@@ -1,0 +1,84 @@
+\begin{tikzpicture}
+
+\begin{axis}[
+	width=6cm,
+	height=6cm,
+	scale only axis,
+	xmin=0,
+	xmax=25,
+	xlabel={$t_{\mr{inc}}$\,[h]},
+	ymin=0,
+	ymax=0.06,
+	ylabel={OD 600\,nm},
+	ylabel near ticks,
+	at={(0cm,0cm)},
+	anchor=south west,
+	legend style={at={(1.03,0.5)},legend columns=1,anchor=west,font=\scriptsize,draw=black,fill=white,legend cell align=left}
+	]
+\addplot[
+color=black,
+solid,
+mark=*,
+mark options={solid,fill=black,draw=black}
+]
+table[row sep=crcr]{
+0.000000 0.001500\\
+1.000000 0.001000\\
+2.000000 0.001500\\
+3.000000 0.002500\\
+4.000000 0.002000\\
+6.333333 0.001500\\
+24.00000 0.000000\\
+};\addlegendentry{60\,g/L};
+
+\addplot[
+color=black,
+dashed,
+mark=*,
+mark options={solid,fill=white,draw=black}
+]
+table[row sep=crcr]{
+0.000000 0.000500\\
+1.000000 0.003000\\
+2.000000 0.003000\\
+3.000000 0.003500\\
+4.000000 0.003500\\
+6.333333 0.003500\\
+24.00000 0.002000\\
+};\addlegendentry{120\,g/L};
+
+\addplot[
+color=black,
+dashdotted,
+mark=triangle*,
+mark options={solid,fill=black,draw=black}
+]
+table[row sep=crcr]{
+0.000000 0.002000\\
+1.000000 0.004500\\
+2.000000 0.006000\\
+3.000000 0.008000\\
+4.000000 0.011500\\
+6.333333 0.010500\\
+24.00000 0.004500\\
+};\addlegendentry{180\,g/L};
+
+\addplot[
+color=black,
+dashdotdotted,
+mark=triangle,
+mark options={solid,fill=white,draw=black}
+]
+table[row sep=crcr]{
+0.000000 0.007000\\
+1.000000 0.019500\\
+2.000000 0.021500\\
+3.000000 0.032000\\
+4.000000 0.040500\\
+6.333333 0.045500\\
+24.00000 0.048000\\
+};\addlegendentry{240\,g/L};
+
+\end{axis}
+
+\end{tikzpicture}

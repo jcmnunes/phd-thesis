@@ -1,0 +1,111 @@
+% This file was created by matlab2tikz v0.3.3.
+% Copyright (c) 2008--2013, Nico Schlömer <nico.schloemer@gmail.com>
+% All rights reserved.
+% 
+% The latest updates can be retrieved from
+%   http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz
+% where you can also make suggestions and rate matlab2tikz.
+% 
+% 
+% 
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=\figurewidth,
+height=\figureheight,
+scale only axis,
+xmin=0,
+xmax=300,
+xlabel={$\forcaionica\,[\mathrm{mol}/\mathrm{m}^{3}]$},
+ymin=0,
+ymax=30,
+ytick={ 0,  5, 10, 15, 20, 25, 30},
+ylabel={$\concmum/\concbum$},
+title={TEPC \unit{0.03}{\micro\meter}},
+%legend style={at={(0.97,0.03)},anchor=south east,draw=black,fill=white,legend cell align=left}
+]
+\addplot [
+color=black,
+solid
+]
+table[row sep=crcr]{
+0 1.15755627\\
+6.25 2.31511254\\
+18.75 4.533762058\\
+33.33333333 7.041800643\\
+51.38888889 9.935691318\\
+73.61111111 13.21543408\\
+94.44444444 15.91639871\\
+116.6666667 18.61736334\\
+139.5833333 21.02893891\\
+154.1666667 22.18649518\\
+169.4444444 23.34405145\\
+186.1111111 24.21221865\\
+203.4722222 24.79099678\\
+218.0555556 25.08038585\\
+239.5833333 25.17684887\\
+261.8055556 25.08038585\\
+281.25 24.98392283\\
+300 24.88745981\\
+}; \label{Hplot}
+%\addlegendentry{$\concmum/\concbum$};
+
+\end{axis}
+
+\begin{axis}[%
+legend pos= south east,
+width=\figurewidth,
+height=\figureheight,
+scale only axis,
+xmin=0,
+xmax=300,
+ymin=-3.5,
+ymax=-2.9,
+ytick={-3.5, -3.4, -3.3, -3.2, -3.1,   -3, -2.9},
+ylabel={$\potencialgrad\,[\mathrm{V}/\mathrm{m}]$},
+axis x line*=bottom,
+axis y line*=right
+]
+\addlegendimage{/pgfplots/refstyle=Hplot}\addlegendentry{$\concmum/\concbum$}
+\addplot [
+color=black,
+dashed
+]
+table[row sep=crcr]{
+0 -3.424758842\\
+2.083333333 -3.393890675\\
+3.472222222 -3.376527331\\
+6.25 -3.353376206\\
+9.027777778 -3.336012862\\
+13.88888889 -3.312861736\\
+18.75 -3.299356913\\
+26.38888889 -3.28392283\\
+36.80555556 -3.268488746\\
+48.61111111 -3.253054662\\
+59.72222222 -3.245337621\\
+72.22222222 -3.237620579\\
+84.02777778 -3.229903537\\
+95.13888889 -3.224115756\\
+106.25 -3.218327974\\
+118.0555556 -3.208681672\\
+129.8611111 -3.202893891\\
+140.9722222 -3.195176849\\
+152.7777778 -3.185530547\\
+163.8888889 -3.177813505\\
+175.6944444 -3.168167203\\
+187.5 -3.15659164\\
+198.6111111 -3.143086817\\
+209.7222222 -3.131511254\\
+222.2222222 -3.118006431\\
+234.0277778 -3.102572347\\
+245.1388889 -3.089067524\\
+256.9444444 -3.073633441\\
+267.3611111 -3.058199357\\
+279.1666667 -3.042765273\\
+288.8888889 -3.031189711\\
+300 -3.013826367\\
+};
+\addlegendentry{\potencialgrad};
+
+\end{axis}
+\end{tikzpicture}%

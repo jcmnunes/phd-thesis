@@ -1,0 +1,159 @@
+% This file was created by matlab2tikz v0.3.3.
+% Copyright (c) 2008--2013, Nico Schlömer <nico.schloemer@gmail.com>
+% All rights reserved.
+% 
+% The latest updates can be retrieved from
+%   http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz
+% where you can also make suggestions and rate matlab2tikz.
+% 
+% 
+%!TEX root=testfigum.tex
+\begin{tikzpicture}
+
+%\draw[help lines] (-4,-4) grid (14,14);
+\node[right] at (0,12.5) {a) TEPC 0.03\,\micro m};
+\node[right] at (7,12.5) {b) XM300};
+\node[right] at (0,5.5) {c) YM100};
+
+\begin{axis}[%
+width=\figurewidth,
+height=\figureheight,
+scale only axis,
+xmin=0,
+xmax=8,
+xlabel={$\fluxo\,[\micro\mathrm{m}/\mathrm{s}]$},
+ymin=-0.025,
+ymax=0.25,
+ylabel={\fracaomembrana},
+name=plot1,
+at={(0cm,7cm)},
+anchor=south west,
+%title={TEPC 0.03\,\micro m},
+%legend style={at={(0.03,0.97)},anchor=north west,draw=black,fill=white,legend cell align=left}
+]
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=white,draw=black}
+]
+table[row sep=crcr]{
+2.287804878 0.07885085575\\
+3.643902439 0.1295843521\\
+3.673170732 0.1356968215\\
+3.829268293 0.1375305623\\
+3.887804878 0.1246943765\\
+4.356097561 0.108190709\\
+4.824390244 0.1094132029\\
+};
+%\addlegendentry{$\agitacao=100\,\mathrm{min}^{-1}$};
+
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=black,draw=black}
+]
+table[row sep=crcr]{
+2.151219512 0.00488997555\\
+3.702439024 0.03300733496\\
+4.307317073 0.02506112469\\
+6.414634146 0\\
+};
+%\addlegendentry{$\agitacao=800\,\mathrm{min}^{-1}$};
+
+\end{axis}
+
+\begin{axis}[%
+width=\figurewidth,
+height=\figureheight,
+scale only axis,
+xmin=0,
+xmax=30,
+xlabel={$\fluxo\,[\micro\mathrm{m}/\mathrm{s}]$},
+ymin=0,
+ymax=0.5,
+ylabel={\fracaomembrana},
+at={(7cm,7cm)},
+anchor=south west,
+%title={XM300},
+%legend style={at={(0.03,0.97)},anchor=north west,draw=black,fill=white,legend cell align=left}
+]
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=white,draw=black}
+]
+table[row sep=crcr]{
+1.465798046 0.05090497738\\
+2.833876221 0.07466063348\\
+3.615635179 0.08597285068\\
+6.302931596 0.2454751131\\
+};
+%\addlegendentry{$\agitacao=100\,\mathrm{min}^{-1}$};
+
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=black,draw=black}
+]
+table[row sep=crcr]{
+5.863192182 0.03733031674\\
+6.351791531 0.02601809955\\
+26.04234528 0.2205882353\\
+};
+%\addlegendentry{$\agitacao=800\,\mathrm{min}^{-1}$};
+
+\end{axis}
+
+\begin{axis}[%
+width=\figurewidth,
+height=\figureheight,
+scale only axis,
+xmin=0,
+xmax=30,
+xlabel={$\fluxo\,[\micro\mathrm{m}/\mathrm{s}]$},
+ymin=0,
+ymax=1.5,
+ylabel={\fracaomembrana},
+at={(0cm,0cm)},
+anchor=south west,
+%title={YM100},
+legend style={at={(1.9,0.5)},anchor=center,draw=black,fill=white,legend cell align=left}
+]
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=white,draw=black}
+]
+table[row sep=crcr]{
+1.416938111 0.1079365079\\
+2.785016287 0.1841269841\\
+4.153094463 0.2603174603\\
+5.521172638 0.3174603175\\
+6.107491857 0.2698412698\\
+12.21498371 0.6571428571\\
+18.32247557 0.9111111111\\
+24.13680782 1.304761905\\
+};
+\addlegendentry{$\agitacao=100\,\mathrm{min}^{-1}$};
+
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=black,draw=black}
+]
+table[row sep=crcr]{
+12.16612378 0.07936507937\\
+12.21498371 0.1142857143\\
+18.3713355 0.146031746\\
+18.32247557 0.2\\
+};
+\addlegendentry{$\agitacao=800\,\mathrm{min}^{-1}$};
+
+\end{axis}
+\end{tikzpicture}%

@@ -1,0 +1,101 @@
+% This file was created by matlab2tikz v0.3.3.
+% Copyright (c) 2008--2013, Nico Schlömer <nico.schloemer@gmail.com>
+% All rights reserved.
+% 
+% The latest updates can be retrieved from
+%   http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz
+% where you can also make suggestions and rate matlab2tikz.
+% 
+% 
+%!TEX root=testfigum.tex 
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=\figurewidth,
+height=\figureheight,
+scale only axis,
+xmode=log,
+xmin=1,
+xmax=10000,
+xminorticks=true,
+xlabel={$\forcaionica\,[\mathrm{mol}/\mathrm{m}^{3}]$},
+ymin=-0.05,
+ymax=1,
+ylabel={\permobs},
+legend style={at={(1.03,0.5)},anchor=west,font=\scriptsize,draw=black,fill=white,legend cell align=left}
+]
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=white,draw=black}
+]
+plot [error bars/.cd, y dir = both, y explicit]
+coordinates{
+(10.2983099091336,0.07430340557) +- (0.0,0.01547987616)(20.0506132454179,0.006191950464) +- (0.0,0.027863777086)(30.2587556300066,0.09907120743) +- (0.0,0.02786377707)(39.8107170553498,0.1950464396) +- (0.0,0.0681114551)(50.3648633546114,0.8544891641) +- (0.0,0.0247678018)(198.551119449913,0.9164086687) +- (0.0,0.0154798761999999)(990.249612203102,0.9318885449) +- (0.0,0.0402476780000001)};
+\addlegendentry{TEPC 0.03\,\micro m};
+
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=black,draw=black}
+]
+plot [error bars/.cd, y dir = both, y explicit]
+coordinates{
+(9.90249611975088,0.6749226006) +- (0.0,0.0216718266)(20.0506132454179,0.9411764706) +- (0.0,0.0278637771)(29.6715631284978,0.9256965944) +- (0.0,0.0495356037)};
+\addlegendentry{Nylon 0.2\,\micro m};
+
+\addplot [
+color=black,
+solid
+]
+table[row sep=crcr]{
+1 0.03405572755\\
+1.60049867558139 0.04024767802\\
+2.3225092202643 0.04643962848\\
+3.30482856826026 0.05263157895\\
+4.70262583578953 0.06191950464\\
+6.82405554575474 0.0773993808\\
+9.90249611975088 0.0959752322\\
+13.8173746057578 0.1269349845\\
+20.0506132454179 0.1640866873\\
+27.9774746561865 0.213622291\\
+36.8092905432019 0.2693498452\\
+45.6640543144332 0.3250773994\\
+55.549589123674 0.3808049536\\
+66.2638394340789 0.4427244582\\
+77.5107076699676 0.4953560372\\
+87.18173988937 0.5541795666\\
+98.0594294468393 0.6068111455\\
+110.294331054882 0.6625386997\\
+121.648394908545 0.7213622291\\
+136.826498450166 0.7770897833\\
+153.898378126634 0.8328173375\\
+173.100320506256 0.8916408669\\
+194.698094892897 0.9442724458\\
+206.487429069493 0.9659442724\\
+227.743929129021 0.9845201238\\
+256.159600935813 0.9938080495\\
+293.822538137996 1\\
+};
+\addlegendentry{TEPC 0.03\,\micro m (p.)};
+
+\addplot [
+color=black,
+dashed
+]
+table[row sep=crcr]{
+1 0.5479876161\\
+1.76525930980707 0.5851393189\\
+3.6450385660698 0.6563467492\\
+7.52654642366903 0.7616099071\\
+11.8124620429857 0.8421052632\\
+17.8264075004846 0.9133126935\\
+24.3912491823709 0.9535603715\\
+34.0341488551958 0.9814241486\\
+54.4716101547382 1\\
+};
+\addlegendentry{Nylon 0.2\,\micro m (p.)};
+\end{axis}
+\end{tikzpicture}%

@@ -1,0 +1,109 @@
+\begin{tikzpicture}
+
+%\draw[help lines] (0cm,0cm) grid (10cm,12cm);
+
+% Define block styles  
+\tikzstyle{materia}=[draw, fill=gray!20, text width=6.0em, text centered,
+  minimum height=1.5em,drop shadow]
+\tikzstyle{practica} = [materia, text width=16em, minimum width=10em,
+  minimum height=3em, rounded corners, drop shadow]
+\tikzstyle{texto} = [below right]
+\tikzstyle{linepart} = [draw, thick, color=black!50, -latex', dashed]
+\tikzstyle{line} = [draw, thick, color=black!50, -latex']
+\tikzstyle{ur}=[draw, text centered, minimum height=0.01em]
+ 
+% Define distances for bordering
+\newcommand{\blockdist}{1.3}
+\newcommand{\edgedist}{1.5}
+
+\newcommand{\practica}[2]{node (p#1) [practica]
+  {\scriptsize{Colheita de células} \\{\scriptsize\textit{#2}}}}
+
+% Draw background
+\newcommand{\background}[5]{%
+  \begin{pgfonlayer}{background}
+    % Left-top corner of the background rectangle
+    \path (#1.west |- #2.north)+(-0.5,0.5) node (a1) {};
+    % Right-bottom corner of the background rectanle
+    \path (#3.east |- #4.south)+(+0.5,-0.25) node (a2) {};
+    % Draw the background
+    \path[fill=gray!7.5,rounded corners, draw=black!50, dashed]
+      (a1) rectangle (a2);
+    \path (a1) node (u1)[texto]
+      {\scriptsize\textit{#5}};
+  \end{pgfonlayer}}
+
+\newcommand{\transreceptor}[3]{%
+  \path [linepart] (#1.east) -- node [above]
+    {\scriptsize Transreceptor #2} (#3);}
+
+
+  % Draw diagram elements
+\path node[anchor=north] at (5,12) (p1) [practica] {%
+Colheita de células\\%
+\scriptsize{
+\begin{flushleft}
+$\ast$ Centrifugação\\%
+$\ast$ \textbf{MF} \\%
+\end{flushleft}
+}};
+
+\path (p1.south)+(0.0,-0.5) node[anchor=north] (p2) [practica] {%
+Lise celular\\%
+\scriptsize{
+\begin{flushleft}
+$\ast$ Química (alcalina/detergente)\\%
+$\ast$ Térmica\\%
+$\ast$ Mecânica (não recomendado)\\
+\end{flushleft}
+}};
+
+\path (p2.south)+(0.0,-0.5) node[anchor=north] (p3) [practica] {%
+Separação sólido-líquido\\%
+\scriptsize{
+\begin{flushleft}
+$\ast$ Filtração (\textbf{MF}, materiais inertes)\\%
+$\ast$ Flutuação\\%
+$\ast$ Centrifugação (não recomendado)\\%
+\end{flushleft}
+}};
+
+\path (p3.south)+(0.0,-1) node[anchor=north] (p4) [practica] {%
+Concentração/Troca de tampão/Pré-purificação\\%
+\scriptsize{%
+\begin{flushleft}
+$\ast$ Precipitação (sais, PEG, Álcoois, CTAB)\\%
+$\ast$ \textbf{UF}\\%
+$\ast$ Extração líquido-líquido\\%
+$\ast$ Cromatografia de leito expandido\\
+\end{flushleft}
+}};
+
+\path (p4.south)+(0.0,-1) node[anchor=north] (p5) [practica] {%
+Purificação/Separação isoformas\\%
+\scriptsize{%
+\begin{flushleft}
+$\ast$ Cromatografia\\%
+\ \ \ \ $\circ$ AE, RP, HIC, SEC, IMAC, Afinidade\\
+\ \ \ \ $\circ$ Cromatografia de membrana\\
+$\ast$ Adsorção seletiva de impurezas\\
+$\ast$ \textbf{UF}\\%
+\end{flushleft}
+}};
+
+\path (p5.south)+(0.0,-0.5) node[anchor=north] (p6) [practica] {%
+Concentração/Esterilização/Troca de tampão\\%
+\scriptsize{%
+\begin{flushleft}
+$\ast$ \textbf{MF}\\
+$\ast$ \textbf{UF}\\
+$\ast$ Precipitação\\
+$\ast$ SEC\\
+\end{flushleft}
+}};
+
+\background{p1}{p1}{p3}{p3}{Isolamento primário}
+\background{p4}{p4}{p4}{p4}{Isolamento intermediário}
+\background{p5}{p5}{p6}{p6}{Purificação final}
+
+\end{tikzpicture}

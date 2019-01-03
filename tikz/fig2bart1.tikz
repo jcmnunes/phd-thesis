@@ -1,0 +1,93 @@
+% This file was created by matlab2tikz v0.3.3.
+% Copyright (c) 2008--2013, Nico SchlÃ¶mer <nico.schloemer@gmail.com>
+% All rights reserved.
+% 
+% The latest updates can be retrieved from
+%   http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz
+% where you can also make suggestions and rate matlab2tikz.
+% 
+% 
+% 
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=\figurewidth,
+height=\figureheight,
+scale only axis,
+xmode=log,
+xmin=10,
+xmax=1000000,
+xminorticks=true,
+xlabel={número de pares de bases (\numpb)},
+ymode=log,
+ymin=1e-013,
+ymax=1e-010,
+yminorticks=true,
+ylabel={$\dinf\,[\meter^{2}\per\second]$},
+legend style={at={(1.03,0.5)},anchor=west,font=\scriptsize,draw=black,fill=white,legend cell align=left}
+]
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=black,draw=black}
+]
+table[row sep=crcr]{
+363.460747977115 1.59985870983267e-011\\
+756.980979130253 9.10298170719548e-012\\
+1003.76948079791 7.19685677735829e-012\\
+2296.73617575103 3.84621900960553e-012\\
+2296.73617575103 4.64158886923828e-012\\
+3045.51070928126 4.56945021531303e-012\\
+6463.3476448505 1.9921394233148e-012\\
+};
+\addlegendentry{``Light scattering''};
+
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=white,draw=black}
+]
+table[row sep=crcr]{
+20.8270351982524 6.44946677810926e-011\\
+99.2503452123573 2.72504795919508e-011\\
+249.493263586118 1.3894954852319e-011\\
+500.433535123067 3.968619481925e-012\\
+1003.76948079791 3.6126270546783e-012\\
+1975.83936632778 3.23745753064699e-012\\
+2988.75417643441 2.55954795036325e-012\\
+4354.00465477059 2.44205308307306e-012\\
+5883.12184325573 1.59985870983267e-012\\
+6586.08681349741 1.81344087286176e-012\\
+5994.84250625689 1.01578716268392e-012\\
+9240.30433060574 1.43371421101258e-012\\
+11152.8438314174 1.24519709838823e-012\\
+23228.0671037541 8.4172469704969e-013\\
+44870.4870871908 5.51437885273818e-013\\
+48377.1771157257 5.96362326054667e-013\\
+106605.049953028 4.71486638782885e-013\\
+112794.411325515 3.28856779936563e-013\\
+183952.579430903 2.51976790557642e-013\\
+217888.994132914 2.15443467349598e-013\\
+288924.462492657 1.75751062815831e-013\\
+311504.304281983 1.78525673436378e-013\\
+};
+\addlegendentry{``Brownian motion tracking''};
+
+\addplot [
+color=black,
+solid
+]
+table[row sep=crcr]{
+20.8270351982524 6.16332187824059e-011\\
+100 2.36317684044671e-011\\
+1000 5.78756953391684e-012\\
+10000 1.41741238051362e-012\\
+100000 3.47133255965158e-013\\
+311504.304281983 1.73376282258395e-013\\
+};
+\addlegendentry{$\dinf=3.94\times 10^{-10}(\numpb)^{-0.611}$};
+
+\end{axis}
+\end{tikzpicture}%

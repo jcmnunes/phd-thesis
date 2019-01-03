@@ -1,0 +1,15 @@
+%!TEX root=testfigum.tex
+\begin{tikzpicture}
+%\draw[help lines] (0,0) grid (10,4);
+\node[font=\large] at (5,2) {$\displaystyle \vec{F}_i=\sum_{j\neq i}\atrito_{i,j}x_j(\vec{u}_i-\vec{u}_j)$};
+\node[below, align=center] at (1,1) {Força motriz\\no componente $i$};
+\draw[->] (1,1) -- (2.9,1.9);
+\node[above, align=center] at (3,3) {Coeficiente de atrito\\entre $i$ e $j$};
+\draw[->] (4,3) -- (4.6,2.5);
+\node[below, align=center] at (4.25,1) {Fração molar\\do componente $j$};
+\draw[->] (4.25,1) -- (5.1,1.9);
+\node[above, align=center] at (8,3) {Velocidade do componente $i$\\(difusiva)};
+\draw[->] (7,3) -- (5.95,2.45);
+\node[below, align=center] at (8,1) {Velocidade do componente $j$\\(difusiva)};
+\draw[->] (8,1) -- (6.9,1.9);
+\end{tikzpicture}

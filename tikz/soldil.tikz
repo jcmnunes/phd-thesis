@@ -1,0 +1,52 @@
+%!TEX root=testfigum.tex
+\begin{tikzpicture}
+
+%\draw[help lines] (0,0) grid (10,8);
+
+\shadedraw[thin,bottom color=black!5!white, top color=black!1!white] (0.7,-0.3) rectangle (1.3,0.3);
+\node[right] at (1.4,0) {$w$ (solvente)};
+\shade[bottom color=black!5!white, top color=black!1!white] (0.5,3) rectangle (6,7.5);
+%\fill[black!5!white] (0.5,3) rectangle (6,7.5);
+
+\coordinate (a) at (7,6.5);
+\coordinate (b) at (9,6.5);
+\draw[->, >=latex,black!10!white, line width=15pt]   (a) to node[black]{$F_2$} (b) ;
+
+\coordinate (c) at (7,4.5);
+\coordinate (d) at (9,4.5);
+\draw[->, >=latex,black!10!white, line width=15pt]   (c) to node[black]{$F_1$} (d) ;
+
+\shade [ball color=white] (1,2) circle [radius=0.1cm];
+\node[right] at (1.4,2) {1};
+\node[right] at (2,2) {$F_1=\atrito_{1,w}x_w(u_1-u_w)+\atrito_{1,2}x_2(u_1-u_2)$};
+\draw[->] (6.5,1.5)--(6.9,2.5) node[above] {$x_2\rightarrow 0$};
+
+\shade [ball color=white] (1,1) circle [radius=0.3cm];
+\node[right] at (1.4,1) {2};
+\node[right] at (2,1) {$F_2=\atrito_{2,w}x_w(u_2-u_w)+\atrito_{2,1}x_1(u_2-u_1)$};
+\draw[->] (6.4,1.5)--(6.8,0.5) node[below] {$x_1\rightarrow 0$};
+
+\draw[thin] (1,7) -- (a);
+\draw[thin] (2.5,4) -- (a);
+\draw[thin] (4,5.5) -- (a);
+
+\begin{scope}[dashed]
+\draw[thin] (1.5,5.5) -- (c);
+\draw[thin] (3.5,6.5) -- (c);
+\draw[thin] (5,4) -- (c);
+\end{scope}
+
+\shade [ball color=white] (1,7) circle [radius=0.3cm];
+\shade [ball color=white] (2.5,4) circle [radius=0.3cm];
+\shade [ball color=white] (4,5.5) circle [radius=0.3cm];
+
+\shade [ball color=white] (1.5,5.5) circle [radius=0.1cm];
+\shade [ball color=white] (3.5,6.5) circle [radius=0.1cm];
+\shade [ball color=white] (5,4) circle [radius=0.1cm];
+
+
+
+%\node[left] at (1,2) {$F_i=\atrito_{1,w}$};
+
+
+\end{tikzpicture}

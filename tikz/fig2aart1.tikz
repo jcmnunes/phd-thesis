@@ -1,0 +1,149 @@
+% This file was created by matlab2tikz v0.3.3.
+% Copyright (c) 2008--2013, Nico SchlÃ¶mer <nico.schloemer@gmail.com>
+% All rights reserved.
+% 
+% The latest updates can be retrieved from
+%   http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz
+% where you can also make suggestions and rate matlab2tikz.
+% 
+% 
+% 
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=\figurewidth,
+height=\figureheight,
+scale only axis,
+xmode=log,
+xmin=10,
+xmax=1000000,
+xminorticks=true,
+xlabel={número de pares de bases (\numpb)},
+ymode=log,
+ymin=1e-013,
+ymax=1e-010,
+yminorticks=true,
+ylabel={$\dinf\,[\meter^{2}\per\second]$},
+legend style={at={(1.03,0.5)},anchor=west,font=\scriptsize,draw=black,fill=white,legend cell align=left}
+]
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=black,draw=black}
+]
+table[row sep=crcr]{
+2253.9339022925 3.84621900960553e-012\\
+};
+\addlegendentry{Lewis e Pecora \cite{lewis}};
+
+\addplot [
+color=black,
+only marks,
+mark=diamond*,
+mark options={solid,fill=black,draw=black}
+]
+table[row sep=crcr]{
+363.460747977115 1.5749940229659e-011\\
+756.980979130253 9.10298170719548e-012\\
+1003.76948079791 7.19685677735829e-012\\
+};
+\addlegendentry{Sorlie e Pecora \cite{sorlie}};
+
+\addplot [
+color=black,
+only marks,
+mark=triangle*,
+mark options={solid,,rotate=180,fill=black,draw=black}
+]
+table[row sep=crcr]{
+6463.3476448505 1.9921394233148e-012\\
+};
+\addlegendentry{Voordouw \et\ \cite{voordouw}};
+
+\addplot [
+color=black,
+only marks,
+mark=square*,
+mark options={solid,fill=black,draw=black}
+]
+table[row sep=crcr]{
+2296.73617575103 4.42851887454277e-012\\
+};
+\addlegendentry{Newman \et\ \cite{newman}};
+
+\addplot [
+color=black,
+only marks,
+mark=triangle*,
+mark options={solid,fill=black,draw=black}
+]
+table[row sep=crcr]{
+2296.73617575103 4.42851887454277e-012\\
+};
+\addlegendentry{Nguyen \et\ \cite{nguyen}};
+
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=white,draw=black}
+]
+table[row sep=crcr]{
+4272.86285892968 1.96117798737595e-012\\
+6463.3476448505 1.43371421101258e-012\\
+9240.30433060574 1.1335006408481e-012\\
+22795.1858304999 6.65471177027432e-013\\
+48377.1771157257 4.71486638782885e-013\\
+209843.453478078 1.70330538718639e-013\\
+305699.070341973 1.41143167650584e-013\\
+};
+\addlegendentry{Smith \et\ \cite{smith}};
+
+\addplot [
+color=black,
+only marks,
+mark=diamond*,
+mark options={solid,fill=white,draw=black}
+]
+table[row sep=crcr]{
+104618.344406119 3.66966018570687e-013\\
+};
+\addlegendentry{Araki \et\ \cite{araki}};
+
+\addplot [
+color=black,
+only marks,
+mark=triangle*,
+mark options={solid,,rotate=180,fill=white,draw=black}
+]
+table[row sep=crcr]{
+20.8270351982524 5.01972898230213e-011\\
+99.2503452123573 2.12095087695685e-011\\
+244.843674744864 1.09854115076332e-011\\
+500.433535123067 3.13760768463555e-012\\
+985.063102477209 2.90124917521446e-012\\
+1975.83936632778 2.55954795036325e-012\\
+2988.75417643441 2.02358965247973e-012\\
+5994.84250625689 8.03085713333562e-013\\
+};
+\addlegendentry{Lukacs \et\ \cite{lukacs}};
+
+\addplot [
+color=black,
+only marks,
+mark=square*,
+mark options={solid,fill=white,draw=black}
+]
+table[row sep=crcr]{
+5883.12184325573 1.28482370280305e-012\\
+10944.9979862773 9.69157944137883e-013\\
+44870.4870871908 4.35969171223002e-013\\
+112794.411325515 2.59995595025296e-013\\
+180524.415701589 1.9921394233148e-013\\
+283540.028710911 1.3894954852319e-013\\
+};
+\addlegendentry{Robertson \et\ \cite{robertson}};
+
+\end{axis}
+\end{tikzpicture}%

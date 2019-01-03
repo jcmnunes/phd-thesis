@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+
+\node[anchor = south west] at (0cm, 0cm) {%\includegraphics[width=7cm]{% mudar para 6.3 cm
+\includegraphics[width=14cm]{processos_art4.jpg}};
+
+% \draw[help lines] (0cm, -2cm) grid (14cm, 10cm);
+
+\node[align = center] at (1.5, 4.5) {Filtração lisado \\ (Microfiltração)};
+\node[align = center] at (4.5, 4.5) {Concentração \\ (Ultrafiltração)};
+\node[align = center] at (7.4, 4.5) {Diafiltração \\ (Ultrafiltração)};
+
+\node[align = center] at (1.5, -0.5) {Centrifugação \\ lisado};
+\node[align = center] at (4.4, -0.5) {Precipitação \\ isopropanol};
+\node[align = center] at (7.4, -0.5) {Centrifugação \\ \phantom{phantom}};
+\node[align = center] at (10.3, -0.5) {Precipitação \\ sulfato de amónio};
+\node[align = center] at (13.3, -0.5) {Centrifugação \\ \phantom{phantom}};
+
+\draw[dashed] (3, 4) rectangle (8.9, 7.4);
+\draw[dashed] (3, -1) rectangle (14.5, 3.5);
+
+\node[right, align = left] at (9, 6.7) {Processo A:\\FS40PP (\pVAX)};
+\node[right, align = left] at (9, 5.7) {Processo B:\\Biomax\,300 (\pVAX)};
+\node[right, align = left] at (9, 4.7) {Processo C:\\Biomax\,300 (\pCAMBIA)};
+\node at (9.25, -1.5) {Processo D: processo alternativo};
+
+\end{tikzpicture}

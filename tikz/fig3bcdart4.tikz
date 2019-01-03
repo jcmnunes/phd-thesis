@@ -1,0 +1,198 @@
+\begin{tikzpicture}
+
+\node[right,font=\scriptsize] at (0cm,12.5cm) {RNA 23\,S};
+\node[right,font=\scriptsize] at (7cm,12.5cm) {RNA 16\,S};
+\node[right,font=\scriptsize] at (0cm,5.5cm) {RNA 5\,S};
+
+\begin{axis}[%
+width=5cm,
+height=5cm,
+forget plot,
+scale only axis,
+xmin=0,
+xmax=16,
+xlabel={\fluxo\,[\micro m/s]},
+ymin=0,
+ymax=7,
+ylabel={$\concm/\concb$},
+at={(0cm,7cm)},
+anchor=south west
+]
+
+\addplot[
+color=black,
+solid
+]
+table[row sep=crcr]{
+1.3984 1.3697\\
+1.9621 1.5409\\
+2.8618 1.8241\\
+3.9458 2.1994\\
+4.9322 2.5484\\
+6.0054 2.9172\\
+6.7967 3.2267\\
+7.7073 3.5823\\
+8.4770 3.8655\\
+9.2575 4.1881\\
+10.038 4.4976\\
+10.916 4.8532\\
+11.762 5.1891\\
+12.336 5.4262\\
+12.900 5.6566\\
+13.485 5.9003\\
+13.886 6.0715\\
+};
+
+\addplot[
+color=black,
+dashed
+]
+table[row sep=crcr]{
+1.3875 1.0865\\
+2.3415 1.1261\\
+3.2304 1.1590\\
+4.0650 1.1656\\
+4.9322 1.1787\\
+5.7453 1.1919\\
+6.6016 1.1853\\
+7.4688 1.1919\\
+8.7371 1.1853\\
+9.5610 1.1853\\
+10.407 1.1656\\
+11.263 1.1722\\
+12.119 1.1458\\
+12.943 1.1392\\
+13.886 1.1261\\
+};
+
+\end{axis}
+
+
+\begin{axis}[%
+width=5cm,
+height=5cm,
+forget plot,
+scale only axis,
+xmin=0,
+xmax=16,
+xlabel={\fluxo\,[\micro m/s]},
+ymin=0,
+ymax=7,
+ylabel={$\concm/\concb$},
+at={(7cm,7cm)},
+anchor=south west
+]
+
+\addplot[
+color=black,
+solid
+]
+table[row sep=crcr]{
+1.3984 1.3776\\
+2.1355 1.6149\\
+2.9485 1.8983\\
+3.7073 2.1817\\
+4.3686 2.4322\\
+5.0949 2.7156\\
+5.7561 2.9925\\
+6.4390 3.2759\\
+7.2087 3.6055\\
+7.9892 3.9416\\
+8.9648 4.3635\\
+9.8645 4.7721\\
+10.612 5.1083\\
+11.480 5.5038\\
+12.304 5.8663\\
+13.041 6.2090\\
+13.875 6.5913\\
+};
+
+\addplot[
+color=black,
+dashed
+]
+table[row sep=crcr]{
+1.3984 1.1139\\
+2.0921 1.1601\\
+2.7967 1.2194\\
+3.6423 1.2853\\
+4.9539 1.3842\\
+6.1572 1.4765\\
+7.4688 1.5621\\
+9.0515 1.6610\\
+9.9837 1.7269\\
+11.263 1.8126\\
+12.499 1.8917\\
+13.333 1.9510\\
+13.875 1.9840\\
+};
+
+\end{axis}
+
+
+\begin{axis}[%
+%scaled ticks=false,
+width=5cm,
+height=5cm,
+scale only axis,
+xmin=0,
+xmax=16,
+xlabel={\fluxo\,[\micro m/s]},
+ymin=0.8,
+ymax=1.8,
+ylabel={$\concm/\concb$},
+at={(0cm,0cm)},
+anchor=south west,
+legend style={at={(9.5cm,2.5cm)},legend columns=1,anchor=center,font=\scriptsize,draw=black,fill=white,legend cell align=left,align=left}
+]
+
+\addplot[
+color=black,
+solid
+]
+table[row sep=crcr]{
+1.3993 1.0916\\
+2.2237 1.1462\\
+3.2325 1.2092\\
+4.0353 1.2581\\
+4.9247 1.3127\\
+5.7275 1.3588\\
+6.4976 1.4011\\
+7.4522 1.4510\\
+8.2766 1.4933\\
+9.1336 1.5310\\
+9.8495 1.5648\\
+10.587 1.5968\\
+11.433 1.6297\\
+12.236 1.6598\\
+13.049 1.6871\\
+13.885 1.7172\\
+};
+\addlegendentry{RNA (3 componentes)};
+
+\addplot[
+color=black,
+dashed
+]
+table[row sep=crcr]{
+1.3668 1.0239\\
+2.3864 1.0408\\
+3.6339 1.0606\\
+4.5125 1.0747\\
+5.3478 1.0869\\
+6.5953 1.1048\\
+7.4739 1.1170\\
+8.7322 1.1340\\
+9.6217 1.1452\\
+10.457 1.1565\\
+11.292 1.1669\\
+12.117 1.1763\\
+12.616 1.1829\\
+13.375 1.1923\\
+13.896 1.1970\\
+};
+\addlegendentry{RNA + \pVAX\\(4 componentes)};
+
+\end{axis}
+
+\end{tikzpicture}

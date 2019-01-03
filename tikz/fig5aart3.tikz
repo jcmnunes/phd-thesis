@@ -1,0 +1,59 @@
+% This file was created by matlab2tikz v0.3.3.
+% Copyright (c) 2008--2013, Nico Schlömer <nico.schloemer@gmail.com>
+% All rights reserved.
+% 
+% The latest updates can be retrieved from
+%   http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz
+% where you can also make suggestions and rate matlab2tikz.
+% 
+% 
+% 
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=\figurewidth,
+height=\figureheight,
+scale only axis,
+xmin=1,
+xmax=3.25,
+xlabel={VDF},
+ymin=0,
+ymax=30,
+ylabel={\fluxo\,[\micro\meter/s]},
+legend style={at={(1.03,0.5)},anchor=west,draw=black,font=\scriptsize,fill=white,legend cell align=left}
+]
+\addplot [
+color=black,
+solid,
+mark=*,
+mark options={solid,fill=white,draw=black}
+]
+plot [error bars/.cd, y dir = both, y explicit,error bar style={solid}]
+coordinates{
+(1.108870968,23.26683292) +- (0.0,2.16957606)(1.245967742,20.57356608) +- (0.0,1.94513716)(1.431451613,18.17955112) +- (0.0,1.64588529)(1.665322581,16.3840399) +- (0.0,1.34663342)(2,14.96259352) +- (0.0,2.09476309)(2.5,13.69077307) +- (0.0,2.01995012)(2.943548387,13.24189526) +- (0.0,1.87032419)};
+\addlegendentry{UF-A};
+
+\addplot [
+color=black,
+dashed,
+mark=*,
+mark options={solid,fill=black,draw=black}
+]
+plot [error bars/.cd, y dir = both, y explicit,error bar style={solid}]
+coordinates{
+(1.112903226,22.81795511) +- (0.0,2.24438903)(1.25,15.11221945) +- (0.0,1.34663342)(1.427419355,11.97007481) +- (0.0,1.12219452)(1.665322581,10.32418953) +- (0.0,0.748129670000001)(2,9.351620948) +- (0.0,0.822942641999999)(2.5,8.753117207) +- (0.0,0.748129676)(3.008064516,8.453865337) +- (0.0,0.748129674999999)};
+\addlegendentry{UF-B};
+
+\addplot [
+color=black,
+dash pattern=on 1pt off 3pt on 3pt off 3pt,
+mark=triangle*,
+mark options={solid,fill=black,draw=black}
+]
+plot [error bars/.cd, y dir = both, y explicit,error bar style={solid}]
+coordinates{
+(1.112903226,24.83790524) +- (0.0,2.16957606)(1.25,23.04239401) +- (0.0,2.24438903)(1.427419355,21.17206983) +- (0.0,1.94513715)(1.665322581,19.52618454) +- (0.0,2.01995012)(2,17.80548628) +- (0.0,1.72069826)(2.504032258,16.3840399) +- (0.0,1.42144638)(3.004032258,15.86034913) +- (0.0,1.42144638)};
+\addlegendentry{UF-C};
+
+\end{axis}
+\end{tikzpicture}%

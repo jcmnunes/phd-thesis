@@ -1,0 +1,35 @@
+%!TEX root=testfigum.tex
+\begin{tikzpicture}
+
+%\draw[help lines] (0,0) grid (10,8);
+
+%\fill[black!5!white] (1.5,1.5) rectangle (6.5,6.5);
+\shade[bottom color=black!5!white, top color=black!1!white] (1.5,1.5) rectangle (6.5,6.5);
+
+\coordinate (a) at (7,4);
+\coordinate (b) at (9,4);
+\draw[->, >=latex,black!10!white, line width=15pt]   (a) to node[black]{$F_i$} (b) ;
+
+\draw[thin] (3,6) -- (7,4);
+\draw[thin] (3,2) -- (7,4);
+\draw[thin] (2,5) -- (7,4);
+\draw[thin] (2,3) -- (7,4);
+\draw[thin] (4,5) -- (7,4);
+\draw[thin] (4,3) -- (7,4);
+\draw[thin] (5,2) -- (7,4);
+\draw[thin] (3,4) -- (7,4);
+\draw[thin] (5,6) -- (7,4);
+
+\shade [ball color=white] (3,6) circle [radius=0.2cm];
+\shade [ball color=white] (3,2) circle [radius=0.2cm];
+\shade [ball color=white] (2,5) circle [radius=0.2cm];
+\shade [ball color=white] (2,3) circle [radius=0.2cm];
+\shade [ball color=white] (4,5) circle [radius=0.2cm];
+\shade [ball color=white] (4,3) circle [radius=0.2cm];
+\shade [ball color=white] (5,2) circle [radius=0.2cm];
+\shade [ball color=white] (3,4) circle [radius=0.2cm];
+\shade [ball color=white] (5,6) circle [radius=0.2cm];
+
+\node at (4,1) {$\atrito=6\pi\viscosidade\raiostokes\avogadro$};
+
+\end{tikzpicture}

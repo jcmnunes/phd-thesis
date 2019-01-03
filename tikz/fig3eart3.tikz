@@ -1,0 +1,113 @@
+% This file was created by matlab2tikz v0.3.3.
+% Copyright (c) 2008--2013, Nico Schlömer <nico.schloemer@gmail.com>
+% All rights reserved.
+% 
+% The latest updates can be retrieved from
+%   http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz
+% where you can also make suggestions and rate matlab2tikz.
+% 
+% 
+% 
+\begin{tikzpicture}
+%\draw[help lines] (-2,-2) grid (10,10);
+\node[right,font=\scriptsize] at (0,5.75) {MF-B}; 
+\begin{axis}[%
+width=\figurewidth,
+height=\figureheight,
+scale only axis,
+xmin=0,
+xmax=3.2,
+xlabel={VDF},
+ymin=0,
+ymax=1.05,
+ylabel={Rendimento de permeação},
+legend style={at={(1.03,0.5)},anchor=west,font=\scriptsize,draw=black,fill=white,legend cell align=left}
+]
+\addplot [
+color=black,
+solid
+]
+table[row sep=crcr]{
+0 -0.002155172414\\
+0.08035714286 0.05603448276\\
+0.2142857143 0.1530172414\\
+0.375 0.2693965517\\
+0.5669642857 0.3943965517\\
+0.7544642857 0.5\\
+0.9508928571 0.5862068966\\
+1.174107143 0.6745689655\\
+1.441964286 0.7521551724\\
+1.866071429 0.8405172414\\
+2.174107143 0.8857758621\\
+2.549107143 0.9288793103\\
+2.852678571 0.9504310345\\
+3 0.9590517241\\
+};
+\addlegendentry{Permeação total};
+
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=white,draw=black}
+]
+table[row sep=crcr]{
+0.04464 0.004310344828\\
+0.04464 0.008620689655\\
+0.1517857143 0.07327586207\\
+0.1517857143 0.08836206897\\
+0.5 0.3534482759\\
+0.5 0.3642241379\\
+1.5 0.7564655172\\
+1.5 0.7737068966\\
+2.5 0.8706896552\\
+2.5 0.8836206897\\
+3 0.9181034483\\
+3 0.9245689655\\
+};
+\addlegendentry{\pVAX};
+
+\addplot [
+color=black,
+only marks,
+mark=triangle*,
+mark options={solid,,rotate=180,fill=black,draw=black}
+]
+table[row sep=crcr]{
+0.04464 0.002155172414\\
+0.04464 0.01293103448\\
+0.1517857143 0.09482758621\\
+0.1517857143 0.07974137931\\
+0.5 0.3534482759\\
+0.5 0.3728448276\\
+1.5 0.7543103448\\
+1.5 0.7931034483\\
+2.5 0.9288793103\\
+2.5 0.8771551724\\
+3 0.9418103448\\
+3 0.9892241379\\
+};
+\addlegendentry{C. hidrofílicos};
+
+\addplot [
+color=black,
+only marks,
+mark=triangle*,
+mark options={solid,fill=white,draw=black}
+]
+table[row sep=crcr]{
+0.04464 0.002155172414\\
+0.1517857143 0.06896551724\\
+0.5 0.3362068966\\
+0.5 0.3836206897\\
+1.5 0.7392241379\\
+1.5 0.8168103448\\
+2.5 0.8577586207\\
+2.5 0.974137931\\
+3 0.9181034483\\
+3 0.9181034483\\
+};
+\addlegendentry{C. hidrofóbicos};
+
+\end{axis}
+\end{tikzpicture}%

@@ -1,0 +1,138 @@
+% This file was created by matlab2tikz v0.3.3.
+% Copyright (c) 2008--2013, Nico Schlömer <nico.schloemer@gmail.com>
+% All rights reserved.
+% 
+% The latest updates can be retrieved from
+%   http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz
+% where you can also make suggestions and rate matlab2tikz.
+% 
+% 
+% 
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=\figurewidth,
+height=\figureheight,
+scale only axis,
+xmin=0,
+xmax=18,
+xlabel={$\mathrm{kbp}$},
+ymin=20,
+ymax=200,
+ylabel={$\raiogiracao\,[\mathrm{nm}]$},
+legend style={at={(1.03,0.5)},anchor=west,font=\scriptsize,draw=black,fill=white,legend cell align=left}
+]
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=white,draw=black}
+]
+table[row sep=crcr]{
+1.849117175 39.71602434\\
+1.849117175 43.36713996\\
+5.22953451 67.8296146\\
+5.22953451 70.02028398\\
+5.22953451 71.48073022\\
+5.22953451 74.03651116\\
+5.22953451 76.59229209\\
+5.22953451 78.4178499\\
+5.22953451 80.60851927\\
+5.22953451 82.43407708\\
+};
+\addlegendentry{Experimental \cite{hammermann}};
+
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=black,draw=black}
+]
+table[row sep=crcr]{
+5.749598716 102.1501014\\
+9.794542536 117.1196755\\
+16.81540931 169.3306288\\
+};
+\addlegendentry{Experimental \cite{latusls}};
+
+\addplot [
+color=black,
+dotted
+]
+table[row sep=crcr]{
+1.993579454 35.3346856\\
+2.744783307 45.55780933\\
+3.553772071 57.24137931\\
+4.391653291 68.55983773\\
+4.911717496 76.22718053\\
+5.72070626 84.98985801\\
+6.414125201 91.56186613\\
+7.309791332 99.22920892\\
+8.205457464 107.2616633\\
+9.101123596 115.2941176\\
+10.17014446 124.0567951\\
+11.21027287 131.7241379\\
+12.13483146 137.9310345\\
+13.17495987 145.5983773\\
+14.070626 152.1703854\\
+15.25521669 160.5679513\\
+16.17977528 167.505071\\
+16.78651685 171.5212982\\
+};
+\addlegendentry{Abordagem CSC};
+
+\addplot [
+color=black,
+dashed
+]
+table[row sep=crcr]{
+1.849117175 42.63691684\\
+2.51364366 49.20892495\\
+2.975922953 53.59026369\\
+3.929373997 63.0831643\\
+4.88282504 72.57606491\\
+5.836276083 80.24340771\\
+6.760834671 86.0851927\\
+7.714285714 91.92697769\\
+8.667736758 98.4989858\\
+9.621187801 104.3407708\\
+10.6035313 109.0872211\\
+11.52808989 113.8336714\\
+12.48154093 118.5801217\\
+13.43499197 122.9614604\\
+14.38844302 127.3427992\\
+14.87961477 129.8985801\\
+15.86195827 134.6450304\\
+16.78651685 139.0263692\\
+};
+\addlegendentry{Abordagem FJC, $L_{s}=0.5L$};
+
+\addplot [
+color=black,
+dash pattern=on 1pt off 3pt on 3pt off 3pt
+]
+table[row sep=crcr]{
+1.849117175 49.20892495\\
+2.51364366 58.336714\\
+2.975922953 64.54361055\\
+3.69823435 74.40162272\\
+4.478330658 84.98985801\\
+5.345104334 96.30831643\\
+6.21187801 104.7058824\\
+7.078651685 112.3732252\\
+8.032102729 120.7707911\\
+8.92776886 128.0730223\\
+9.794542536 135.7403651\\
+10.63242376 141.2170385\\
+11.55698234 147.4239351\\
+12.42375602 152.9006085\\
+13.31942215 158.7423935\\
+14.18619583 164.5841785\\
+15.08186196 170.4259635\\
+15.97752809 176.2677485\\
+16.81540931 181.7444219\\
+};
+\addlegendentry{Abordagem FJC, $L_{s}=0.4L$};
+
+\end{axis}
+\end{tikzpicture}%

@@ -1,0 +1,80 @@
+%!TEX root=testfigum.tex
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=6cm,
+height=6cm,
+scale only axis,
+xmin=0,
+xmax=40,
+xlabel={\numsegmento},
+ymin=0,
+ymax=10,
+ylabel={$L_{\mathrm{res}}/\comsegmento$\,(\porcento)},
+%axis x line*=bottom,
+%axis y line*=left,
+legend style={at={(1.03,0.5)},anchor=west,font=\scriptsize,draw=black,fill=white,legend cell align=left}
+]
+\addplot [
+color=black,
+only marks,
+mark=o,
+mark options={solid}
+]
+table[row sep=crcr]{
+5 7.89557517132155\\
+7 3.79149118201146\\
+9 1.75927341290422\\
+14 0.305351395909881\\
+21 0.0169569224457428\\
+39 2.35407391165874e-005\\
+};
+\addlegendentry{$\comsegmento=1\,\nano\meter$};
+
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=black}
+]
+table[row sep=crcr]{
+4 9.20211387378048\\
+8 2.81699110282869\\
+18 0.0705115724314956\\
+22 0.014128167910284\\
+38 2.58575210253822e-005\\
+};
+\addlegendentry{$\comsegmento=10\,\nano\meter$};
+
+\addplot [
+color=black,
+only marks,
+mark=triangle*,
+mark options={solid,fill=white}
+]
+table[row sep=crcr]{
+5 8.10595820881193\\
+6 5.70850578527931\\
+10 1.34326109606714\\
+11 0.847195826326385\\
+25 0.00445186023685024\\
+};
+\addlegendentry{$\comsegmento=20\,\nano\meter$};
+
+\addplot [
+color=black,
+only marks,
+mark=triangle*,
+mark options={solid,fill=black}
+]
+table[row sep=crcr]{
+6 5.58046801135805\\
+12 0.635883749723188\\
+15 0.193747710987261\\
+30 0.000700094356761098\\
+35 8.21882468696919e-005\\
+};
+\addlegendentry{$\comsegmento=50\,\nano\meter$};
+
+\end{axis}
+\end{tikzpicture}%

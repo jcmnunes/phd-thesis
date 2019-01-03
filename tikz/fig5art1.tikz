@@ -1,0 +1,294 @@
+% This file was created by matlab2tikz v0.3.3.
+% Copyright (c) 2008--2013, Nico Schlömer <nico.schloemer@gmail.com>
+% All rights reserved.
+% 
+% The latest updates can be retrieved from
+%   http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz
+% where you can also make suggestions and rate matlab2tikz.
+% 
+% 
+% 
+\begin{tikzpicture}
+
+%\draw[help lines] (-4,-4) grid (14,14);
+
+\node[right] at (0,12.25) {60\,\minmum};
+\node[right] at (7,12.25) {100\,\minmum};
+\node[right] at (0,5.25) {200\,\minmum};
+\node[right] at (7,5.25) {300\,\minmum};
+
+
+\begin{axis}[%
+width=5cm,
+height=5cm,
+scale only axis,
+xmin=4,
+xmax=16,
+xlabel={$\fluxo\,[\mathrm{L}/\mathrm{h}\cdot\mathrm{m}^{2}]$},
+ymin=-0.1,
+ymax=1,
+ylabel={\permobs},
+name=plot1,
+%title={60\,rpm},
+at={(0cm,7cm)},
+anchor=south west,
+]
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=white,draw=black}
+]
+plot [error bars/.cd, y dir = both, y explicit]
+coordinates{
+(6.28,0.3545706371) +- (0.0,0.1024930748)(8.608,0.512465374) +- (0.0,0.0969529086000001)(13.504,0.7174515235) +- (0.0,0.0886426592)};
+%\addlegendentry{experimental};
+
+\addplot [
+color=black,
+solid
+]
+table[row sep=crcr]{
+5.992 0.2216066482\\
+6.664 0.2742382271\\
+7.336 0.3324099723\\
+7.936 0.3850415512\\
+8.416 0.432132964\\
+9.064 0.4958448753\\
+9.712 0.5595567867\\
+10.456 0.6288088643\\
+11.392 0.7091412742\\
+12.04 0.7590027701\\
+12.928 0.8171745152\\
+13.672 0.8559556787\\
+14.368 0.8864265928\\
+14.992 0.91135734072\\
+};
+%\addlegendentry{previs�o};
+
+\addplot [
+color=black,
+dashed
+]
+table[row sep=crcr]{
+5.992 0.1939058172\\
+6.424 0.2243767313\\
+7.024 0.2686980609\\
+7.696 0.3213296399\\
+8.344 0.3822714681\\
+8.992 0.4459833795\\
+9.616 0.5041551247\\
+10.552 0.595567867\\
+11.176 0.6537396122\\
+11.824 0.7091412742\\
+12.736 0.7783933518\\
+13.432 0.8199445983\\
+14.104 0.8587257618\\
+14.992 0.8947368421\\
+};
+%\addlegendentry{previs�o (modelo WLC)};
+
+\end{axis}
+
+\begin{axis}[%
+width=5cm,
+height=5cm,
+scale only axis,
+xmin=4,
+xmax=16,
+xlabel={$\fluxo\,[\mathrm{L}/\mathrm{h}\cdot\mathrm{m}^{2}]$},
+ymin=-0.1,
+ymax=1,
+ylabel={\permobs},
+name=plot2,
+at={(7cm,7cm)},
+anchor=south west,
+%title={100\,rpm},
+]
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=white,draw=black}
+]
+plot [error bars/.cd, y dir = both, y explicit]
+coordinates{
+(6.562874251,0.2527777778) +- (0.0,0.1027777778)(8.862275449,0.3166666667) +- (0.0,0.0944444445)(13.46107784,0.4222222222) +- (0.0,0.0888888889)};
+%\addlegendentry{experimental};
+
+\addplot [
+color=black,
+solid
+]
+table[row sep=crcr]{
+6.035928144 0.1388888889\\
+6.850299401 0.1722222222\\
+7.54491018 0.2027777778\\
+8.622754491 0.2555555556\\
+9.48502994 0.3083333333\\
+10.41916168 0.3722222222\\
+11.28143713 0.4333333333\\
+12.33532934 0.5111111111\\
+13.22155689 0.5777777778\\
+14.2994012 0.6527777778\\
+14.99401198 0.6972222222\\
+};
+%\addlegendentry{previs�o};
+
+\addplot [
+color=black,
+dashed
+]
+table[row sep=crcr]{
+6.011976048 0.1194444444\\
+6.467065868 0.1333333333\\
+7.281437126 0.1666666667\\
+7.952095808 0.1944444444\\
+8.598802395 0.2277777778\\
+9.341317365 0.2666666667\\
+9.988023952 0.3055555556\\
+10.82634731 0.3611111111\\
+11.76047904 0.4277777778\\
+12.52694611 0.4861111111\\
+13.31736527 0.5444444444\\
+13.91616766 0.5861111111\\
+14.44311377 0.6222222222\\
+14.99401198 0.6611111111\\
+};
+%\addlegendentry{previs�o (modelo WLC)};
+
+\end{axis}
+
+\begin{axis}[%
+width=5cm,
+height=5cm,
+scale only axis,
+xmin=4,
+xmax=16,
+xlabel={$\fluxo\,[\mathrm{L}/\mathrm{h}\cdot\mathrm{m}^{2}]$},
+ymin=-0.1,
+ymax=1,
+ylabel={\permobs},
+name=plot4,
+at={(7cm,0cm)},
+anchor=south west,
+%title={300\,rpm},
+]
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=white,draw=black}
+]
+plot [error bars/.cd, y dir = both, y explicit]
+coordinates{
+(6.778443114,0.0668789809) +- (0.0,0.1019108279)(8.790419162,0.0955414013) +- (0.0,0.0923566879)(11.13772455,0.0382165605) +- (0.0,0.0955414015)(12.86227545,0.0414012739) +- (0.0,0.0955414009)(13.36526946,0.0636942675) +- (0.0,0.1019108285)};
+%\addlegendentry{experimental};
+
+\addplot [
+color=black,
+solid
+]
+table[row sep=crcr]{
+6.011976048 0.0668789809\\
+7.017964072 0.076433121\\
+7.976047904 0.0891719745\\
+9.269461078 0.1082802548\\
+10.51497006 0.127388535\\
+11.78443114 0.1496815287\\
+12.71856287 0.1719745223\\
+13.96407186 0.2006369427\\
+14.99401198 0.2261146497\\
+};
+%\addlegendentry{previs�o};
+
+\addplot [
+color=black,
+dashed
+]
+table[row sep=crcr]{
+6.011976048 0.0573248408\\
+7.017964072 0.0668789809\\
+8.047904192 0.076433121\\
+9.005988024 0.0891719745\\
+9.892215569 0.0987261146\\
+10.70658683 0.1114649682\\
+11.52095808 0.1242038217\\
+12.28742515 0.1401273885\\
+13.07784431 0.1560509554\\
+13.84431138 0.1719745223\\
+14.34730539 0.1847133758\\
+14.99401198 0.2006369427\\
+};
+%\addlegendentry{previs�o (modelo WLC)};
+
+\end{axis}
+
+\begin{axis}[%
+width=5cm,
+height=5cm,
+scale only axis,
+xmin=4,
+xmax=16,
+xlabel={$\fluxo\,[\mathrm{L}/\mathrm{h}\cdot\mathrm{m}^{2}]$},
+ymin=-0.1,
+ymax=1,
+ylabel={\permobs},
+at={(0cm,0cm)},
+anchor=south west,
+%title={200\,rpm},
+legend style={at={(6cm,-1.5cm)},anchor=center,legend columns=-1,font=\scriptsize,draw=black,fill=white,legend cell align=left}
+]
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=white,draw=black}
+]
+plot [error bars/.cd, y dir = both, y explicit]
+coordinates{
+(6.808,0.1158536585) +- (0.0,0.0914634146)(8.848,0.137195122) +- (0.0,0.0945121952)(12.904,0.118902439) +- (0.0,0.1006097561)(13.384,0.131097561) +- (0.0,0.1006097561)};
+\addlegendentry{experimental};
+
+\addplot [
+color=black,
+solid
+]
+table[row sep=crcr]{
+6.016 0.0823170732\\
+6.832 0.0945121951\\
+7.6 0.1097560976\\
+8.56 0.131097561\\
+9.592 0.1554878049\\
+10.672 0.1859756098\\
+11.704 0.2164634146\\
+12.448 0.2469512195\\
+13.096 0.2682926829\\
+13.792 0.2987804878\\
+14.392 0.3231707317\\
+15.016 0.3506097561\\
+};
+\addlegendentry{previsão};
+
+\addplot [
+color=black,
+dashed
+]
+table[row sep=crcr]{
+5.992 0.0701219512\\
+6.4 0.0762195122\\
+7.408 0.0914634146\\
+8.344 0.1067073171\\
+9.304 0.1280487805\\
+10.288 0.1493902439\\
+11.224 0.1768292683\\
+12.184 0.2073170732\\
+13.096 0.237804878\\
+14.032 0.2713414634\\
+14.656 0.2987804878\\
+14.992 0.3140243902\\
+};
+\addlegendentry{previsão (modelo WLC)};
+
+\end{axis}
+\end{tikzpicture}%

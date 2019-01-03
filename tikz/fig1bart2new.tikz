@@ -1,0 +1,153 @@
+% This file was created by matlab2tikz v0.3.3.
+% Copyright (c) 2008--2013, Nico SchlÃ¶mer <nico.schloemer@gmail.com>
+% All rights reserved.
+% 
+% The latest updates can be retrieved from
+%   http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz
+% where you can also make suggestions and rate matlab2tikz.
+% 
+% 
+% 
+%!TEX root = testfigum.tex
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=\figurewidth,
+height=\figureheight,
+scale only axis,
+xmode=log,
+xmin=0.1,
+xmax=100,
+xminorticks=true,
+xlabel={\lambdag},
+ymode=log,
+ymin=0.0001,
+ymax=1,
+yminorticks=true,
+ylabel={\particao},
+legend style={at={(1.03,0.5)},anchor=west,font=\scriptsize,draw=black,fill=white,legend cell align=left}
+]
+\addplot [
+color=black,
+solid
+]
+table[row sep=crcr]{
+0.127917715 0.921055318\\
+0.203662416 0.876712387\\
+0.324258291 0.834504286\\
+0.625229706 0.673862717\\
+0.892267449 0.55316812\\
+1.189179804 0.432229382\\
+2.356553087 0.186822238\\
+3.317355993 0.108571112\\
+4.606449735 0.061054023\\
+6.39647334 0.033222214\\
+9.128428949 0.016111755\\
+12.16601969 0.009060306\\
+22.82526572 0.002511886\\
+33.02264692 0.001198316\\
+41.10185152 0.000768625\\
+47.77579483	 0.000553168\\
+59.46445269 0.000360697\\
+81.45000007 0.000196271\\
+};
+\addlegendentry{eq.\ref{eq:partiçãomeu2}};
+
+\addplot [
+color=black,
+only marks,
+mark=*,
+mark options={solid,fill=white,draw=black}
+]
+table[row sep=crcr]{
+1.460012035 0.385224842\\
+2.933099073 0.138949549\\
+7.33409506 0.026389343\\
+14.73386994 0.006520572\\
+29.19755835 0.001584893\\
+73.00730834 0.000296093\\
+};
+\addlegendentry{$n_{k}=5$};
+
+\addplot [
+color=black,
+only marks,
+mark=triangle*,
+mark options={solid,,rotate=180,fill=black,draw=black}
+]
+table[row sep=crcr]{
+1.051434391 0.509498438\\
+2.141376682 0.220220195\\
+5.354425389 0.042517863\\
+10.61066429 0.010680004\\
+21.3163514 0.003162278\\
+54.034765 0.000493012\\
+};
+\addlegendentry{$n_{k}=10$};
+
+\addplot [
+color=black,
+only marks,
+mark=triangle*,
+mark options={solid,fill=white,draw=black}
+]
+table[row sep=crcr]{
+0.778196206 0.630957344\\
+1.563361476 0.337731391\\
+3.90912185 0.078137074\\
+7.853251483 0.020283498\\
+15.77683204 0.005265366\\
+39.44932749 0.001\\
+};
+\addlegendentry{$n_{k}=20$};
+
+\addplot [
+color=black,
+only marks,
+mark=square*,
+mark options={solid,fill=black,draw=black}
+]
+table[row sep=crcr]{
+0.51626334 0.743752728\\
+1.03715003 0.509498438\\
+2.593351509 0.163789371\\
+5.209927541 0.046927625\\
+10.4665121 0.012383892\\
+26.17108826 0.001995262\\
+};
+\addlegendentry{$n_{k}=50$};
+
+\addplot [
+color=black,
+only marks,
+mark=square*,
+mark options={solid,fill=white,draw=black}
+]
+table[row sep=crcr]{
+0.371789422 0.820891416\\
+0.746908371 0.641420531\\
+1.893336131 0.263893426\\
+3.751953313 0.087671239\\
+7.537506902	 0.023135864\\
+18.59117894 0.003727594\\
+};
+\addlegendentry{$n_{k}=100$};
+
+\addplot [
+color=black,
+only marks,
+mark=diamond*,
+mark options={solid,fill=black,draw=black}
+]
+table[row sep=crcr]{
+0.27143345 0.862410997\\
+0.537889503 0.731620245\\
+1.344970848 0.391613038\\
+2.701986459 0.153360772\\
+5.354425389 0.043939706\\
+13.5729193 0.007316202\\
+};
+\addlegendentry{$n_{k}=200$};
+
+\end{axis}
+\end{tikzpicture}%

@@ -1,0 +1,179 @@
+%!TEX root=testfigum.tex
+\begin{tikzpicture}
+
+%\draw[help lines] (0cm,0cm) grid (14cm,7cm);
+\node[right,font=\scriptsize] at (0cm,4.75cm) {MF-B};
+\node[right,font=\scriptsize] at (7cm,4.75cm) {MF-B};
+\node[right,font=\large] at (0cm,5.5cm) {a)};
+\node[right,font=\large] at (7cm,5.5cm) {b)};
+
+\begin{axis}[%
+%width=\figurewidth,
+%height=\figureheight,
+width=5cm,
+height=5cm,
+scale only axis,
+xmin=0,
+xmax=3,
+xlabel={VDF},
+ymin=0,
+ymax=1.1,
+ylabel={\permobs},
+at={(0cm,0cm)},
+anchor=south west,
+name=plot1,
+legend style={at={(6cm,-1.5cm)},legend columns=2,anchor=center,font=\scriptsize,draw=black,fill=white,legend cell align=left}
+]
+\addplot [
+color=black,
+solid,
+%forget plot
+]
+table[row sep=crcr]{
+0 0.9864253394\\
+0.6558345643 0.9841628959\\
+1.369276219 0.9864253394\\
+1.861152142 0.9864253394\\
+2.144756278 0.9864253394\\
+2.614475628 0.9864253394\\
+3 0.9864253394\\
+};
+\addlegendentry{\pVAX};
+
+\addplot [
+color=black,
+dashed,
+%forget plot
+]
+table[row sep=crcr]{
+0 0.9954751131\\
+0.2304283604 0.9954751131\\
+0.5228951256 0.9977375566\\
+0.8153618907 1\\
+1.183161004 1\\
+1.568685377 1\\
+1.905465288 1\\
+2.353028065 1\\
+2.694239291 1\\
+3 1\\
+};
+\addlegendentry{RNA 23\,S};
+
+\addplot [
+color=black,
+dash pattern=on 1pt off 3pt on 3pt off 3pt,
+%forget plot
+]
+table[row sep=crcr]{
+0 0.9954751131\\
+0.1949778434 0.9977375566\\
+0.4342688331 0.9977375566\\
+0.7355982275 1\\
+1.107828656 1\\
+1.435745938 1\\
+1.772525849 1\\
+2.104874446 1\\
+2.627769572 0.9977375566\\
+2.871491876 1\\
+3 0.9977375566\\
+};
+\addlegendentry{RNA 16\,S};
+
+\addplot [
+color=black,
+dotted,
+%forget plot
+]
+table[row sep=crcr]{
+0 0.9932126697\\
+0.2481536189 0.9954751131\\
+0.4963072378 0.9977375566\\
+0.8242245199 0.9954751131\\
+1.307237814 0.9977375566\\
+1.688330871 0.9977375566\\
+2.082717873 0.9977375566\\
+2.742983752 0.9954751131\\
+3 0.9977375566\\
+};
+\addlegendentry{RNA 5\,S};
+\end{axis}
+
+\begin{axis}[%
+%width=\figurewidth,
+%height=\figureheight,
+width=5cm,
+height=5cm,
+scale only axis,
+xmin=0,
+xmax=3,
+xlabel={VDF},
+ymin=0,
+ymax=2,
+ylabel={\concm/\concb},
+at={(7cm,0cm)},
+anchor=south west,
+%legend style={at={(0.97,0.03)},anchor=south east,font=\scriptsize,draw=black,fill=white,legend cell align=left}
+]
+\addplot [
+color=black,
+solid
+]
+table[row sep=crcr]{
+0 1.679671458\\
+0.5672082718 1.675564682\\
+1.564254062 1.679671458\\
+1.989660266 1.679671458\\
+2.570162482 1.679671458\\
+3 1.679671458\\
+};
+%\addlegendentry{\pVAX};
+
+\addplot [
+color=black,
+dashed
+]
+table[row sep=crcr]{
+0 1.162217659\\
+0.3545051699 1.170431211\\
+0.8197932053 1.170431211\\
+1.280649926 1.170431211\\
+1.732644018 1.174537988\\
+2.184638109 1.170431211\\
+2.649926145 1.170431211\\
+3 1.170431211\\
+};
+%\addlegendentry{RNA 23\,S};
+
+\addplot [
+color=black,
+dash pattern=on 1pt off 3pt on 3pt off 3pt
+]
+table[row sep=crcr]{
+0 1.133470226\\
+0.2880354505 1.133470226\\
+0.9704579025 1.133470226\\
+1.550960118 1.133470226\\
+2.016248154 1.133470226\\
+2.592319055 1.133470226\\
+3 1.137577002\\
+};
+%\addlegendentry{RNA 16\,S};
+
+\addplot [
+color=black,
+dotted
+]
+table[row sep=crcr]{
+0 1.075975359\\
+0.4165435746 1.075975359\\
+0.8995568685 1.075975359\\
+1.382570162 1.071868583\\
+1.856720827 1.075975359\\
+2.251107829 1.075975359\\
+2.579025111 1.075975359\\
+3 1.075975359\\
+};
+%\addlegendentry{RNA 5\,S};
+
+\end{axis}
+\end{tikzpicture}%

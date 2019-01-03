@@ -1,0 +1,31 @@
+%!TEX root = tese.tex
+\begin{tikzpicture}
+
+\node[right] at (6, 5) {Amicon 8010};
+\node[right] at (6, 4.5) {\concb};
+\node[right] at (6, 4) {$V$};
+\node[right] at (4.5, 6.5) {$C_{\mr{in}}$};
+\node[right] at (4.5, 2.5) {\concp};
+ 
+%\draw[help lines] (0cm, 0cm) grid (10cm, 10cm);
+
+\draw (3, 3) rectangle (6, 6);
+
+\draw[dashed] (6, 6) -- (3, 3);
+
+\draw (2.5, 7) circle (0.5cm);
+\node[above] at (2.5, 7.5) {$Q_{\mr{in}}$};
+\draw (2.25, 7.433) -- (2.25, 6.567) -- (3, 7) -- cycle;
+\draw[very thick] (0.5, 7) -- (2, 7); 
+\draw[very thick] (3, 7) -- (4.5, 7) -- (4.5, 6);
+
+
+\draw (6.5, 2) circle (0.5cm);
+\draw (6.25, 2.433) -- (6.25, 1.567) -- (7, 2) --cycle;
+\node[below] at (6.5, 1.5) {$Q$};
+\draw[very thick] (4.5, 3) -- (4.5, 2) -- (6, 2);
+\draw[very thick] (7, 2) -- (8.5, 2);
+
+\draw [thin, dashed] (4.5, 4.5) circle (2.3cm);
+
+\end{tikzpicture}

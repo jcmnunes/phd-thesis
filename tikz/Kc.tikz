@@ -1,0 +1,155 @@
+%!TEX root=testfigum.tex
+\begin{tikzpicture}
+
+%\draw[help lines] (0,0) grid (12,11);
+%\draw (0,-1)--(12,-1)--(12,11)--(0,11)--cycle;
+\node[above] at (3,6) {a)};
+\node[above] at (6,6) {b)};
+\node[above] at (9,6) {c)};
+%
+%\begin{scope}[very thick]
+%\draw (2,10)--(2,5);
+%\draw (4,10)--(4,5);
+%
+%\draw (5,10)--(5,5);
+%\draw (7,10)--(7,5);
+%
+%\draw (8,10)--(8,5);
+%\draw (10,10)--(10,5);
+%\end{scope}
+%
+%%\draw (2,9.5) parabola (4,9.5);% parabola (4,9.5);
+%\draw (2,9.5) parabola bend (3,8)  (4,9.5);
+%\draw (5,9.5) parabola bend (6,8)  (7,9.5);
+%\draw (8,9.5) parabola bend (9,8)  (10,9.5);
+%
+%\begin{scope}[yshift=-0.2cm]
+%\shade [ball color=white] (2.25,8.59375) circle [radius=0.075cm];
+%\shade [ball color=white] (2.5,8.125) circle [radius=0.075cm];
+%\shade [ball color=white] (2.75,7.84375) circle [radius=0.075cm];
+%\shade [ball color=white] (3,7.75) circle [radius=0.075cm];	
+%\shade [ball color=white] (3.75,8.59375) circle [radius=0.075cm];
+%\shade [ball color=white] (3.5,8.125) circle [radius=0.075cm];
+%\shade [ball color=white] (3.25,7.84375) circle [radius=0.075cm];
+%\end{scope}
+%
+%\draw [->] (2.25,9.5)--(2.25,9.09375);
+%\draw [->] (2.5,9.5)--(2.5,8.625);
+%\draw [->] (2.75,9.5)--(2.75,8.34375);
+%\draw [->] (3,9.5)--(3,8.25);	
+%\draw [->] (3.75,9.5)--(3.75,9.09375);
+%\draw [->] (3.5,9.5)--(3.5,8.625);
+%\draw [->] (3.25,9.5)--(3.25,8.34375);
+%
+%\begin{scope}[xshift=3cm]
+%\draw [->] (2.25,9.5)--(2.25,9.09375);
+%\draw [->] (2.5,9.5)--(2.5,8.625);
+%\draw [->] (2.75,9.5)--(2.75,8.34375);
+%\draw [->] (3,9.5)--(3,8.25);	
+%\draw [->] (3.75,9.5)--(3.75,9.09375);
+%\draw [->] (3.5,9.5)--(3.5,8.625);
+%\draw [->] (3.25,9.5)--(3.25,8.34375);
+%\end{scope}
+%
+%\begin{scope}[xshift=6cm]
+%\draw [->] (2.25,9.5)--(2.25,9.09375);
+%\draw [->] (2.5,9.5)--(2.5,8.625);
+%\draw [->] (2.75,9.5)--(2.75,8.34375);
+%\draw [->] (3,9.5)--(3,8.25);	
+%\draw [->] (3.75,9.5)--(3.75,9.09375);
+%\draw [->] (3.5,9.5)--(3.5,8.625);
+%\draw [->] (3.25,9.5)--(3.25,8.34375);
+%\end{scope}
+%
+%\shade [ball color=white] (5.75,7.25) circle [radius=0.5cm];
+%\shade [ball color=white] (6.25,6) circle [radius=0.5cm];
+%
+%\shade [ball color=white] (9,6.5) circle [radius=1cm];
+\shade[top color=black!1!white, bottom color=black!4!white] (1.75,6) rectangle (4.25,5.5);
+\shade[top color=black!4!white, bottom color=black!1!white] (1.75,5) rectangle (4.25,5.5);
+\begin{scope}[xshift=3cm]
+\shade[top color=black!1!white, bottom color=black!4!white] (1.75,6) rectangle (4.25,5.5);
+\shade[top color=black!4!white, bottom color=black!1!white] (1.75,5) rectangle (4.25,5.5);
+\end{scope}
+\begin{scope}[xshift=6cm]
+\shade[top color=black!1!white, bottom color=black!4!white] (1.75,6) rectangle (4.25,5.5);
+\shade[top color=black!4!white, bottom color=black!1!white] (1.75,5) rectangle (4.25,5.5);
+\end{scope}
+
+
+%\draw[thick,color=white,pattern=custom north west lines,hatchspread=9pt,hatchthickness=0.5pt] 
+%(1.75,4.85)rectangle(4.25,5);
+%\draw[thick,color=white,pattern=custom north west lines,hatchspread=9pt,hatchthickness=0.5pt] 
+%(1.75,6)rectangle(4.25,6.15);
+%\begin{scope}[xshift=3cm]
+%\draw[thick,color=white,pattern=custom north west lines,hatchspread=9pt,hatchthickness=0.5pt] 
+%(1.75,4.85)rectangle(4.25,5);
+%\draw[thick,color=white,pattern=custom north west lines,hatchspread=9pt,hatchthickness=0.5pt] 
+%(1.75,6)rectangle(4.25,6.15);
+%\end{scope}
+%\begin{scope}[xshift=6cm]
+%\draw[thick,color=white,pattern=custom north west lines,hatchspread=9pt,hatchthickness=0.5pt] 
+%(1.75,4.85)rectangle(4.25,5);
+%\draw[thick,color=white,pattern=custom north west lines,hatchspread=9pt,hatchthickness=0.5pt] 
+%(1.75,6)rectangle(4.25,6.15);
+%\end{scope}
+
+\draw (3,4.5)--(3,0)--(9.5,0);
+\draw[thick] (3,0) parabola bend (6,4) (9,0);
+\node[left] at (3,4) {$\alpha$};
+\node[below] at (3,0) {0};
+\node[below] at (6,0) {$1/2$};
+\node[below] at (9,0) {1};
+\node[left] at (3,0) {1};
+\node[below] at (6,-0.5) {$\lambdas$};
+
+
+
+\draw[thick] (1.75,5)--(4.25,5) (1.75,6)--(4.25,6);
+%\draw[thick] (1.75,4.75)--(1.75,5)--(4.25,5)--(4.25,4.74) (1.75,6.25)--(1.75,6)--(4.25,6)--(4.25,6.25);
+\begin{scope}[xshift=3cm]
+\draw[thick] (1.75,5)--(4.25,5) (1.75,6)--(4.25,6);
+\end{scope}
+\begin{scope}[xshift=6cm]
+\draw[thick] (1.75,5)--(4.25,5) (1.75,6)--(4.25,6);
+\end{scope}
+\draw[rotate around={90:(2.5,5.5)}] (2,6) parabola bend (2.5,5) (3,6);
+\shade [ball color=white] (3.1,5.5) circle [radius=0.05cm];
+\shade [ball color=white] (3,5.7) circle [radius=0.05cm];
+\shade [ball color=white] (3,5.3) circle [radius=0.05cm];
+\shade [ball color=white] (2.85,5.8) circle [radius=0.05cm];
+\shade [ball color=white] (2.85,5.2) circle [radius=0.05cm];
+\shade [ball color=white] (2.675,5.875) circle [radius=0.05cm];
+\shade [ball color=white] (2.675,5.125) circle [radius=0.05cm];
+\shade [ball color=white] (2.5,5.93) circle [radius=0.05cm];
+\shade [ball color=white] (2.5,5.07) circle [radius=0.05cm];
+\draw[->] (2,5.75)--(2.6,5.75);
+\draw[->] (2,5.5)--(2.95,5.5);
+\draw[->] (2,5.25)--(2.6,5.25);
+
+\begin{scope}[yshift=-1cm]
+\draw[rotate around={90:(5.5,6.5)}] (5,7) parabola bend (5.5,6) (6,7);
+\shade [ball color=white] (6.3,6.575) circle [radius=0.25cm];
+\shade [ball color=white] (7,6.4425) circle [radius=0.25cm];
+\begin{scope}[xshift=3cm,yshift=1cm]
+\draw[->] (2,5.75)--(2.6,5.75);
+\draw[->] (2,5.5)--(2.95,5.5);
+\draw[->] (2,5.25)--(2.6,5.25);
+\end{scope}
+\end{scope}
+
+\draw[rotate around={90:(8.5,5.5)}] (8,6) parabola bend (8.5,5) (9,6);
+\shade [ball color=white] (9.75,5.5) circle [radius=0.5cm];
+\begin{scope}[xshift=6cm]
+\draw[->] (2,5.75)--(2.6,5.75);
+\draw[->] (2,5.5)--(2.95,5.5);
+\draw[->] (2,5.25)--(2.6,5.25);
+\end{scope}
+
+
+
+
+
+
+
+\end{tikzpicture}

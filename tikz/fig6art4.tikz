@@ -1,0 +1,30 @@
+%!TEX root=tese.tex
+\begin{tikzpicture}
+%\draw[help lines] (-5cm,-4cm) grid (7cm,4cm);
+\node at (0cm,0cm) {\includegraphics[width=8cm]{EFart4}};
+
+\begin{scope}[font=\scriptsize]
+\node[above] at (-3.65cm,2.85cm) {1};
+\node[above] at (-3.025cm,2.85cm) {2};
+\node[above] at (-2.4cm,2.85cm) {3};
+\node[above] at (-1.775cm,2.85cm) {4};
+
+\node[above] at (-1cm,2.85cm) {5};
+\node[above] at (-0.375cm,2.85cm) {6};
+\node[above] at (0.275cm,2.85cm) {7};
+\node[above] at (0.975cm,2.85cm) {8};
+
+\node[above] at (1.75cm,2.85cm) {9};
+\node[above] at (2.39cm,2.85cm) {10};
+\node[above] at (3.05cm,2.85cm) {11};
+\node[above] at (3.725cm,2.85cm) {12};
+
+\draw (4.1,1.35) -- (4.25,1.35) -- (4.35,1.6) -- (4.5,1.6)  node[right,align=left] {\pCAMBIA\\(9--12)};
+\draw (4.1,1) -- (4.5,1) node[right,align=left] {\pVAX\\(1--8)};
+%\draw (2.6,0.9) -- (3,0.9) node[right] {pDNA (sc)};
+\draw (4.1,-1.8) -- (4.5,-1.8) node[right] {HMw\,RNA};
+\draw (4.1,-2.5) -- (4.5,-2.5) node[right] {LMw\,RNA};
+
+\end{scope}
+
+\end{tikzpicture}

@@ -1,0 +1,341 @@
+\begin{tikzpicture}
+
+\node[right,font=\scriptsize,align=left] at (0cm,12.5cm) {\pVAX\\$\raioporo=4.8$\,nm, $\agitacao=100$\,min$^{-1}$};
+\node[right,font=\scriptsize,align=left] at (7cm,12.5cm) {\pVAX\\$\raioporo=4.8$\,nm, $\agitacao=760$\,min$^{-1}$};
+\node[right,font=\scriptsize,align=left] at (0cm,5.5cm) {\pVAX\\$\raioporo=25$\,nm, $\agitacao=760$\,min$^{-1}$};
+\node[right,font=\scriptsize,align=left] at (7cm,5.5cm) {\pCAMBIA\\$\raioporo=25$\,nm, $\agitacao=760$\,min$^{-1}$};
+
+\begin{axis}[%
+width=5cm,
+height=5cm,
+forget plot,
+scale only axis,
+xmin=0,
+xmax=20,
+xlabel={\fluxo\,[\micro m/s]},
+ymin=-0.1,
+ymax=1.1,
+ylabel={Rend. pDNA ou Remo. RNA},
+at={(0cm,7cm)},
+anchor=south west
+]
+
+\addplot[
+color=black,
+mark=*,
+only marks,
+mark options={solid,fill=black,draw=black}
+]
+plot [error bars/.cd, y dir = both, y explicit]
+coordinates{
+(3.909,1.023) +- (0.000,0.052)
+(8.117,1.008) +- (0.000,0.049)
+(16.25,0.802) +- (0.000,0.078)
+};
+
+\addplot[
+color=black,
+solid
+]
+table[row sep=crcr]{
+1.4184 0.9755\\
+2.4271 0.9644\\
+4.4129 0.9388\\
+5.9417 0.9187\\
+7.3444 0.8987\\
+9.0623 0.8753\\
+10.701 0.8530\\
+12.151 0.8318\\
+13.790 0.8085\\
+14.878 0.7929\\
+15.745 0.7817\\
+16.675 0.7695\\
+};
+
+\addplot[%0.5MIC
+color=black,
+mark=*,
+only marks,
+mark options={solid,fill=white,draw=black}
+]
+plot [error bars/.cd, y dir = both, y explicit]
+coordinates{
+(3.893,0.187) +- (0.000,0.080)
+(8.117,0.334	) +- (0.000,0.102)
+(16.26,0.369) +- (0.000,0.090)
+};
+
+\addplot[
+color=black,
+dashed
+]
+table[row sep=crcr]{
+1.4184 0.3641\\
+2.3325 0.3753\\
+3.4515 0.3898\\
+4.6966 0.4031\\
+5.8629 0.4154\\
+7.1080 0.4243\\
+8.4003 0.4365\\
+9.5981 0.4443\\
+10.875 0.4521\\
+12.025 0.4588\\
+13.302 0.4655\\
+14.500 0.4710\\
+15.713 0.4777\\
+16.548 0.4788\\
+};
+
+\end{axis}
+
+
+\begin{axis}[%
+width=5cm,
+height=5cm,
+forget plot,
+scale only axis,
+xmin=0,
+xmax=20,
+xlabel={\fluxo\,[\micro m/s]},
+ymin=-0.1,
+ymax=1.1,
+ylabel={Rend. pDNA ou Remo. RNA},
+at={(7cm,7cm)},
+anchor=south west
+]
+
+\addplot[
+color=black,
+mark=*,
+only marks,
+mark options={solid,fill=black,draw=black}
+]
+plot [error bars/.cd, y dir = both, y explicit]
+coordinates{
+(4.063,0.969) +- (0.000,0.050)
+(8.126,1.030) +- (0.000,0.048)
+(16.25,0.997) +- (0.000,0.093)
+};
+
+\addplot[
+color=black,
+solid
+]
+table[row sep=crcr]{
+1.4331 0.9878\\
+2.8346 0.9811\\
+4.7244 0.9745\\
+6.6614 0.9678\\
+8.5039 0.9600\\
+10.094 0.9534\\
+11.843 0.9467\\
+13.276 0.9390\\
+14.677 0.9356\\
+15.827 0.9290\\
+16.646 0.9256\\
+};
+
+\addplot[%0.5MIC
+color=black,
+mark=*,
+only marks,
+mark options={solid,fill=white,draw=black}
+]
+plot [error bars/.cd, y dir = both, y explicit]
+coordinates{
+(4.063,0.090) +- (0.000,0.054)
+(8.142,0.139) +- (0.000,0.032)
+(16.27,0.161) +- (0.000,0.041)
+};
+
+\addplot[
+color=black,
+dashed
+]
+table[row sep=crcr]{
+1.3858 0.3507\\
+2.8976 0.3585\\
+4.5984 0.3663\\
+5.9213 0.3718\\
+7.5906 0.3774\\
+8.9134 0.3829\\
+10.772 0.3907\\
+12.520 0.3973\\
+13.858 0.4018\\
+15.118 0.4051\\
+16.583 0.4084\\
+};
+
+\end{axis}
+
+
+\begin{axis}[%
+width=5cm,
+height=5cm,
+scale only axis,
+xmin=0,
+xmax=20,
+xlabel={\fluxo\,[\micro m/s]},
+ymin=-0.1,
+ymax=1.1,
+ylabel={Rend. pDNA ou Remo. RNA},
+at={(0cm,0cm)},
+anchor=south west,
+legend style={at={(6cm,-2cm)},legend columns=2,anchor=center,font=\scriptsize,draw=black,fill=white,legend cell align=left}
+]
+
+\addplot[
+color=black,
+mark=*,
+only marks,
+mark options={solid,fill=black,draw=black}
+]
+plot [error bars/.cd, y dir = both, y explicit]
+coordinates{
+(1.290,0.900) +- (0.000,0.080)
+(2.486,0.931) +- (0.000,0.081)
+(4.028,0.806) +- (0.000,0.057)
+(8.749,0.412) +- (0.000,0.068)
+};\addlegendentry{Rendimento de pDNA (exp)};
+
+\addplot[
+color=black,
+solid
+]
+table[row sep=crcr]{
+1.3847 0.7389\\
+1.9984 0.7011\\
+3.0999 0.6322\\
+4.3745 0.5556\\
+5.6491 0.4822\\
+6.5460 0.4322\\
+7.9780 0.3556\\
+9.1424 0.3011\\
+10.212 0.2533\\
+11.377 0.2056\\
+12.258 0.1767\\
+13.108 0.1567\\
+13.895 0.1389\\
+};\addlegendentry{Rendimento de pDNA (teo)};
+
+\addplot[%0.5MIC
+color=black,
+mark=*,
+only marks,
+mark options={solid,fill=white,draw=black}
+]
+plot [error bars/.cd, y dir = both, y explicit]
+coordinates{
+(1.259,0.763) +- (0.000,0.049)
+(2.502,0.879) +- (0.000,0.088)
+(4.028,0.879) +- (0.000,0.090)
+(8.718,0.816) +- (0.000,0.073)
+};\addlegendentry{Remoção de RNA (exp)}
+
+\addplot[
+color=black,
+dashed
+]
+table[row sep=crcr]{
+1.4005 0.7489\\
+2.8167 0.7411\\
+4.6105 0.7367\\
+5.8222 0.7344\\
+7.1125 0.7389\\
+8.2455 0.7400\\
+9.5515 0.7478\\
+10.291 0.7533\\
+11.393 0.7589\\
+12.179 0.7678\\
+12.777 0.7711\\
+13.375 0.7778\\
+13.879 0.7822\\
+};\addlegendentry{Remoção de RNA (teo)}
+
+\end{axis}
+
+
+\begin{axis}[%
+width=5cm,
+height=5cm,
+forget plot,
+scale only axis,
+xmin=0,
+xmax=20,
+xlabel={\fluxo\,[\micro m/s]},
+ymin=-0.1,
+ymax=1.1,
+ylabel={Rend. pDNA ou Remo. RNA},
+at={(7cm,0cm)},
+anchor=south west
+]
+
+\addplot[
+color=black,
+mark=*,
+only marks,
+mark options={solid,fill=black,draw=black}
+]
+plot [error bars/.cd, y dir = both, y explicit]
+coordinates{
+(2.423,0.992) +- (0.000,0.047)
+(4.296,0.933) +- (0.000,0.093)
+(8.765,0.412) +- (0.000,0.083)
+};
+
+\addplot[
+color=black,
+solid
+]
+table[row sep=crcr]{
+1.4005 0.8322\\
+2.2659 0.7722\\
+3.0685 0.7167\\
+3.8238 0.6611\\
+4.5633 0.6067\\
+5.3659 0.5489\\
+6.3415 0.4822\\
+7.2541 0.4200\\
+8.3399 0.3456\\
+9.1739 0.2956\\
+10.165 0.2378\\
+11.046 0.1900\\
+12.006 0.1533\\
+12.825 0.1311\\
+13.548 0.1178\\
+13.863 0.1122\\
+};
+
+\addplot[%0.5MIC
+color=black,
+mark=*,
+only marks,
+mark options={solid,fill=white,draw=black}
+]
+plot [error bars/.cd, y dir = both, y explicit]
+coordinates{
+(2.423,0.892) +- (0.000,0.039)
+(4.296,0.788) +- (0.000,0.063)
+(8.765,0.821) +- (0.000,0.046)
+};
+
+\addplot[
+color=black,
+dashed
+]
+table[row sep=crcr]{
+1.4162 0.7544\\
+2.8482 0.7533\\
+4.7364 0.7511\\
+5.9481 0.7511\\
+7.0653 0.7533\\
+8.3714 0.7556\\
+10.165 0.7656\\
+11.487 0.7722\\
+12.667 0.7833\\
+13.895 0.7933\\
+};
+
+\end{axis}
+
+\end{tikzpicture}

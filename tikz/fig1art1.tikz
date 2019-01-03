@@ -1,0 +1,67 @@
+% This file was created by matlab2tikz v0.3.3.
+% Copyright (c) 2008--2013, Nico Schlömer <nico.schloemer@gmail.com>
+% All rights reserved.
+% 
+% The latest updates can be retrieved from
+%   http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz
+% where you can also make suggestions and rate matlab2tikz.
+% 
+% 
+% 
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=\figurewidth,
+height=\figureheight,
+scale only axis,
+xmin=0,
+xmax=30,
+xlabel={$\contorno/\persis$},
+ymin=2.4,
+ymax=3.3,
+ylabel={$\distanciah/\raiogiracao$},
+legend style={at={(1.03,0.5)},anchor=west,font=\scriptsize,draw=black,fill=white,legend cell align=left}
+]
+\addplot [
+smooth,
+color=black,
+solid
+]
+table[row sep=crcr]{
+1.037891269 3.260411899\\
+1.532125206 3.184897025\\
+2.273476112 3.084210526\\
+3.163097199 2.983524027\\
+4.250411862 2.896567506\\
+5.238879736 2.834782609\\
+7.462932455 2.740961098\\
+10.57660626 2.663157895\\
+12.99835255 2.626544622\\
+15.91433278 2.594508009\\
+18.43492586 2.576201373\\
+21.54859967 2.557894737\\
+25.2553542 2.54416476\\
+26.09555189 2.539588101\\
+28.27018122 2.532723112\\
+30 2.530434783\\
+};
+\addlegendentry{Modelo WLC};
+
+\addplot [
+color=black,
+dashed
+]
+table[row sep=crcr]{
+1.136738056 2.44948974278318\\
+5.189456343 2.44948974278318\\
+11.26853377 2.44948974278318\\
+16.16144975 2.44948974278318\\
+21.3014827 2.44948974278318\\
+23.42668863 2.44948974278318\\
+26.34266886 2.44948974278318\\
+30 2.44948974278318\\
+};
+\addlegendentry{FJC (eq.~\ref{eq:rgfjcco})};
+
+\end{axis}
+\end{tikzpicture}%

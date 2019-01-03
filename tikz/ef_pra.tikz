@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+
+%\draw[help lines] (0cm, 0cm) grid (12cm, 8cm);
+
+
+% \draw[help lines] (0cm, 0cm) grid (12cm, 8cm);
+
+\node at (2.5cm, 4cm) {%\includegraphics[width=7cm]{% mudar para 6.3 cm
+\includegraphics[width=5cm]{ef_pra.jpg}};
+
+\fill[white] (3.7, 1.1) rectangle (5.1, 6.9);
+
+\draw (3.8, 4.7) -- (4.2, 4.7) node[right] {pDNA\,(sc)};
+\draw (3.8, 5.15) -- (4.2, 5.15) node[right] {pDNA\,(oc)}; 
+\draw (3.8, 2.9) -- (4.2, 2.9) node[right] {HMw\,RNA};
+\draw (3.8, 2.0) -- (4.2, 2.0) node[right] {LMw\,RNA}; 
+
+
+
+\end{tikzpicture}

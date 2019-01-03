@@ -1,0 +1,302 @@
+\begin{tikzpicture}[decoration={ticks,amplitude = 0.025cm}]
+
+%%ESQUEMA DE MONTAGEM AMICON 8010
+%% BASE
+\begin{scope}[scale=0.75,xshift=17cm]
+\draw (2cm,1cm) ellipse (2cm and 0.75cm);
+\begin{scope}
+\clip[draw] (2cm,1cm) ellipse (1.85cm and 0.69375cm);
+\draw (0cm,0.6cm) arc (180:0:2cm and 0.75cm);
+\end{scope}
+\draw (0cm,0.6cm) arc (-180:0:2cm and 0.75cm);
+\draw (4cm,1cm) -- (4cm,0.6cm);
+\draw (0cm,1cm) -- (0cm,0.6cm);
+\begin{scope}
+\clip[draw] (4cm,0.6cm) arc (0:-180:2cm and 0.75cm) -- (0cm,1cm) arc (-180:0:2cm and 0.75cm)--cycle;
+\foreach \x in {%
+2.00000,%
+2.20000,%
+2.39850,%
+2.59254,%
+2.77938,%
+2.95660,%
+3.12228,%
+3.27505,%
+3.41409,%
+3.53910,%
+3.65027,%
+3.74814,%
+3.83354,%
+3.90747,%
+3.97103}%
+\draw[thin] (\x,1cm) -- (\x,-0.5cm);
+\foreach \x in {%
+1.80000,%
+1.60150,%
+1.40746,%
+1.22062,%
+1.04340,%
+0.87772,%
+0.72495,%
+0.58591,%
+0.46090,%
+0.34973,%
+0.25186,%
+0.16646,%
+0.09253,%
+0.02897}%
+\draw[thin] (\x,1cm) -- (\x,-0.5cm);
+\end{scope}
+\draw (2cm,0.9cm) ellipse (1.25cm and 0.46875cm);
+\filldraw[fill=white,draw=black] (2cm,1.1cm) ellipse (1.15cm and 0.43125cm); 
+\begin{scope}
+\clip[draw] (2cm,1.1cm) ellipse (0.95cm and 0.356cm); 
+\draw (2cm,0.75cm) ellipse (1.15cm and 0.43125cm); 
+\end{scope}
+\begin{scope}
+\clip (2cm,0.9cm) ellipse (1.25cm and 0.46875cm);
+\draw (0.75cm,1cm) arc (-180:0:1.25cm and 0.46875cm);
+\end{scope}
+% fim base
+
+% Suporte
+\begin{scope}[yshift=-0.95cm]
+\fill[white] (2cm,2.685cm) ellipse (1.15cm and 0.43125cm);
+\filldraw[fill=white,draw=black] (0.6,2.54)--(1,2.65)--(1,2.47)--(0.6,2.36)--cycle;
+\filldraw[fill=white,draw=black] (0.6,2.45) ellipse (0.05 and 0.09);
+\draw (0.85cm,3cm) -- (0.85cm,2.685cm) arc (-180:0:1.15cm and 0.43125cm) -- (3.15cm,3cm);
+\filldraw[fill=white,draw=black] (0.9cm,2.55cm)--(3.5cm,3.20cm)--(3.2cm,3.35cm)--(0.6,2.7)--cycle;
+\filldraw[fill=white,draw=black] (0.6,2.7) -- (0.6,2.6)--(0.9,2.45)--(0.9,2.55)--cycle;
+\draw (3.5,3.2)--(3.5,3.1)--(2,2.725);
+\draw (0.9,2.45)--(1.3125,2.553125)--(1.3125,2.653125);
+\filldraw[fill=white,draw=black](2cm,3cm) ellipse (1.15cm and 0.43125cm); 
+\begin{scope}
+\clip[draw] (2cm,3cm) ellipse (0.95cm and 0.356cm);
+\draw (2cm,2.935cm) ellipse (0.95cm and 0.356cm);
+\end{scope}
+\draw(2cm,2.95cm) ellipse (0.75cm and 0.28125cm); 
+\draw (2cm,2.95cm) ellipse (0.6500cm and 0.2437cm);
+\draw (2cm,2.95cm) ellipse (0.5500cm and 0.2062cm);
+\draw (2cm,2.95cm) ellipse (0.4500cm and 0.1687cm);
+\draw (2cm,2.95cm) ellipse (0.3500cm and 0.1312cm);
+\draw (2cm,2.95cm) ellipse (0.2500cm and 0.0937cm);
+\draw (2cm,2.95cm) ellipse (0.1500cm and 0.0562cm);
+\draw (2cm,2.95cm) ellipse (0.0500cm and 0.0187cm);
+\filldraw[fill=white,draw=black] (0.9,2.55)--(0.9,2.45)--(1.3125,2.553125)--(1.3125,2.653125)--cycle;
+\end{scope}
+% end suporte
+
+% Membrana
+\begin{scope}[yshift=-1.8cm]
+\filldraw[fill=white,draw=black] (2cm,4.5cm) ellipse (0.95cm and 0.356cm);
+\end{scope}
+% fim membrana
+
+% O-ring
+\begin{scope}[yshift=-2.6cm]
+\draw[line width=5pt] (2cm,6cm) ellipse (0.95cm and 0.356cm);
+\end{scope}
+% fim o-ring
+
+% body
+\begin{scope}[yshift=-1.5cm]
+\draw (2,6.7) ellipse (1.25cm and 0.46875cm);
+\draw (0.75,6.7)--(0.66,6.5);
+\draw (0.66,6.5)--(0.66,5.9) arc (-180:0:1.34 and 0.525)--(3.34,6.5);
+\draw (3.25,6.7)--(3.34,6.5);
+\draw (2,9) ellipse (0.95cm and 0.356cm);
+\draw (2,9) ellipse (0.8cm and 0.3cm);
+\draw (1.05,9) -- (1.05,6.7) arc (-180:0:0.95cm and 0.356cm)--(2.95,9) arc (0:-180:0.95cm and 0.356cm)--cycle;
+\begin{scope}
+\clip (1,6.1)rectangle(1.35,6.25);
+\draw (2,6.5) ellipse (1.25cm and 0.46875cm);
+\end{scope}
+\fill[white] (1,5.43) rectangle (1.35,5.56);
+\draw (1,5.550536444)--(1,6.21875) (1.35,6.099609566)--(1.35,5.440901801);
+\end{scope}
+% end body
+
+% magnetic stirrer
+\begin{scope}[yshift=-3cm]
+\draw (2,10.615) ellipse (0.15cm and 0.05625cm);
+\draw (1.85,10.615) -- (1.85,10) arc (-180:-90:0.15cm and 0.2cm)--(2.15,10)--(2.15,10.615);
+\draw (2.15,10)--(2.6,9.85)--(2.4,9.7)--(2.3,9.3)--(2.6,9.4)--(2.75,9.65)--(2.7,9.8167)--cycle;
+\draw (2.3,9.3) -- (1.25,9.65)--(1.35,10.05)--(1.55,10.20)--(1.85,10.1);
+\filldraw[fill=white,draw=black] (1.875,11)--(1.875,10.65) arc (-180:0:0.125cm and 0.046875cm)--(2.125,11)--cycle;
+\filldraw[fill=white,draw=black] (1.75,12)--(1.75,10.9) arc (-180:0:0.25cm and 0.09375cm) -- (2.25,12)--cycle;
+\filldraw[fill=white,draw=black] (2,11.95) ellipse (0.25cm and 0.09375cm);
+\filldraw[fill=white,draw=black] (2,12) ellipse (0.25cm and 0.09375cm);
+\draw (2,12.281245)--(2,11.931245);
+\draw (2,11.775)--(2,11.425);
+\draw (2,11.931245) arc (90:270:0.75cm and 0.281245cm)--(2,11.718755);
+\draw (1.25,11.65)--(1.25,12);
+\filldraw[fill=white,draw=black] (2,11.95) ellipse (0.25cm and 0.09375cm);
+\filldraw[fill=white,draw=black] (2,12) ellipse (0.25cm and 0.09375cm);
+\filldraw[fill=white,draw=black] (1.25,12)--(1.25,11.65) arc (180:270:0.75cm and 0.281245cm) -- (2,11.718755)%
+arc (-90:-180:0.75cm and 0.281245cm) --cycle;
+\filldraw[fill=white,draw=black] (2,11.718755)--(2,11.775) arc (270:90:0.6cm and 0.225cm) -- (2,12.281245)%
+arc (90:270:0.75cm and 0.281245cm) -- cycle;
+\begin{scope}
+\clip (2,12) ellipse (0.6cm and 0.225cm);
+\draw (1,12.025)--(2,12.025);
+\filldraw[fill=white,draw=black] (1,11.975)--(1.75,11.975)--(1.75,11.5)--(1,11.5)--cycle;
+\end{scope}
+\draw (2,12.025)--(2.6,12.025)--(2.6,11.975)--(2,11.975);
+\draw (2.6,11.975)--(2.6,11.6)--(2.25,11.6);
+\filldraw[fill=white,draw=black] (2,12) ellipse (0.25cm and 0.09375cm);
+\end{scope}
+% end magnetic stirrer
+\end{scope}
+%% FIM ESQUEMA AMICON 8010
+
+
+%% ESQUEMA DE UTILIZAÇÃO AMICON 8010
+\begin{scope}[scale=0.75]
+\begin{scope}[xshift=-3cm]
+% amicon 8010
+\begin{scope}[xshift=10cm,yshift=2cm,xscale=0.75,yscale=0.75]
+\foreach \x in {-2.8,-2.6,...,2.8} \draw (\x,0) -- (\x,0.5);
+\draw (-1,5) -- (-1,5.5);
+\draw (1,5) -- (1,5.5);
+% Graduação do corpo
+\draw (1.5,4.5) -- (1.2,4.5) ;
+\node [left,font=\tiny] at (1.2,4.5) {$\mathsf{10\,mL}$};
+\draw (1.5,4) -- (1.2,4) ;
+\node [left,font=\tiny] at (1.2,4)  {$\mathsf{8}$ };
+\draw [font=\tiny] (1.5,3.5) -- (1.2,3.5) ;
+\node [left,font=\tiny] at (1.2,3.5)  {$\mathsf{6}$ };
+\draw [font=\tiny] (1.5,3) -- (1.2,3) ;
+\node [left,font=\tiny] at (1.2,3)  {$\mathsf{4}$ };
+\draw [font=\tiny] (1.5,2.5) -- (1.2,2.5) ;
+\node [left,font=\tiny] at (1.2,2.5)  {$\mathsf{2}$ };
+\draw (-3,0) rectangle (3,0.5);                %base
+\draw (-2,0.5) rectangle (2,1.5);             %parte da rosca
+\draw (-1.5,1.5) rectangle (1.5,5);         %Corpo
+\draw (-2.3,5) rectangle (2.3,5.5);         %parte inferior campanula
+\draw (-1.8,5.5) rectangle (1.8,7);          %parte de cima da campanula
+\draw (1.8,6.4) rectangle (2.5,6.65);
+\draw (1.8,6.9) rectangle (2.5,6.15);      %válvula de pressão
+\draw (-1.8,6.7) rectangle (-2.75,5.8);   %Rosca
+\draw (-1.8,5.8) -- (-1.9,6.7);
+\draw (-1.9,5.8) -- (-2,6.7);
+\draw (-2,5.8) -- (-2.1,6.7);
+\foreach \x in {-1.8,-1.9,...,-2.6} \draw [thin] (\x,5.8) -- (\x-0.1,6.7);
+\draw (-1,1.5) rectangle (1,2); 
+\draw (-0.2,2) rectangle (0.2,3);
+\draw (-0.1,3) rectangle (0.1,3.5);
+\draw (-0.3,3.5) rectangle (0.3,5);
+\draw (2cm,0.85cm) rectangle (2.6cm,1.15cm);
+\end{scope}
+
+%Placa de agitação
+\draw (7,2) -- (6,0) -- (14,0) -- (13,2) -- cycle;
+%fim placa
+\draw (3.7,7) -- (3.7,7.3) -- (4.3,7.3) -- (4.3,7);
+%Garrafa de azoto
+\draw (3,0) -- (5,0) -- (5,6) -- (3,6) -- cycle;
+\filldraw[fill=white,draw=black] (5,6) arc (0:180:1cm and 1.15cm) -- cycle;
+\draw (3.9,7.3) rectangle (4.1,7.8);
+\draw (3.8,7.8) rectangle (4.2, 8);
+\draw (4.4, 7.45) rectangle (5.4, 7.65);
+\draw (4.1, 7.5) rectangle (4.4, 7.6);
+\draw (4.7, 7.8) rectangle (4.6, 7.65);
+\draw (5.1, 7.8) rectangle (5.2, 7.65);
+\filldraw[fill = white, draw = black] (4.65, 7.925) circle (0.2);
+\filldraw[fill = white, draw = black] (5.15, 7.925) circle (0.2);
+\draw (4.65, 7.925) circle (0.15);
+\draw (5.15, 7.925) circle (0.15);
+\draw (4.7, 7.35) rectangle (5.1, 7);
+\draw (4.85, 7.45) rectangle (4.95, 7.35);
+\draw[very thick] (5.4, 7.55) -- (6.5, 7.55) -- (6.5, 6.7)%
+	-- (7.93, 6.7);
+\end{scope}
+
+% Bomba peristáltica
+\begin{scope}[yshift=-0.25cm]
+\draw [rounded corners] (11, 1.4) rectangle (15, 3.6);
+\draw [rounded corners] (10.9, 1.3) rectangle (15.1, 3.7);
+\filldraw[fill=white, draw=black] (10.7, 2.85) rectangle (11.4, 3.15);
+\begin{scope}[yshift=-1cm]
+	\filldraw[fill=white, draw=black] (10.7, 2.85) rectangle (11.4, 3.15);
+\end{scope}
+\filldraw[fill=white,draw=black] (12.25, 2.5) circle (1.15);
+\draw (12.25, 2.5) circle (0.9);
+\begin{scope}[rotate around={30:(12.25, 2.5)}]
+\draw (12.25, 3.1) circle (0.25);
+\draw[fill=white, draw=black] (11.99, 2.65) -- (12.1, 3.1)%
+    arc (180:0:0.15) -- (12.510, 2.65);
+\draw (12.25, 3.1) circle (0.04);
+\begin{scope}[rotate around={-120:(12.25, 2.5)}]
+\draw (12.25, 3.1) circle (0.25);
+\draw[fill=white, draw=black] (11.99, 2.65) -- (12.1, 3.1)%
+    arc (180:0:0.15) -- (12.510, 2.65);
+\draw (12.25, 3.1) circle (0.04);
+\end{scope}
+\begin{scope}[rotate around={120:(12.25, 2.5)}]
+\draw (12.25, 3.1) circle (0.25);
+\draw[fill=white, draw=black] (11.99, 2.65) -- (12.1, 3.1)%
+    arc (180:0:0.15) -- (12.510, 2.65);
+\draw (12.25, 3.1) circle (0.04);
+\end{scope}
+\end{scope}
+\filldraw[fill=white,draw=black] (12.25, 2.5) circle (0.3);
+\draw[->] (12.25, 2.3) arc (270:45:0.2);
+\begin{scope}[yshift=0.1cm]
+\draw (13.8, 3.2) circle (0.2);
+\draw (13.8, 3.2) circle (0.15);
+\begin{scope}[xshift=0.7cm]
+\draw (13.8, 3.2) circle (0.2);
+\draw (13.8, 3.2) circle (0.15);
+\end{scope}
+\end{scope}
+\draw (14.7, 2.5) arc (0:360:0.4);
+\draw (14.3, 2.5) circle (0.44);
+\draw (14.3, 2.5) circle (0.25);
+\draw (14.3, 2.5) circle (0.2);
+\draw [decorate] {(14.3, 2.5) circle (0.325)};
+\begin{scope}
+	\clip (14.3, 2.5) circle (0.2);
+	\draw[thick] (14.3,2.5) -- (14, 3);
+\end{scope}
+\draw[rounded corners] (14, 1.6) rectangle (14.6, 1.9);
+\draw[rounded corners] (14.04, 1.6) rectangle (14.56, 1.9);
+\end{scope}
+
+% Knobs da placa de agitação
+\begin{scope}[decoration={ticks,segment length= 0.47124cm,amplitude = 0.05cm}]
+\draw (5, 1) circle (0.4);
+\draw (5, 1) circle (0.5);
+\draw [decorate] {(5, 1) circle (0.6)};
+\end{scope}
+\fill[white] (4.9,0.49) rectangle (5.1,0.3);
+\begin{scope}
+\clip (5, 1) circle (0.4);
+\draw [thick] (5,1) -- (4,1.5);
+\end{scope}
+\begin{scope}[xshift=4cm]
+\begin{scope}[decoration={ticks,segment length= 0.47124cm,amplitude = 0.05cm}]
+\draw (5, 1) circle (0.4);
+\draw (5, 1) circle (0.5);
+\draw [decorate] {(5, 1) circle (0.6)};
+\end{scope}
+\fill[white] (4.9,0.49) rectangle (5.1,0.3);
+\begin{scope}
+\clip (5, 1) circle (0.4);
+\draw [thick] (5,1) -- (6,1.5);
+\end{scope}
+\end{scope}
+\draw [very thick] (10.7, 2.75) -- (8.95,2.75);
+\draw [very thick] (10.7, 1.75) -- (10.3, 1.75) -- (10.3, 0.5);
+\end{scope}
+
+% Legenda 
+\draw (12.5, 0.5) -- (12.1, 0.5) node[left] {F};
+\draw (13, 1.5) -- (12.1, 1.5) node[left] {E};
+\draw (13, 2) -- (12.1, 2) node[left] {D};
+\draw (13, 2.55) -- (12.1, 2.55) node[left] {C};
+\draw (13, 4.5) -- (12.1, 4.5) node[left] {B};
+\draw (13, 6.5) -- (12.1, 6.5) node[left] {A};
+\node[above] at (2.5, 6.2) {Pressão constante};
+\node[above] at (8.5, 2.8) {Fluxo constante};
+
+\end{tikzpicture}
