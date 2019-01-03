@@ -1,4 +1,4 @@
-![Logo of the project](https://raw.githubusercontent.com/jehna/readme-best-practices/master/logo.png)
+<img src="https://raw.githubusercontent.com/jcmnunes/phd-thesis/master/logo.png" width="100px">
 
 # Purification of plasmid DNA using membrane separation processes: modeling and application
 > PhD Thesis build with LaTeX
