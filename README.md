@@ -26,7 +26,7 @@ Even though this information can be found inside the project on machine-readable
 format like in a .json file, it's good to include a summary of most useful
 links to humans using your project. You can include links like:
 
-- Final thesis: https://www.josenunes.xyz/tese.pdf
+- Final thesis: https://www.josenunes.xyz/assets/tese.pdf
 - Repository: https://github.com/jcmnunes/phd-thesis
 - Related projects:
   - PhD calculation routines: https://github.com/jcmnunes/phd-calculation-routines
