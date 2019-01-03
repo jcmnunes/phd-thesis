@@ -1,0 +1,363 @@
+%!TEX root = tese.tex
+\chapter{Desenvolvimento de um modelo para a filtração de moléculas longas e flexíveis.}
+\label{chap:art1}\index{moléculas flexíveis}%
+
+O trabalho descrito neste capítulo foi publicado na revista Journal of Membrane Science \cite{meu1}.
+
+\section{Introdução}
+\index{transporte restringido!fundamentos teóricos}%
+\index{transporte restringido!referências bibliográficas}%
+O desenvolvimento de modelos de transporte restringido que descrevem a permeação de solutos através de matrizes porosas tem especial importância na caracterização de membranas e na previsão da seletividade. Modelos em que os solutos são vistos como tendo um comportamento semelhante ao de esferas rígidas (HS), têm vindo a ser utilizados com sucesso para este efeito em operações de microfiltração, ultrafiltração e nanofiltração. A vantagem da abordagem HS é que para poros com geometria cilíndrica, é possível estimar os coeficientes hidrodinâmicos que contabilizam os efeitos da difusão e convecção restringida no interior dos mesmos \cite{deen,bowen02,dechadilok}. Para os casos em que os efeitos de carga podem ser desprezados, isto é, se os solutos forem neutros ou a força iónica da solução for elevada, esta abordagem é suficiente para se obterem previsões satisfatórias das permeações intrínsecas dos solutos, com base unicamente em efeitos de exclusão geométricos. Por este motivo, este tipo de modelos têm vindo a ser muito adotados para obter informação sobre a membrana, nomeadamente o tamanho ou a distribuição de tamanhos de poro \cite{bowen02,xenopoulos,bruggen,noordman}, e mais recentemente o grau de assimetria \cite{moraompa}. Feita a caracterização da membrana, a abordagem HS permite obter previsões da permeação de solutos a partir dos seus raios hidrodinâmicos. Esta informação é de especial importância para guiar a escolha da membrana a usar em cada aplicação, para interpretar resultados experimentais e para as fases de desenvolvimento, otimização e controlo do processo.
+
+No entanto, a aplicação destes modelos para o estudo da permeação de moléculas lineares de elevada massa molecular apresenta severas limitações devido ao desvio do comportamento deste tipo de moléculas à abordagem de esferas rígidas. De facto, sabe-se que macromoléculas lineares apresentam uma elevada permeação através de poros com dimensões muito inferiores. As dimensões deste tipo de solutos são geralmente representadas quer pelo raio hidrodinâmico, \raiostokes, quer pelo raio de giração, \raiogiracao. É importante notar que estas quantidades devem ser vistas como valores médios, uma vez que a estrutura deste tipo de moléculas em solução se encontra em constante variação. Uma revisão recente sobre este assunto pode ser encontrada em \cite{latu07}. A existência de uma elevada permeação deste tipo de solutos em poros com menores dimensões indica com clareza que a abordagem HS é insuficiente para descrever com exatidão as suas permeações em matrizes porosas, o que é especialmente verdade para massas moleculares superiores a $\sim 1\,\mathrm{MDa}$, e \raiogiracao\ na ordem dos $10\,\mathrm{nm}$. Assim, é necessário desenvolver modelos mais adequados que possam incluir a possibilidade do soluto adotar diferentes conformações ao longo do tempo, e se necessário, os efeitos da deformação molecular induzida pelo fluxo convectivo do solvente através dos poros.
+
+No procedimento convencional para modelar a permeação de moléculas longas e flexíveis, podem ser distinguidas três situações: a permeação na ausência de convecção (transporte exclusivamente por difusão), permeação a fluxos moderados sem existência de deformação molecular e permeação a fluxos elevados, onde a deformação molecular pode ser significativa \cite{deen}. De entre os estudos publicados nesta temática, é igualmente importante distinguir aqueles em que o rácio entre o raio do soluto e o raio do poro (\lambdas) é inferior a 1, dos estudos em que $\lambdas>1$. Para o caso de moléculas lineares, para valores de \lambdas\ até 0.87 existem modelos teóricos disponíveis para prever o transporte restringido de macromoléculas lineares em poros \cite{davidson88}. No entanto, para valores superiores de \lambdas\ a modelação das permeações é mais difícil, especialmente para o caso em que $\lambdas>1$ onde a deformação molecular tem que ser considerada.
+
+\index{metodos@métodos estocásticos}\index{Monte-Carlo}%
+Para além do desenvolvimento do modelo de transporte de massa, é necessário igualmente estimar os coeficientes de partição à entrada do poro. Para isso, foram desenvolvidos métodos estocásticos, envolvendo simulações computacionais \cite{davidson87,hermsen,cifra}, para evitar a excessiva complexidade de obter uma solução analítica. Nestes algoritmos é estimada a probabilidade de um determinado evento ocorrer, por exemplo, a probabilidade de uma molécula entrar no interior de um poro, testando esse evento um elevado número de vezes (tipicamente, pelo menos $10^{5}$ simulações são necessárias para obter uma aproximação satisfatória da probabilidade real do evento). A forma como o evento é testado pode ser variada, dependendo do método usado, assim como a estrutura da molécula pode ser representada com um maior ou menor grau de realismo, com importantes consequências em termos do tempo computacional. Para evitar excessivos esforços computacionais, para a representação da estrutura de moléculas flexíveis, podem ser considerados protótipos moleculares que imitam essa mesma estrutura, retendo as características essenciais que determinam a sua permeação através de poros.
+
+\index{FJC}%
+A abordagem mais simples para representar a estrutura de uma molécula linear flexível é a representação de \fjc\ (FJC) \cite{teraoka,youngbook,tager}. Esta abordagem, assim como outras mais sofisticadas, têm vindo a ser usadas para estudar a possibilidade de macromoléculas adotarem conformações que lhes permitem entrar em regiões confinadas \cite{davidson87,hermsen,cifra}, no entanto nunca para $\lambdas \gg 1$. Coeficientes de partição podem ser determinados estimando a probabilidade da molécula adotar tais conformações, assumindo que não ocorre deformação induzida pelo fluxo de solvente. No entanto, em processos de membranas onde a força motriz é a pressão, esta abordagem não deve ser utilizada e é possível provar que as estimativas dela resultantes não estão de acordo com os resultados experimentais. De facto, na área da tecnologia de membranas, esta abordagem tem vindo apenas a ser aplicada no estudo de processos de difusão restringida. No presente capítulo considera-se que os coeficientes de partição são influenciados pelo fluxo convectivo, sendo a sucção à entrada do poro e a conformação espacial da molécula os fatores que determinam a permeação.
+
+\index{dextrano!T2000}%
+Assim, o objetivo neste capítulo passa por desenvolver um modelo simples, baseado em modelos prévios de transporte restringido em membranas porosas, e por estimar os coeficientes de partição para o caso em que $\lambdas \gg 1$. O modelo desenvolvido pode assim ser aplicado para a previsão das permeações de macromoléculas lineares, representadas por FJCs. A validade do modelo foi testada pelo estudo da permeação de duas moléculas longas através de diferentes membranas. Os solutos testados foram o dextrano T2000 (que tem uma massa molecular de cerca de $2\,\mathrm{MDa}$) e o plasmídeo \pUC\ (que tem 2686 pares de bases, e uma correspondente massa molecular de $1.773\,\mathrm{MDa}$) tratado com uma enzima de restrição, que corta a dupla cadeia originando um plasmídeo na isoforma linear.
+\index{enzima}%
+\index{pUC@\pUC}% 
+
+\section{Desenvolvimento do modelo}
+
+\subsection{Definição da estrutura FJC}
+Uma FJC pode ser definida com uma série de \numsegmento\ segmentos, com orientações aleatórias todos com o mesmo comprimento, \comsegmento, que ligam $\numsegmento+1$ massas pontuais \cite{teraoka,tager,youngbook}. Os valores de \numsegmento\ e \comsegmento\ são definidos para que se obtenha o mesmo comprimento do contorno da molécula real, \contorno; \comsegmento\ corresponde à distância mínima para que se tenha um segmento com orientação independente do anterior, e para o caso de uma FJC equivale à distância de Kuhn, \kuhn. 
+\index{distância!de Kuhn}%
+\index{comprimento!segmentos}%
+\index{número!segmentos}%
+\index{comprimento!contorno}%
+Desta forma, o rácio $\comsegmento/\contorno$ é um indicador da flexibilidade da cadeia. Esta estrutura pode ser gerada como um caminho aleatório em três dimensões com \numsegmento\ passos com comprimento \comsegmento\ \cite{teraoka}. Neste tipo de estrutura, não é tido em conta possíveis interações entre monómeros, e uma FJC definida desta maneira é igualmente denominada de cadeia ideal. 
+\index{cadeias!ideias}%
+Assim, uma representação FJC é o modelo mais simples que pode ser considerado para representar moléculas longas e flexíveis, sendo particularmente indicado para valores reduzidos de $\comsegmento/\contorno$. Considerando o esforço computacional necessário para representar com maior realismo a estrutura e conformação de moléculas de grandes dimensões, e tendo em conta que é necessário gerar estas estruturas e conformações um elevado número de vezes, a abordagem FJC foi assim com naturalidade escolhida para representar as moléculas estudadas neste capítulo.
+
+Para uma FJC, a distância média entre as extremidades da cadeia, \distanciah, é a forma mais simples de definir as suas dimensões, e pode ser demonstrado que é dada por $\numsegmento^{1/2}\comsegmento$ \cite{teraoka,youngbook}. 
+\index{distância!entre extremidades de uma cadeia}%
+O valor de \distanciah\ pode ser relacionado com o raio de giração da molécula, \raiogiracao, que pode ser determinado experimentalmente. Para uma molécula, contendo $N$ átomos cada um com uma massa $m_{i}$, e posicionados a uma distância $(\vectorpos-\vectorcm)$ do centro de massa da molécula, o raio de giração instantâneo, \raiogiracaoinst, é dado por:
+\index{raio de giração instantâneo}%
+\index{centro de massa}%
+\index{vetor!posição}%
+\begin{equation}
+(\raiogiracaoinst)^{2}=\frac{\sum_{i=1}^{N} m_{i}(\vectorpos-\vectorcm)}{\sum_{i=1}^{N} m_{i}} 
+\end{equation}
+onde \vectorpos\ representa as coordenadas do ponto $i$, \vectorcm\ representa as coordenadas do centro de massa da molécula.
+
+Para o caso de uma representação FJC equivalente, as várias massas atómicas são substituídas por $\numsegmento+1$ massas pontuais iguais, e dado que a estrutura da molécula se encontra em constante alteração, é o raio de giração médio, obtido a partir de um elevado número de simulações, a quantidade que se relaciona com os valores experimentais de \raiogiracao. Essa média é dada por:
+\index{FJC!raio de giração}%
+\begin{equation}
+\raiogiracao^{2}=\left\langle \raiogiracaoinst \right\rangle ^{2} = \frac{1}{\numsegmento+1}\sum_{i=1}^{\numsegmento+1} \left\langle (\vectorpos-\vectorcm)\right\rangle^{2} 
+\end{equation}
+Independentemente do número de segmentos, uma FJC apresenta um raio de giração, \raiogiracao, dado por \cite{teraoka}:
+\begin{equation}
+\raiogiracao=\comsegmento\sqrt{\frac{\numsegmento(\numsegmento+2)}{6(\numsegmento+1)}}
+\end{equation}
+Para o caso limite de um elevado número de segmentos, \numsegmento, uma FJC é chamada de cadeia Gaussiana e o raio de giração é obtido por:
+\index{cadeias!Gaussianas}%
+\begin{equation}
+\label{eq:rgfjcco}
+\raiogiracao=\frac{\numsegmento^{1/2}\comsegmento}{\sqrt{6}}=\frac{\distanciah}{\sqrt{6}}
+\end{equation}
+
+\subsection{Estimativa das dimensões das moléculas reais}
+\index{light@``light scattering''}%
+\index{AFM}%
+Para especificar as dimensões da cadeia FJC é necessário determinar as dimensões das moléculas reais. Apesar da distância entre as extremidades das cadeias, \distanciah, ter já sido determinadas por AFM \cite{lail}, existe pouca informação na literatura sobre esta quantidade. Dados experimentais para o raio de giração, obtidos por ``light scattering'', ou por quantidades que podem ser relacionadas com \raiogiracao, nomeadamente coeficientes de difusão e valores de comprimento de persistência, são a principal fonte de informação. Os principais desenvolvimentos na temática da modelação molecular têm como um dos principais objetivos estabelecer relações entre \raiogiracao\ e o raio hidrodinâmico, \raiostokes, permitindo assim o cálculo de \raiogiracao\ a partir de \raiostokes\ ou de coeficientes de difusão, \dinf, que se podem relacionar com \raiostokes\ através da equação de Stokes-Einstein:
+\index{equação!Stokes-Einstein}
+\begin{equation}
+\label{eq:art1se}
+\dinf=\frac{\boltzman T}{6\pi\viscosidade\raiostokes}
+\end{equation}
+onde \boltzman\ é a constante de Boltzmann, $T$ é a temperatura absoluta e \viscosidade\ é a viscosidade do solvente. Valores experimentais para \dinf\ estão em regra disponíveis na literatura. Para o caso de uma cadeia Gaussiana, num solvente ``theta'' (que é um solvente onde os efeitos do volume excluído são contrabalançados pelas interações entre os monómeros e o solvente), o raio de giração pode ser calculado a partir do raio hidrodinâmico, através do modelo de Zimm \cite{teraoka,fukatsu,robertson}:
+\index{solvente!``theta''}%
+\index{modelo!Zimm}%
+\begin{equation}
+\label{eq:thetargrs}
+\dinf=\frac{8}{3\sqrt{6\pi^{3}}}\frac{\boltzman T}{\viscosidade \comsegmento\numsegmento^{1/2}}\Rightarrow\frac{\raiogiracao}{\raiostokes}=\frac{8}{3\sqrt{\pi}}=1.505
+\end{equation}
+Num bom solvente, estima-se igualmente que \cite{teraoka,oono}:
+\index{solvente!bom}%
+\begin{equation}
+\label{eq:goodrgrs}
+\dinf=0.0829\frac{\boltzman T}{\viscosidade\raiogiracao}\Rightarrow \frac{\raiogiracao}{\raiostokes}=6\pi(0.0829)=1.563
+\end{equation}
+Como se pode ver a diferença entre os valores do rácio $\raiogiracao/\raiostokes$ calculados pelas equações~\ref{eq:thetargrs}~e~\ref{eq:goodrgrs} é pequena ($<5\%$), e assim as duas equações podem ser usadas para estimar \raiogiracao. No entanto, deve ser realçado que estas equações são apenas válidas para cadeias Gaussianas. Quando o número de segmentos é pequeno, ou mais precisamente, quando o rácio entre o comprimento dos segmentos e o comprimento do contorno, $\comsegmento/\contorno$, não é pequeno o suficiente para que se possa considerar a cadeia como uma cadeia Gaussiana, o modelo de \wlc (WLC) \cite{teraoka,sunbook} é preferível.
+\index{WLC}%
+\index{cadeias!worm@``worm-like''|see{WLC}}%
+Uma cadeia WLC é representada por uma linha espacial com curvatura constante, sendo assim portanto distinta da abordagem FJC, que é formada por segmentos retilíneos. A rigidez deste tipo de cadeias é dada pelo chamado comprimento de persistência, \persis.
+\index{comprimento!persistência}%
+Quando o contorno da cadeia é igual a este valor, uma cadeia WLC é semelhante a uma linha quase reta, mas quando \contorno\ é suficientemente grande a cadeia tem a conformação de uma cadeia Gaussiana, em que $\comsegmento=2\persis$ \cite{tager,teraoka,hagerman}. O modelo WLC foi originalmente proposto por Kratky e Porod \cite{kratky}. A distância média entre as extremidades e o raio de giração de uma cadeia WLC são funções do contorno do polímero e do comprimento de persistência \cite{teraoka}:
+\index{WLC!distância entre extremidades da cadeia}%
+\begin{equation}
+\label{eq:endtoendwlc}
+\distanciah=(2\persis)^{1/2}[\contorno+\persis(\numeroeuler^{-\contorno/\persis}-1)]^{1/2}
+\end{equation}  
+e o raio de giração:
+\index{WLC!raio de giração}%
+\begin{equation}
+\label{eq:rgwlc}
+\raiogiracao=\persis\left[\frac{\contorno}{3\persis}-1+\frac{2\persis}{\contorno}-2\left(\frac{\persis}{\contorno}\right)^{2}(1-\numeroeuler^{-\contorno/\persis})\right]^{1/2}
+\end{equation}
+A dependência do rácio $\distanciah/\raiogiracao$ com $\contorno/\persis$ está indicada na figura~\ref{fig:1art1}. Como se pode verificar, para $\contorno/\persis=10$ a diferença entre o rácio e o valor assimptótico dado pela equação~\ref{eq:rgfjcco} é de apenas 10\%. Pode-se assim concluir que existe uma clara semelhança entre os modelos WLC e FJC para $\contorno/\persis$ superior a $\sim 10$. Apesar de em regra os valores que se encontram na literatura serem obtidos a partir de valores experimentais de $\raiogiracao$, o comprimento de persistência pode ser obtido independentemente por medições de ``force-extension'' \cite{lail,bouchiat}.
+\index{force@``force-extension''}%
+\begin{figure}
+	\centering
+	\setlength\figureheight{6cm} 
+	\setlength\figurewidth{6cm}
+	\input{./tikz/fig1art1.tikz}
+	\caption[Depedência do rácio $\distanciah/\raiogiracao$ com $\contorno/\persis$ para o modelo WLC]{Dependência teórica do rácio $\distanciah/\raiogiracao$ com $\contorno/\persis$ para o modelo WLC. Comparação com o modelo FJC.}
+	\label{fig:1art1}
+\end{figure}
+
+\subsection{Determinação das dimensões das cadeias}
+Para o tipo de moléculas estudadas neste capítulo, dextranos e DNA linear de dupla cadeia, a principal fonte de informação para determinar as suas dimensões resulta dos seus coeficientes de difusão, que podem ser relacionados com \raiostokes\ através da equação~\ref{eq:art1se}. Para dextranos pode-se usar a seguinte equação, que relaciona \raiostokes\ com a massa molecular, \massamolecular\ \cite{xenopoulos}:
+\index{dextrano!raio hidrodinâmico}%
+\index{dextrano!massa molecular}%
+\index{dextrano!T2000}%
+\begin{equation}
+\label{eq:rsvsmxdextran}
+\raiostokes=0.0282(\massamolecular)^{0.47752}
+\end{equation}
+com \raiostokes\ em nm e \massamolecular\ em Da. Assim, para o dextrano T2000, que tem uma massa molecular de $2\times 10^{6}\,\daltons$, $\raiostokes=\unit{28.8}{\nano\meter}$, $\raiogiracao=\unit{45}{\nano\meter}$ (pela equação~\ref{eq:goodrgrs}) e $\distanciah=\unit{110}{\nano\meter}$ (pela equação~\ref{eq:rgfjcco}).
+
+Para o caso do DNA linear de dupla cadeia, a dependência de \dinf\ com o número de pares de bases é analisada na figura~\ref{fig:2aart1}. Duas técnicas distintas foram usadas para obter os valores encontrados na literatura, ``light scattering'' (LS) \cite{lewis,sorlie,voordouw,newman,nguyen} e ``Brownian motion tracking'' (BMT) de moléculas marcadas por fluorescência \cite{robertson,smith,araki,lukacs}. 
+\index{DNA plasmídico!linear}%
+\index{light@``light scattering''}%
+\index{brown@``brownian motion tracking''}%
+\index{DNA plasmídico!coeficiente de difusão}%
+Contudo, os valores experimentais não são equivalentes, tal como referido por Smith \et\ \cite{smith}, que propuseram um fator de $(1.75)^{2/5}$ para corrigir os valores obtidos por BMT. De facto, tal como pode ser visto na figura~\ref{fig:2aart1}, os valores obtidos por BMT têm uma clara tendência para serem inferiores aos que se obtêm por LS, o que provavelmente reflete um efeito da ligação do corante, usado neste técnica, às moléculas de DNA \cite{smith}. Usando os valores obtidos por LS e corrigindo os valores obtidos por BMT, a seguinte equação pode ser obtida pelo ajuste aos pontos na figura~\ref{fig:2bart1}. 
+\begin{equation}
+\label{eq:11art1}
+\dinf=3.94 \times 10^{-10}(\numpb)^{-0.611}
+\end{equation}
+Usando a equação de Stokes-Einstein obtém-se:
+\index{DNA plasmídico!raio hidrodinâmico}%
+\begin{equation}%
+\label{eq:12art1}
+\raiostokes=6.27\times 10^{-10}(\numpb)^{0.611}
+\end{equation}%
+\begin{figure}%
+	\centering
+	\setlength\figureheight{6cm} 
+	\setlength\figurewidth{6cm}
+	\input{./tikz/fig2aart1.tikz}
+	\caption[Coeficiente de difusão de DNA linear de dupla cadeia]{Valores, encontrados na literatura, para o coeficiente de difusão de DNA linear de dupla cadeia em função do número de pares de bases, obtidos por ``light scattering'', LS,  (a preto) e por ``Brownian motion tracking'', BMT, (a branco).}
+	\label{fig:2aart1}
+\end{figure}%
+\begin{figure}%
+	\centering
+	\setlength\figureheight{6cm} 
+	\setlength\figurewidth{6cm}
+	\input{./tikz/fig2bart1.tikz}
+	\caption[Ajuste aos valores do coeficiente de difusão de dsDNA]{Ajuste da equação~\ref{eq:11art1} aos valores do coeficiente de difusão de DNA linear de dupla cadeia (ver figura~\ref{fig:2aart1}), encontrados na literatura. Os valores obtidos por ``Brownian motion tracking'' (BMT) já se apresentam corrigidos segundo a recomendação de Smith \et\ \cite{smith} (ver texto).}
+	\label{fig:2bart1}
+\end{figure}%
+Para o plasmídeo \pUC, $\numpb=2686$, e assim $\raiostokes=77.9\,\nano\meter$, $\raiogiracao=122\,\nano\meter$ e $\distanciah=298\,\nano\meter$. 
+\index{puc@\pUC!número de pares de bases}%
+\index{puc@\pUC!raio hidrodinâmico}%
+\index{puc@\pUC!raio de giração}%
+\index{puc@\pUC!distância entre extremidades da cadeia}%
+Estes valores podem ser comparados com os que se obtêm por uma abordagem diferente, usando o modelo WLC, que é regularmente aplicado ao DNA (uma vez que é uma molécula com alguma rigidez). Para isso é necessário estimar o comprimento do contorno e o comprimento de persistência. O comprimento de persistência do DNA linear de dupla cadeia não é constante; varia consideravelmente com a força iónica.
+\index{comprimento!persistência}%
+\index{DNA plasmídico!comprimento de persistência}%
+\index{força iónica}%
+Podem ser distinguidas duas zonas de variação \cite{hagerman}: para valores até $10\,\milimolar$, verifica-se uma acentuada diminuição do comprimento de persistência com o aumento da força iónica (soluções contendo \tce{Na+}) com valores na ordem dos 80--100\,\nano\meter\ a serem indicados nesta zona. No entanto, acima de $10\,\milimolar$ a taxa de decréscimo abranda, sendo encontrados na literatura valores entre 45 e 50\,\nano\meter\ para uma gama alargada de forças iónicas \cite{latu07,hagerman,bouchiat,chirico,zakharova}. Este efeito pode estar relacionado com a repulsão eletrostática entre os grupos fosfato na cadeia de DNA.
+\index{repulsão eletrostática}%
+\index{cloreto de sódio|see{NaCl}}%
+\index{NaCl}%
+De acordo com esta ideia, verifica-se que iões $\mr{Mg}^{2+}$ produzem um efeito muito maior na redução do comprimento de persistência do DNA \cite{hagerman}.
+\index{Mg@$\mr{Mg}^{2+}$}%
+Em relação ao comprimento do contorno, ele pode ser facilmente estimado a partir do valor da altura da dupla hélice do B-DNA por par de bases, igual a 0.34\,\nano\meter\ \cite{voet}, multiplicado pelo número de pares de bases da molécula, que no caso do plasmídeo \pUC\ resulta num comprimento do contorno igual 913\,\nano\meter, uma vez que este plasmídeo tem 2686\,bp.
+\index{comprimento!por par de bases}%
+\index{número!pares de bases}%
+\index{comprimento!contorno}%
+\index{puc@\pUC!comprimento contorno}%
+\index{WLC}%
+Assim, usando o valor aproximado $\persis=50\,\nano\meter$ obtém-se, usando as equações~\ref{eq:endtoendwlc}~e~\ref{eq:rgwlc}, $\raiogiracao=114\,\nano\meter$ e $\distanciah=294\,\nano\meter$ para o \pUC\ linear. Estes valores estão em boa concordância com os valores obtidos pela abordagem FJC.
+
+\subsection{Coeficientes de partição}
+\index{coeficiente!de partição}%
+\index{FJC!coeficiente de partição}%
+\index{moléculas flexíveis!coeficiente de partição}%
+O passo seguinte no desenvolvimento do modelo passa por estimar os coeficientes de partição à entrada dos poros. Para simular a partição, desenvolve-se neste capítulo um método de Monte-Carlo baseado no método descrito por Davidson \et\ \cite{davidson87}.
+\index{Monte-Carlo}%
+O método consiste na determinação da distribuição radial da probabilidade da molécula entrar no interior do poro, com essa distribuição a ser obtida através de simulações estocásticas em 10 posições radiais diferentes, mais o centro do poro. Assim, após gerar a molécula, o centro de massa é colocado numa determinada posição radial, e é testado se a projeção de todos os pontos (massas pontuais) no plano da superfície da membrana, se encontra no interior do poro. Apenas nessa situação é assumido que a molécula entra no poro. Neste capítulo o procedimento é ligeiramente alterado para permitir ter em conta a flexibilidade das cadeias e a possibilidade de ocorrência de deformação imposta pelo efeito de sucção à entrada dos poros. Assim, após a geração da estrutura tridimensional da molécula, a única obrigatoriedade para que haja permeação é que a projeção da parte inferior da molécula (isto é, a massa pontual mais próxima da membrana) esteja dentro do poro.
+\index{condição de entrada no poro}%
+Isto significa que se a parte inferior da molécula tem acesso ao poro, toda a molécula será forçada a entrar no mesmo devido aos efeitos de sucção. Caso contrário a molécula difunde de novo para o seio da solução. Após realizar um elevado número de testes, obtém-se uma distribuição de probabilidade radial, e o coeficiente de partição, \particao, é calculado por integração radial, de acordo com \cite{davidson87}, pela seguinte expressão:
+\index{moléculas flexíveis!coeficiente de partição}%
+\begin{equation}%
+\label{eq:13art1}
+\particao=2\int_{0}^{1} p(\radialadimensional)\radialadimensional d\radialadimensional
+\end{equation}%
+onde \radialadimensional\ é a coordenada radial adimensional ($r/\raioporo$), e \raioporo\ é o raio do poro. Os resultados das simulações estão representados na figura~\ref{fig:3aart1}, pela representação dos valores obtidos de \particao\ em função de \numsegmento\ para vários valores de $\contorno/\raioporo$. Uma vez que o raio de giração pode ser calculado a partir de \numsegmento\ e \comsegmento, com este último a ser obtido a partir de \contorno\ e \numsegmento, podem-se representar os resultados das simulações colocando $\ln \particao$ em função de $\ln (\lambdah)$, sendo \lambdah\ definido pelo rácio $\distanciah/\raioporo$ (ver figura~\ref{fig:3bart1}). Como se pode constatar, existe uma evidente correlação entre $\ln (\lambdah)$ e $\ln (\particao)$. Dado que \lambdah\ pode ser relacionado com \lambdag\ ou com \lambdas\ ($\raiogiracao/\raioporo$ e $\raiostokes/\raioporo$ respetivamente) através das equações~\ref{eq:goodrgrs}~e~\ref{eq:rgwlc}, é possível assim relacionar \particao\ com \lambdag\ ou \lambdas. Para obter um ajuste aos valores apresentados na fig~\ref{fig:3bart1}, usou-se o software \emph{SPSS/TableCurve2D v.5.0}. Uma função cumulativa SDS (dupla sigmoidal simétrica) foi a que revelou ser a mais apropriada para este fim (equação~\ref{eq:14art1}), tendo-se obtido um coeficiente de correlação de 0.998. A equação obtida permite assim relacionar \particao\ com a as dimensões da cadeia representadas por \distanciah:
+\index{cadeias lineares!coeficiente de partição}% 
+\begin{equation}
+\label{eq:14art1}
+\begin{split}
+\ln \left(\particao\right)= {} & a_{0}+\frac{a_{1}}{2a_{3}}\left\{\vphantom{\frac{x+a_{3}/2}{a_{4}}}\right.2a_{4}\ln \left[\exp \left(\frac{x+a_{3}/2}{a_{4}}\right)+\exp \left(\frac{a_{2}}{a_{4}}\right)\right] \\
+ & -2a_{4}\ln \left[\exp\left(\frac{a_{2}+a_{3}/2}{a_{4}}\right)+\exp \left(\frac{x}{a_{4}}\right)\right]+a_{3}\left.\vphantom{\frac{x+a_{3}/2}{a_{4}}}\right\}
+\end{split}
+\end{equation}
+\begin{displaymath}
+a_{0}=-11.60;\ a_{1}=11.53;\ a_{2}=3.955;\ a_{3}=-5.520;\ a_{4}=-0.613
+\end{displaymath}
+\begin{displaymath}
+x=\ln (\lambdah);\ \ \lambdah=\frac{\distanciah}{\raioporo}
+\end{displaymath}
+A equação~\ref{eq:14art1} pode ser comparada com dois casos limites da permeação de moléculas lineares sem o efeito de sucção; o de uma cadeia Gaussiana com segmentos infinitésimalmente pequenos \cite{casassa}, e o caso de uma cadeia retilínea fina \cite{giddings}.
+\index{cadeias!Gaussianas}%
+A comparação com os resultados obtidos está representada na figura~\ref{fig:3bart1}, onde é bem visível o efeito da sucção nos coeficientes de partição.
+\begin{figure}
+	\centering
+	\setlength\figureheight{6cm} 
+	\setlength\figurewidth{6cm}
+	\input{./tikz/fig3aart1.tikz}
+	\caption[Coeficiente de partição, em função de \numsegmento\, para vários valores de $\contorno/\raioporo$]{Coeficiente de partição, em condições de filtração, em função de \numsegmento\, para vários valores de $\contorno/\raioporo$.}
+	\label{fig:3aart1}
+\end{figure}       
+\begin{figure}
+	\centering
+	\setlength\figureheight{6cm} 
+	\setlength\figurewidth{6cm}
+	\input{./tikz/fig3bart1.tikz}
+	\caption[Coeficiente de partição em função de \lambdah]{Coeficiente de partição em função de \lambdah\ (está representado o logaritmo de ambas as quantidades). Comparação com os valores que se obtêm para uma cadeia Gaussiana com segmentos infinitésimalmente pequenos \cite{casassa} e para uma cadeia retilínea fina \cite{giddings}.}
+	\label{fig:3bart1}
+\end{figure}
+
+Um procedimento distinto foi proposto anteriormente \cite{daoudi}, em que se assume uma condição diferente para a entrada de uma molécula flexível num poro, considerando que ocorre deformação induzida pelo fluxo.
+\index{deformação molecular}%
+É considerado que a molécula segue de forma exata a deformação induzida pelo fluxo se as tensões de corte excederem um determinado valor.
+\index{tensão de corte}%
+Este principio foi desenvolvido mais recentemente \cite{latu07,latu09,zydneyiso} para prever o fluxo crítico, a partir do qual a permeação de moléculas de plasmídeo aumenta de valores pouco significativos para valores consideráveis, tal como referido na secção~\ref{sec:modulaçãopermeação}.
+
+\subsection{Estimativa da permeação dos solutos}
+Após concluída a determinação dos coeficientes de partição, a próxima fase no desenvolvimento do modelo passa por estimar as permeações intrínsecas.
+\index{permeação!intrínseca}%
+Esta determinação pode constituir um problema complexo caso \lambdas\ (ou \lambdah) tenham valores pequenos. No entanto, para moléculas flexíveis com tamanhos muito superiores ao do poro, o problema pode ser consideravelmente simplificado assumindo que durante a passagem pelo poro estas moléculas ocupam na totalidade a sua área de secção reta. Isto significa que a difusão é muito restringida, o que implica que o transporte de massa se dê exclusivamente por convecção. Na ausência de difusão, a permeação intrínseca é independente do fluxo e dada por (ver capítulo~\ref{chap:teov3}):
+\begin{equation}
+\label{eq:15art1}
+\permm = \particao\kapace
+\end{equation}%
+\index{coeficiente!de impedimento convectivo}%
+onde \permm\ é a permeação intrínseca, \particao\ é o coeficiente de partição e \kapace\ é o fator de impedimento convectivo \cite{deen}. No entanto, como a molécula ocupa toda a área de secção reta do poro, a velocidade do soluto deverá ser igual à velocidade média do solvente, o que implica que $\kapace\rightarrow 1$. Assim, apenas para o caso de moléculas flexíveis com dimensões muito superiores às do poro, obtém-se:
+\begin{equation}
+\label{eq:17art1}
+\permm = \particao
+\end{equation}
+Uma vez que esta quantidade é uma permeação intrínseca, ela pode ser relacionada com a concentração do soluto no permeado, \concp, e com a concentração de soluto junto à membrana, \concm:
+\index{concentração!permeado}%
+\index{concentração!membrana}%
+\begin{equation}
+\label{eq:18art1}
+\permm=\frac{\concp}{\concm}
+\end{equation}
+Para estimar a permeação observada, que é dada por:
+\index{permeação!observada}%
+\begin{equation}
+\label{eq:19art1}
+\permobs=\frac{\concp}{\concb}
+\end{equation}
+onde \concb\ é a concentração do soluto no seio da solução, pode-se usar a seguinte relação, que se obtém a partir do modelo do filme \cite{sherwood} (secção~\ref{sec:filmepol}):
+\index{concentração!seio da solução}%
+\begin{equation}
+\label{eq:20art1}
+\permobs=\frac{\permm}{\permm+(1-\permm)\exp(-\fluxo/\coeficientemassa)}
+\end{equation}
+onde \fluxo\ representa o fluxo de permeado e \coeficientemassa\ é o coeficiente de transferência de massa, que pode ser estimado pelo método desenvolvido na próxima secção.
+\index{fluxo!filtração}%
+\index{coeficiente!de transferência de massa}%
+
+\section{Materiais e métodos}
+O dextrano T2000 foi adquirido da \emph{Pharmacia}, atualmente comercializado pela empresa \emph{Pharmacosmos}. Este dextrano apresenta um grau de ramificação inferior a 5\%, de acordo com o fabricante. O plasmídeo \pUC\ foi obtido por fermentação, e foi isolado e purificado de acordo com o método descrito em \cite{sousabab}.
+\index{pUC@\pUC}%
+O plasmídeo obtido, na isoforma super-enrolada, foi linearizado pela ação da enzima SmaI (\emph{Takara Bio Inc.}). Após digestão com a enzima, a qualidade da preparação de plasmídeo foi analisada por eletroforese em gel de agarose (AGE). A enzima foi removida, antes de se iniciarem os ensaios, por cromatografia de exclusão molecular (SEC), em que se usou o gel \emph{Sephacryl HR-S100} da \emph{GE Healthcare}, numa coluna com 1.5\,cm\,$\times$\,20\,cm, a um caudal de 1\,mL/min e a 25\degreecelsius.
+\index{Sephacryl S-100}%
+A fase móvel utilizada foi tampão Tris/HCl 10\,mM, a pH 8.00.
+\index{Tris}%
+Antes dos ensaios de filtração, adicionaram-se 0.15\,M de NaCl às soluções de plasmídeo, para minimizar eventuais efeitos de carga.
+\index{NaCl}%
+Uma solução semelhante foi usada no caso do dextrano T2000. A concentração dos solutos nas soluções testadas foi 1\,g/L para o caso do dextrano e 20\,mg/L no caso do plasmídeo.
+
+Os ensaios de filtração foram realizados na célula de filtração Amicon 8010 (\emph{Millipore}), que tem uma geometria ``dead-end'' e 10\,mL de capacidade.
+\index{celula@célula de filtração|see{Amicon 8010, 8050}}
+A velocidade de agitação foi ajustada com calibração prévia. O fluxo de permeado foi controlado pela ação de uma bomba peristáltica da \emph{ISMATEC}, modelo \emph{ISM444}, que tem 8 cilindros rotativos o que assegura um fluxo praticamente não pulsado.
+\index{bomba peristáltica}%
+Com esta bomba e com um tubo apropriado, conseguem-se obter caudais muito reduzidos, o que possibilita minimizar os efeitos de polarização de concentração, que caso contrário poderiam dificultar a análise dos resultados experimentais, especialmente tendo em conta os reduzidos coeficientes de difusão dos solutos testados. 
+
+As membranas usadas foram duas membranas ``track-etched'' de policarbonato (TEPC) da \emph{Sterlitech}, com raios de poro de 15 e 40\,nm (valores nominais), uma membrana de poliacrilonitrilo da \emph{Millipore}, com ``cut-off'' de 300\,kDa (XM300) e uma membrana de PVDF da \emph{DSS/Alfa-Laval}, com 100\,kDa de ``cut-off'' (FS40PP).
+\index{track@``track-etched''}%
+\index{policarbonato}%
+\index{poliacrilonitrilo}%
+\index{PVDF}%
+\index{FS40PP}%
+As membranas XM300 e FS40PP foram previamente caracterizadas com solutos de referência pelo modelo dos poros simétricos (SPM), descrito em \cite{moraompa}, tendo-se obtido, respetivamente, os valores de 10.5 e 4.1\,nm para os raios de poro.
+\index{XM300}%
+
+Para estimar os coeficientes de transferência de massa, \coeficientemassa, usou-se a seguinte relação, válida para a célula de filtração usada \cite{opong,bowen97}:
+\index{coeficiente!de transferência de massa}%
+\begin{equation}
+\label{eq:21art1}
+\frac{\coeficientemassa \raiocelula}{\dinf}=0.23\left(\frac{\agitacao \raiocelula^{2}\densidade}{\viscosidade}\right)^{0.567}\left(\frac{\viscosidade}{\densidade \dinf}\right)^{0.33}  
+\end{equation}
+onde \dinf\ é o coeficiente de difusão, \agitacao\ é a velocidade de agitação (rad/s), \densidade\ é a densidade, \viscosidade\ é a viscosidade e \raiocelula\ é o raio da célula de filtração. Para evitar ter que determinar a viscosidade e a densidade das soluções assume-se que:
+\begin{equation}
+\label{eq:22art1}
+\coeficientemassa=A\agitacao^{0.567}
+\end{equation}
+onde $A$ é uma constante para uma dada solução. Assim, usando a equação~\ref{eq:20art1} na forma:
+\begin{equation}
+\label{eq:23art1}
+  \ln \left( \frac{1-\permobs}{\permobs} \right) = 
+	\ln \left( \frac{1-\permm}{\permm} \right) - \frac{\fluxo}{k}	
+\end{equation}
+a constante de proporcionalidade ``$A$'' pode ser obtida, para as soluções de plasmídeo e de dextrano, através do gráfico de $\ln (\frac{1-\permobs}{\permobs})$ vs $\agitacao^{-0.567}$.
+
+As permeações do dextrano T2000 (e dos solutos de referência usados para efetuar a caracterização das membranas) foram determinadas usando um detetor de índice de refração da \emph{Shodex}, modelo \emph{RI-71}, injetando diretamente as amostras.
+\index{indice@índice de refração}%
+\index{detetor de IR|see{índice de refração}}%
+O detetor foi previamente calibrado para cada soluto. Obtém-se uma excelente seletividade e reprodutibilidade com este método. As permeações do plasmídeo foram determinadas por medição da absorvância a 260\,nm, usando um espetrofotómetro da \emph{Pharmacia Biotech}, modelo \emph{Ultrospec 3000}.
+\index{absorvância}%
+\index{espetrofotómetro}%
+Cada amostra de permeado foi obtida pela filtração de 10\,mL da solução inicial; os primeiros 0.5\,mL de filtrado foram recolhidos para um primeiro eppendorf para serem descartados, e o seguinte 1\,mL recolhido para outro eppendorf para ser analisado (resultando assim num volume total de permeado de 1.5\,mL).
+\index{eppendorf}%
+O número de replicados para cada conjunto de condições experimentais variou consoante o grau de dispersão dos resultados. As várias repetições resultaram na obtenção de valores médios de \permobs\ com uma precisão de no mínimo $\pm 0.1$, com 95\% de confiança. 
+
+Deve ser notado que as membranas foram escolhidas de acordo com as simulações feitas previamente, estimando \permm\ pelo modelo e por estimativa dos parâmetros da equação~\ref{eq:21art1} para obter \coeficientemassa. No entanto, só após determinação experimental da constante ``$A$'' na equação~\ref{eq:22art1}, se obtiveram previsões satisfatórias de \permobs.
+
+\section{Resultados e discussão}
+Os valores experimentais da a constante ``$A$'' (equação~\ref{eq:22art1}), necessários para efetuar o cálculo dos coeficientes de transferência de massa no caso do dextrano T2000 e do plasmídeo \pUC\ linear, foram determinados variando a velocidade de agitação entre 60 e 300\,\minmum. Para o dextrano obteve-se $A=1.04\times 10^{-7}\,(\mathrm{rad/s})^{-0.567}$, e para o plasmídeo $A=6.87\times 10^{-8}\,(\mathrm{rad/s})^{-0.567}$. Estes valores foram assim usados para a determinação de \permobs, a partir dos valores de \permm, de acordo com a equação~\ref{eq:20art1}. A estimativa dos valores de \permm\ foi feita com a equação~\ref{eq:17art1}, a partir dos valores de \particao\ obtidos pela equação~\ref{eq:14art1}.
+
+Para as membranas de ultrafiltração, FS40PP e XM300, o tamanho médio do poro foi obtido pela determinação das permeações de solutos de referência, tal como referido na secção anterior. Para as membranas TEPC, a caracterização não foi necessária uma vez que a distribuição de tamanhos de poro é aproximadamente conhecida \cite{kim97}. Esta informação foi usada nos cálculos, assumindo uma distribuição log-normal de tamanho de poro.
+
+Os resultados dos ensaios de filtração para o dextrano nas diferentes membranas testadas, a 60 e a 100\,\minmum, estão representados na figura~\ref{fig:4art1}. No mesmo gráfico estão também representadas as previsões teóricas obtidas pelo modelo desenvolvido. Apesar dos resultados mostrarem alguma tendência para sobrestimar as permeações, o modelo prevê com algum sucesso o tamanho de poro para o qual ocorrem permeações intermédias. As permeações reduzidas obtidas com a membrana FS40PP ($\raioporo=4.1$\,nm) a baixas velocidades de agitação e as permeações elevadas no caso da membrana TEPC 0.08\,\micro m ($\raioporo=40$\,nm) foram satisfatoriamente previstas pelo modelo.
+\index{FS40PP!tamanho de poro}%
+\index{TEPC!tamanho de poro}%
+Para o plasmídeo, as previsões estão em melhor concordância com os resultados experimentais (figura~\ref{fig:5art1}). Este facto pode estar relacionado com o melhor conhecimento das propriedades físicas desta molécula, como por exemplo a massa molecular, que está melhor definida quando em comparação com o dextrano. Sabe-se que, em regra, os dextranos apresentam alguma polidispersividade.
+\index{polidispersividade}%
+\begin{figure}[!t]
+	\centering
+	\input{./tikz/fig4art1v2.tikz}
+	\caption[Permeação observada do dextrano T2000 nas diferentes membranas testadas]{Resultados experimentais e previsões teóricas da permeação observada (\permobs) do dextrano T2000 nas diferentes membranas testadas. ($\ast$) Previsão contabilizando o efeito da polidispersividade (ver texto).}
+	\label{fig:4art1}
+\end{figure}
+Para investigar melhor esta possibilidade, e para o caso da membrana XM300, foi simulada a polidispersividade assumindo uma mistura de dextranos com massas moleculares entre 600 e 3400\,k\daltons, com distribuição log-normal, o que resulta numa polidispersividade de 1.3 e massa molecular média (em peso) de 2000\,kDa, que se podem considerar valores típicos para dextranos lineares, de acordo com os dados apresentados em \cite{lechner}.
+\index{log-normal}%
+Como se pode ver na figura~\ref{fig:4art1}, um possível efeito da polidispersividade não parece ser responsável pelos desvios observados. Pode-se observar também que as permeações não aumentam de forma substancial, da forma como seria esperado, com o aumento do fluxo. Esta tendência sistemática sugere que possam ocorrer outros efeitos, com influência nas permeações, que não são contabilizados no modelo desenvolvido. Ainda assim, pelos resultado obtidos, é possível afirmar que o modelo proposto para a estimativa das permeações, para o caso de moléculas longas e flexíveis, é relativamente preciso, confirmando assim a possibilidade de se usar a equação~\ref{eq:17art1}. A ideia de que, para as condições estudadas, a convecção será o mecanismo de transferência de massa dominante, fica igualmente confirmada. Este importante resultado está de acordo com os resultados obtidos por Stein \et\ \cite{stein} no estudo do transporte de moléculas individuais de DNA através de canais nanofluídicos.
+\index{canais nanofluídicos}%
+Os autores determinaram a velocidade de moléculas de DNA com 8.8, 20.3 e 48.5\,\kilopb\ através de canais com dimensões comparáveis (em termos de ordem de grandeza; 175--3800\,nm) quando sujeitas a um fluxo convectivo. Os resultados mostram claramente uma dependência linear entre a velocidade das moléculas e o gradiente de pressão ao longo do canal, e que para canais estreitos não existe dependência da velocidade com o tamanho molecular. Adicionalmente, só acima de uma certa altura dos canais é que começam a aparecer diferenças nas velocidades das moléculas, e para moléculas maiores observaram-se velocidades mais elevadas. Estes resultados mostram que deverá ser aceitável considerar que moléculas grandes e flexíveis, ao permearem em poros de pequenas dimensões como os que se verificam em membranas, deverão ocupar a totalidade da área de secção reta dos mesmos, e assim moverem-se com a velocidade média do solvente. Isto significa que o fator de impedimento convectivo é igual a 1, e a permeação intrínseca para solutos flexíveis pode ser identificada com o coeficiente de partição. 
+
+\begin{figure}
+	\centering
+	\input{./tikz/fig5art1.tikz}
+	\caption[Permeação observada do plasmídeo \pUC\ na membrana TEPC 0.03\,\micro\meter]{Resultados experimentais e previsões teóricas da permeação observada (\permobs) do plasmídeo \pUC\ na membrana TEPC 0.03\,\micro\meter, para diferentes velocidades de agitação. É feita uma comparação entre as previsões feitas com diferentes estimativas de \distanciah: através de valores de coeficiente de difusão (\distanciah=270\,nm) e através do modelo WLC (\distanciah=294\,nm).}
+	\label{fig:5art1}
+\end{figure}
+
+\section{Conclusões}
+Neste capítulo foi desenvolvido um modelo simples para prever a permeação de duas moléculas lineares de elevada massa molecular, o dextrano T2000 e o plasmídeo \pUC, assumindo que o mecanismo de transporte dominante é a convecção. Para a aplicação do modelo, foram estimados coeficientes de partição usando um método de Monte-Carlo, em que se inclui o efeito de sucção à entrada do poro. Para gerar as moléculas foi utilizado o modelo de \fjc\ (FJC). 
+
+Os coeficientes de partição foram obtidos em função do rácio da distância média entre as extremidades da cadeia (\distanciah) e o raio do poro. Para estimar \distanciah, os coeficientes de difusão (ou os raios hidrodinâmicos) das moléculas têm que ser conhecidos. Para o caso de plasmídeos lineares propôs-se uma correlação a partir de dados recolhidos na literatura. Tal como previsto pelo modelo, observou-se que ambas as moléculas estudadas permeiam através de poros com dimensões muito inferiores aos seus raios de giração, tendo-se obtido excelentes previsões no caso do plasmídeo. Os coeficientes de transferência de massa dos solutos foram calculados pela relação $\coeficientemassa=A\agitacao^{0.567}$, com os valores da constante ``$A$'' a serem determinados experimentalmente para cada soluto. Para o caso do dextrano, as permeações determinadas experimentalmente são em regra mais baixas que as previstas pelo modelo, especialmente a fluxos mais elevados. Esta mesma tendência pode ser observada também para o plasmídeo, sendo no entanto os desvios menores e dentro do erro experimental. Assim, tendo em conta a simplicidade do modelo desenvolvido, e o facto de este poder ser facilmente aplicado na prática, uma vez que não é necessário saber \emph{a priori} nenhum parâmetro difícil de obter experimentalmente, pode-se considerar positiva a sua aplicação.

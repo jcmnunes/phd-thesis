@@ -1,0 +1,413 @@
+%!TEX root=tese.tex
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+\usepackage[utopia]{mathdesign}
+\usepackage[scaled]{beramono}
+\usepackage[a4paper,left=3.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{aecompl}
+\usepackage[center,nooneline,font={footnotesize}]{caption}
+\usepackage[pdftex]{graphicx}
+\usepackage{attachfile2}                                    
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[squaren,thinspace,textstyle]{SIunits}
+\usepackage[version=3]{mhchem}
+\usepackage{breqn}
+\usepackage{fancyvrb}
+\usepackage{booktabs}
+\usepackage{dcolumn}
+\usepackage{threeparttable}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{rotating}
+\usepackage{fancyhdr}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{diagbox}
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+\usepackage{etoolbox}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage{makeidx}
+\usepackage[notintoc,portuguese]{nomentblze}
+\usepackage{listings} 
+\usepackage{lipsum}
+\usepackage{upquote}
+\usepackage{amsthm}
+
+\DeclareGraphicsExtensions{.jpg,.png}
+\graphicspath{{.}{images/}}
+\definecolor{linkcol}{rgb}{0,0,0}
+\definecolor{citecol}{rgb}{0,0,0}
+
+%%%% Definidos por mim %%%%
+\providecommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}
+\providecommand{\mr}[1]{\mathrm{#1}}
+\providecommand{\tce}[1]{$\ce{#1}$}
+\providecommand{\pCAMBIA}{\emph{pCAMBIA-1303}}
+\providecommand{\et}{et al}
+\providecommand{\fluxocritico}{\ensuremath{J_{\mathrm{crit}}}}
+\providecommand{\fluxo}{\ensuremath{J_{\mathrm{V}}}}
+\providecommand{\fluxosoluto}{\ensuremath{J}}
+\providecommand{\kapace}{\ensuremath{K_{\mathrm{c}}}}
+\providecommand{\kapade}{\ensuremath{K_{\mathrm{d}}}}
+\providecommand{\cargamembrana}{\ensuremath{Q_{x}}}
+\providecommand{\porcento}{\,\%}
+\providecommand{\molar}{\,M}
+\providecommand{\kpb}{\ensuremath{\,\mathrm{kbp}}}
+\providecommand{\kilopb}{\ensuremath{\mathrm{kbp}}}
+\providecommand{\npb}{\ensuremath{\,\mathit{nbp}}}
+\providecommand{\numpb}{\ensuremath{\mathrm{nbp}}}
+\providecommand{\milimolar}{\ensuremath{\mathrm{\,mM}}}
+\providecommand{\deborahcritico}{\ensuremath{\mathrm{De}_{\mathrm{crit}}}}
+\providecommand{\deborah}{\ensuremath{\mathrm{De}}}
+\providecommand{\permeacaoobservada}{\ensuremath{S_{obs}}}
+\providecommand{\boltzman}{\ensuremath{k_{\mr{B}}}}
+\providecommand{\raioporo}{\ensuremath{r_{\mr{p}}}}
+\providecommand{\viscosidade}{\ensuremath{\eta}}
+\providecommand{\raiogiracao}{\ensuremath{r_{\mr{g}}}}
+\providecommand{\raiogiracaoinst}{\ensuremath{\raiogiracao^{*}}}
+\providecommand{\raiostokes}{\ensuremath{r_{\mr{s}}}}
+\providecommand{\raiosuperhelice}{\ensuremath{r_{H}}}
+\providecommand{\dinf}{\ensuremath{D_{\mathit{\infty}}}}
+\providecommand{\coeficientemassa}{\ensuremath{k}}
+\providecommand{\avogadro}{\ensuremath{N_{A}}}
+\providecommand{\reynolds}{\ensuremath{\mathrm{Re}}}
+\providecommand{\particao}{\ensuremath{\Phi}}
+\providecommand{\lambdah}{\ensuremath{\lambda_{\mr{h}}}}
+\providecommand{\lambdas}{\ensuremath{\lambda_{\mr{s}}}}
+\providecommand{\lambdag}{\ensuremath{\lambda_{\mr{g}}}}
+\providecommand{\distanciah}{\ensuremath{\left\langle h^{2}\right\rangle^{1/2}}}
+\providecommand{\lambdahfor}{\ensuremath{\distanciah\!\!/\raioporo}}
+\providecommand{\concentracao}{\ensuremath{C}}
+\providecommand{\concp}{\ensuremath{C_{\mathrm{p}}}}
+\providecommand{\concb}{\ensuremath{C_{\mathrm{b}}}}
+\providecommand{\concm}{\ensuremath{C_{\mathrm{m}}}}
+\providecommand{\permm}{\ensuremath{S_{\mathrm{m}}}}
+\providecommand{\permobs}{\ensuremath{S_{\mathrm{obs}}}}
+\providecommand{\concpi}{\ensuremath{C_{\mathrm{p,i}}}}
+\providecommand{\concbi}{\ensuremath{C_{\mathrm{b,i}}}}
+\providecommand{\concmi}{\ensuremath{C_{\mathrm{m,i}}}}
+\providecommand{\concMi}{\ensuremath{C_{\mathrm{M,i}}}}
+\providecommand{\permmi}{\ensuremath{S_{\mathrm{m,i}}}}
+\providecommand{\permobsi}{\ensuremath{S_{\mathrm{obs,i}}}}
+\providecommand{\perminf}{\ensuremath{S_{\infty}}}
+\providecommand{\permmum}{\ensuremath{S_{\mathrm{m,1}}}}
+\providecommand{\permmdois}{\ensuremath{S_{\mathrm{m,2}}}}
+\providecommand{\permmtres}{\ensuremath{S_{\mathrm{m,3}}}}
+\providecommand{\permobsum}{\ensuremath{S_{\mathrm{obs,1}}}}
+\providecommand{\permobsdois}{\ensuremath{S_{\mathrm{obs,2}}}}
+\providecommand{\permobstres}{\ensuremath{S_{\mathrm{obs,3}}}}
+\providecommand{\concmum}{\ensuremath{C_{\mathrm{m,1}}}}
+\providecommand{\concMum}{\ensuremath{C_{\mathrm{M,1}}}}
+\providecommand{\concmdois}{\ensuremath{C_{\mathrm{m,2}}}}
+\providecommand{\concMdois}{\ensuremath{C_{\mathrm{M,2}}}}
+\providecommand{\concmtres}{\ensuremath{C_{\mathrm{m,3}}}}
+\providecommand{\concMtres}{\ensuremath{C_{\mathrm{M,3}}}}
+\providecommand{\concbum}{\ensuremath{C_{\mathrm{b,1}}}}
+\providecommand{\concbdois}{\ensuremath{C_{\mathrm{b,2}}}}
+\providecommand{\concbtres}{\ensuremath{C_{\mathrm{b,3}}}}
+\providecommand{\concpum}{\ensuremath{C_{\mathrm{p,1}}}}
+\providecommand{\concpdois}{\ensuremath{C_{\mathrm{p,2}}}}
+\providecommand{\concptres}{\ensuremath{C_{\mathrm{p,3}}}}
+\providecommand{\numsegmento}{\ensuremath{n_{k}}}
+\providecommand{\comsegmento}{\ensuremath{l_{k}}}
+\providecommand{\registado}{\textsuperscript{\textregistered}}
+\providecommand{\vectorpos}{\ensuremath{\vec{r}_{i}}}
+\providecommand{\vectorcm}{\ensuremath{\vec{r}_{\mathrm{cm}}}}
+\providecommand{\contorno}{\ensuremath{L}}
+\providecommand{\kuhn}{\ensuremath{l_{K}}}
+\providecommand{\persis}{\ensuremath{a}}
+\providecommand{\forcaionica}{\ensuremath{I}}
+\providecommand{\inversodebye}{\ensuremath{\kappa}}
+\providecommand{\raioduplahelice}{\ensuremath{R_{\mathrm{DNA}}}}
+\providecommand{\cargaeletrica}{\ensuremath{z}}
+\providecommand{\bjerrum}{\ensuremath{l_{B}}}
+\providecommand{\densidadecarga}{\ensuremath{\xi}}
+\providecommand{\numeroeuler}{\ensuremath{\mathrm{e}}}
+\providecommand{\contornosuper}{\ensuremath{L_{s}}}
+\providecommand{\persissuper}{\ensuremath{a_{s}}}
+\providecommand{\agitacao}{\ensuremath{\omega}}
+\providecommand{\densidade}{\ensuremath{\rho}}
+\providecommand{\fracaomembrana}{\ensuremath{\theta}}
+\providecommand{\ctefaraday}{\ensuremath{F}}
+\providecommand{\ctegases}{\ensuremath{R}}
+\providecommand{\potencial}{\ensuremath{\Psi}}
+\providecommand{\atividade}{\ensuremath{a}}
+\providecommand{\potencialD}{\ensuremath{\Delta\Psi_{D}}}
+\providecommand{\Nadsorvido}{\ensuremath{N_{\mathrm{ads}}}}
+\providecommand{\potencialgrad}{\ensuremath{(d\Psi/dy)_{\mr{m}}}}
+\providecommand{\comporo}{\ensuremath{L}}
+\providecommand{\velocidadesolvente}{\ensuremath{v}}
+\providecommand{\velocidadesoluto}{\ensuremath{u}}
+\providecommand{\radialadimensional}{\ensuremath{\beta}}
+\providecommand{\massamolecular}{\ensuremath{M_\mathrm{w}}}
+\providecommand{\daltons}{\ensuremath{\mathrm{Da}}}
+\providecommand{\raiocelula}{\ensuremath{r_{\mathrm{cell}}}}
+\providecommand{\minmum}{\ensuremath{\mathrm{min^{-1}}}}
+\providecommand{\atrito}{\ensuremath{\zeta}}
+\providecommand{\potqui}{\ensuremath{\mu}}
+\providecommand{\fluxoporo}{\ensuremath{j_{\mathrm{V}}}}
+\providecommand{\caudal}{\ensuremath{Q}}
+\providecommand{\numporo}{\ensuremath{n_{p}}}
+\providecommand{\areamembrana}{\ensuremath{A_{\mathrm{m}}}}
+\providecommand{\porosidade}{\ensuremath{\varepsilon}}
+\providecommand{\tortuosidade}{\ensuremath{\tau}}
+\providecommand{\commembrana}{\ensuremath{L_{\mathrm{m}}}}
+\providecommand{\permhidra}{\ensuremath{L_{\mathrm{p}}}}
+\providecommand{\potencialms}{\ensuremath{\Upsilon}}
+\providecommand{\conctotal}{\ensuremath{C_{\mathrm{T}}}}
+\providecommand{\peclet}{\ensuremath{\mathrm{Pe}}}
+\providecommand{\euler}{\ensuremath{\mathrm{e}}}
+\providecommand{\volumeparcial}{\ensuremath{V_{\mathrm{s}}}}
+\providecommand{\sedimentacao}{\ensuremath{s}}
+\providecommand{\sulfatoamonio}{\ensuremath{\mathrm{(NH_{4})_{2}SO_{4}}}}
+\providecommand{\volumeparcial}{\ensuremath{V_{\mathrm{s}}}}
+\providecommand{\sedimentacao}{\ensuremath{s}}
+\providecommand{\remocaoum}{\ensuremath{R_{1}}}
+\providecommand{\remocaodois}{\ensuremath{R_{2}}}
+\providecommand{\cacldois}{\ensuremath{\mathrm{CaCl_{2}}}}
+\providecommand{\volretencao}{\ensuremath{V_{\mathrm{R}}}}
+\providecommand{\fjc}{cadeias de ligação livre}
+\providecommand{\Fjc}{Cadeias de rotação livre}
+\providecommand{\closedsc}{cadeias segmentadas fechadas}
+\providecommand{\Closedsc}{Cadeias segmentadas fechadas}
+\providecommand{\wlc}{cadeias ``worm-like''}
+\providecommand{\Wlc}{Cadeias ``worm-like''}
+\providecommand{\superenrolada}{super-enrolada}
+\providecommand{\pVAX}{\emph{pVAX1-LacZ}}
+\providecommand{\pUC}{\emph{pUC19}}
+\providecommand{\ecoli}{\emph{E.\ coli}}
+\providecommand{\ecolidh}{\emph{E.\ coli DH5$\alpha$}}
+\providecommand{\tracketched}{``track-etched''}
+\providecommand{\eppendorf}{Eppendorf}
+\providecommand{\espectrofotometro}{espectrofotómetro}
+\providecommand{\Espectrofotometro}{Espectrofotómetro}
+
+% TIKZ
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{patterns}
+\pgfplotsset{x tick label style={/pgf/number format/fixed}} 
+\pgfplotsset{y tick label style={/pgf/number format/fixed}} 
+\newlength{\hatchspread}
+\newlength{\hatchthickness}
+\newlength{\hatchshift}
+\newcommand{\hatchcolor}{}
+\tikzset{hatchspread/.code={\setlength{\hatchspread}{#1}},
+         hatchthickness/.code={\setlength{\hatchthickness}{#1}},
+         hatchshift/.code={\setlength{\hatchshift}{#1}},% must be >= 0
+         hatchcolor/.code={\renewcommand{\hatchcolor}{#1}}}
+\tikzset{hatchspread=3pt,
+         hatchthickness=0.4pt,
+         hatchshift=0pt,% must be >= 0
+         hatchcolor=black}
+\pgfdeclarepatternformonly[\hatchspread,\hatchthickness,\hatchshift,\hatchcolor]% variables
+   {custom north west lines}% name
+   {\pgfqpoint{\dimexpr-2\hatchthickness}{\dimexpr-2\hatchthickness}}% lower left corner
+   {\pgfqpoint{\dimexpr\hatchspread+2\hatchthickness}{\dimexpr\hatchspread+2\hatchthickness}}% upper right corner
+   {\pgfqpoint{\dimexpr\hatchspread}{\dimexpr\hatchspread}}% tile size
+   {% shape description
+    \pgfsetlinewidth{\hatchthickness}
+    \pgfpathmoveto{\pgfqpoint{0pt}{\dimexpr\hatchspread+\hatchshift}}
+    \pgfpathlineto{\pgfqpoint{\dimexpr\hatchspread+0.15pt+\hatchshift}{-0.15pt}}
+    \ifdim \hatchshift > 0pt
+      \pgfpathmoveto{\pgfqpoint{0pt}{\hatchshift}}
+      \pgfpathlineto{\pgfqpoint{\dimexpr0.15pt+\hatchshift}{-0.15pt}}
+    \fi
+    \pgfsetstrokecolor{\hatchcolor}
+    \pgfusepath{stroke}
+   }
+
+\usetikzlibrary{shadows}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+\usetikzlibrary{decorations}
+\usepgflibrary{decorations.pathreplacing}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+\hypersetup
+{
+pagebackref,
+hyperindex=true,
+bookmarksopen=true,
+pdftitle="Tese",
+pdfauthor="J. Nunes",
+pdfsubject="Tese",
+pdfmenubar=true,
+pdfhighlight=/O,
+colorlinks=true,
+pdfpagemode=UseNone,
+pdfpagelayout=SinglePage,
+pdffitwindow=true,
+linkcolor=linkcol,
+citecolor=citecol,
+urlcolor=linkcol
+}
+
+% Settings
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\def\abs{\operatorname{abs}}
+\def\argmax{\operatornamewithlimits{arg\,max}}
+\def\argmin{\operatornamewithlimits{arg\,min}}
+\def\diag{\operatorname{Diag}}
+\newcommand{\eqRef}[1]{(\ref{#1})}
+
+% Header and footer
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyhead{}
+\fancyfoot[LE,RO]{\thepage}
+\newcommand{\cabecalho}[1]{\fancyhead[RE,LO]{\bfseries{#1}}}
+\let\headruleORIG\headrule
+\renewcommand{\headrule}{\color{black} \headruleORIG}
+\renewcommand{\headrulewidth}{0pt}
+
+% Fonts
+\newcommand{\capitulos}{\fontsize{22pt}{10pt}\bfseries\selectfont}
+\newcommand{\titulos}{\fontsize{18pt}{10pt}\bfseries\selectfont}
+\newcommand{\seccao}{\fontsize{14pt}{20pt}\bfseries\selectfont}
+\newcommand{\subseccao}{\fontsize{12pt}{14pt}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{9pt}{12pt}\selectfont}
+\renewcommand{\Huge}{\titulos}
+
+% Cover
+\newcommand{\rostoubi}{\fontsize{14pt}{14pt}\selectfont}
+\newcommand{\rostotitulo}{\fontsize{18pt}{18pt}\selectfont}
+\newcommand{\rostosubtit}{\fontsize{16pt}{16pt}\selectfont}
+\newcommand{\rostonomes}{\fontsize{14pt}{14pt}\selectfont}
+\newcommand{\rostooutros}{\fontsize{12pt}{12pt}\selectfont}
+\newcommand{\rostofac}{\fontsize{12.5pt}{12.5pt}\selectfont}
+
+\addto\captionsportuguese{\renewcommand*{\contentsname}{Índice}}
+\addto\captionsportuguese{\renewcommand*{\indexname}{Índice Remissivo}}
+
+\arrayrulecolor{black}
+
+% Page style plain
+\fancypagestyle{plain}{
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+
+% Blank pages must be numbered
+\makeatletter
+
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else%
+  \hbox{}%
+  \thispagestyle{plain}%
+  \newpage%
+  \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+
+\makeatother
+
+\AtBeginEnvironment{tabular}{\footnotesize}
+
+% Equation number centered
+\makeatletter
+\def\place@tag{\quad\boxz@}
+\makeatother
+\let\equation\align
+\let\endequation\endalign
+
+\newenvironment{maxime}[1]
+{
+\vspace*{0cm}
+\hfill
+\begin{minipage}{0.5\textwidth}%
+\hrulefill $\:$ {\bf #1}\\
+\it 
+}%
+{%
+\hrulefill
+\vspace*{0.5cm}%
+\end{minipage}
+}
+
+\newenvironment{bulletList}%
+{ \begin{list}%
+  {$\bullet$}%
+  {\setlength{\labelwidth}{25pt}%
+   \setlength{\leftmargin}{30pt}%
+   \setlength{\itemsep}{\parsep}}}%
+{ \end{list} }
+
+\newtheorem{definition}{Définition}
+\renewcommand{\epsilon}{\varepsilon}
+
+% Centered page environment
+\newenvironment{vcenterpage}
+{\newpage\vspace*{\fill}\renewcommand{\headrulewidth}{0pt}}
+{\vspace*{\fill}\par\pagebreak}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+% Listings style
+\definecolor{keycordois}{RGB}{38,139,210}
+\definecolor{keycortres}{RGB}{38,139,210}
+\definecolor{comcor}{RGB}{147,161,161}
+\definecolor{strcor}{RGB}{42,161,152}
+\definecolor{ncor}{RGB}{101,123,131}
+\definecolor{backcor}{RGB}{253,246,227}
+\definecolor{keycor}{RGB}{133,153,0}
+
+\lstdefinelanguage{matlabfloz}{%
+  alsoletter={...},%
+  morekeywords={%                       % keywords
+  break,case,catch,continue,elseif,else,end,for,function,global,%
+  if,otherwise,persistent,return,switch,try,while,...},%
+  keywords=[2]{np_4c,np_pdna_3c,mantexpnt,fiflex,mem_rp,dpdnapra,%
+  iscres,kamicon8010,kc_dech,kd_dech,manning,nernst3c,nernst4c,np_rna_3c,%
+  peclet,propRNA,propSAL,rgcsc,rk4arg,sm_hindered,sm2sobs,%
+  stokes_einstein,testODE_3c,testODE_4c,visc,sobs_hs,sobs_flex},
+  %keywords=[3]{\n},
+  comment=[l]\%,%                       % comments
+  morecomment=[l]...,%                  % comments
+  morestring=[m]',%                       % strings 
+}[keywords,comments,strings]%
+
+% Listings package
+\lstset{%
+basicstyle=\color{ncor}\footnotesize\ttfamily,
+language=matlabfloz,
+deletekeywords={cond,expo},
+numberstyle=\tiny,
+numbersep=5pt,
+tabsize=2,
+extendedchars=true,
+breaklines=true,
+keywordstyle=[1]\color{keycor},
+frame=b,
+commentstyle=\color{comcor},         
+keywordstyle={[2]\color{keycordois}},
+%keywordstyle={[3]\color{keycortres}},
+stringstyle=\color{strcor}\ttfamily,
+showspaces=false,
+showtabs=false,
+xleftmargin=17pt,
+framexleftmargin=17pt,
+framexrightmargin=5pt,
+framexbottommargin=4pt,
+backgroundcolor=\color{backcor},
+showstringspaces=false
+}
+% Listings legend name
+\renewcommand{\lstlistingname}{Função}
+% Listings legend
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+\newcolumntype{d}[1]{D{,}{.}{#1}}
+\newcolumntype{z}[1]{D{?}{\,\pm\,}{#1}}
+\theoremstyle{definition}
+\newtheorem{rotina}{Rotina}[chapter]
+\newlength\figureheight 
+\newlength\figurewidth 

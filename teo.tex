@@ -1,0 +1,662 @@
+%!TEX root=tese.tex
+\chapter{Fundamentos Teóricos}
+\label{chap:teov3}
+Neste capítulo são discutidas as equações e fundamentos teóricos inerentes à realização do presente trabalho. A abordagem incide, naturalmente, nos processos de membranas usados, nomeadamente a microfiltração (MF) e a ultrafiltração (UF). Não está no âmbito do presente trabalho fazer uma introdução aos processos de MF e UF, sendo esta uma área de conhecimento em constante expansão e onde existe uma enorme diversidade de aplicações e consequentemente de tipo de equipamentos, o que conduziria a uma extensa exposição. Contudo, existem referências bibliográficas onde estes processos são apresentados e amplamente discutidos \cite{mulder,rathore,reis,maurel}, desde os métodos de síntese de membranas, os vários tipos de aplicações e de equipamentos, denominados módulos de filtração, e os principais avanços científicos que têm vindo a ser efetuados.\index{tecnologias de membranas!referências bibliográficas} 
+
+\section{Modelo dos poros cilíndricos}
+\label{sec:cilindricos}\index{modelo!dos poros cilíndricos}
+Os processos de MF e UF são muito semelhantes, são ambos processos de membranas em que a principal força motriz é o diferencial de pressão. As membranas são consideradas porosas, o que significa que o transporte de massa se dá, na sua totalidade, através dos poros. As membranas de microfiltração apresentam poros com diâmetros que podem ir dos 0.1 aos 10\,\micro m, na grande maioria dos casos. Por esse motivo, os processos de microfiltração são muito utilizados para proceder a separações sólido-líquido e a operações de esterilização. As membranas de UF, por sua vez, apresentam poros de menores dimensões, por regra entre 2 e 100\,nm. Os processos de ultrafiltração podem ser usados num grande número de aplicações, por exemplo operações de concentração, de troca de tampão, e de dessalinização e purificação de soluções de macromoléculas.\index{microfiltração!tamanhos de poro}\index{ultrafiltração!tamanhos de poro}  
+
+Os componentes da mistura a filtrar podem apresentar diferentes permeações consoante os seus tamanhos (exclusão molecular) e/ou as suas características físico-químicas, de onde se destaca a sua carga elétrica. A estrutura da grande maioria das membranas de MF e UF é complexa (ver figura~\ref{fig:mpcilindricos}). Tentar modelar essa mesma estrutura com um elevado grau de precisão é bastante difícil ou mesmo impossível. Por esse motivo, surge a necessidade de elaborar modelos mais simples, sendo o mais utilizado o modelo de poros cilíndricos (figura~\ref{fig:mpcilindricos}). Neste modelo, considera-se que os poros apresentam uma área de secção reta uniforme e perpendicular à superfície da membrana\footnote{Dentro do modelo dos poros cilíndricos podem ser considerados alguns melhoramentos que não complicam demasiado a análise (ver \cite{moraompa,mulder}).}. Como se poderá constatar, considerar os poros como cilíndricos permite obter uma interpretação teórica de vários fenómenos durante processos de MF e UF,\ o que tem utilidade na interpretação de resultados e elaboração de modelos com capacidade de previsão. 
+
+\begin{figure}
+	\centering
+	\input{./tikz/estrutura_membrana.tikz}
+	\caption[Desvio ao modelo de poros cilíndricos]{Ilustração do desvio ao modelo ideal de poros cilíndricos apresentado por membranas de MF e UF\@. A estrutura de uma membrana real pode diferir significativamente da situação ideal, por exemplo contendo poros não cilíndricos, poros fechados e poros comunicantes.}
+	\label{fig:mpcilindricos}
+\end{figure}
+
+O desenvolvimento teórico descrito neste capítulo é assim baseado no modelo dos poros cilíndricos. Considera-se igualmente que os coeficientes de transferência de massa, muito dependentes da geometria do módulo de membranas utilizado, são conhecidos ou podem ser determinados experimentalmente.
+
+\section{Permeabilidade de membranas de MF e UF} % (fold)
+\label{sec:teo1}
+\index{ultrafiltração!permeabilidade}
+\index{microfiltração!permeabilidade}
+As membranas de MF e UF são consideradas membranas porosas, isto é, na sua estrutura existem poros de pequenas dimensões por onde ocorre, na sua totalidade, o transporte de massa. Excluídos deste processo de transferência de massa estão os solutos cujas dimensões e/ou carga elétrica não lhes permitam permear através desta estrutura porosa. Se os poros forem considerados cilíndricos, o fluxo de líquido pode ser relacionado com o diferencial de pressão ao longo da membrana através de um simples balanço de quantidade de movimento. Se o escoamento através de um poro cilíndrico, perpendicular à superfície da membrana, for laminar (como é geralmente o caso em processos de MF e UF), e estiver completamente desenvolvido, o perfil de velocidade é função da coordenada radial adimensional, \radialadimensional ($=r/\raioporo$) \cite{bird}:\index{coordenadas!radial adimensional}
+\begin{equation}
+ 	\label{eq:bird}
+ 	v(\radialadimensional)=2\fluxoporo(1-\radialadimensional^2)
+ \end{equation}
+\index{velocidade!fluido num poro} 
+onde $v$ é a velocidade do líquido (função de \radialadimensional) e \fluxoporo\ é o fluxo de líquido no poro dado por:
+\begin{equation}
+	\label{eq:fluxoporo}
+	\fluxoporo=\frac{\raioporo^2}{8\viscosidade\comporo}\Delta p
+\end{equation}
+\index{equação!Hagen-Poiseuille}\index{fluxo!poro}%
+onde $\Delta p$ representa o diferencial de pressão ao longo do poro, \raioporo\ o raio do poro, \viscosidade\ a viscosidade e \comporo\ o comprimento do poro. A equação~\ref{eq:fluxoporo} é conhecida como a equação de Hagen-Poiseuille, e um escoamento que obedeça à referida equação é denominado como um escoamento de Poiseuille.\index{Hagen-Poiseuille} 
+Uma quantidade de maior interesse em processos de MF e UF é o caudal de filtração por unidade de área de membrana, \fluxo, normalmente denominado fluxo de filtração. Considerando que a membrana contém $n_p$ poros cilíndricos paralelos, todos com raio \raioporo, então \fluxo\ é dado por:\index{fluxo!filtração}
+\begin{equation}
+\begin{aligned}
+	\label{eq:fluxopoise}
+	\caudal &=\fluxo\areamembrana = \fluxoporo n_p\pi\raioporo^2 \\
+     \fluxo&=\porosidade\fluxoporo
+\end{aligned}
+\end{equation}\index{area@área!membrana}%
+onde \caudal\ é o caudal (volumétrico) de filtração, \areamembrana\ é a área total da superfície da membrana e \porosidade\ é a fração da área total de membrana ocupada pelos poros, denominada porosidade ($\porosidade=n_p\pi\raioporo^2/\areamembrana$).\index{porosidade}\index{caudal volumétrico} 
+Assim, pelas equações~\ref{eq:fluxoporo}~e~\ref{eq:fluxopoise}, o fluxo de filtração é dado por:
+\begin{equation}
+ 	\label{eq:fluxopoisec}
+ 	\fluxo=\frac{\porosidade\raioporo^2}{8\viscosidade\comporo}\Delta p
+\end{equation} 
+A equação~\ref{eq:fluxopoisec} pode ainda ser modificada pela inclusão de um parâmetro \tortuosidade\ (tortuosidade) que possa contabilizar o afastamento à situação ideal de se terem poros perpendiculares à superfície da membrana \cite{mulder}.\index{tortuosidade}
+Assim, se o comprimento médio dos poros numa situação não ideal for $\overline{\comporo}$ e a espessura da membrana for \commembrana, o parâmetro tortuosidade é definido como $\tortuosidade=\overline{\comporo}/\commembrana$, e a equação~\ref{eq:fluxopoisec} vem assim:
+\begin{equation}
+	\label{eq:poisemod}
+	\fluxo=\frac{\porosidade\raioporo^2}{8\viscosidade\tortuosidade\commembrana}\Delta p
+\end{equation}
+É importante notar que o parâmetro \tortuosidade\ deve ser visto como um parâmetro empírico, uma vez que a equação~\ref{eq:bird} só é válida para poros paralelos à direção do escoamento. A equação~\ref{eq:poisemod} indica que o fluxo de líquido através da membrana é diretamente proporcional ao diferencial de pressão. Com exceção da viscosidade, a constante de proporcionalidade é apenas função de características intrínsecas da membrana e é designada por permeabilidade hidráulica (\permhidra).\index{permeabilidade hidráulica} 
+Assim a equação~\ref{eq:poisemod} pode ser reescrita da seguinte forma \cite{latu09}:
+\begin{equation}
+	\label{eq:permhidro}
+	\fluxo=\permhidra\Delta p
+\end{equation}
+A permeabilidade hidráulica é uma característica específica de cada membrana e a sua determinação permite aferir o grau de colmatação. Importa também salientar que durante a filtração de soluções que contenham solutos que sejam parcialmente (ou totalmente) retidos pela membrana, a relação linear entre o fluxo de filtração e a pressão aplicada não é verificada experimentalmente, o que se deve em parte à ocorrência de um aumento de concentração destes solutos junto à membrana, um fenómeno conhecido como polarização de concentração, discutido na secção~\ref{sec:filmepol}. 
+% section teo1 (end)
+
+\section{Equações de Maxwell-Stefan}
+\label{sec:ems}\index{Maxwell-Stefan}
+O transporte de massa em processos de MF e UF pode ser descrito segundo várias abordagens. Uma abordagem possível é através das equações de Maxwell-Stefan (MS). Uma descrição pormenorizada destas equações pode ser encontrada na literatura \cite{wesslivro,krishna,noordman,taylor}. Em termos qualitativos, as equações de MS indicam que, em condições de estado estacionário, a força motriz aplicada num componente de uma mistura é contrabalançada pela força de atrito provocada pelo movimento relativo deste componente na mistura. Para um dado componente $i$ numa mistura de vários componentes $j$ as equações de MS assumem a seguinte forma (ver igualmente a figura~\ref{fig:MSteste}):
+\begin{figure}
+\centering
+\input{./tikz/MSteste.tikz}
+\caption{Equações de Maxwell-Stefan.}
+\label{fig:MSteste}
+\end{figure}
+\begin{equation}
+	\label{eq:ms1}
+	\vec{F_{i}}=\sum_{j\neq i} \atrito_{i,j}x_{j}(\vec{u_{i}}-\vec{u_{j}})
+\end{equation}
+\index{equação!Maxwell-Stefan}%
+onde $\vec{F_{i}}$ é a força motriz por mole do componente $i$, $\atrito_{i,j}$ é o coeficiente de atrito molar entre $i$ e $j$, $x_{j}$ é a fração molar de $j$, $\vec{u_{i}}$ é a velocidade do componente $i$ e $\vec{u_{j}}$ a velocidade do componente $j$. As velocidades que figuram na equação~\ref{eq:ms1} são velocidades difusivas. Para além da velocidade difusiva, um componente pode ter igualmente uma velocidade convectiva ($\vec{v}$) provocada pelo movimento da mistura como um todo. Assim, a velocidade total, $\vec{w}$, de um determinado componente $i$ de uma mistura é dada pela soma destas duas velocidades:\index{velocidade!difusiva}\index{velocidade!convectiva}\index{velocidade!total}
+\begin{equation}
+	\label{eq:veltotal}
+	\vec{w}_{i}=\vec{u}_{i}+\vec{v}_{i}
+\end{equation}
+A força motriz $\vec{F}_{i}$ é dada pelo simétrico do gradiente de um potencial (\potencialms):
+\begin{equation}
+ 	\label{eq:mspot}
+ 	-\nabla\potencialms_i=\sum_{j\neq i} \atrito_{i,j}x_{j}(\vec{u_{i}}-\vec{u_{j}})
+ \end{equation}\index{potencial!Maxwell-Stefan}%
+O potencial que figura na equação~\ref{eq:mspot} representa a soma dos vários potenciais referentes ao componente $i$, como por exemplo o potencial gravítico, centrífugo ou eletroquímico, sendo este último o único com interesse no presente trabalho. O potencial eletroquímico de um dado componente $i$ é dado por \cite{bowen02}:
+\begin{equation}
+\label{eq:potq}
+\potqui_{i}=\ctegases T\ln\atividade_{i} + \cargaeletrica_{i}\ctefaraday\potencial + V_{i}p + \mathrm{constante} 	
+\end{equation}\index{potencial!eletroquímico}\index{volume!parcial molar}% 
+onde $\potqui_{i}$ é o potencial eletroquímico da espécie $i$, \ctegases\ é a constante dos gases perfeitos, $T$ é a temperatura absoluta, $\atividade_{i}$ é a atividade, $\cargaeletrica_{i}$ é a valência elétrica, \ctefaraday\ é a constante de Faraday, \potencial\ o potencial elétrico, $V_{i}$ o volume parcial molar e $p$ a pressão. A força motriz é assim dada pelo gradiente espacial do potencial eletroquímico, o que para uma situação de transporte de massa unidimensional, segundo uma coordenada $y$, resulta em:
+\begin{equation}
+	\label{eq:formo}
+	F_{i}=-\frac{d\potqui_{i}}{dy}=-\left(\ctegases T\frac{d\ln \atividade_{i}}{dy}+\cargaeletrica_{i}\ctefaraday\frac{d\potencial}{dy}+V_{i}\frac{dp}{dy}\right)
+\end{equation}
+A dependência do potencial eletroquímico com a pressão pode ser importante, em especial quando o volume molar do componente é elevado. No entanto é por vezes desprezada tendo em conta a maior dependência com a atividade e potencial elétrico. No presente trabalho opta-se por desprezar o termo referente à pressão para simplificar um pouco a formulação das equações e agilizar os cálculos inerentes.
+
+As equações de MS representadas na equação~\ref{eq:mspot} podem ser enormemente simplificadas considerando algumas aproximações.\index{solução!diluída} Em primeiro lugar, assumindo que as soluções são diluídas e ideais, as atividades dos componentes são iguais às suas frações molares. 
+\index{Maxwell-Stefan!simplificações da equação}
+Por outro lado, sendo soluções diluídas, assume-se que a força de atrito sobre um soluto $i$ da solução, dada pelo segundo membro da equação~\ref{eq:mspot}, é aproximadamente igual à força de atrito resultante do seu movimento relativo em relação ao solvente. A justificação para esta aproximação passa por verificar que a força de atrito entre solutos é proporcional à fração molar dos mesmos, frações molares estas, que para o caso de soluções diluídas assumem valores reduzidos (ver figura~\ref{fig:soldil}). Por fim, assume-se que o transporte de massa pode ser aproximadamente descrito por uma abordagem unidimensional segundo uma coordenada $y$. Assim, as equações de MS assumem a seguinte forma simplificada:
+\begin{equation}
+  	\label{eq:mssim}
+  	-\left(\ctegases T\frac{d\ln x_{i}}{dy}+\cargaeletrica_{i}\ctefaraday\frac{d\potencial}{dy}\right)=\atrito_{i,w}x_{w}(u_{i}-u_{w})
+\end{equation}
+\begin{figure}[t]
+\centering
+\input{./tikz/soldil.tikz}
+\caption[Representação de uma solução diluída de dois solutos]{Representação de uma solução diluída de dois solutos (1 e 2) num solvente ($w$). Para soluções diluídas, as forças de atrito entre solutos podem ser desprezadas devido às reduzidas frações molares dos mesmos.}
+\label{fig:soldil}
+\end{figure}%
+O índice $w$ é usado para indicar que a propriedade se refere ao solvente, que no caso deste trabalho é a água. A equação~\ref{eq:mssim} pode ainda ser simplificada considerando que, como as soluções são diluídas, $x_{w}\approx 1$. Por outro lado, assume-se que a velocidade difusiva do solvente é nula $u_w\approx 0$. Esta suposição está de acordo com a opção de se escolher a velocidade do solvente como velocidade de referência, discutida por Taylor e Krishna \cite{taylor}. Assim, tendo em conta a equação~\ref{eq:veltotal}, obtém-se por fim:
+\begin{equation}
+	\label{eq:mssimples}
+	-\left(\ctegases T\frac{d\ln x_{i}}{dy}+\cargaeletrica_{i}\ctefaraday\frac{d\potencial}{dy}\right)=\atrito_{i,w}(w_{i}-v_{i})
+\end{equation}
+A velocidade convectiva do componente $i$ ($v_{i}$) nem sempre assume o mesmo valor da velocidade convectiva do solvente, em especial quando a solução se encontra confinada como é o caso na permeação através de poros de membranas. No entanto as duas velocidades são proporcionais, sendo a constante de proporcionalidade denominada seletividade convectiva ($\alpha_i$) \cite{noordman}:
+\index{seletividade!convectiva}
+\begin{equation}
+ 	\label{eq:alfa}
+ 	v_i=\alpha_i v_w
+ \end{equation} 
+Na secção~\ref{sec:restringido} será abordada uma situação em que $\alpha_i$ é diferente de 1. Pode-se ainda referir que o coeficiente de atrito, \atrito, pode ser facilmente relacionado com o coeficiente de difusão, $D$, através da seguinte equação \cite{wesslivro,taylor,krishna}\index{coeficiente!de atrito molar}
+\index{coeficiente!de difusão}
+\footnote{A grande maioria dos valores do coeficiente de difusão de solutos reportados na literatura são coeficientes de difusão de Fick. Em condições não ideais, o coeficiente de difusão de Fick não é igual ao coeficiente de difusão que figura nas equações de MS \cite{wesslivro}. No entanto, no âmbito deste trabalho assume-se que os dois coeficientes são iguais, como resultado de se considerarem as soluções como ideais.}:
+\begin{equation}
+	\label{eq:DeA}
+	\atrito=\frac{RT}{D}
+\end{equation} 
+
+Uma primeira aplicação da equação~\ref{eq:mssimples}, que serve simultaneamente como exemplo, é a dedução da equação de Stokes-Einstein. Para isso, considera-se uma solução não confinada, diluída e ideal, de um soluto com dimensões suficientemente superiores às do solvente para que o seja possível tratar como uma partícula hidrodinâmica. Considera-se que existe um gradiente de concentração do soluto, que se assume unidimensional segundo $y$, e que a solução se encontra em repouso, o que resulta numa velocidade convectiva de soluto nula\footnote{Não é necessário supor que o gradiente de concentração do soluto é unidimensional para efetuar a presente dedução. O resultado obtido será o mesmo considerando o gradiente tridimensional.}. Nestas condições, considerando que o soluto é neutro ($\cargaeletrica=0$), a equação~\ref{eq:mssimples} pode ser escrita na seguinte forma:
+\begin{equation}
+ 	\label{eq:dedse1}
+ 	-\ctegases T\frac{d\ln x}{dy}=\atrito u
+ \end{equation} 
+Note-se que como a velocidade convectiva do soluto é nula, a velocidade total é igual à velocidade difusiva. Multiplicando ambos os membros da equação pela concentração do soluto, $x\conctotal$, em que \conctotal\ é a concentração molar total da solução, obtém-se:
+\begin{equation}
+	\label{eq:dedse2}
+	-\ctegases T\frac{dC}{dy}=\atrito J
+\end{equation}
+onde $J$ é o fluxo difusivo molar de soluto ($J=x\conctotal u$). Se o soluto for considerado esférico, o coeficiente de atrito pode ser obtido pela lei de Stokes (figura~\ref{fig:MSstokes}):
+\begin{figure}
+\centering
+\input{./tikz/MSstokes.tikz}
+\caption[Coeficiente de atrito para uma solução de um soluto esférico]{Ilustração do coeficiente de atrito para uma solução de um soluto esférico. A força de atrito por mol de soluto é igual à força de atrito de uma molécula (esférica), dada pela lei de Stokes, multiplicada pela número de Avogadro.}
+\label{fig:MSstokes}
+\end{figure}
+\begin{equation}
+	\label{eq:leistokes}
+	\atrito=6\pi\viscosidade\raiostokes\avogadro
+\end{equation}
+onde \raiostokes\ é o raio do soluto e \avogadro\ é o número de Avogadro. Assim, a equação~\ref{eq:dedse2}, após inclusão da equação~\ref{eq:leistokes}, resulta em:
+\begin{equation}
+	\label{eq:dedse3}
+	\frac{\boltzman T}{6\pi\viscosidade\raiostokes}=\frac{-J}{dC/dy}
+\end{equation}
+O segundo membro da equação anterior não é mais que o coeficiente de difusão do soluto ($D$) pela primeira lei de Fick, obtendo-se assim a equação de Stokes-Einstein:\index{equação!Stokes-Einstein}
+\begin{equation}
+	\label{eq:stokesein}
+	D=\frac{\boltzman T}{6\pi\viscosidade\raiostokes}
+\end{equation}
+Esta equação é importante no âmbito do presente trabalho porque permite relacionar o coeficiente de difusão de um soluto com as suas dimensões, representadas por \raiostokes.\index{raio!hidrodinâmico} 
+Para um dado soluto, este parâmetro pode ser visto como o raio de uma esfera com igual difusividade, e é denominado o raio hidrodinâmico. Uma conclusão importante a tirar da equação anterior é o facto do coeficiente de difusão de solutos ser inversamente proporcional às suas dimensões. 
+
+O transporte de massa em operações com membranas é muito influenciado pelas condições hidrodinâmicas do escoamento, o que leva à necessidade de formular um modelo hidrodinâmico para permitir a aplicação das equações de MS. Na secção seguinte será abordado o modelo usado neste trabalho, o modelo do filme, sendo também discutido o fenómeno de polarização de concentração.  
+
+\section{Polarização de concentração e modelo do filme} % (fold)
+\label{sec:filmepol}\index{polarização de concentração}
+O transporte de massa através de membranas de micro e ultrafiltração pode ser dividido em duas fases: o transporte de componentes até à superfície da membrana e o transporte de componentes através dos poros. No transporte de componentes até à superfície da membrana, a solução não se encontra confinada em espaços pequenos, e o transporte pode ser descrito pelas equações de Maxwell-Stefan (MS) apresentadas na secção~\ref{sec:ems}. O mesmo não se passa durante a permeação em poros de membranas, onde o confinamento da mistura produz efeitos quer ao nível da difusão, quer ao nível da convecção, tal como discutido na secção~\ref{sec:restringido}. Nesta secção será abordada a primeira etapa, em que se procura determinar o perfil de concentração dos vários componentes da solução a ser filtrada, desde o seio da solução até à superfície da membrana. Para isso é preciso aplicar as equações de transporte, o que é apenas possível se for definido um modelo hidrodinâmico. Uma possibilidade é o denominado modelo do filme (ver figura~\ref{fig:modfilme}). Neste modelo, assume-se que desde uma distância da membrana superior a um determinado valor $\delta$ existe turbulência no seio do líquido, o que impossibilita o desenvolvimento de gradientes de concentração.\index{espessura camada de polarização} 
+Para distâncias inferiores a esse valor (para y entre 0 e $\delta$, ver figura~\ref{fig:modfilme}), assume-se que se forma um filme de líquido onde se localiza toda a resistência ao transporte de massa\footnote{Uma descrição elaborada do modelo do filme pode ser encontrada na literatura, por exemplo \cite{zydneyfilm,vasan}}.
+\index{modelo!do filme}
+\begin{figure}
+\centering
+\input{./tikz/modelofilme.tikz}
+\caption[Ilustração do modelo do filme]{Ilustração do modelo do filme. Neste modelo assume-se que se forma um filme de líquido junto à membrana onde se desenvolvem gradientes de concentração Fora deste filme existe turbulência no seio do líquido o que impossibilita a formação de gradientes de concentração.}
+\label{fig:modfilme}
+\end{figure}
+
+Na ausência de reação química e de adsorção na membrana, o fluxo molar total de soluto ($x_i\conctotal w_i$), no filme ilustrado na figura~\ref{fig:modfilme}, é constante e dado pelo produto entre o fluxo de filtração e a concentração de soluto no permeado ($\fluxo\concp$).\index{fluxo!molar} 
+Multiplicando assim os dois membros da equação~\ref{eq:mssimples} pela concentração total de soluto, e tendo em conta a equação~\ref{eq:DeA}, obtém-se:   
+\begin{equation}
+	\label{eq:msmem}
+	\frac{dC_i}{dy}=\frac{-\cargaeletrica_{i}C_i\ctefaraday}{\ctegases T}\frac{d\potencial}{dy}+\frac{\fluxo}{D_{i}}(C_i-C_{\mathrm{p},i})
+\end{equation}\index{Maxwell-Stefan!solutos iónicos}\index{gradiente!concentração}%
+A equação anterior é assim uma variante da equação de Nernst-Planck \cite{taylor}, e é denominada equação de Nernst-Planck estendida.
+\index{equação!Nernst-Planck}\index{valência elétrica}%
+Para solutos neutros $\cargaeletrica_{i}=0$, e a equação~\ref{eq:msmem} reduz-se a:
+\begin{equation}
+	\label{eq:msmemneutro}
+	\frac{dC_i}{dy}=\frac{\fluxo}{D_{i}}(C_{i}-C_{\mathrm{p},i})
+\end{equation}\index{Maxwell-Stefan!solutos neutros}%
+A equação~\ref{eq:msmemneutro} pode ser usada para ilustrar um fenómeno importante em processos de membranas, nomeadamente o aumento de concentração de solutos junto à membrana em condições de filtração, denominado por polarização de concentração. Considere-se a filtração de uma solução diluída de um soluto, em condições em que seja possível aplicar a equação~\ref{eq:msmemneutro} no filme ilustrado na figura~\ref{fig:modfilme}, para $y$ entre 0 e $\delta$. Após integração obtém-se:
+\begin{equation}
+	\label{eq:cnofilme}
+	\frac{C(y)-\concp}{\concb-\concp}=\exp\left( \frac{\fluxo}{D} y\right)
+\end{equation}\index{concentração!camada de polarização}%
+Pela análise da equação obtida, verifica-se que a concentração do soluto aumenta exponencialmente na camada de polarização (no filme). A equação indica também que o aumento de concentração (polarização de concentração) é tanto maior quanto maior for o fluxo de filtração e menor o coeficiente de difusão do soluto.
+
+A polarização de concentração é um fenómeno inerente aos processos de membranas, que deve contudo ser minimizado. O aumento da concentração de solutos junto à membrana pode conduzir, entre outros efeitos, à colmatação prematura de membranas, alterando assim quer a produtividade, quer a seletividade destas operações.
+\index{colmatação}
+A concentração máxima que o soluto adquire na camada de polarização é em $y=\delta$, sendo neste ponto a concentração denominada por $\concm$ (ver figura~\ref{fig:modfilme}). \index{concentração!membrana}%
+O rácio entre este valor de concentração e o valor da concentração do soluto no seio da solução (\concb) é assim um indicador do grau de polarização de concentração. Para $y=\delta$ tem-se assim:
+\index{concentração!seio da solução}
+\begin{equation}
+	\label{eq:filmec}
+	\frac{\concm-\concp}{\concb-\concp}=\exp\left( \frac{\fluxo}{\coeficientemassa}\right)
+\end{equation}
+onde \coeficientemassa\ é o coeficiente de transferência de massa, definido neste modelo por:\index{coeficiente!de transferência de massa}
+\begin{equation}
+\label{eq:kmassa}
+k=\frac{D}{\delta}
+\end{equation}
+A equação~\ref{eq:filmec} indica que em condições de filtração, a concentração do soluto junto à membrana começa a aumentar de forma rápida à medida que o fluxo de filtração ultrapassa o valor do coeficiente de transferência de massa. 
+
+Uma das características mais importantes de qualquer processo de separação é a sua seletividade. A seletividade na separação de dois solutos corresponde à razão dos respetivos coeficientes de permeação. O coeficiente de permeação observado (\permobs) de um soluto é definido por:
+\index{permeação!observada}
+\begin{equation}
+	\label{eq:permobs_a}
+	\permobs=\frac{\concp}{\concb}
+\end{equation}
+O coeficiente de permeação real ou intrínseco do um soluto é dado por:\index{permeação!intrínseca}
+\begin{equation}
+	\label{eq:permintr}
+	\permm=\frac{\concp}{\concm}
+\end{equation}
+A substituição das equações~\ref{eq:permobs_a}~e~\ref{eq:permintr} na equação~\ref{eq:filmec}, permite obter uma relação entre os dois coeficientes de permeação:
+\begin{equation}
+\label{eq:sobsvssm}
+\permobs=\frac{\permm}{\permm+(1-\permm)\exp(-\fluxo/\coeficientemassa)}
+\end{equation}
+Esta equação mostra que a permeação observada de solutos é dependente quer do fluxo de filtração, quer do coeficiente de transferência de massa. Considerando que a permeação intrínseca não depende das condições na camada de polarização, verifica-se que a permeação observada de solutos aumenta com o aumento do rácio $\fluxo/\coeficientemassa$. Este resultado mostra a importância que as condições hidrodinâmicas (refletidas no valor de $k$), e o fluxo de filtração, podem ter na seletividade de um processo de membranas.
+% section filmepol (end) 
+
+\section{Polarização de concentração para solutos iónicos} % (fold)
+\label{sec:ioes}
+A análise desenvolvida até aqui assumiu solutos neutros. No entanto, para o caso de iões, a equação~\ref{eq:msmem} não pode ser simplificada, tendo que se considerar o termo referente à força elétrica. A determinação do perfil de concentração é feito de forma semelhante, contudo a presença do gradiente do potencial impossibilita uma solução analítica. A cada ião da mistura corresponde uma respetiva equação de MS (equação~\ref{eq:msmem}), sendo o potencial elétrico igual para todos os componentes. Na ausência de potenciais elétricos externos terá que se verificar a condição de eletroneutralidade:\index{eletroneutralidade}
+\begin{equation}
+	\label{eq:eleneutra}
+	\sum_{i} \cargaeletrica_i C_i=0
+\end{equation}
+Diferenciando a equação anterior em ordem a $y$, multiplicando a equação~\ref{eq:msmem} por $\cargaeletrica_i$ e somando para todos os iões obtém-se a seguinte expressão para o gradiente do potencial elétrico:\index{gradiente!potencial elétrico}
+\begin{equation}
+	\label{eq:gradpot}
+	\frac{d\potencial}{dy}=\frac{\sum_{i} \frac{\cargaeletrica_{i}\fluxo}{D_i}(C_i-\concpi)}{\frac{\ctefaraday}{\ctegases T}\sum_{i}\cargaeletrica_{i}^{2}C_i}
+\end{equation}
+O sistema de equações diferenciais, definido pelas equações~\ref{eq:msmem} e pela equação~\ref{eq:gradpot}, pode assim ser resolvido por métodos numéricos, desde que a concentração no permeado (\concp) seja conhecida para cada componente. 
+
+Os plasmídeos, sendo moléculas muito carregadas negativamente a valores de pH de interesse, devem ser modelados como iões.\index{iões} 
+Na grande maioria das aplicações práticas, uma solução de plasmídeo contém um sal dissolvido. O sistema mais simples que pode ser considerado para efetuar a referida modelação passa por considerar uma solução  com 3 solutos \cite{wesslargepoli}. Os 3 solutos são assim o plasmídeo (componente 1), um co-ião (componente 2) e um contra-ião (componente 3), sendo estes dois últimos componentes os iões de um sal dissolvido. Assumindo que as simplificações impostas para a dedução da equação~\ref{eq:msmem} apresentam uma boa aproximação para as características da solução, a equação~\ref{eq:msmem} representa assim um sistema de 3 equações diferenciais, que juntamente com a equação~\ref{eq:gradpot} pode ser resolvido através de métodos numéricos (por exemplo o método de Runge-Kutta de 4ª ordem).\index{Runge-Kutta}\index{equação!diferencial} 
+
+Na secção seguinte é feito um exemplo da aplicação das equações~\ref{eq:msmem}~e~\ref{eq:gradpot}, com objetivo de determinar os perfis de concentração para um sistema de três componentes iónicos (pDNA e os iões de um sal monovalente dissolvido), na camada de polarização, assim como o perfil do potencial elétrico. 
+\index{perfil!concentração}\index{perfil!potencial elétrico}%
+É igualmente comparado o perfil de concentração de pDNA obtido, com esse mesmo perfil considerando-o como uma molécula neutra, passível de ser determinado com a equação~\ref{eq:cnofilme}.
+
+\subsubsection*{Exemplo: Determinação do perfil de concentração, na camada de polarização, para um sistema de três componentes iónicos}
+Para ilustrar a aplicação das equações~\ref{eq:msmem}~e~\ref{eq:gradpot} na determinação do perfil de concentração na camada de polarização, considera-se nesta secção um pequeno exemplo. Os valores considerados são hipotéticos, contudo dentro da ordem de grandeza esperada. Considera-se uma solução de 3\,\micro g/mL de um plasmídeo com 4545\,pb e 3\,MDa de massa molecular, em solução aquosa contendo 150\,mM de NaCl. Como as concentrações no permeado dos vários componentes figuram nas equações, considera-se como aproximação que o plasmídeo é completamente retido pela membrana ($\concpum=0$). Considera-se igualmente que o NaCl apresenta uma permeação observada igual a 1 ($\concpdois=\concptres=150\,\mathrm{mM}$)\footnote{Como a concentração de pDNA é consideravelmente menor, esta aproximação não deverá estar muito longe da realidade, assim como, consequentemente, os resultados obtidos nos cálculos.}.
+\index{cloreto de sódio!sistema de 3 componentes}
+No seio da solução terá que se verificar a condição de eletroneutralidade (equação~\ref{eq:eleneutra}).\index{eletroneutralidade}
+A concentração do contra-ião será um pouco mais alta que a concentração do co-ião para permitir que a solução seja eletricamente neutra\footnote{Em termos mais precisos, teria que se considerar um quarto componente iónico constituído pelos contra-iões originais das moléculas de plasmídeo. Contudo, assume-se aqui, como simplificação do modelo, que esses contra-iões são representados pelos iões em excesso de Na$^{+}$.}. A sua concentração pode ser determinada notando que neste exemplo $z_1=-2\,\mathrm{nbp}$, $z_2=-1$ e $z_3=1$, e fazendo uso da equação~\ref{eq:eleneutra}. Os restantes dados necessários aos cálculos encontram-se na tabela~\ref{tab:dadosionico}.\index{número!pares de bases}
+
+\begin{table}
+	\centering
+	\caption[Dados sistema iónico 3 componentes]{Dados para a derminação do perfil de concentrações na camada de polarização, para um sistema iónico de 3 componentes (ver texto).}
+	\label{tab:dadosionico}
+\begin{threeparttable}
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}} l d{7} d{1} d{11} }
+\toprule
+Componente&\concb\,[mol/$\mathrm{m}^3$]&\multicolumn{1}{r}{\concp\,[mol/$\mathrm{m}^3$]}&\multicolumn{1}{l}{$z$}&\multicolumn{1}{l}{$D\times 10^9\,[\mathrm{m}^2/\mathrm{s}]$}\\
+\midrule
+pDNA&$1\times 10^{-6}$&0&$-9090$&0,005\\
+$\mathrm{Cl}^{-}$&150&150&$-1$&2,032\\
+$\mathrm{Na}^{+}$&150.0091&150&$+1$&1,334\\
+ \bottomrule
+\end{tabular*}
+\begin{tablenotes}
+\item{}$F=96485\,\mathrm{C}/\mathrm{mol}$, $R=8.314\,\mathrm{J}/\mathrm{K}\cdot\mathrm{mol}$, $T=293.15\,\mathrm{K}$
+\item{}$k=1\times 10^{-6}\,\mathrm{m}/\mathrm{s}$, $\fluxo=2.5\times 10^{-6}\,\meter\per\second$
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+A espessura da camada de polarização ($\delta$) pode ser estimada, a partir do valor do coeficiente de transferência de massa, \coeficientemassa, e do coeficiente de difusão do plasmídeo, através da relação:\index{espessura camada de polarização}
+\begin{equation}
+	\label{eq:deltaKD}
+	\delta=\frac{D_1}{k}
+\end{equation}
+
+Após integração numérica, obtêm-se os perfis representados na figura~\ref{fig:resexemploioes}\footnote{Foi usado o método de Runge-Kutta de ordem 4, adaptado de \cite{arnold}.}.\index{Runge-Kutta}\index{integração numérica} 
+Verifica-se a existência de polarização de concentração do plasmídeo, assim como do contra-ião ($\mathrm{Na}^{+}$). 
+\index{contra-ião}\index{co-ião}
+No caso do co-ião ($\mathrm{Cl}^{-}$), a sua concentração diminui gradualmente na camada de polarização, excluído pela presença das moléculas de pDNA. Observa-se igualmente que se forma uma gradiente negativo de potencial elétrico. \index{gradiente!potencial elétrico}
+Este potencial, apesar de reduzido valor, faz com que o contra-ião polarize juntamente com o plasmídeo. Outro efeito do potencial, que não é aparente na figura~\ref{fig:resexemploioes}, é a redução do grau de polarização no caso do pDNA. Para verificar este efeito, pode-se aplicar a equação~\ref{eq:cnofilme}, que calcula assim o perfil de concentração no caso de se considerar o plasmídeo como uma molécula neutra. Os resultados dos dois perfis de concentração, assim como do perfil do potencial elétrico, encontram-se na figura~\ref{fig:pc_n_vs_i}.\index{perfil!concentração}\index{perfil!potencial elétrico} 
+Como é possível constatar, a polarização neste último caso é consideravelmente maior. Observa-se igualmente que o potencial assume valores cada vez mais negativos à medida que o fluxo aumenta, resultando assim numa maior divergência entre os dois perfis de concentração.
+\begin{figure}[!t]
+	\centering
+	\input{./tikz/exemplo_ioes.tikz}
+	\caption[Sistema de 3 componentes iónicos]{Perfis de concentração e potencial elétrico, obtidos por integração do sistema de equações diferenciais definido pela equação~\ref{eq:msmem}, para um sistema de 3 componentes iónicos (ver texto).}
+	\label{fig:resexemploioes}
+\end{figure}
+\begin{figure}
+	\centering
+	\input{./tikz/pc_neutro_vs_iao.tikz}
+	\caption[Polarização de concentração de pDNA considerando-o neutro e com carga.]{Concentração de pDNA na camada de polarização, em função de $y/\delta$, para os fluxos de 0.5, 1.5 e 2.5\,\micro m/s, referente aos dados do exemplo de cálculo referido no texto. Na figura encontra-se também o perfil do potencial elétrico na camada de polarização. Observa-se que este potencial, apesar de apresentar um valor reduzido, faz com que o pDNA apresente uma polarização de concentração superior, quando é modelado como um soluto neutro (\ref{pgf:neutro}), por comparação com a situação em que a sua carga elétrica é tida em conta nos cálculos (\ref{pgf:iao}).}
+	\label{fig:pc_n_vs_i}
+\end{figure}
+% section ioes (end)
+
+
+
+\section{Transporte restringido de solutos esféricos} % (fold) 
+\label{sec:restringido}\index{transporte restringido!fundamentos teóricos}
+A análise do transporte de massa efetuada até aqui incidiu em situações nas quais a solução não se encontra confinada em espaços de pequenas dimensões. No entanto, no interior de poros de membranas de MF e UF a situação é distinta, desde logo a começar pelo perfil de velocidade do solvente, que para escoamentos de Poiseuille é função da coordenada radial adimensional, \radialadimensional, segundo a equação~\ref{eq:bird}. 
+\index{coordenadas!radial adimensional}\index{Hagen-Poiseuille}
+Outra importante consequência da presença das paredes dos poros é o facto dos solutos não poderem ocupar a totalidade da área de secção reta do poro. Por exemplo, um soluto esférico terá que ocupar posições no interior do poro que distem da parede uma distância igual ou superior ao seu raio (figura~\ref{fig:modelohindered}). Este mecanismo de exclusão baseado unicamente em fatores geométricos permite, para o caso de se considerarem os solutos como esferas rígidas, calcular coeficientes de partição que relacionam as concentrações de equilíbrio entre o interior e o exterior dos poros. 
+\index{esfera rígida}\index{coeficiente!de partição}
+Nestas condições, é fácil verificar que no caso de poros cilíndricos, o coeficiente de partição, \particao, de um dado soluto é função do rácio entre o raio do soluto (esférico) e o raio do poro, \lambdas:
+\begin{equation}
+\label{eq:particaohs}
+\begin{gathered}
+\particao =  \frac{c_0}{\concm}=\frac{c_{\mathrm{L}}}{\concp}=(1-\lambdas)^2 \\
+\lambdas \in  [0, 1]
+\end{gathered}
+\end{equation}  
+onde $c_0$ e $c_{\mathrm{L}}$ são as concentrações para $y=0$ e $y=L$ e $\lambdas=\raiostokes/\raioporo$ (ver figura~\ref{fig:modelohindered})\footnote{Para distinguir as variáveis que se referem a posições no interior do poro, opta-se aqui por as representar por letras minúsculas}. 
+\begin{figure}
+	\centering
+	\input{./tikz/modelohindered.tikz}
+	\caption[Soluto esférico no interior de um poro cilíndrico]{Ilustração do movimento de um soluto esférico no interior de um poro cilíndrico. O soluto só poderá ocupar posições no interior do poro que distem das paredes uma distância mínima igual ao seu raio. Na figura está representado o perfil parabólico de velocidade do solvente, considerando escoamento de Poiseuille.} 
+	\label{fig:modelohindered}
+\end{figure}
+Os principais avanços na teoria do transporte restringido foram feitos através de uma analogia com o movimento hidrodinâmico de esferas em tubos cilíndricos, sendo o artigo de revisão de Deen \cite{deen} talvez o mais citado nesta temática. A vantagem desta abordagem está na possibilidade de se calcularem coeficientes hidrodinâmicos que contabilizem o movimento restringido no interior de poros. A análise através das equações de Maxwell-Stefan é também possível, tendo sido já efetuada \cite{noordman}. No entanto, para além da formulação ser complexa, não existem dados suficientes na literatura que forneçam valores para os vários coeficientes de atrito que figuram necessariamente nas equações. 
+\index{coeficiente!de atrito}
+Assim, opta-se aqui por se aplicar a equação~\ref{eq:mssimples} fazendo uma analogia com o modelo descrito em \cite{deen,anderson}, sendo o resultado obtido igual ao modelo de atrito proposto por Anderson e Queen \cite{anderson}. Para isso, considera-se a situação descrita na figura~\ref{fig:modelohindered}. O soluto é modelado como uma esfera rígida e o poro cilíndrico. A presença das paredes do poro produz dois efeitos. Em primeiro lugar, assume-se que o confinamento da solução produz um aumento do coeficiente de atrito entre o soluto e o solvente. A razão entre estes coeficientes é dada por um parâmetro $K$:\footnote{Este parâmetro $K$ não deve ser confundido com o parâmetro $K$ descrito no artigo de Deen \cite{deen}. O primeiro representa uma média radial, enquanto que o de Deen representa o rácio entre os coeficientes de atrito em função da coordenada \radialadimensional.}
+\begin{equation}
+ 	\label{eq:K}
+ 	K=\frac{\atrito_{\mr{p}}}{\atrito_\infty}
+ \end{equation} 
+onde $\atrito_{\mr{p}}$ representa o coeficiente de atrito entre o soluto e o solvente no interior do poro e $\atrito_\infty$ esse mesmo coeficiente numa situação não confinada.
+\index{coeficiente!de atrito no poro}
+O segundo efeito é consequência do perfil parabólico de velocidade no interior do poro (equação~\ref{eq:bird}) e da restrição geométrica das posições permissíveis ao soluto. 
+\index{perfil!velocidade}
+A situação está ilustrada na figura~\ref{fig:KceAlpha}. Para solutos com dimensões muito inferiores às do poro, ou seja para $\lambdas\rightarrow 0$ (situação~a), o soluto pode ocupar praticamente na totalidade todas as posições radiais no poro, adquirindo assim uma velocidade convectiva igual à velocidade do solvente. 
+\index{velocidade!convectiva}\index{velocidade!solvente}
+Na situação~b, o soluto tem um raio que é cerca de duas vezes inferior ao raio do poro. Devido à restrição geométrica na sua localização, este soluto tende a circular mais junto ao centro do poro, sendo a sua velocidade convectiva superior à velocidade média do solvente. Na situação~c, o soluto tem um raio igual ao do poro e o seu movimento assemelha-se ao de um pistão, movendo-se assim com a velocidade média do solvente. Estes comportamentos distintos são dependentes de \lambdas, e são contabilizados na seletividade convectiva, $\alpha$, referida na secção~\ref{sec:ems}. 
+\index{seletividade!convectiva}
+A dependência de $\alpha$ com \lambdas\ está igualmente ilustrada na figura~\ref{fig:KceAlpha}.
+\begin{figure}[!t]
+	\centering
+	\input{./tikz/Kc.tikz}
+	\caption[Variação da seletividade convectiva em função de \lambdas]{Ilustração da variação da seletividade convectiva em função de \lambdas. a) Quando o soluto apresenta um 
+tamanho muito inferior ao do poro ($\lambdas\rightarrow 0$), o soluto pode ocupar praticamente todas as posições radiais e assim adquirir uma velocidade convectiva próxima da do solvente ($\alpha\rightarrow 1$). b) Nesta situação, o soluto tem um raio que é metade do raio do poro ($\lambdas=1/2$). Como o soluto só poderá ocupar posições radias que distem no mínimo $\raioporo/2$ das paredes, o soluto tende a ocupar posições mais centrais, adquirindo assim uma velocidade convectiva superior à velocidade média do solvente. c) Quando o raio do soluto é igual ao raio do poro, ele move-se como se de um pistão se tratasse, adquirindo novamente uma velocidade convectiva igual à do solvente, sendo a seletividade convectiva de novo igual a 1.}
+	\label{fig:KceAlpha}
+\end{figure} 
+Após o referido, a equação~\ref{eq:mssimples} pode assim ser reescrita para a situação ilustrada na figura~\ref{fig:modelohindered}:
+\begin{equation}
+   	\label{eq:mshindered}
+   	-\ctegases T\frac{d\ln x}{dy}=K\atrito_\infty(w-\alpha\fluxoporo)
+   \end{equation}   
+onde \fluxoporo\ é o fluxo volumétrico de solvente no interior do poro, dado pela equação~\ref{eq:fluxoporo}. 
+\index{fluxo!poro}
+Multiplicando a equação anterior pela concentração do soluto no interior do poro, $c$, e rearranjando obtém-se:\index{concentração!poro}
+\begin{equation}
+	\label{eq:mshin2}
+	n=-K^{-1}\dinf\frac{dc}{dy}+\alpha\fluxoporo c
+\end{equation}
+onde $n$ é o fluxo de soluto no poro ($=cw$). 
+\index{fluxo!de soluto no poro}
+Esta equação assume a mesma forma da equação que se obtém pelo modelo hidrodinâmico de Deen, de onde se pode concluír que:
+\begin{equation}
+\begin{split}
+	\label{eq:kdkkcalfa}
+	K^{-1} & =  \kapade \\
+	\alpha  & =  \kapace
+\end{split}
+\end{equation}
+onde \kapade\ e \kapace\ são os parâmetros hidrodinâmicos que contabilizam o efeito do transporte restringido na difusão e na convecção respetivamente. 
+\index{coeficiente!de impedimento convectivo}\index{fator!de impedimento convectivo|see{coeficiente}}%
+\index{coeficiente!de impedimento difusivo}\index{fator!de impedimento difusivo|see{coeficiente}}%
+Interessa salientar que todas as variáveis presentes na equação~\ref{eq:mshin2} são médias radiais, pelo que a concentração de soluto no interior do poro é apenas função de $y$.
+\index{media@média radial}
+Os parâmetros \kapade\ e \kapace\ podem ser determinados por correlações existentes na literatura \cite{dechadilok} obtidas pelo modelo hidrodinâmico, para solutos esféricos neutros e em poros cilíndricos:
+\begin{equation}
+\label{eq:dechadilok}
+	\begin{split}
+\kapade = {} & (1-\lambdas)^{-2}\left(1+\frac{9}{8}\lambdas\ln\lambdas-1.56034\lambdas+0.528255\lambdas^2+1.91521\lambdas^3-2.81903\lambdas^4\right. \\
+& \left.\vphantom{\frac{9}{8}}+0.270788\lambdas^5+1.10115\lambdas^6-0.435933\lambdas^7\right) \\
+\kapace = {} & \left( \frac{1+3.867\lambdas-1.907\lambdas^2-0.834\lambdas^3}{1+1.867\lambdas-0.741\lambdas^2}\right)
+	\end{split}
+\end{equation}
+Na figura~\ref{fig:kdekc} encontra-se a representação gráfica dos parâmetros da equação anterior. O parâmetro $\kapade$ tende para zero à medida que $\lambdas$ tende para 1. O significado físico deste parâmetro é o rácio entre o coeficiente de atrito numa solução não confinada e esse mesmo coeficiente de atrito no interior do poro (equação~\ref{eq:K} e equação~\ref{eq:kdkkcalfa}), o que significa que à medida que o valor de $\lambdas$ aumenta, o coeficiente de atrito no interior do poro é consideravelmente superior ao coeficiente que se obtém na mesma solução não confinada, e tende para infinito à medida que \lambdas\ tende para 1. A variação de $\kapace$ reflete o comportamento da seletividade convectiva discutido anteriormente. 
+\begin{figure}
+\centering
+\input{./tikz/kdekc.tikz}
+\caption[Representação gráfica dos parâmetros $\kapade$ e $\kapace$]{Representação gráfica dos parâmetros $\kapade$ e $\kapace$, em função de $\lambdas$, obtidos pelas correlações representadas na equação~\ref{eq:dechadilok} \cite{dechadilok}.}
+\label{fig:kdekc}
+\end{figure}
+
+Uma das utilizações mais frequentes do modelo enunciado, que foi também utilizada no presente trabalho, é a caracterização de membranas quanto ao seu tamanho de poro \cite{moraompa,moraotese,moraodes,bowen02}. 
+\index{caracterização!membranas}
+Para isso, são determinadas as permeações observadas de solutos de referência, geralmente neutros e com geometria aproximadamente esférica, e o raio de poro determinado como sendo o valor que minimiza os erros entre os resultados obtidos e as previsões do modelo. A equação \ref{eq:mshin2}, juntamente com a equação \ref{eq:kdkkcalfa}, pode ser integrada ao longo do poro, obtendo-se após alguma manipulação algébrica:
+\begin{equation}
+	\label{eq:odkvn}
+	n=\kapace\fluxoporo c_0\frac{\left[1-\left(c_L/c_0\right)\euler^{-\peclet}\right]}{1-\euler^{-\peclet}}
+\end{equation}
+onde \peclet\ é o número de Peclet, dado por:
+\begin{equation}
+	\label{eq:peclet}
+	\peclet=\frac{\kapace\fluxoporo\comporo}{\kapade\dinf}
+\end{equation}\index{número!de Peclet}%
+As concentrações $c_0$ e $c_L$ podem ser relacionadas com a concentração junto à membrana (\concm) e com a concentração no permeado (\concp), respetivamente, através do coeficiente de partição (equação~\ref{eq:particaohs}). 
+\index{coeficiente!de partição}
+\index{concentração!no poro}
+O fluxo molar de soluto no poro, $n$, pode ser relacionado com o fluxo molar de soluto com base na área total de membrana, $N$, através da porosidade ($N=\porosidade n$). Por seu lado, $N$ é dado pelo produto entre o fluxo de filtração, \fluxo, e a concentração do soluto no permeado ($N=\fluxo\concp$). Assim, o fluxo molar de soluto no poro pode ser obtido por:
+\index{fluxo!molar}\index{fluxo!de soluto no poro}\index{porosidade}
+\begin{equation}
+	\label{eq:fluxoporoaid}
+	n=\frac{N}{\porosidade}=\frac{\fluxo\concp}{\porosidade}=\fluxoporo\concp
+\end{equation}
+Substituindo as equações~\ref{eq:particaohs}~e~\ref{eq:fluxoporoaid} na equação~\ref{eq:odkvn}, obtém-se após alguma manipulação algébrica:
+\begin{equation}
+	\label{eq:smhindered}
+	\permm=\frac{\particao\kapace}{1-(1-\particao\kapace)\euler^{-\peclet}}
+\end{equation}\index{permeação!intrínseca}%
+onde \permm\ é a permeação intrínseca definida pela equação~\ref{eq:permintr}. O comprimento dos poros, $\comporo$, que figura na equação~\ref{eq:peclet} nem sempre é conhecido com exatidão para uma determinada membrana, sendo a sua determinação por vezes difícil de obter experimentalmente.
+\index{comprimento!poro}
+Este valor pode ser relacionado com outros parâmetros, mais facilmente determináveis, através da equação de Hagen-Poiseuille (equação~\ref{eq:fluxoporo}). Com o auxílio da equação~\ref{eq:permhidro}, o número de Peclet pode ser definido alternativamente por:
+\begin{equation}
+	\label{eq:peclet2}
+	\peclet=\frac{\kapace\raioporo^2\fluxo}{8\kapade\dinf\permhidra\viscosidade}
+\end{equation}\index{número!de Peclet}%
+O coeficiente de difusão do soluto (\dinf) pode ainda ser relacionado com o seu raio hidrodinâmico através da equação de Stokes-Einstein (equação~\ref{eq:stokesein}).\footnote{O símbolo $\infty$ é usado para indicar que o coeficiente de difusão, que figura na equação~\ref{eq:peclet2}, é o coeficiente de difusão numa situação não confinada e não esse mesmo coeficiente no interior do poro.} 
+\index{coeficiente!de difusão}\index{raio!hidrodinâmico}
+Se a polarização de concentração não puder ser desprezada, a permeação observada, \permobs, irá assumir um valor diferente de \permm. Neste caso, a equação~\ref{eq:sobsvssm} pode ser usada para relacionar estes dois parâmetros. O valor de \permobs\ obtido pode assim ser comparado com os resultados experimentais.\index{permeação!observada}
+% section restringido (end)
+
+\section{Partição de moléculas longas e flexíveis}
+\label{sec:fjcecsc}
+Como discutido na secção~\ref{sec:restringido}, se os solutos puderem ser considerados rígidos e com geometria esférica, os coeficientes de partição, que relacionam as concentrações adjacentes à interface solução não-confinada-solução no interior do poro, podem ser facilmente calculados pela equação~\ref{eq:particaohs}. Uma consequência imediata da referida equação é a ausência de permeação no caso de solutos para os quais $\lambdas> 1$. No entanto, observa-se experimentalmente que alguns solutos obedecem relativamente bem à equação~\ref{eq:particaohs}, mas existem outros que exibem consideráveis desvios \cite{dechadilok}. Como referido no capítulo~\ref{chap:intro}, os plasmídeos enquadram-se nesta última categoria. Esta observação experimental indica com clareza que a equação~\ref{eq:particaohs} não pode ser usada neste caso. Sendo os plasmídeos moléculas flexíveis e de elevada massa molecular, a determinação exata dos coeficientes de partição, com base numa representação geométrica rigorosa das moléculas revela-se um problema de excessiva complexidade. Uma forma de conseguir a sua determinação aproximada passa por representar essa mesma estrutura por modelos mais simplificados, que possam ainda assim reter as principais características da molécula que determinam a sua partição nos poros de membranas.   
+
+Um dos modelos de representação de macromoléculas mais simples consiste em considerar o soluto como um cadeia de ligação livre (FJC).\index{FJC}\index{cadeias!de ligação livre|see{FJC}}
+Durante a geração de uma FJC, a única imposição passa por manter constante a distância entre vários pontos, podendo os ângulos de ligação assumir qualquer valor \cite{teraoka}. Uma representação FJC pode assim simular a estrutura e conformação de uma macromolécula linear. Os parâmetros que caracterizam uma cadeia FJC são o comprimento dos segmentos, \comsegmento, que assume um valor constante, e o número total de segmentos, \numsegmento. 
+\index{comprimento!segmentos}\index{número!segmentos}
+Estes segmentos, que se consideram ter massa nula, unem $\numsegmento +1$ massas pontuais. A representação análoga para cadeias circulares, ou fechadas, são as denominadas cadeias segmentadas fechadas (CSC), que podem ser geradas a partir de uma cadeia FJC (secção~\ref{subsec:csc}).\index{CSC}\index{cadeias!fechadas segmentadas|see{CSC}}
+Apesar das estruturas simplificadas, FJC e CSC, apresentarem já uma considerável redução da complexidade estrutural das moléculas reais, a determinação do coeficiente de partição é geralmente feita por métodos estocásticos, conhecidos como métodos de Monte-Carlo \cite{davidson87,cifra,hermsen}. 
+\index{Monte-Carlo}
+Neste tipo de métodos, a estrutura da molécula é gerada e é estabelecida uma condição para a sua entrada no poro. A probabilidade de entrada da molécula no poro é assim determinada testando esta condição um elevado número de vezes.
+
+Nesta secção apresentam-se os métodos usados no presente trabalho para a geração de estruturas FJC e CSC, e para a determinação dos coeficientes de partição, necessários para completar o desenvolvimento teórico. 
+%Nesta secção utiliza-se o programa Matlab\registado\ para demonstrar a geração deste tipo de moléculas. 
+
+\subsection{Cadeias de ligação livre (FJC)}
+\label{subsec:fjc}\index{FJC}
+Numa primeira abordagem, e para facilitar o raciocínio, pode-se considerar o problema de gerar uma cadeia FJC em apenas duas dimensões, ficando posteriormente mais facilitada a abordagem para três dimensões, que será discutida na secção~\ref{subsec:3d}. Uma cadeia FJC pode ser gerada por um caminho aleatório em \numsegmento\ passos. Em cada passo, um novo ponto é gerado, podendo este novo ponto ocupar qualquer posição numa circunferência de raio \comsegmento\ centrada no ponto anterior. O processo é repetido até que a cadeia gerada possua \numsegmento\ segmentos. Em duas dimensões, o problema é simplificado se for utilizado o sistema de coordenadas polares, sendo a sua relação com o sistema cartesiano dado pelas seguintes expressões:\index{coordenadas!cartesianas}\index{coordenadas!polares}
+\begin{equation}
+\label{eq:polar}
+\begin{split}
+       x & = r\cos\theta       \\
+       y & = r\sin\theta       \\
+	     r & = \sqrt{x^2+y^2}    \\
+  \theta & = \mr{arctan2}(y,x)
+\end{split}
+\end{equation}
+A função $\mr{arctan2}$ deve ser usada, por substituição da tradicional função $\arctan$, para que o ângulo possa ser determinado inequivocamente. 
+\index{arctan2}\index{atan2@\texttt{atan2}}%
+Por exemplo, o ângulo $\theta$ entre um vetor $(x,y)$ e o eixo positivo dos $xx$ pode ser obtido por $\arctan(y/x)$. 
+\index{vetor}\index{angulo!ângulo}
+No entanto, este método não distingue entre vetores diametralmente opostos\footnote{Vetores do tipo $(+x,+y)$ e $(-x,-y)$ não são distinguidos pelo método $\arctan(y/x)$.}. Além disso, vetores com abcissa nula causam problemas pelo facto de $y/x$ não ser um número neste caso. A função $\mr{arctan2}$, definida em muitas linguagens de programação pela função \texttt{atan2}, permite superar estas limitações. Esta função é definida por:
+\begin{equation}
+\mr{arctan2}(x,y)=\left\{ \begin{array}{ll}%
+				\arctan(y/x) 		& \mbox{$x>0$}		\\
+				\arctan(y/x)+\pi 	& \mbox{$y\geq0, x<0$}	\\
+				\arctan(y/x)-\pi 	& \mbox{$y\leq0, x<0$}	\\
+				\pi/2			& \mbox{$y>0, x=0$}	\\
+				-\pi/2			& \mbox{$y<0, x=0$}	\\
+				\text{não definido}	& \mbox{$x=0, y=0$}	
+			         \end{array}    	
+			\right.
+\end{equation}
+Cada ponto $i$ de uma cadeia FJC em duas dimensões é definido pelas suas coordenadas, que representam o seu vetor posição $\vec{r_{i}}$ (ver figura~\ref{fig:rw2d}). Em cada passo, um novo ponto é gerado segundo o vetor $\Delta\vec{r}_{i}$, dado por $\vec{r}_{i+1}-\vec{r}_{i}$. Em coordenadas polares a posição de um novo ponto da cadeia pode assim ser obtida por: 
+%
+\begin{equation}
+\label{eq:xi}
+\begin{split}
+x_{i+1} & = x_{i}+\comsegmento \cos \theta_{i+1} \\
+y_{i+1} & = y_{i}+\comsegmento \sin \theta_{i+1}
+\end{split}
+\end{equation}
+% 
+\begin{figure}
+	\centering
+	\setlength\figureheight{6cm} 
+	\setlength\figurewidth{6cm}
+	\input{./tikz/rw2dvector.tikz}
+	\caption[Trajetória em duas dimensões de uma cadeia FJC]{Trajetória em duas dimensões de uma cadeia FJC com $n_{k}$ segmentos com comprimento $l_{k}$. Na figura estão igualmente representados os vectores $r_{i}$ e $\Delta\vec{r}_{i}$.}
+	\label{fig:rw2d}
+\end{figure}
+onde $x_{i+1}$ e $y_{i+1}$ representam as coordenadas do novo ponto a ser gerado, $x_{i}$ e $y_{i}$ as coordenadas do ponto anterior e $\theta_{i+1}$ o ângulo entre $\Delta\vec{r}_{i}$ e o eixo dos $xx$. Em coordenadas polares a aleatoriedade do processo resume-se à aleatoriedade no valor que este ângulo toma em cada iteração. O código apresentado na figura~\ref{fig:FJCcode} serve como exemplo.
+\index{FJC!código}%
+A função \texttt{rand} gera números aleatórios entre 0 e 1. 
+\index{número!aleatório}\index{rand@\texttt{rand}}%
+Na quarta de linha de código (\texttt{r=rand(nk,1)}) são assim gerados \numsegmento\ números aleatórios entre 0 e 1, que serão posteriormente utilizados dentro do ciclo \texttt{for} para obter um ângulo $\theta$ aleatório no intervalo $0\leq\theta\leq2\pi$, em cada iteração, construindo assim um caminho aleatório em duas dimensões. 
+
+\begin{figure}
+  \centering
+	\input{./tikz/fjc_codigo.tikz}
+\caption[Código \textsc{Matlab}\textsuperscript{\textregistered}/GNU Octave para gerar uma FJC]{Código \textsc{Matlab}\textsuperscript{\textregistered}/GNU Octave para gerar uma FJC com $\protect\numsegmento = 100$ e $\protect\comsegmento = 1$, com a respetiva representação gráfica do resultado.}
+\label{fig:FJCcode}
+\end{figure}
+
+As dimensões de uma cadeia FJC podem ser definidas por duas variáveis: a distância média entre as suas extremidades, \distanciah, e o raio de giração médio, normalmente designado apenas por raio de giração, \raiogiracao\ \cite{teraoka}. 
+\index{distância!entre extremidades de uma cadeia}\index{raio!de giração}
+Devido à aleatoriedade no valor de $\theta$, cada geração de uma cadeia FJC com o código apresentado na figura~\ref{fig:FJCcode} produz uma cadeia com dimensões diferentes. Para estimar uma dimensão média de uma cadeia FJC é assim preciso gera-la um elevado número de vezes, calculando em cada geração a distância entre as suas extremidades, $h$, e o raio de giração instantâneo, $\raiogiracao^{*}$:
+
+\begin{equation}
+\label{eq:herg}
+\begin{split}
+  h & = \left|\vec{r}_{n_{k}+1}-\vec{r}_{1}\right|  \\
+  (\raiogiracao^{*})^{2} & = \frac{1}{n_{k}+1}\sum_{i=1}^{n_{k}+1}\left(\vec{r}_{i}-\vec{r}_{\mr{cm}}\right)^{2}
+\end{split}
+\end{equation}
+As coordenadas do centro de massa da molécula, $\vec{r}_{\mr{cm}}$, considerando todas as massas pontuais com igual massa, podem ser dadas por:\index{coordenadas!do centro de massa}
+\begin{equation}
+\label{eq:centromassa}
+\vec{r}_{\mr{cm}}=\frac{1}{\numsegmento+1}\sum_{i=1}^{\numsegmento+1} \vec{r}_{i}
+\end{equation}
+
+\subsection{Cadeias fechadas segmentadas (CSC)}
+\label{subsec:csc}\index{CSC}\index{pDNA|see{DNA plasmídico}}
+Os plasmídeos, na sua forma nativa, são moléculas circulares, ao contrário de uma cadeia FJC, que é por natureza uma cadeia aberta. Para superar esta limitação, é proposto neste trabalho uma nova estrutura de cadeia fechada, denominada cadeia fechada segmentada (CSC). Esta nova estrutura pode ser considerada a análoga de uma estrutura FJC mas com conformação circular (ou fechada). De facto, para gerar uma CSC é necessário gerar primeiro a FJC correspondente. Utilizando de novo coordenadas polares, o código representado na figura~\ref{fig:csc_vs_fjc} pode ser usado para gerar uma cadeia CSC. 
+\index{CSC!código}
+Como se pode ver na figura, a estrutura CSC obtida é agora uma cadeia aleatória fechada, que ainda assim se assemelha naturalmente à cadeia FJC correspondente.
+
+O algoritmo para gerar uma cadeia CSC, a partir de uma FJC, é o seguinte: após gerar a cadeia FJC o seu vetor $\vec{r}_{\numsegmento+1}$ é feito coincidir com o vetor $\vec{r}_{1}$. 
+\index{CSC!algoritmo}
+Em seguida, o vetor $\vec{r}_{\numsegmento}$ é movido até ficar à distância \comsegmento\ pretendida, segundo a direção do vetor $\Delta\vec{r}_{\numsegmento}$ ($=\vec{r}_{\numsegmento}-\vec{r}_{\numsegmento+1}$). De seguida, o vetor $\vec{r}_{\numsegmento-1}$ é movido até ficar a uma distância \comsegmento\ do vetor $\vec{r}_{\numsegmento}$, segundo a direção do vetor $\Delta\vec{r}_{\numsegmento-1}$, e assim sucessivamente.
+%
+\begin{figure}[!t]
+	\centering
+	\input{./tikz/FJCvsCSCver2.tikz}
+	\caption[Código e representação gráfica de FJC e CSC em 2D]{Código \textsc{Matlab}\textsuperscript{\textregistered}/GNU Octave para gerar uma cadeia CSC. Note-se que as primeiras 8 linhas de código geram uma FJC com $\comsegmento=1$ e $\numsegmento=100$. Após gerar a FJC, a estrutura da cadeia CSC é assim obtida movendo os pontos segundo a direção dos vetores $\Delta\vec{r}_{i}$ até ficaram a uma distância \comsegmento\ entre si. Na figura encontra-se igualmente a representação gráfica do resultado.}
+	\label{fig:csc_vs_fjc}
+\end{figure}
+%
+Uma cadeia CSC partilha assim as mesmas simplificações de uma cadeia FJC, nomeadamente, o facto de não haver restrições na posição dos pontos, com exceção do comprimento dos segmentos, que deverá ser constante. Esta imposição faz com que uma cadeia CSC, gerada com o código simples ilustrado na figura~\ref{fig:csc_vs_fjc}, apresente um erro residual. 
+\index{CSC!erro residual}
+Este erro resulta do método de geração, método este que faz com que as extremidades da cadeia FJC, gerada previamente, não coincidam exatamente na mesma coordenada espacial. Ou seja, o mesmo é dizer que uma cadeia CSC, gerada com o código da figura~\ref{fig:csc_vs_fjc}, apresenta uma distância residual, $L_{\mathrm{res}}$, que faz dela uma cadeia que não é perfeitamente fechada. Na figura~\ref{fig:erro_csc}, encontra-se a representação gráfica de $L_{\mathrm{res}}$, normalizada por \comsegmento, em função do número de segmentos, para vários valores de \comsegmento. Como se pode verificar, $L_{\mathrm{res}}/\comsegmento$ assume um valor reduzido e tende rapidamente para zero à medida que \numsegmento\ aumenta. Observa-se igualmente que o rácio $L_{\mathrm{res}}/\comsegmento$ é independente de \comsegmento, o que permite utilizar o método de geração de CSC descrito, para cadeias FJC com diferentes \comsegmento, obtendo-se assim valores de erro semelhantes\footnote{É importante notar que o valor de $L_{\mathrm{res}}$ tem que ser obtido gerando a cadeia um elevado número de vezes (tipicamente acima de $10^5$ gerações) e calculando assim o seu valor médio.}.    
+%
+\begin{figure}
+\centering
+\input{./tikz/erro_CSC.tikz}
+\caption[Distância residual em cadeias CSC, em função do número de segmentos]{Rácio entre a distância residual entre as extremidades de uma cadeia CSC e \comsegmento, em função do número de segmentos, para vários valores de \comsegmento. O erro é independente de \comsegmento, e tende rapidamente para zero à medida que \numsegmento\ aumenta. Para valores de \numsegmento\ superiores a 15 o erro já é inferior a 0.2\%.}
+\label{fig:erro_csc}
+\end{figure}
+
+\subsection{Cadeias FJC e CSC em três dimensões}
+\label{subsec:3d}\index{FJC!três dimensões}\index{CSC!três dimensões}
+A geração das estruturas FJC e CSC em três dimensões difere, em relação ao exposto nas secções~\ref{subsec:fjc} e \ref{subsec:csc}, apenas no sistema de coordenadas a utilizar, que neste caso deve ser o sistema de coordenadas esféricas. Neste sistema de coordenadas, um vetor posição fica definido pelos 3 valores: distância até à origem $r$, ângulo entre a projeção do vetor posição, no plano $xy$, e o eixo positivo dos $xx$, definido aqui como o ângulo $\theta$, e o ângulo entre o vetor posição e o eixo positivo dos $zz$, definido como o ângulo $\varphi$. A relação entre os dois sistemas é dada pelas equações~\ref{eq:car2sph}~e~\ref{eq:sph2car}:\index{angulo@ângulo!theta@``theta''}\index{angulo@ângulo!phi@``phi''}
+%
+\begin{equation}
+\label{eq:car2sph}
+\begin{split}
+      r & = \sqrt{x^2+y^2+z^2}    \\
+ \theta & = \mathrm{arctan2}(y,x) \\
+\varphi & = \arccos (z/r)
+\end{split}
+\end{equation}
+%
+\begin{equation}
+\label{eq:sph2car}
+\begin{split}
+x & = r\cos\theta\sin\varphi \\
+y & = r\sin\theta\sin\varphi \\
+z & = r\cos\varphi
+\end{split}
+\end{equation}
+%
+Deve ser usada novamente a função $\mathrm{arctan2}$, pelo mesmo motivo discutido na secção~\ref{subsec:fjc}.\index{arctan2} 
+Com as referidas relações entre os sistemas de coordenadas, a geração das estruturas FJC e CSC é feita como discutido antes para o caso de duas dimensões. No entanto, é incorreto escolher valores dos ângulos $\theta$ e $\varphi$ de forma uniforme nos intervalos $[0, 2\pi]$ e $[0, \pi]$ respetivamente\footnote{\url{http://mathworld.wolfram.com/SpherePointPicking.html}}. Na figura~\ref{fig:cadeias_3d}, encontra-se o código para gerar estas estruturas, assim como a representação gráfica de um possível resultado.
+\index{FJC!código três dimensões}\index{CSC!código três dimensões}  
+
+As cadeias CSC, geradas com o código proposto na figura~\ref{fig:cadeias_3d}, apresentam igualmente uma distância residual, $L_{\mr{res}}$, tal como se verifica nas suas cadeias equivalentes em duas dimensões. No entanto, verifica-se um comportamento semelhante ao nível do erro, ou seja, esta distância residual tende rapidamente para zero à medida que o número de segmentos da cadeia aumenta. 
+ 
+\begin{figure}[!t]
+\centering
+\input{./tikz/cadeias_3d.tikz}
+\caption[Código e representação gráfica de FJC e CSC em 3D]{Código \textsc{Matlab}\textsuperscript{\textregistered}/GNU Octave para gerar as cadeias FJC e CSC em 3 dimensões, com a respetiva representação gráfica do resultado.}
+\label{fig:cadeias_3d}
+\end{figure}
+
+\subsection{Coeficiente de partição de moléculas flexíveis}
+\label{subsec:fiflex}\index{moléculas flexíveis!coeficiente de partição}\index{moléculas flexíveis!representação|see{FJC, CSC}}
+\index{coeficiente!de partição}
+O coeficiente de partição estabelece uma relação de equilíbrio entre as concentrações junto à entrada do poro. Este coeficiente é por definição:
+%
+\begin{equation}
+	\label{eq:parti1}
+	\particao = \frac{c_0}{\concm}
+\end{equation}
+%
+onde \concm\ é a concentração junto à membrana e $c_0$ a concentração no interior do poro para $y=0$ (ver figura~\ref{fig:modelohindered}). Como tem vindo a ser considerado, esta última concentração é uma média radial, e pode ser obtida por:
+\index{concentração!membrana}\index{concentração!poro}
+%
+\begin{equation}
+\label{eq:med_radial}
+c_0 = 2\int_0^{1}c_0^{\ast}(\beta)\beta d\beta
+\end{equation}\index{media@média radial}%
+%
+onde $c_0^{\ast}$ representa a concentração no interior do poro em função de \radialadimensional. 
+\index{coordenadas!radial adimensional}%
+Para o caso de solutos esféricos e com geometria rígida, considerando apenas efeitos de exclusão puramente geométricos, a concentração $c_0^{\ast}$ no interior do poro será dada por:
+\begin{equation}
+	\label{eq:cast}
+c_0^{\ast}(\beta)=\left\{\begin{array}{ll}%
+		    \concm & \mbox{$\beta \in [0,\ 1-\lambdas[$} \\
+             0 & \mbox{$\beta \in [1-\lambdas,\ 1]$} \\
+                       \end{array}    	
+			          \right.
+\end{equation}\index{esferas rígidas!concentração no poro}%
+Substituindo a equação anterior na equação~\ref{eq:med_radial}, e efetuando a integração, é possível obter a equação~\ref{eq:particaohs}, que representa o coeficiente de partição para solutos modelados como esferas rígidas, considerando apenas efeitos de exclusão puramente geométricos. 
+\index{esferas rígidas!coeficiente de partição}%
+Um raciocínio semelhante pode ser feito para a outra extremidade do poro (concentrações $c_{\mr{L}}$ e \concp), obtendo-se o mesmo resultado.
+
+No caso de moléculas flexíveis, a possibilidade de existência de deformação geométrica das cadeias leva à necessidade de efetuar um cálculo do coeficiente de partição distinto. Considerando novamente apenas efeitos de exclusão geométricos, existe em cada valor de \radialadimensional\ uma fração de todas as conformações possíveis da molécula que permite a sua entrada no poro. Se a esta fração for $p(\beta)$, função de \radialadimensional, a concentração $c_0^{\ast}$ é assim obtida por:
+%
+\begin{equation}
+	\label{eq:c_ast_flex}
+	c_0^{\ast}(\radialadimensional) = p(\beta)\concm
+\end{equation}\index{moléculas flexíveis!concentração no poro}%
+%
+A concentração é inferior no interior do poro porque apenas uma fração $p(\beta)$ de todas as conformações possíveis da molécula permitem a sua entrada no poro. Esta fração pode também ser vista como uma probabilidade de entrada no poro, do mesmo modo que para solutos esféricos essa probabilidade é unitária na região para \radialadimensional\ entre 0 e $1-\lambdas$, e nula para \radialadimensional\ entre $1-\lambdas$ e 1. Substituindo a equação~\ref{eq:c_ast_flex} na equação~\ref{eq:med_radial}, o coeficiente de partição para moléculas flexíveis pode ser obtido por:
+%
+\begin{equation}
+	\label{eq:fi_flex}
+	\particao = 2\int_0^{1}p(\beta)\beta d\beta
+\end{equation}\index{moléculas flexíveis!coeficiente de partição}
+%
+
+Davidson \et\ \cite{davidson87}, fizeram uso da equação~\ref{eq:fi_flex} para determinar o coeficiente de partição de cadeias flexíveis, recorrendo a um método de Monte-Carlo para estimar $p(\beta)$. O método consiste em gerar a estrutura da cadeia um elevado número de vezes e testar em cada geração uma condição necessária de entrada no poro. No caso do referido trabalho, os autores optaram por considerar, como condição de entrada no poro, que todas as massas pontuais da estrutura gerada devam estar projetadas no interior do mesmo. Esta condição, embora aplicável em processos puramente difusivos, não contabiliza possíveis efeitos de deformação induzidos pelo fluxo convectivo de solvente, em condições de filtração. De facto, pode ser mostrado que esta condição conduz à obtenção de previsões de permeação de moléculas flexíveis, em processos de ultrafiltração, que subestimam consideravelmente os resultados experimentais \cite{meu1}. Assim, opta-se neste trabalho por considerar uma nova condição, ilustrada na figura~\ref{fig:condi}. Considera-se que para ocorrer permeação a parte inferior da molécula (a massa pontual mais próxima do poro) deverá estar projetada no interior do poro, sendo posteriormente conduzida pelo fluxo de solvente. Caso contrário, a molécula difunde novamente para o seio da solução. No capítulo~\ref{chap:art1} este tema será novamente abordado.
+\index{condição de entrada no poro}
+%
+\begin{figure}
+	\centering
+	\input{./tikz/permsimounao.tikz}
+	\caption[Condição para entrada no poro (FJC e CSC)]{Ilustração da condição de entrada no poro em condições de filtração. Assume-se que as tensões de corte à entrada do poro, geradas pelo fluxo de solvente, provocam o alongamento da molécula e consequente entrada no poro, desde que a parte inferior da cadeia esteja projetada para o interior do mesmo. Se isso não acontecer, a molécula não permeia e difunde de novo para o seio da solução. Na figura está igualmente representado o centro de massa da molécula, \tikz \draw (1pt,1pt) circle (4pt);.}
+	\label{fig:condi}
+\end{figure}
+
+Para completar a formulação teórica é ainda necessário relacionar o coeficiente de partição para moléculas flexíveis com o valor da sua permeação intrínseca. Para isso pode-se recorrer à equação~\ref{eq:smhindered}. No entanto, as correlações existentes na literatura para os fatores de impedimento difuso e convectivo, \kapade\ e \kapace\ respetivamente, representados na equação~\ref{eq:dechadilok}, são apenas aplicáveis a solutos esféricos e para valores de \lambdas\ inferiores a 1. No entanto, é proposto neste trabalho o seguinte raciocínio: para solutos flexíveis de elevadas dimensões, em especial para $\lambdas\rightarrow 1$, \kapade\ tende rapidamente para zero. Isto significa que o número de Péclet (equação~\ref{eq:peclet2}) tende rapidamente para infinito e a permeação intrínseca, de acordo com a equação~\ref{eq:smhindered}, tende assim para:
+\begin{equation}
+ 	\label{sm_inf}
+ 	\permm = \particao\kapace
+\end{equation} 
+É pois razoável assumir um comportamento semelhante para moléculas flexíveis para as quais $\lambdas\gg 1$, ou seja, pode assumir-se que estas moléculas uma vez no interior do poro deverão ocupar na totalidade a sua área de secção reta, o que implica que $\kapade\rightarrow 0$. Por outro lado, como ilustrado na figura~\ref{fig:KceAlpha}, se o soluto ocupa a totalidade do poro, a sua velocidade deverá ser igual à velocidade média do solvente, o que implica que $\kapace = 1$. Assim, é proposta no presente trabalho a seguinte relação:
+\begin{equation}
+	\label{eq:parti_vs_sm}
+	\permm = \particao
+\end{equation}\index{moléculas flexíveis!permeação intrínseca}%
+A formulação teórica apresentada permite assim estabelecer um paralelismo com o modelo do transporte restringido (secção~\ref{sec:restringido}), ampliando o seu espectro de aplicação para o caso de solutos em que $\lambdas \gg 1$. No capítulo seguinte serão abordados os fundamentos práticos inerentes à realização do presente trabalho.  

@@ -1,0 +1,411 @@
+%!TEX root = tese.tex
+\chapter{Ultrafiltração de DNA plasmídico: Modelação e aplicação}
+\label{chap:art2}
+O trabalho descrito neste capítulo foi publicado na revista Journal of Membrane Science \cite{meu2}.
+\index{DNA plasmídico!ultrafiltração}%
+
+\section{Introdução}
+Tal como referido no capítulo~\ref{chap:intro}, os processos de separação com membranas têm vindo a ser estudados no âmbito da purificação de \mbox{DNA} plasmídico. Dado o elevado número de possíveis aplicações destes processos \cite{rathore}, é desejável entender melhor a forma como estas biomoléculas permeiam através de matrizes porosas. A formulação de modelos matemáticos com capacidade de previsão da seletividade e desempenho deste tipo de processos são uma mais valia nas fases de desenvolvimento, otimização e controlo. Em termos de geometria molecular, os plasmídeos são moléculas circulares, longas e flexíveis, capazes de adotar estruturas super-enroladas, dependendo das propriedades do meio.
+\index{estrutura super-enrolada}%
+Sendo moléculas longas e flexíveis, os plasmídeos apresentam um comportamento de permeação, através de poros de pequenas dimensões, completamente distinto do que se verifica com moléculas de maior rigidez molecular, cuja permeação se assemelha ao comportamento de esferas rígidas (isto é, não passíveis de sofrer deformação).
+
+\index{esfera rígida}%
+A teoria do transporte restringido de solutos através de poros de pequenas dimensões permitiu obter modelos, especialmente no caso em que os solutos são modelados como esferas rígidas, com excelente capacidade de previsão de resultados experimentais \cite{deen,dechadilok,moraompa}. No entanto, estes modelos não podem ser utilizados para prever a permeação de moléculas de \mbox{pDNA}. De facto a possibilidade de deformação da geometria destas moléculas faz com permeiem de forma significativa em poros cujas dimensões são consideravelmente inferiores aos seus raios hidrodinâmicos \cite{kong10,latu07,latu09,ark11}. A aplicação dos modelos de esferas rígidas neste caso produz o natural resultado de ausência de permeação. Tal como referenciado na secção~\ref{sec:modulaçãopermeação}, existem vários modelos na literatura com o intuito de prever o fluxo máximo a partir do qual a deformação das moléculas de plasmídeo é suficientemente alta para que estas permeiem através de poros de menores dimensões \cite{latu07,latu09,ager,daoudi}.
+
+Sendo moléculas altamente carregadas, os plasmídeos apresentam também variações na sua permeação com a força iónica do meio \cite{latusalt,ager}.
+\index{força iónica}%
+Nestes estudos observou-se um aumento da permeação com o aumento da força iónica, mesmo utilizando membranas essencialmente sem carga. Este fenómeno foi atribuído a alterações conformacionais das moléculas de \mbox{pDNA} provocadas pela redução das interações eletrostáticas entre os seus grupos fosfato, com o aumento da força iónica, levando assim à obtenção de moléculas mais compactas \cite{latusalt}.
+\index{interações eletrostáticas}%
+\index{repulsão eletrostática}%
+
+O método desenvolvido no Capítulo~\ref{chap:art1} segue uma abordagem diferente, na qual para além da existência de deformação induzida pelo fluxo, é necessário que a molécula possua uma conformação e orientação, adequadas quando se aproxima do poro. Um método de Monte-Carlo foi desenvolvido para estimar a probabilidade da ocorrência de permeação, em condições de filtração, probabilidade essa que pode ser identificada com o coeficiente de partição à superfície da membrana (\particao).
+\index{Monte-Carlo}%
+\index{deformação molecular}%
+Para obter os valores de \particao, as moléculas foram modeladas como \fjc\ (FJC), tendo-se obtido uma relação entre \particao\ e \lambdah, onde \lambdah\ é o rácio da distância entre as extremidades da cadeia e o raio do poro, \lambdahfor. Alternativamente pode-se calcular \particao\ em função de \lambdag, onde \lambdag\ representa o rácio entre o raio de giração e o raio do poro, $\raiogiracao/\raioporo$. A aplicabilidade do modelo foi testada com dois polímeros lineares: um dextrano e uma molécula de DNA plasmídico na isoforma linear, obtida pela ação de uma enzima de restrição \cite{meu1}.
+\index{isoforma!linear}%
+
+No estudo desenvolvido neste capítulo, pretende-se obter um modelo para a previsão da permeação de DNA plasmídico, na sua isoforma \superenrolada.
+\index{isoforma!super-enrolada}%
+Dois modelos básicos de representação da estrutura destas moléculas são aqui discutidos: o modelo de cadeias fechadas segmentadas (CSC) e o de cadeias FJC. Para além disso, é demonstrado que a equação obtida no capítulo~\ref{chap:art1}, escrita em termos de \lambdag\, pode ser usada para obter \particao\ no caso da representação CSC. A partir dos valores de \particao\ estimados, é possível prever as permeações observadas (\permobs) através de um modelo de transporte de massa igualmente desenvolvido neste capítulo, no qual os plasmídeos são modelados como poli-eletrólitos.
+\index{poli-eletrólito}%
+Com o referido modelo é ainda possível prever as variações na permeação com o efeito da força iónica.
+
+\section{Materiais e métodos}
+\label{sec:art2materiaisemetodos}
+\subsection{Desenvolvimento do modelo de transferência de massa}
+Para estimar a permeação de um plasmídeo através de uma membrana, na presença de um sal, tem que se considerar um modelo de transporte com, no mínimo, três componentes: o plasmídeo em si, que se considera o componente ``1'', sendo ele um poli-anião com carga $-2\mathrm{nbp}$, onde $\mathrm{nbp}$ representa o número de pares de bases, um anião como \tce{Cl-}, considerado o componente ``2'' e um catião como \tce{Na+}, considerado o componente ``3''.
+\index{modelo!transporte iões}%
+As concentrações dos componentes 1 e 2 são normalmente conhecidas no seio da solução a filtrar, \concbum\ e \concbdois, e se o componente 3 for considerado o contra-ião de ambos os componentes 1 e 2, a sua concentração pode ser obtida por um simples balanço de cargas. Um balanço semelhante pode ser feito à solução perto da superfície da membrana, considerando que não ocorre adsorção, onde as concentrações das espécies são \concmi. Estas concentrações diferem das que se verificam no seio da solução devido à ocorrência de efeitos de polarização de concentração (secção~\ref{sec:filmepol}).
+\index{polarização de concentração}%
+
+Considera-se que à superfície da membrana os solutos estão distribuídos, entre os poros e a solução, segundo os seus coeficientes de partição. Para o cálculo do coeficiente de partição do plasmídeo, $\particao_{1}$, utiliza-se a equação~\ref{eq:14art1} (capítulo~\ref{chap:art1}), com os coeficientes modificados para se obter uma relação entre \particao\ e \lambdag:
+\index{coeficiente!de partição}%
+\index{moléculas flexíveis!coeficiente de partição}%
+\index{FJC!coeficiente de partição}%
+\index{CSC!coeficiente de partição}%
+\begin{equation}
+\label{eq:partiçãomeu2}
+\begin{split}
+\ln \left(\particao\right){}=&a_{0}+\frac{a_{1}}{2a_{3}}\left\{\vphantom{\frac{x+a_{3}/2}{a_{4}}}\right.2a_{4}\ln \left[\exp \left(\frac{x+a_{3}/2}{a_{4}}\right)+\exp \left(\frac{a_{2}}{a_{4}}\right)\right] \\
+& -2a_{4}\ln \left[\exp\left(\frac{a_{2}+a_{3}/2}{a_{4}}\right)+\exp \left(\frac{x}{a_{4}}\right)\right]+a_{3}\left.\vphantom{\frac{x+a_{3}/2}{a_{4}}}\right\}
+\end{split}
+\end{equation}
+\begin{displaymath}
+a_{0}=-11.60;\ a_{1}=11.53;\ a_{2}=3.955;\ a_{3}=-5.520;\ a_{4}=-0.613
+\end{displaymath}
+\begin{displaymath}
+x=\ln (\lambdag)+0.896;\ \lambdag=\frac{\raiogiracao}{\raioporo}
+\end{displaymath}
+Todas as membranas usadas neste trabalho foram previamente caracterizadas, quanto aos seus raios de poro, pelo modelo dos poros simétricos (SPM) descrito em Morão \et\ \cite{moraompa}.
+\index{modelo!poros simétricos}%
+Se puder ser considerado que não existem efeitos de carga à superfície da membrana, isto é, se a membrana for essencialmente neutra, o coeficiente de partição do plasmídeo, $\particao_{1}$, pode ser dado pela equação~\ref{eq:partiçãomeu2}.
+
+Como discutido no capítulo~\ref{chap:art1}, o mecanismo de transporte dominante, para o caso da permeação de uma molécula de plasmídeo em poros estreitos, deverá ser a convecção (a difusão será desprezável). Considera-se igualmente que durante a passagem do plasmídeo em poros com $\raioporo<\raiostokes$, estes deverão ocupar a totalidade da área de secção reta dos mesmos. Nestas condições, $\particao_{1}$ pode ser identificado com a permeação intrínseca, \permmum, que por definição é dada para as várias espécies como:
+\index{moléculas flexíveis!permeação intrínseca}%
+\index{permeação!intrínseca}%
+\begin{equation}
+\label{eq:permeacaointrinsicameu2}
+\permmi=\frac{\concpi}{\concmi}
+\end{equation}
+onde \concpi\ são as concentrações das espécies no permeado. Os valores de \permmdois\ e \permmtres\ são aqui aproximados a 1, assumindo que os sais considerados não são retidos pela membrana; assim $\concpi=\concmi$ para $i=2$ e $3$.
+Para completar o desenvolvimento do modelo matemático a ser usado nos cálculos, podem-se obter uma série de relações entre as concentrações \concpi, \concmi\ e \concbi\ através da integração numérica da equação estendida de Nernst-Planck (NP) no filme onde ocorre a polarização de concentração \cite{bowen02}:
+\index{equação!Nernst-Planck}%
+\index{Nernst-Planck|see{equação}}%
+\begin{equation}
+\label{eq:np}
+\frac{dC_{y,i}}{dy}=\frac{-z_{i}C_{y,i}F}{RT}\frac{d\Psi}{dy}+\frac{\fluxo}{D_{i}}\left(C_{y,i}-C_{p,i}\right)
+\end{equation}
+onde $\Psi$ é o potencial elétrico e $C_{y,i}$ as concentrações a uma distância $(\delta-y)$ da membrana, sendo $\delta$ a espessura da camada de polarização de concentração (secção~\ref{sec:filmepol}).
+\index{potencial!elétrico}%
+\index{espessura camada de polarização}%
+A integração deverá ser feita em condições de eletroneutralidade, o que implica que:
+\index{eletroneutralidade}%
+\begin{equation}
+\label{eq:eletroneutralidade}
+\sum_{i=1}^{3} z_{i} \frac{dC_{y,i}}{dy}=0
+\end{equation}
+
+
+\subsubsection{Algoritmo para o cálculo de \concpi, \concbi\ e das propriedades da membrana}
+\index{algoritmo!transporte iões}%
+O primeiro passo do algoritmo aqui proposto para o cálculo numérico de \concpi, consiste em estimar os valores de \concmum\ e \concmdois, e calcular o respetivo valor de \concmtres. A partir destes valores, que se denotam por $\concmi^{0}$, podem-se estimar as concentrações no permeado: para o caso do plasmídeo, como $\particao\concmum^{0}$, e para os componentes 2 e 3, como $\concmdois^{0}$ e\ $\concmtres^{0}$, respetivamente. Com estes valores de \concpi\ o sistema de equações diferenciais definido pela equação estendida de Nernst-Planck, juntamente com a equação~\ref{eq:eletroneutralidade}, pode ser integrado usando \concbi\ como condições iniciais ao longo da distância $\delta$, que corresponde à espessura da camada de polarização de concentração. Esta espessura pode ser calculada através da equação:
+\begin{equation}
+\label{eq:delta}
+\delta\simeq\frac{D_{1}}{k_{1}}
+\end{equation}
+onde $k_{1}$ é o coeficiente de transferência de massa do plasmídeo, que se pode obter através da seguinte correlação válida para as células de filtração usadas neste trabalho \cite{opong,bowen97}:
+\index{Amicon 8010!coeficiente de transferência de massa}%
+\index{Amicon 8050!coeficiente de transferência de massa}%
+\begin{equation}
+\label{eq:opong}
+\frac{kr_{\mathrm{cell}}}{D_{\infty}}=0.23\left(\frac{\omega r^{2}_{\mathrm{cell}}\rho}{\viscosidade}\right)^{0.567}\left(\frac{\viscosidade}{\rho D_{\infty}}\right)^{0.33}  
+\end{equation}
+Pode ser então calculada uma nova estimativa para os valores de \concmi, que se denotam como $\concmi^{1}$, e estes valores comparados com os valores estimados anteriormente $\concmi^{0}$. Usa-se a seguinte função de erro para comparar os dois conjuntos de valores:
+\index{função de erro}%
+\begin{equation}
+\label{eq:erromeu2}
+f(\concmi^{0},\concmi^{1})=\sum_{i=1}^{3}\frac{|\concmi^{0}-\concmi^{1}|}{\concbi}
+\end{equation}
+O erro absoluto é dividido pela respetiva \concbi\ uma vez que as concentrações do plasmídeo neste trabalho são sempre muito inferiores às do sal. Para obter os valores corretos de \concmi, as estimativas iniciais para \concmum e \concmdois\ podem ser variadas ao longo de intervalos pré-estabelecidos para permitir encontrar o mínimo de $f$. 
+
+Após obtenção dos valores de \concpi, a permeação observada, \permobsi, pode assim ser determinada e comparada com os resultados experimentais para o caso do plasmídeo:
+\begin{equation}
+\label{eq:permobsmeu2}
+\permobsi=\frac{\concpi}{\concbi}
+\end{equation}
+
+\subsection{Estimativa do coeficiente de partição do plasmídeo, \particao}
+Para aplicar o modelo de transferência de massa definido em cima, o coeficiente de partição do plasmídeo tem que ser estimado, e para isso tem que se definir um modelo estrutural para a representação desta molécula.
+Sendo os plasmídeos moléculas com uma estrutura complexa, é desejável considerar uma forma simplificada de os representar durante a simulação da sua permeação através de membranas. Para isso, duas representações são propostas: a primeira considerando os plasmídeos como \closedsc\ (CSC), e a segunda considerando os plasmídeos como moléculas lineares, usando a abordagem FJC.
+
+\subsubsection{Abordagem de \closedsc\ (CSC)}
+\index{CSC!algoritmo}%
+O modelo mais simples para representar polímeros circulares é o de \closedsc. Uma representação de uma molécula circular pelo modelo CSC pode ser obtido através da geração de uma FJC da molécula linear correspondente com \numsegmento\ segmentos de comprimento \comsegmento, como descrito no Capítulo~\ref{chap:teov3}.
+Para cada conformação gerada, a possibilidade de permeação é então testada segundo o método descrito no Capítulo~\ref{chap:art1} para FJC. O processo consiste em alinhar o centro de massa da estrutura com o centro do poro, e mais outras 10 posições radiais. Em seguida, para cada posição radial, se a massa pontual da molécula mais próxima da superfície da membrana ficar projetada no interior do poro, considera-se que ocorre permeação. Repetindo este procedimento um elevado número de vezes, tipicamente acima de $10^{5}$ simulações, pode-se obter uma distribuição radial da probabilidade de permeação, e integrando essa função obtém-se a probabilidade total de permeação, que representa o coeficiente de partição, \particao, do soluto entre a solução junto à membrana e o interior dos poros \cite{davidson87}. Este coeficiente de partição tem que ser visto como um coeficiente de partição dinâmico uma vez que ele é apenas válido em condições de filtração. 
+
+O raio de giração de uma molécula modelada como CSC pode ser também diretamente determinado das simulações computacionais previamente descritas. Para isso, em cada geração da molécula calcula-se o raio de giração instantâneo, \raiogiracaoinst, dado por:
+\index{raio!de giração instantâneo}%
+\begin{equation}
+\label{eq:raiogirinst}
+(\raiogiracaoinst)^{2}=\frac{1}{\numsegmento+1}\sum_{i=1}^{\numsegmento+1} (\vectorpos-\vectorcm)^{2}
+\end{equation}
+onde \vectorpos\ representa as coordenadas do ponto $i$ e \vectorcm\ as coordenadas do centro de massa da estrutura.
+\index{vetor!posição}%
+\index{centro de massa}%
+A equação~\ref{eq:raiogirinst} é válida para uma cadeia com massas pontuais todas iguais (isto é, com a mesma massa). Após um elevado número de simulações, acima de $10^{5}$, o valor médio do raio de giração, \raiogiracao, pode assim ser calculado. 
+
+Valores obtidos de \particao\, para uma representação CSC, estão representados na figura~\ref{fig:1aart2} em função de \numsegmento\ para diferentes valores de $L/\raioporo$, onde $L$ é o comprimento do contorno da cadeia ($L=\numsegmento\comsegmento$) e \raioporo\ é o raio do poro da membrana. Os valores obtidos são comparados com os que se obtêm com uma representação FJC, calculados previamente no capítulo~\ref{chap:art1}. Como se pode verificar, os valores de \particao\ para CSC são ligeiramente superiores aos valores correspondentes para a representação FJC, em especial quando o número de segmentos da cadeia é pequeno. No entanto a dependência de \particao\ com \raiogiracao\ é a mesma quer para a representação CSC, quer para a representação FJC (ver figura~\ref{fig:1bart2}). Assim pode-se concluir que a equação~\ref{eq:partiçãomeu2}, obtida originalmente para FJC, é igualmente válida para uma abordagem CSC.
+%
+\begin{figure}
+	\centering 
+	\setlength\figureheight{6cm} 
+	\setlength\figurewidth{6cm}
+	\input{./tikz/fig1aart2.tikz}
+	\caption[Coeficiente de partição de cadeias CSC e FJC]{Coeficiente de partição de cadeias CSC e FJC, em condições de filtração, em função de \numsegmento\ para vários valores de $L/\raioporo$.}
+	\label{fig:1aart2}
+\end{figure}  
+\begin{figure}
+	\centering
+	\setlength\figureheight{6cm} 
+	\setlength\figurewidth{6cm}
+	\input{./tikz/fig1bart2new.tikz}
+	\caption[Coeficiente de partição de cadeias CSC em função de \lambdag]{Coeficiente de partição de cadeias CSC, em condições de filtração, em função de \lambdag\ para vários valores de \numsegmento.}
+	\label{fig:1bart2}
+\end{figure}  
+A partir das simulações foi igualmente possível obter a seguinte equação que relaciona \raiogiracao\, para uma CSC, com \numsegmento\ e \contorno:
+\index{raio!de giração}%
+\index{número!segmentos}%
+\index{comprimento!contorno}%
+\begin{equation}
+\label{eq:rgnkLart2}
+\raiogiracao=0.221\numsegmento^{-0.352}\contorno
+\end{equation}
+Para uma molécula de DNA de dupla cadeia linear o valor de \contorno\ pode ser estimado pelo aumento de comprimento axial por par de bases, igual a \unit{0.34}{\nano\meter}, multiplicado pelo número total de pares de bases.
+\index{comprimento!por par de bases}
+Este valor deverá ser semelhante para cadeias fechadas, como é o caso do DNA plasmídico. Para estimar o valor de \numsegmento\ é necessário saber \comsegmento. Como primeira estimativa pode-se considerar que \comsegmento\ é dado pela distância de Kuhn, \kuhn, da molécula linear correspondente (FJC).
+\index{distância!de Kuhn}%
+\index{Kuhn|see{distância}}%
+Os valores da distância de Kuhn para moléculas lineares correspondem aproximadamente ao dobro do comprimento de persistência, \persis, o que é uma boa aproximação para $\contorno/\persis>10$.
+\index{comprimento!persistência}%
+\index{persistência|see{comprimento}}%
+O comprimento de persistência do DNA linear é dependente da força iónica da solução, \forcaionica, através do inverso do comprimento de Debye, \inversodebye, e pode ser estimado pela seguinte equação \cite{latu09,manning}:
+\index{comprimento!inverso Debye}%
+\index{força iónica}%
+\begin{equation}
+\label{eq:persisart2}
+\persis=\left(\frac{\pi\persis^{*}}{2}\right)^{2/3}\frac{\raioduplahelice^{4/3}}{\cargaeletrica^{2}\bjerrum}\left[(2\cargaeletrica\densidadecarga-1)\frac{\inversodebye b \numeroeuler^{-\inversodebye b}}{1-\numeroeuler^{-\inversodebye b}}-1-\ln(1-\numeroeuler^{-\inversodebye b})\right]
+\end{equation}
+onde $\persis^{*}$ é o comprimento de persistência de DNA sem carga, \raioduplahelice\ é o raio da dupla hélice do DNA, \cargaeletrica\ é a valência do catião (componente 3), \bjerrum\ é o comprimento de Bjerrum da água pura, \densidadecarga\ é a densidade de carga do DNA e $b$ é o espaço entre cargas no DNA.
+\index{raio!dupla hélice}%
+\index{carga elétrica}%
+\index{comprimento!de Bjerrum}%
+\index{densidade de cargas}%
+No entanto, é esperado que \comsegmento\ para uma CSC deva ser inferior a \kuhn, tendo em conta que a tensão molecular numa CSC deverá ser superior que no caso de uma FJC. Considerando, numa primeira abordagem, que o rácio entre \numsegmento\ e \kuhn\ é independente do comprimento de contorno, é aqui proposto a introdução de um parâmetro, $\alpha$, que relaciona estas duas quantidades:
+\begin{equation}
+\label{eq:alpha}
+\comsegmento=\alpha\kuhn
+\end{equation}
+Um método adequado para obter $\alpha$ para DNA circular passa por considerar os valores de \raiogiracao\ disponíveis na literatura, e usar as equações~\ref{eq:rgnkLart2}~e~\ref{eq:alpha}. Um valor ótimo de $\alpha=0.196$ foi estimado, usando um método de mínimos quadrados, a partir de dados obtidos para diferentes plasmídeos a diferentes valores de força iónica (ver figura~\ref{fig:aart2}). Sabendo o valor de $\alpha$, o cálculo de \numsegmento\ a partir de \kuhn\ é assim possível para outro plasmídeo através da equação~\ref{eq:alpha}. Os valores de \raiogiracao\ obtidos por este método podem ser comparados com valores existentes na literatura para o raio de giração de três plasmídeos com 5.76, 9.80 e 16.8\kpb, medidos por ``static light scattering'' \cite{latusls}.
+\index{static@``static light scattering''}%
+Os valores encontrados são $102\pm2$, $117\pm3$ e $169\pm4$\,nm, respetivamente, que estão em boa concordância com os valores de 86, 121 e \unit{171}{\nano\meter} obtidos pelo método aqui desenvolvido. 
+\begin{figure}
+	\centering
+	\setlength\figureheight{6cm} 
+	\setlength\figurewidth{6cm}
+	\input{./tikz/fig2art2.tikz}
+	\caption[Raio de giração (p1868 e SV40) em função da força iónica]{Raio de giração para o plasmídeo p1868 (1868\,bp) e para o vírus SV40 (5243\,bp) em função da força iónica \cite{hammermann}. Na figura está igualmente representado o ajuste, através das equações~\ref{eq:rgnkLart2}~e~\ref{eq:alpha}, com $\alpha=0.196$ e $\alpha=1$.}
+	\label{fig:aart2}
+\end{figure}
+
+\subsubsection{Abordagem de \fjc\ (FJC)}
+\index{FJC}%
+\index{isoforma!super-enrolada}%
+\index{AFM}%
+\index{isoforma!linear}%
+Apesar de não serem moléculas lineares, os plasmídeos podem também ser modelados como cadeias FJC, mas somente em condições de elevada força iónica. Os plasmídeos, quando apresentam uma estrutura altamente super-enrolada, encontram-se numa conformação que se assemelha a uma molécula linear, como pode ser comprovado por imagens de AFM obtidas a elevadas forças iónicas ($160\milimolar$) \cite{lyubchenko}.
+Considerando este facto, a equação~\ref{eq:partiçãomeu2} pode ser usada com os valores de \raiogiracao\ calculados a partir do modelo de \wlc, WLC, através da seguinte equação \cite{latu07,latusalt,latu09}:
+\index{WLC!raio de giração}%
+\begin{equation}
+\label{eq:rgwlg}
+\raiogiracao=a_{s}\left[\frac{L_{s}}{3a_{s}}-1+\frac{2a_{s}}{L_{s}}-2\left(\frac{a_{s}}{L_{s}}\right)^{2}(1-\numeroeuler^{-L_{s}/a_{s}})\right]^{1/2}
+\end{equation}
+Os subscritos ``$s$'' usados na equação~\ref{eq:rgwlg} servem para indicar que os valores do comprimento de persistência, $a_{s}$, e do comprimento do contorno, $L_{s}$, referem-se à super-hélice e não à dupla cadeia de DNA (dsDNA).
+\index{super-hélice}% 
+
+Valores de \contornosuper\ e \persissuper não são conhecidos \emph{a priori}, no entanto \contornosuper, numa primeira abordagem, pode ser estimado como $0.5\contorno$, onde \contorno\ representa o comprimento do contorno do dsDNA (ou seja, \contorno\ é dado por \unit{0.34}{\nano\meter} multiplicado pelo número de pares de bases e \contornosuper\ representa assim a máxima extensão possível de uma molécula de pDNA).\index{comprimento!contorno}
+Assim, \persissuper\ pode ser estimado a partir de valores conhecidos de \raiogiracao\ através da equação~\ref{eq:rgwlg}. Latulippe \et\ \cite{latusls} propuseram uma outra forma de abordar o problema, considerando para os plasmídeos um comprimento de contorno efetivo de $0.4\contorno$, quando $\persissuper=46\,\mathrm{nm}$, que está em melhor concordância com o valor de $\contornosuper/\contorno=0.41$ obtido por Boles \et\ \cite{boles}.
+
+\vspace{-3 mm}
+\subsubsection{Comparação entre as duas abordagens}
+As abordagens CSC e FJC para modelar a estrutura de pDNA, em condições de elevada força iónica, são comparadas na figura~\ref{fig:3art2}. Como se pode verificar, a melhor abordagem é claramente a de CSC, que produz um erro médio no valor de \raiogiracao\ inferior a 4\%. Por este motivo, este foi o modelo escolhido para efetuar os cálculos.
+\begin{figure}[!b]
+	\centering
+	\setlength\figureheight{6cm} 
+	\setlength\figurewidth{6cm}
+	\input{./tikz/fig3art2.tikz}
+	\caption[Comparação das diferentes abordagens para estimar \raiogiracao\ de plasmídeos]{Comparação das diferentes abordagens para estimar o raio de giração de plasmídeos. Foram usados os seguintes valores de \persissuper\ no caso da abordagem FJC: $20.8\,\mathrm{nm}$ (valor de ajuste) para o caso em que $\contornosuper=0.5\contorno$ e $46\,\mathrm{nm}$, segundo \cite{latusls}, no caso de $\contornosuper=0.4\contorno$. Valores experimentais para \raiogiracao\ foram obtidos por Latulippe \et\ \cite{latusls} e por Hammermann \et\ \cite{hammermann}.}
+	\label{fig:3art2}
+\end{figure}
+Através desta abordagem é possível estimar o coeficiente de partição dinâmico de plasmídeos em função do seu número de pares de bases e do raio do poro da membrana (ver figura~\ref{fig:4art2}).
+\begin{figure}
+	\centering
+	\setlength\figureheight{6cm} 
+	\setlength\figurewidth{6cm}
+	\input{./tikz/fig4art2.tikz}
+	\caption[Coeficiente de partição dinâmico de plasmídeos em função de nbp]{Coeficiente de partição dinâmico de plasmídeos em função do número de pares de bases para diferentes tamanhos de poro.}
+	\label{fig:4art2}
+\end{figure}
+
+\subsection{Parte experimental}
+Foi usado o pasmídeo \pVAX, com $6050\,\mathrm{bp}$, nos ensaios experimentais.
+\index{pVAX@\pVAX}%
+\index{ecolidh@\ecolidh}%
+\index{fermentação}%
+O plasmídeo foi produzido por fermentação com a bactéria \ecolidh, e posteriormente purificado como descrito em Sousa \et\ \cite{sousabab}. O grau de purificação da preparação final de plasmídeo foi avaliado por eletroforese horizontal em gel de agarose (AGE).
+\index{AGE}%
+\index{eletroforese|see{AGE}}%
+\index{agarose|see{AGE}}%
+Todas as soluções de plasmídeo usadas nos ensaios foram preparadas num tampão contendo 10\milimolar\ de Tris/HCl a pH 8.00, com adição de 0.45\molar\ de \tce{NaCl}, com exceção dos ensaios em que se investigou o efeito da força iónica da solução na permeação.
+\index{NaCl}%
+\index{Tris}%
+Nesses testes, foram adicionadas quantidades pré-determinadas de \tce{NaCl} ao tampão Tris para obter diferentes valores de força iónica.
+
+As membranas usadas, assim como as suas principais características, estão indicadas na tabela~\ref{tab:1art2}. Todas as membranas têm tamanhos de poro semelhantes mas são feitas de diferentes materiais. No caso das membranas \tracketched\ de policarbonato (TECP), a distribuição de tamanho de poro é conhecida através de Kim \et\ \cite{kim97}.
+\index{TEPC}
+\index{policarbonato}%
+\index{track@``track-etched''}%
+\index{XM300}%
+\index{YM100}%
+Para as membranas XM300 e YM100, o raio de poro médio foi obtido pela determinação das permeações de solutos neutros, usando o modelo do poro simétrico (SPM) descrito em Morão \et\ \cite{moraompa}.
+\index{modelo!poros simétricos}%
+Os valores obtidos de \raioporo\ estão indicados na tabela~\ref{tab:1art2}.
+\begin{table}%
+\centering
+\begin{threeparttable}
+\caption{Características principais das membranas usadas.}
+\label{tab:1art2}
+\begin{tabular*}{\textwidth}{@{\phantom{l}}@{\extracolsep{\fill}}llllll}  
+\toprule
+	Membrana & Material & Fabricante & \raioporo $[\mathrm{nm}]$ & $\varepsilon$ & $L\,[\mu\mathrm{m}]$ \\
+\midrule
+	TEPC \unit{0.03}{\micro\meter} & Policarbonato \tracketched & Sterlitech & $15$\tnote{a}\ ;$14.5$\tnote{b} & $4.2\times 10^{-3}$\tnote{c} & $6$\tnote{c} \\
+	XM300                          & Poliacrilonitrilo          & Millipore  & $10.5$\tnote{d}             & ---                          & ---        \\
+	YM100                          & Celulose regenerada        & Millipore  & $10.0$\tnote{e}             & ---                          & ---        \\
+	Nylon \unit{0.2}{\micro\meter} & Nylon                      & Millipore  & $100$\tnote{a}              & ---                          & ---        \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}
+\item[a]Valor nominal.
+\item[b]Calculado a partir da distribuição de tamanhos de poro.
+\item[c]Fornecido pelo fabricante.
+\item[d]Obtido em \cite{meu1}.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+Os ensaios de filtração foram efetuados num célula de filtração da \emph{Amicon/Millipore}, modelo \emph{8010}, com uma área efetiva de filtração de $4.1\times10^{-4}\,\mathrm{m}^{2}$.
+\index{Amicon 8010}%
+Antes de serem utilizadas nos ensaios, as membranas foram mantidas em água durante a noite e em seguida lavadas com a passagem de pelo menos \unit{20}{\milli\liter} de tampão para assegurar a completa remoção de agentes conservantes, inicialmente presentes nas membranas. O tampão foi então removido da célula e substituído por \unit{10}{\milli\liter} da solução de plasmídeo a ser filtrada. Recolheu-se logo em seguida, do interior da célula, uma amostra da solução inicial.
+\index{velocidade!agitação}%
+A velocidade de agitação, \agitacao, foi ajustada para 100 e para 800\,min$^{-1}$ (com calibração prévia). A temperatura em todos os ensaios foi de 20\,$\pm$\,1\degreecelsius. O caudal de permeado foi controlado em todos os ensaios através de uma bomba peristáltica \emph{Watson-Marlow 403 U}, colocada a jusante da membrana (atuando assim por sucção).
+\index{bomba peristáltica}%
+Antes de se recolher a amostra de permeado para ser analisada, o primeiro \unit{1.0}{\milli\liter} filtrado foi recolhido num \eppendorf\ para ser descartado. Este procedimento tem com objetivo evitar a diluição da amostra de permeado devido ao líquido presente inicialmente no tubo da bomba peristáltica, como verificado experimentalmente. O volume de permeado recolhido em seguida foi \unit{0.6}{\milli\liter} (filtrando-se assim no total \unit{1.6}{\milli\liter} da solução inicial). As concentrações de plasmídeo, quer no permeado quer na soluçao inicial, foram determinadas medindo a absorvância a \unit{260}{\nano\meter}, num \espectrofotometro\ da \emph{Pharmacia Biotech}, modelo \emph{Ultrospect 3000}.
+\index{absorvância}%
+\index{espetrofotómetro}%
+
+\section{Resultados e discussão}
+Usando a abordagem CSC, o raio de giração do plasmídeo foi estimado em \unit{85.6}{\nano\meter} a uma força iónica de 0.46\,M, que representa o valor escolhido para realizar as experiências (com exceção dos ensaios em que se variou a força iónica). Com este valor e com os tamanhos de poro dados na tabela~\ref{tab:1art2}, os coeficientes de partição dinâmicos puderam ser calculados através da equação~\ref{eq:partiçãomeu2}. Os valores obtidos estão indicados na tabela~\ref{tab:2art2}. Com estes valores, a permeação observada pode assim ser estimada resolvendo numericamente o sistema de equações~\ref{eq:partiçãomeu2}---\ref{eq:permobsmeu2}, com $\delta$ estimado pela equação~\ref{eq:delta} e $k_{1}$ estimado pela equação~\ref{eq:opong}. O coeficiente de difusão do plasmídeo \pVAX\ foi estimado em $2.97\times10^{-12}\,\mathrm{m}^{2}/\mathrm{s}$ utilizando a correlação proposta por Prazeres \et\ \cite{prazeresdif}.
+\index{DNA plasmídico!coeficiente de difusão}%
+\begin{table}[!b]%
+\centering
+\begin{threeparttable}
+\caption[Coeficiente de partição do plasmídeo \pVAX\ nas membranas usadas]{Coeficiente de partição dinâmico do plasmídeo \pVAX\ nas membranas usadas com força iónica igual a \unit{0.46}{\mole\per\liter}.}
+\label{tab:2art2}
+\begin{tabular*}{8cm}{lll}
+\toprule
+Membrana &\phantom{espaço}& \particao \\
+\midrule
+TEPC \unit{0.03}{\micro\meter} &\phantom{espaço}& 0.0409\tnote{a}\ ;\ 0.0418\tnote{b}\\
+XM300 &\phantom{espaço}& 0.0205\\
+YM100 &\phantom{espaço}& 0.0187\\
+Nylon \unit{0.2}{\micro\meter} &\phantom{espaço}& 0.57 \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}
+\item[a]Usando o valor nominal de tamanho de poro.
+\item[b]Usando a distribuição de tamanho de poro. 
+\end{tablenotes} 
+\end{threeparttable}
+\end{table}
+
+As permeações observadas do plasmídeo \pVAX\ nas membranas TEPC \unit{0.03}{\micro\meter}, XM300 e YM100, para diferentes velocidades de agitação, em função do fluxo estão representadas na figura~\ref{fig:5art2}, comparadas também com as correspondentes previsões teóricas.
+\index{pVAX@\pVAX}%
+\index{XM300}%
+\index{YM100}%
+\begin{figure}[!t]
+	\centering
+	\setlength\figureheight{5cm} 
+	\setlength\figurewidth{5cm}
+	\input{./tikz/fig5art2.tikz}
+	\caption[Permeações observadas do plasmídeo \pVAX\ nas membranas testadas]{Valores experimentais e previstos (p.) das permeações observadas do plasmídeo \pVAX\ nas membranas TEPC \unit{0.03}{\nano\meter}~(a), XM300~(b) e YM100~(c), em função do fluxo de permeado para diferentes valores de velocidade de agitação. Estão também representadas as previsões corrigidas considerando carga negativa à superfície da membrana ($\cargamembrana<0$) devido à ocorrência de adsorção.}
+	\label{fig:5art2}
+\end{figure}
+Como é visível na figura~\ref{fig:5art2}, as previsões do modelo proposto (p.) estão de acordo com a observação experimental da existência de permeações intermédias do plasmídeo na gama de fluxos testados, e para a velocidade de agitação mais elevada aproximam-se claramente dos resultados experimentais. As permeações observadas são, no entanto, geralmente mais baixas que o previsto pelo modelo. Este facto sugere a ocorrência de uma excessiva acumulação de plasmídeo na superfície da membrana (adsorção), que deverá ser mais pronunciada à velocidade de agitação mais reduzida.
+\index{adsorção!pDNA}% 
+Para investigar esta possibilidade, pode-se colocar a hipótese da ocorrência de adsorção do plasmídeo na superfície da membrana, o que faz com que a membrana adquira carga negativa devido ao facto dos plasmídeos serem moléculas altamente carregadas negativamente, o que poderá explicar a diferença entre os resultados experimentais e as previsões do modelo. Assim, o algoritmo desenvolvido para a estimar \permobs\ pode ser alterado para possibilitar uma estimativa da carga da membrana, \cargamembrana, a partir dos resultados experimentais.
+\index{carga membrana}%
+Com os valores obtidos de \cargamembrana, a fração da superfície da membrana coberta com moléculas de plasmídeo, \fracaomembrana, pode assim ser calculada. 
+
+Para efetuar os cálculos pode-se considerar um método iterativo no qual é feita uma aproximação inicial, $\concpdois\approx\concbdois$, e a partir de valores conhecidos de \concpum, calcular assim \concptres. Com os valores obtidos de \concbi\ e \concpi, a equação~\ref{eq:np} pode ser resolvida, como descrito anteriormente, obtendo-se assim os valores de \concmi. Considerando que algumas moléculas de plasmídeo estão adsorvidas à superfície da membrana, formando um filme com carga negativa, todos os componentes em solução estarão envolvidos num equilíbrio de partição, com a concentração das espécies não-adsorvidas, \concMi, dada por:
+\index{equilíbrio camada adsorvida}%
+\begin{equation}
+\label{eq:cMcmart2}
+\concMi=\concmi\exp\left(\frac{\cargaeletrica_{i}\ctefaraday}{\ctegases T}\potencialD\right)
+\end{equation}
+onde \potencialD\ representa a diferença entre o potencial elétrico na solução perto do filme e potencial elétrico no filme. Dado que $\concMum=\concpum/\particao$, com os valores de \concmum\ pode-se calcular a diferença de potencial elétrico, \potencialD, usando a equação~\ref{eq:cMcmart2} na forma:
+\begin{equation}
+\label{eq:potencialDart2}
+\potencialD=\frac{\ctegases T}{\cargaeletrica_{1}\ctefaraday}\ln\left(\frac{\concMum}{\concmum}\right)
+\end{equation}
+Os valores de \concMdois\ e \concMtres\ podem ser calculados pela equação~\ref{eq:cMcmart2}. Com o novo valor obtido de \concMdois\ obtém-se assim uma nova estimativa para \concpdois\ e os cálculos deverão ser assim feitos de forma cíclica até que se obtenha convergência. Com os valores finais obtidos de \concMi, \cargamembrana\ pode ser calculada pelo balanço de cargas na filme adsorvido à superfície da membrana:
+\begin{equation}
+\label{eq:qxart2}
+\cargamembrana=-\sum_{i=1}^{3}\cargaeletrica_{i}\concMi
+\end{equation}
+Assumindo que apenas se adsorve uma camada de moléculas de plasmídeo à superfície da membrana, a fração de cobrimento, \fracaomembrana, pode ser determinada através de \cargamembrana. Em primeiro lugar calcula-se o número de moléculas de plasmídeo adsorvidas por unidade de volume da mono-camada:
+\index{mono-camada}%
+\begin{equation}
+\label{eq:Nadsorvidoart2}
+\Nadsorvido=-\frac{\cargamembrana\avogadro}{2\numpb}
+\end{equation}
+onde \avogadro\ é o número de Avogadro, tendo em conta que cada molécula de pDNA tem $(2\,\numpb)$ grupos carregados. Multiplicando \Nadsorvido\ por uma distância igual a duas vezes o raio de giração do plasmídeo, $2\raiogiracao$, obtém-se aproximadamente o número de moléculas de pDNA adsorvidas por unidade de área. Uma vez que cada molécula de plasmídeo ocupa uma área de aproximadamente $\pi\raiogiracao^{2}$, a fração da superfície da membrana coberta é dada por:
+\begin{equation}
+\label{eq:fracaoart2}
+\fracaomembrana=-\frac{\cargamembrana\avogadro}{\numpb}\pi\raiogiracao^3
+\end{equation} 
+Os valores obtidos para \cargamembrana\ e \fracaomembrana, estão representados na figura~\ref{fig:6abcart2}, em função do fluxo de permeado. Como se pode observar, valores bastante razoáveis de \fracaomembrana\ se obtêm assumindo a formação de uma mono-camada de moléculas de plasmídeo adsorvidas na superfície da membrana. Para cada membrana, \fracaomembrana\ é claramente superior para a velocidade de agitação mais baixa e para a membrana YM100 obtêm-se os valores mais altos de \fracaomembrana, o que reflete o maior desvio entre os resultados experimentais e as previsões teóricas encontradas para esta membrana. Para os valores de \cargamembrana\ verificou-se uma dependência linear com \fluxo, sendo esta dependência aparentemente independente da membrana usada. Com o auxílio das correlações indicadas na figura~\ref{fig:6dart2}, pode-se formular um melhor modelo para a dependência de \permobs\ com \fluxo\ e \agitacao, considerando o efeito da carga da superfície da membrana nos cálculos, em vez de se assumir $\cargamembrana=0$ (figura~\ref{fig:5art2}). 
+\begin{figure}
+	\centering
+	\setlength\figureheight{5cm} 
+	\setlength\figurewidth{5cm}
+	\input{./tikz/fig6abcart2.tikz}
+	\caption[Fração de cobrimento, \fracaomembrana, da área de membrana por pDNA]{Fração de cobrimento da área da membrana por adsorção de moléculas de plasmídeo, \fracaomembrana, em função do fluxo de permeado, para as duas velocidades de agitação testadas. Os valores foram obtidos a partir dos dados representados na figura~\ref{fig:5art2}.}
+	\label{fig:6abcart2}
+\end{figure}
+\begin{figure}
+	\centering
+	\setlength\figureheight{6cm} 
+	\setlength\figurewidth{6cm}
+	\input{./tikz/fig6dart2.tikz}
+	\caption[Carga total das moléculas de plasmídeo adsorvidas na superfície da membrana]{Carga total das moléculas de plasmídeo adsorvidas na superfície da membrana em função do fluxo de permeado, para as duas velocidades de agitação testadas. Os valores foram obtidos a partir dos dados representados nas figura~\ref{fig:5art2}.}
+	\label{fig:6dart2}
+\end{figure}
+
+Para além da influência do tamanho de poro, fluxo e velocidade de agitação na permeação do plasmídeo, \permobs, é igualmente importante investigar o efeito da força iónica, que se sabe ter grande importância. As permeações observadas do plasmídeo, obtidas a diferentes valores de força iónica, nas membranas TEPC\,\unit{0.03}{\micro\meter} e na membrana de Nylon\,\unit{0.2}{\micro\meter}, estão representadas na figura~\ref{fig:7art2}, onde se encontram comparadas com as previsões teóricas assumindo adsorção desprezável, ou seja $\cargamembrana=0$.
+\index{Nylon}%
+Como é possível constatar, para valores elevados de força iónica o plasmídeo apresenta elevados valores de permeação, e à medida que a força iónica diminui observa-se uma transição marcada para valores reduzidos de \permobs, por volta de $50\,\mathrm{mM}$ para a membrana TEPC\,\unit{0.03}{\micro\meter}, tal como previsto pelo modelo. Para a membrana de Nylon\,\unit{0.2}{\micro\meter}, que tem poros de maiores dimensões, o valor de força iónica para o qual se observa a transição é aparentemente mais baixo, cerca de $10\,\mathrm{mM}$, igualmente como previsto pelo modelo. O fator dominante que leva à diminuição no valor de \permobs\ é o decréscimo da concentração de plasmídeo junto à superfície da membrana, \concmum\ (ver figura~\ref{fig:7art2}). Este facto é consequência da maior repulsão que ocorre entre as moléculas de plasmídeo à superfície da membrana, à medida que a concentração de sal diminui, o que pode ser visto pelo aumento do valor absoluto do gradiente do potencial elétrico junto à membrana, \potencialgrad\ (ver figura~\ref{fig:8art2} ).
+\index{repulsão eletrostática}% 
+\begin{figure}
+	\centering
+	\setlength\figureheight{6cm} 
+	\setlength\figurewidth{6cm}
+	\input{./tikz/fig7art2.tikz}
+	\caption[Permeação observada do plasmídeo \pVAX\ em função da força iónica]{Permeação observada experimental e prevista (p.) do plasmídeo \pVAX\ na membrana TEPC \unit{0.03}{\micro\meter} com $\fluxo=5.0\times 10^{-6}\,\mathrm{m}/\mathrm{s}$ e na membrana Nylon \unit{0.2}{\micro\meter} com $\fluxo=4.2\times 10^{-6}\,\mathrm{m}/\mathrm{s}$, em função da força iónica, para $\agitacao=100\,\mathrm{min}^{-1}$.}
+	\label{fig:7art2}
+\end{figure}
+\begin{figure}
+	\centering
+	\setlength\figureheight{5cm} 
+	\setlength\figurewidth{5cm}
+	\input{./tikz/fig8art2.tikz}
+	\caption[Previsões do modelo para $\concmum/\concbum$, assumindo $\cargamembrana=0$]{Previsões do modelo, assumindo $\cargamembrana=0$, para o racio entre a concentração de plasmídeo à superfície da membrana e a concentração de plasmídeo no seio da solução, $\concmum/\concbum$, e para o valor do gradiente de potencial elétrico à superfície da membrana, em função da força iónica, para as membranas TEPC 0.03\,\micro m(a) e Nylon 0.2\,\micro m(b).}
+	\label{fig:8art2}
+\end{figure}
+
+\section{Conclusões}
+Neste capítulo desenvolveu-se um modelo de transferência de massa para prever as permeações observadas de plasmídeos em membranas com poros de pequenas dimensões. Nestas circunstâncias, considera-se que a permeação só ocorre devido ao efeito de sucção do fluxo convectivo de solvente e que os plasmídeos durante a passagem pelos poros ocupam a totalidade da secção reta do mesmo, sendo assim a convecção o único mecanismo de transporte. As moléculas de plasmídeo tendem a acumular-se junto à superfície da membrana devido à ocorrência de polarização de concentração. No entanto, esta acumulação é contrabalançada pela existência de repulsão eletrostática entre as moléculas de plasmídeo, que são altamente carregadas negativamente.
+
+A precisão das previsões do modelo aqui desenvolvido revelou-se ser bastante dependente das condições hidrodinâmicas usadas, especialmente da velocidade de agitação assim como do fluxo de permeado imposto. No entanto, estes desvios podem ser interpretados com o modelo desenvolvido, considerando a ocorrência de adsorção de moléculas de plasmídeo na superfície da membrana. Foi assim proposta a existência da formação de uma mono-camada de moléculas de plasmídeo, o que confere carga negativa à membrana. Nesta situação, as moléculas de plasmídeo serão parcialmente excluídas da região perto dos poros, o que leva à diminuição da permação observada em comparação com as previsões do modelo.
+
+Para além de efeitos hidrodinâmicos, a acumulação de plasmídeos à superfície da membrana pode ser contrabalançada também pela diminuição da força iónica da solução, uma vez que os plasmídeos são altamente carregados negativamente e assim a repulsão entre eles é intensificada. Com o modelo desenvolvido conseguem-se obter boas previsões deste efeito. O modelo tem ainda a capacidade de considerar a presença de carga na superfície da membrana, facto que pode ser importante no âmbito da purificação de DNA plasmídico.     
+

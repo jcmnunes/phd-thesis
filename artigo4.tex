@@ -1,0 +1,358 @@
+%!TEX root=tese.tex
+\chapter{Modelação e aplicação prática da separação pDNA/RNA por ultrafiltração}
+\label{chap:art4}
+
+\section{Introdução}
+\label{sec:art4_intro}
+Como referido no capítulo~\ref{chap:intro}, na última década tem sido efetuado um enorme esforço de investigação na área da recuperação e purificação de DNA plasmídico (pDNA) a partir de caldos de fermentação, com o objetivo de facilitar a sua produção em larga-escala, para aplicações em terapia génica e para a formulação de vacinas de DNA \cite{prather,carnes,meu2}. Os processos de separação com membranas estão presentes em praticamente todas as áreas da biotecnologia, numa grande variedade de aplicações \cite{rathore,reis}, e revelam o mesmo potencial de aplicação em processos de produção de DNA plasmídico \cite{carnes,prather,flowsheets}.
+
+A recuperação e posterior purificação de pDNA a partir de caldos de fermentação, que pode ser efetuada por variadas técnicas, tipicamente envolve um passo de lise celular seguido por uma operação de separação sólido-líquido, subsequente precipitação de pDNA com álcoois tais como etanol ou isopropanol (ou mesmo outros agentes precipitantes), ressuspensão do concentrado de pDNA e sua posterior separação de RNA e outros contaminantes por técnicas de adsorção, que tipicamente são técnicas cromatográficas.
+\index{caldos de fermentação}%
+Estas técnicas cromatográficas são igualmente necessárias, num grande número de esquemas de purificação, para obter a isoforma super-enrolada do plasmídeo, pDNA(sc), com os requisitos de qualidade do produto final, impostos pelas entidades reguladoras, tais como a FDA (U.S.\ Food and Drug Administration) e a EMA (``European Medicines Agency'') \cite{prather,carnes,sousabab}.
+\index{isoforma!super-enrolada}%
+\index{EMA}%
+\index{FDA}%
+
+Operações de membranas foram utilizadas com sucesso para obter a colheita de células, a partir de caldos de fermentação, não só em processos de produção de pDNA como também em processos similares que envolvem suspensões celulares \cite{prather,riesmeier,morao01,brites} e igualmente para a seletiva retenção de detritos celulares, resultantes do processo de lise, permitindo a permeação de moléculas de pDNA \cite{duvaltff,meu3,freitas}. Estas operações foram já igualmente utilizadas na concentração de pDNA, com simultânea troca de tampão e remoção de micro-solutos, a seguir a operações de purificação cromatográfica, assim como para a esterilização do produto final \cite{prather,kong06,kong10}. Para além destas aplicações, as operações de membranas podem ser uma alternativa viável na fase da concentração e pré-purificação do pDNA antes da cromatografia, substituindo o uso de solventes e outros agentes precipitantes. 
+
+A aplicação da ultrafiltração para efetuar a separação entre pDNA e RNA, assim como outros contaminantes, tem vindo a ser estudada por vários autores independentes. Kendall \et\ \cite{kendall} estudaram a purificação de pDNA através da adsorção seletiva de contaminantes em membranas de nitrocelulose.
+\index{membrana!nitrocelulose}%
+O procedimento desenvolvido permitiu remover quantidades significativas de RNA, DNA genómico e outros contaminantes hidrofóbicos.
+\index{DNA genómico}%
+No entanto, os problemas relacionados com a colmatação e a reduzida capacidade de membranas para atuarem como materiais adsorventes, podem ser sérias limitações da aplicação prática deste método. Eon-Duvall \et\ \cite{duvaltff} adicionaram cloreto de cálcio aos lisados e efetuaram uma subsequente operação de ultrafiltração para obter uma quase completa remoção de RNA.
+\index{cloreto de cálcio!precipitação RNA}%
+O facto de ser necessário utilizar uma elevada quantidade de \tce{CaCl2} é assim uma desvantagem do método. Kahn \et\ \cite{kahn} estudaram a aplicação da ultrafiltração de diferentes plasmídeos para obter a concentração de pDNA, e a sua separação do RNA, após um processo modificado de lise alcalina.
+\index{lise alcalina!método modificado}%
+Este método contempla um aumento do tempo de incubação (24 horas) durante a lise para obter uma degradação do RNA presente e assim obter elevados graus de purificação de pDNA com uma única operação de ultrafiltração. No entanto, o processo desenvolvido tem a desvantagem de conter elevados tempos de incubação para ser possível efetuar a separação, e não é claro que o pDNA não possa igualmente sofrer alguma degradação nestas condições. Freitas \et\ \cite{freitas} utilizaram um processo de ultrafiltração para efetuar uma recuperação intermediária de pDNA antes de um passo final de purificação. Apesar de obterem rendimentos de recuperação de pDNA elevados, o rendimento de remoção de RNA revelou-se ser modesto. 
+
+Tendo em conta o estudo prévio, descrito no capítulo anterior, neste capítulo é investigada a possibilidade de otimizar a operação de ultrafiltração, procurando obter uma elevada retenção de pDNA e uma permeação alta dos principais contaminantes, com especial enfoque no RNA. A purificação de dois plasmídeos diferentes, \pVAX\ e \pCAMBIA, com 6050\,bp e 12361\,bp respetivamente, usando duas membranas de ultrafiltração distintas, é estudada numa célula de filtração agitada.
+\index{pVAX@\pVAX}%
+\index{pCAMBIA@\pCAMBIA}%
+Os efeitos do tamanho do poro das membranas, da velocidade de agitação e do fluxo de filtração na separação entre pDNA e RNA, bem como no grau de colmatação das membranas, são interpretados com base no modelo desenvolvido para a permeação de macrosolutos flexíveis em membranas com poros de menores dimensões (capítulos~\ref{chap:art1}--\ref{chap:art3}). Para obter um termo comparativo, é avaliada a performance de um processo de isolamento intermediário alternativo, com base em duas operações de precipitação seletiva, usado com regularidade em laboratório e com o qual se obtêm resultados satisfatórios no âmbito do isolamento intermediário de pDNA \cite{sousabab,freitas}. 
+
+\section{Materiais e métodos} % (fold)
+\label{sec:art4_materias}
+\subsection{Produção de pDNA e lise celular} % (fold)
+\label{ssub:art4_lise}
+Bactérias \emph{E. coli} DH5$\alpha$, contendo um plasmídeo de 6050\,bp (\pVAX), e bactérias \emph{E. coli} XL1\,blue, contendo um plasmídeo de 12361\,bp (\pCAMBIA) foram produzidas por fermentação, usando as mesmas condições de crescimento descritas em \cite{asousa}.
+\index{ecolidh@\ecolidh}%
+\index{ecolix@\emph{E. coli} XL1\,blue}%
+\index{fermentação}%
+As bactérias com o plasmídeo \pVAX\ foram cultivadas no meio Terrifc broth (12\,g/L de triptona (\emph{Sigma}), 24\,g/L de extrato de leveduras (\emph{Fluka}), 4\,mL/L de glicerol (\emph{Himedia}), 0.017\,M de \tce{KH2PO4} (\emph{Panreac}) e 0.072\,M de \tce{K2HPO4} (\emph{Panreac}), e as bactérias contendo o plasmídeo \pCAMBIA\ cultivadas em meio Luria Bertani (10\,g/L de triptona, 5\,g/L de extrato de leveduras, 10\,g/L de NaCl (\emph{Panreac}), pH 7.00).
+\index{Terrific broth}%
+\index{Luria Bertani}%
+A lise celular foi obtida por um método modificado de lise alcalina, originalmente desenvolvido por Birnboim e Doly \cite{birnboim}.
+\index{lise alcalina!procedimento}%
+Resumidamente, a 4\,mL de uma suspensão de bactárias a 120\,g/L (peso húmido), em tampão $\mr{T}_{50}\mr{E}_{10}$ (50\,mM Tris (\emph{Fisher BioReagents}) e 10\,mM EDTA (\emph{Sigma}), pH 8.00), foram adicionados 4\,mL de uma solução de 0.2\,M de NaOH (\emph{Panreac}) e 1\% SDS (\emph{Himedia}). Após 5\,min de incubação a temperatura ambiente, foram adicionados 4\,mL de uma solução previamente arrefecida (4\degreecelsius) de 3\,M de acetato de potássio (\emph{Sigma-Aldrich}) a pH 5.00, com o pH ajustado com ácido acético (\emph{Panreac}). Após agitação suave, a suspensão obtida foi incubada em gelo durante 15\,min antes de ser processada por microfiltração.  
+% subsubsection art4_lise (end)
+
+\subsection{Clarificação de lisados - Microfiltração} % (fold)
+\label{ssub:2.2art4}
+\index{lisado!clarificação}%
+O lisado alcalino obtido, contendo uma grande quantidade de sólidos em suspensão, foi filtrado por microfiltração usando uma membrana hidrofílica de Nylon (Nylaflo, \emph{Pall}), com um tamanho de poro nominal de 0.2\,\micro\meter.
+\index{Nylon}%
+\index{Nylaflo|see{Nylon}}%
+Foi efetuada uma diafiltração continua numa célula de filtração agitada, com geometria ``dead-end'', com 50\,mL de capacidade (modelo 8050, \emph{Millipore}).
+\index{Amicon 8050}%
+A velocidade de agitação foi mantida a 100\,\minmum\ e o caudal de permeado ajustado, e mantido, em 1\,mL/min através de uma bomba peristáltica (modelo 403U/VM2, \emph{Watson Marlow}) colocada a jusante da membrana, operando assim por sucção.
+\index{caudal volumétrico}%
+\index{velocidade de agitação}%
+\index{bomba peristáltica}%
+O volume de lisado processado em cada ensaio foi de 10\,mL. O volume da suspensão no interior da célula de filtração foi mantido constante através da contínua adição de Tris/HCl 10\,mM a pH 8.00 (tampão Tris), que foi alimentado à célula de filtração através de uma segunda bomba peristáltica (modelo 101U/R, \emph{Watson Marlow}), ao mesmo caudal.
+\index{Tris}%
+A filtração foi concluída após a recolha de um total de 30\,mL de permeado. Nestas condições espera-se um rendimento de recuperação de plasmídeo no permeado de cerca de 95\%, considerando que o plasmídeo não é retido pela membrana, fazendo uso da equação do balanço de massa para o modo de diafiltração a volume constante (equação~\ref{bal_mas_df_final}, capítulo~\ref{cha:pra}).
+\index{DNA plasmídico!rendimento de recuperação}%
+\index{rendimento!de recuperação}%
+% subsubsection 2.2art4 (end)
+
+\subsection{Ultrafiltração} % (fold)
+\label{ssub:2.3art4}
+\index{ultrafiltração}%
+Os ensaios de ultrafiltração foram efetuados numa célula de filtração Amicon 8010, com geometria ``dead-end'' (\emph{Millipore}).
+\index{Amicon 8010}%
+Em todos os ensaios, o volume inicial de lisado alcalino microfiltrado foi de 10\,mL, tendo-se recolhido 9\,mL de permeado, o que equivale a um fator de concentração volumétrico (VCF) igual a 10.
+\index{fator!de concentração}%
+Testaram-se duas membranas distintas: uma membrana de 100\,kDa de ``cut-off'' de polímero fluorado (FS40PP, \emph{DSS/Alfa-laval}) e uma membrana de 300\,kDa de ``cut-off'' de polietersulfona (Biomax\,300, \emph{Millipore}).
+\index{FS40PP}%
+\index{Biomax 300}%
+\index{PVDF}%
+\index{polietersulfona}%
+Estas membranas foram previamente caracterizadas, em relação ao tamanho de poro, através do modelo de poros simétricos (SPM) desenvolvido por Morão \et\ \cite{moraompa}.
+\index{modelo!dos poros simétricos}%
+O caudal de permeado foi mantido constante através do uso de uma bomba peristáltica (modelo 101U/R, \emph{Watson Marlow}), colocada a jusante da membrana. A velocidade de agitação foi ajustada a 100 ou a 760\,\minmum, com calibração prévia.
+\index{caudal de permeado}%   
+% subsubsection 2.3art4 (end)
+
+\subsection{Isolamento intermediário usando tecnologias de membranas} % (fold)
+\label{sub:isol_mem_final}
+\index{isolamento intermediário}%
+Foram efetuados três conjuntos de ensaios, para o isolamento intermediário de pDNA, com o objetivo de melhorar os valores de remoção de RNA, recorrendo a uma operação de diafiltração. Os ensaios foram todos efetuados em triplicado, tendo-se obtido uma boa reprodutibilidade entre os mesmos. O esquema dos ensaios efetuados, bem como as principais condições operatórias utilizadas, estão representados na figura~\ref{fig:processos_art4} e tabela~\ref{tab:cond_isolamento_art4}, respetivamente. As experiências foram conduzidas numa célula de filtração agitada, com 10 mL de capacidade, com geometria ``dead-end'' (Amicon 8010, \emph{Millipore}). A agitação foi mantida a 760\,\minmum\ em todos os ensaios. O caudal de permeado foi imposto através de uma bomba peristáltica (WM101U/R, \emph{Watson Marlow}). Foram usadas novamente as membranas FS40PP e Biomax\,300. Antes de se iniciar a filtração, as membranas foram lavadas com a filtração de pelo menos 30\,mL de água MilliQ (\emph{Millipore}). Após lavagem das membranas, as suas permeabilidades hidráulicas foram medidas através da determinação do fluxo de água em função da pressão transmembranar, pressão esta imposta pela ligação da célula de filtração a uma garrafa de azoto pressurizado. Foram colocados inicialmente na célula 10 mL de permeado proveniente da microfiltração do lisado. O permeado foi concentrado a um fator de concentração volumétrico (VCF) predefinido (ver tabela~\ref{tab:cond_isolamento_art4}), segundo o método descrito na secção~\ref{ssub:2.3art4}. Após concluída a concentração, foi efetuada uma diafiltração com aproximadamente 4 volumes de diafiltração ($V_{\mr{DF}}$) de Tris/HCl 10 mM a pH 8.00 (tampão Tris), ao mesmo caudal, e utilizando uma segunda bomba peristáltica (WM403U/R, \emph{Watson Marlow}).
+\index{diafiltração}%
+Foram recolhidas amostras da solução inicial antes da concentração (permeado da microfiltração), do concentrado após diafiltração e do permeado conjunto da fase de concentração e da fase de diafiltração, para posterior análise. Para aferir o grau de colmatação irreversível das membranas usadas, no fim dos ensaios a célula foi lavada com água MilliQ, com agitação suave e breve, e a permeabilidade hidráulica novamente determinada.
+% subsection isol_mem_final (end)
+
+\begin{figure}
+\centering
+	\input{./tikz/processos_art4.tikz}
+	\caption[Esquemas dos processos de isolamento intermediário estudados]{Esquema dos processos estudados de isolamento intermediário de pDNA. A tracejado encontram-se as operações consideradas nos cálculos. Os processos A--C usam exclusivamente operações de membranas. O processo D consiste no procedimento de isolamento intermediário alternativo, descrito em \cite{sousabab}. As condições operatórias para os processos A--C estão especificadas na tabela~\ref{tab:cond_isolamento_art4}.}
+	\label{fig:processos_art4}  
+\end{figure}
+%
+\begin{table}[!b]
+	\caption[Condições operatórias utilizadas nos ensaios de isolamento intermediário.]{Condições operatórias, utilizadas nos processos com base em tecnologias de membrana, para efetuar o isolamento intermediário de pDNA.}
+	\label{tab:cond_isolamento_art4}
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}l l d{9} d{5} d{2} d{6}}
+ \toprule
+Processo & Membrana & pDNA & \mc{1}{l}{\fluxo$\times 10^{6}$\,[m/s]} & \mc{1}{l}{\agitacao\,[\minmum]} & \mc{1}{l}{VCF} & \mc{1}{l}{$V_{\mr{DF}}$\,[mL]} \\
+\midrule
+``A'' & FS40PP & \pVAX & 4,2 & 760 & 8 & 3,8 \\
+``B'' & Biomax\,300 & \pVAX & 2,4 & 760 & 8,4 & 4 \\
+``C'' & Biomax\,300 & \pCAMBIA & 2,4 & 760 & 8,4 & 4 \\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+\subsection{Isolamento intermediário alternativo} % (fold)
+\label{sub:isol_alter_final}
+\index{isolamento intermediário alternativo}%
+Para se obter um termo comparativo, em relação aos resultados obtidos com os ensaios de ultrafiltração/diafiltração, foi igualmente estudado um processo de isolamento intermediário alternativo (Processo D, figura~\ref{fig:processos_art4}), regularmente usado em laboratório \cite{sousabab,freitas}. Foi efetuado o procedimento descrito em \cite{sousabab}. O lisado, proveniente da lise alcalina, foi centrifugado duas vezes a 19\,000\,g, durante 30\,min e a 4\degreecelsius, numa centrífuga Allegra 25R (\emph{Beckman Coulter}).
+\index{centrifugação}%
+Ao sobrenadante obtido (8\,mL) foram adicionados 0.7 volumes de isopropanol (\emph{Fischer}).
+\index{isopropanol!isolamento intermediário alternativo}%
+Após 30\,min de incubação em gelo, a suspensão foi centrifugada durante 30\,min, a 16\,000\,g e 4\degreecelsius, na mesma centrífuga. Após remoção do sobrenadante, o ``pellet'' foi dissolvido em 2.5\,mL de tampão Tris. Foi adicionado sulfato de amónio (\emph{Prolabo, VWR}) até perfazer uma concentração de 2.5\,M.
+\index{sulfato de amónio!isolamento intermediário alternativo}%
+Após incubação durante 15 min em gelo, a suspensão foi centrifugada a 16\,000\,g, durante 20\,min e 4\degreecelsius, numa centrífuga Mikro 200R (\emph{Hettich}). Foram recolhidas amostras ao longo do processo para posterior análise.
+
+\subsection{Parte analítica} % (fold)
+\label{ssub:2.4art4}
+\subsubsection{Quantificação de pDNA e RNA}
+\label{ssubsub:2.4.1art4}
+\index{HIC}%
+\index{plasmídeo|see{DNA plasmídico}}%
+A concentração de plasmídeo nas várias amostras foi determinada pelo método desenvolvido por Diogo \et\ \cite{diogo}. Resumidamente, uma coluna HIC \emph{source 15} PHE, da \emph{Amersham Biosciences (GE Healthcare)} foi conectada a um sistema de FPLC (\emph{Äkta purifier}) da \emph{GE Healthcare}.
+\index{akta@Äkta}%
+A coluna foi inicialmente equilibrada com 1.5\,M de \tce{(NH4)2SO4} em tampão tris. As amostras (20\,\micro L) foram injetadas e eluídas a um caudal constante de 1\,mL/min. Ao fim de 2\,min após a injeção, o eluente foi instantaneamente mudado para tampão Tris para eluir as espécies adsorvidas. Este tampão foi mantido por mais 4\,min antes de se re-equilibrar a coluna para a preparar para a próxima injeção. A absorvância do eluído foi registada a 260\,nm. A concentração de pDNA em cada amostra foi calculada por intermédio de uma reta de calibração, preparada com padrões de pDNA obtidos com um kit de purificação (\emph{Maxi kit, Qiagen}). Este método está descrito em detalhe no capítulo~\ref{cha:pra}, onde se propõe que a concentração de RNA pode igualmente ser estimada.    
+% subsubsection 2.4art4 (end)
+
+\subsubsection{Eletroforese em gel de agarose} % (fold)
+\label{ssub:2p4p1art4}
+\index{AGE!procedimento}%
+As amostras foram analisadas por eletroforese horizontal, em gel de 1.0\% de agarose (\emph{Grisp}), preparado em tampão TAE (40\,mM Tris, 20\,mM ácido acético e 1\,mM de EDTA, pH 8.00), complementado com o corante \emph{GreenSafe} (\emph{NZYTech}).
+\index{greensafe@\emph{GreenSafe}}%
+As análises decorreram a 110\,V, durante 40\,min, numa célula da \emph{BioRad}. Os géis foram visualizados num transiluminador da \emph{Uvitec}, modelo \emph{Essential V2}.
+\index{transiluminador}%
+Para concentrar, e/ou evitar possíveis interferências provocadas pelos sais presentes, algumas amostras foram dessalinizadas, através de precipitação com isopropanol, tal como descrito no capítulo~\ref{chap:art3}.
+\index{isopropanol!dessalinização}%
+% subsubsection 2p4p1art4 (end)
+
+\subsection{Simulações} % (fold)
+\label{sub:2p5art4}
+Para efetuar uma otimização da operação de ultrafiltração, com o intuito de obter uma elevada retenção de pDNA e uma elevada permeação de RNA, efetuaram-se simulações, quer para um sistema de 3 componentes contendo a macromolécula de interesse (pDNA ou RNA, componente 1), ião acetato (componente 2) e ião potássio (componente 3), quer para um sistema de 4 componentes contendo o plasmídeo, uma espécie de RNA (23S, 16S ou 5S), o ião acetato e o ião potássio.
+\index{modelo!3 componentes}%
+\index{modelo!4 componentes}%
+Nas simulações utilizou-se o método descrito nos capítulos~\ref{chap:teov3}, \ref{chap:art2} e \ref{chap:art3}. Apesar de nos lisados microfiltrados existirem outros sais presentes em solução, os iões \tce{CH3COO-} e \tce{K+} são, por larga margem, os que se encontram em maior quantidade, sendo os principais responsáveis pelos efeitos de carga que afetam em grande medida a polarização de concentração de macrosolutos (pDNA e RNA) que são altamente carregados negativamente.
+\index{iao@ião!potássio}%
+\index{iao@ião!acetato}%
+
+O modelo de transferência de massa anteriormente desenvolvido permite estimar a permeação de macrosolutos em membranas com poros de reduzidas dimensões, ou seja, poros com um raio médio inferior ao raio de giração do macrosoluto, sendo que este último deverá apresentar alguma flexibilidade. Este modelo foi originalmente desenvolvido para moléculas lineares, que foram modeladas como cadeias de ligação livre (FJC), nomeadamente para pDNA linear e para polissacáridos lineares (capítulo~\ref{chap:art1}). O modelo foi estendido ao caso de macrosolutos de cadeia fechada, através da sua representação pelo modelo de cadeias fechadas segmentadas (CSC), discutido nos capítulos~\ref{chap:teov3}~e~\ref{chap:art2}. De facto, verificou-se que a equação obtida, que relaciona o rácio entre o raio de giração da molécula e o raio do poro com o coeficiente de partição, pode ser usada quer para cadeias FJC quer para cadeias CSC (capítulo~\ref{chap:art2}). Apesar de uma molécula de pDNA poder ser modelada como uma FJC, a representação CSC é, aparentemente, uma melhor aproximação por permitir obter valores de raio de giração em melhor concordância com os valores encontrados na literatura. O modelo desenvolvido pode igualmente ser usado para prever a permeação de RNA, considerando-o uma molécula linear, ou seja, utilizando o modelo FJC, tal como indicado no capítulo~\ref{chap:art3}, onde se aplicou o modelo de 3 componentes para prever a permeação das principais espécies de RNA presentes nos lisados, nomeadamente os RNA's 23S, 16S e 5S, de forma individual. 
+
+Neste capítulo investiga-se a possível mútua interferência entre pDNA e RNA nas suas permeações, considerando um sistema de 4 componentes. A inclusão de um maior número de componentes no modelo representa uma interpretação mais realista do fenómeno mas aumenta consideravelmente a complexidade dos cálculos e o esforço computacional necessário. Para além disso, tal como mostrado mais à frente, a principal interferência é o efeito do pDNA na permeação do RNA e não o contrário, sendo que este último efeito pode ser simulado com um sistema de 4 componentes. 
+
+As simulações do processo de ultrafiltração foram levadas a cabo considerando um cenário de filtração numa célula agitada, com 10\,mL de solução inicial (permeado da microfiltração), em condições de fluxo e velocidade de agitação constantes e em modo de concentração, cenário este consistente com o procedimento experimental descrito na secção~\ref{ssub:2.3art4}. As concentrações inicias das macromoléculas e sais usados nas simulações, assim como as suas propriedades mais relevantes, estão indicadas na tabela~\ref{tab:1art4}. As várias propriedades das moléculas foram determinadas pelos métodos discutidos na secção~\ref{sec:solutos}. 
+\begin{table}
+	\caption[Componentes e suas propriedades relevantes]{Principais componentes do lisado microfiltrado e as suas propriedades mais relevantes para fins de modelação.}
+	\label{tab:1art4}
+\begin{threeparttable}
+\begin{tabular*}{15cm}{l@{\extracolsep{\fill}} l d{0} d{6} d{6} d{8} }
+\toprule
+Componente\phantom{MM}&\concb\,[mol/$\mr{m}^3$]&\mc{1}{r}{M$\mr{_w}$\,[Da]\phantom{l}}&\mc{1}{l}{$\raiostokes\times 10^9$\,[m]}&\mc{1}{l}{$\raiogiracao\times 10^9$\,[m]} & \mc{1}{l}{$D\times 10^{12}\,[\mr{m}^2/\mr{s}]$}\\
+\midrule
+\tce{CH3COO-} & $3.17\times 10^2$ & 59 & 0,227 &  & 1089\\
+\tce{K+}	     & $3.17\times 10^2$ & 39 & 0,125 &  & 1950 \\
+RNA 5S              & $2.26\times 10^{-3}$\tnote{a} & 40800 & 3,39 & 5,10 & 72,9\tnote{c}\\
+                          & $8.45\times 10^{-4}$\tnote{b} &            &         &          &            \\
+RNA 16S            & $1.06\times 10^{-4}$\tnote{a} & 523940 & 13,6 & 20,5 & 18,2\tnote{c}\\ 
+                          & $8.99\times 10^{-5}$\tnote{b} &              &          &         &           \\
+RNA 23S            & $5.63\times 10^{-5}$\tnote{a} & 987360& 17,8 & 26,8 &  13,9\tnote{c} \\
+                          & $4.77\times 10^{-5}$\tnote{b} &             &         &         &           \\
+\pVAX                 & $4.47\times 10^{-6}$\tnote{a} & 3993000 & 83,1 & 87,3 & 2,97\tnote{d}\\
+\pCAMBIA                          & $6.39\times 10^{-7}$\tnote{b} & 8158260 & 134 & 138,7 & 1,85 \tnote{d}\\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}
+\item[a] Lisados provenientes da produção de \pVAX  
+\item[b] Lisados provenientes da produção de \pCAMBIA
+\item[c] Valores obtidos no capítulo~\ref{chap:art3}
+\item[d] Valores obtidos em \cite{prazeresdif}
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+% subsection 2p5art4 (end)
+% section art4_materias (end)
+
+\section{Resultados e discussão} % (fold)
+\label{sec:3art4}
+\subsection{Simulações} % (fold)
+\label{sub:3.1art4}
+Para proceder à otimização de uma operação de ultrafiltração, com o objetivo de concentrar o pDNA e simultâneamente proceder à sua separação do RNA presente, o raio do poro da membrana, \raioporo, e o fluxo de filtração, \fluxo, devem ser os primeiros parâmetros a considerar. Em seguida, deve-se testar o material da membrana, nomeadamente em termos da sua suscetibilidade à colmatação e adsorção de plasmídeo, que deve ser o mais reduzida possível. Assim, os efeitos de \raioporo\ e \fluxo\ nas permeações das moléculas indicadas na tabela~\ref{tab:1art4} foram estimados antes dos ensaios experimentais. As previsões foram efetuadas considerando quer o modelo de 3 componentes, quer o modelo de 4 componentes, descritos na secção~\ref{sub:2p5art4}, em condições ideais de ausência de colmatação e adsorção de pDNA e RNA.
+
+O efeito previsto das diferentes moléculas de RNA na permeação observada, \permobs, do plasmídeo \pVAX, calculada pelos dois modelos propostos, é analisado na figura~\ref{fig:1abcart4}. Obtiveram-se resultados semelhantes para o plasmídeo \pCAMBIA\ (resultados não mostrados).
+\index{pVAX@\pVAX!permeação observada}%
+\index{pCAMBIA@\pCAMBIA!permeação observada}%
+Como é possível constatar, observa-se apenas um ligeiro decréscimo de \permobs, o que leva a concluir que este efeito pode ser desprezado (pelo menos para as concentrações consideradas nos cálculos). Apesar da presença das moléculas de RNA não interferirem significativamente na permeação de pDNA, a presença de pDNA influencia consideravelmente a permeação das moléculas de RNA. Como se pode observar na figura~\ref{fig:2art4}, um significativo decréscimo de \permobs\ é previsto, especialmente a altos valores de fluxo e para as espécies de RNA de alto peso molecular (ou seja, RNA 23S e 16S).
+\index{RNA!permeação observada}%
+Os resultados das simulações podem ser interpretados considerando a polarização de concentração esperada para cada componente, expressa pelo rácio $\concm/\concb$, onde \concm\ é a concentração junto à superfície da membrana e \concb\ é a concentração no seio da solução. Os valores calculados de $\concm/\concb$ para o plasmídeo \pVAX, e para as várias espécies de RNA, estão indicados nas figuras~\ref{fig:3aart4}~e~\ref{fig:3bcdart4}, respetivamente, para o caso de $\raioporo=5$\,nm (para $\raioporo=15$\,nm e $\raioporo=25$\,nm podem ser obtidas conclusões semelhantes). Como é possível constatar na figura, existe uma maior acumulação de moléculas de pDNA junto à membrana, por comparação com as moléculas de RNA, o que é consequência dos menores coeficientes de difusão das moléculas de pDNA. Esta acumulação de pDNA afeta a acumulação de RNA (e provavelmente de outras moléculas carregadas negativamente presentes em solução, que não foram consideradas neste estudo) reduzindo a polarização de concentração por efeitos de repulsão eletrostática.
+\index{repulsão!eletrostática}%
+Como é sabido, o decréscimo de polarização de concentração de um componente reduz a sua permeação observada. O efeito da presença de moléculas de RNA na polarização de concentração de pDNA é claramente menos significativo, o que se deve ao facto das moléculas de RNA apresentarem um tamanho inferior e serem menos carregadas negativamente (assim, só para concentrações altas de RNA são esperados efeitos significativos).
+\begin{figure}
+	\centering
+	\input{./tikz/fig1abcart4.tikz}
+	\caption[Valores calculados de \permobs\ do plasmídeo \pVAX]{Valores de \permobs\ do plasmídeo \pVAX, calculados com os modelos de 3 e 4 componentes para a célula de filtração Amicon 8010, em função do fluxo de permeado, para diferentes valores de \raioporo. Os restantes dados foram: $\agitacao=760$\,min$^{-1}$, $[\ce{CH3COOK}]=316$\,mol/m$^3$ e $T=298$\,K.}
+	\label{fig:1abcart4}  
+\end{figure}
+\begin{figure}
+	\centering
+	\input{./tikz/fig1dart4.tikz}
+	\caption[Valores de calculados de \permobs\ dos plasmídeos \pVAX\ e \pCAMBIA]{Valores de calculados de \permobs\ dos plasmídeos \pVAX\ e \pCAMBIA\ em função do fluxo de filtração, para vários valores de \raioporo.}
+	\label{fig:1dart4}
+\end{figure}
+\begin{figure}
+	\centering
+	\input{./tikz/fig2art4.tikz}
+	\caption[Valores calculados de \permobs\ das várias espécies de RNA]{Valores calculados de \permobs\ das várias espécies de RNA, obtidos pelos modelos de 3 e 4 componentes para a célula de filtração Amicon 8010, em função do fluxo de permeado. Os cálculos foram efetuados para uma velocidade de agitação de 760\,min$^{-1}$, $[\ce{CH3COOK}]=316$\,mol/m$^{3}$ e $T=298$\,K.}
+	\label{fig:2art4}
+\end{figure}
+\begin{figure}
+	\centering
+	\input{./tikz/fig3aart4.tikz}
+	\caption[Polarização de concentração estimada para o plasmídeo \pVAX]{Polarização de concentração estimada, expressa pelo rácio $\concm/\concb$, para o plasmídeo \pVAX, em função do fluxo de permeado. Cálculos feitos com os modelos de 3 e 4 componentes, para a célula de filtração Amicon 8010, com $\raioporo=5$\,nm, $\agitacao=760$\,min$^{-1}$ e $[\ce{CH3COOK}]=316$\,mol/m$^{3}$.}
+	\label{fig:3aart4}
+\end{figure}
+\begin{figure}
+	\centering
+	\input{./tikz/fig3bcdart4.tikz}
+	\caption[Polarização de concentração estimada para as várias espécies de RNA]{Polarização de concentração estimada, expressa pelo rácio $\concm/\concb$, para as várias espécies de RNA, em função do fluxo de permeado. Cálculos feitos com os modelos de 3 e 4 componentes, para a célula de filtração Amicon 8010, com $\raioporo=5$\,nm, $\agitacao=760$\,min$^{-1}$ e $[\ce{CH3COOK}]=316$\,mol/m$^{3}$.}
+	\label{fig:3bcdart4}
+\end{figure}
+
+Comparando os resultados obtidos para os dois plasmídeos, pode-se observar que, para além do efeito da presença das moléculas de RNA ser semelhante, os valores de \permobs, quer para o plasmídeo \pVAX\ quer para o plasmídeo \pCAMBIA, são semelhantes pese embora os dois plasmídeos apresentem tamanhos distintos, tal como se pode observar na figura~\ref{fig:1dart4}. A independência de \permobs\ com o tamanho das moléculas de pDNA é um resultado previamente reportado na literatura \cite{latu07,latusalt,latu09}. No entanto, deve-se ter especial cuidado na interpretação deste resultado uma vez que, tal como indicado na tabela~\ref{tab:1art4}, as concentrações dos dois plasmídeos nos lisados apresentam quase uma ordem de grandeza de diferença entre si. Sendo moléculas com elevada carga negativa, os efeitos do potencial elétrico na camada de polarização, contabilizados na equação estendida de Nernst-Planck (secção~\ref{sec:ioes}), desempenham um importante papel na permeação deste tipo de biomoléculas. À medida que a concentração de pDNA aumenta é gerado um gradiente do potencial elétrico, de valor negativo, mais acentuado na camada de polarização, facto que leva a uma redução do grau de polarização e consequentemente do valor de \permobs.   
+
+Para se obter uma separação satisfatória entre pDNA e RNA é necessário obter, simultaneamente, valores reduzidos de \permobs\ de pDNA e valores elevados de \permobs\ das moléculas de RNA na operação de ultrafiltração. Dado que a permeação observada das moléculas de RNA é praticamente independente de \fluxo, facto originado pela presença das moléculas de pDNA (ver figura~\ref{fig:2art4}), a utilização de um fluxo elevado não garante por si só uma elevada permeação destas moléculas. Para o conseguir, pode-se optar por utilizar membranas com poros de maiores dimensões (pelo menos de 25\,nm de raio). Assim, considerando que a permeação de pDNA pode ser mantida relativamente baixa aplicando fluxos de filtração de reduzido valor ($1-3$\,\micro m/s) para $\raioporo = 25$\,nm (tal como indicado na figura~\ref{fig:1abcart4}), pode-se concluir que a melhor opção será realizar a operação de ultrafiltração a baixos fluxos e utilizando membranas com $20-25$\,nm de raio de poro.   
+% subsection 3.1art4 (end)
+
+\subsection{Resultados experimentais - Ultrafiltração} % (fold)
+\label{sub:3.2art4}
+\index{ultrafiltração!separação pDNA/RNA}%
+Para avaliar as conclusões obtidas, referidas na secção anterior, foram realizados ensaios de ultrafiltração dos lisados microfiltrados de \pVAX\ e \pCAMBIA, utilizando duas membranas distintas, uma com $\raioporo=4.8$\,nm \cite{moraompa} e outra com $\raioporo=25$\,nm, de 100 e 300\,kDa respetivamente, referidas na secção~\ref{ssub:2.3art4}.
+\index{pVAX@\pVAX}%
+\index{pCAMBIA@\pCAMBIA}%
+\index{FS40PP}%
+\index{Biomax 300}%
+O valor de $\raioporo=25$\,nm foi obtido experimentalmente pela medição das permeações observadas dos dextranos T70 e T500. Foram usadas duas velocidades de agitação (100 e 760\,min$^{-1}$) e diferentes valores de fluxo no intervalo $1.4-8.3$\,\micro m/s ($5-30$\,L/h$\cdot$m$^2$).
+\index{dextrano!T70}%
+\index{dextrano!T500}%
+
+Os resultados obtidos, para um fator de concentração volumétrico (VCF) igual a 10, estão representados na figura~\ref{fig:4art4}.
+\index{fator!de concentração}%
+O rendimento de recuperação de pDNA foi calculado como o rácio entre a quantidade de pDNA presente no volume total de permeado recolhido e a quantidade de pDNA presente no volume de permeado da operação de microfiltração (MFP) processado em cada ensaio. O rendimento de remoção de RNA foi calculado como $1-(V_{\mr{p}}C_{\mathrm{RNA,p}})/(V_{\mr{MFP}}C_{\mr{RNA,MFP}})$, onde $C_{\mathrm{RNA,p}}$ representa a concentração no volume total de permeado, $C_{\mr{RNA,MFP}}$ é a concentração de RNA no MFP, $V_{\mr{p}}$ é o volume de permeado recolhido e $V_{\mr{MFP}}$ é o volume de MFP processado em cada ensaio.
+\index{MFP}%
+\begin{figure}[!t]
+	\centering
+	\input{./tikz/fig4art4.tikz}
+	\caption[Rendimentos de recuperação de pDNA e rendimentos de remoção de RNA (exp.)]{Rendimentos de recuperação de pDNA e rendimentos de remoção de RNA, determinados experimentalmente, comparados com as previsões teóricas para o processo de filtração (concentração do MFP com duas membranas distintas a VCF=10). Na figura está igualmente indicado o raio do poro e a velocidade de agitação usada em cada ensaio.}
+	\label{fig:4art4}
+\end{figure}
+
+Como se pode verificar na figura~\ref{fig:4art4}, a utilização da membrana com $\raioporo=25$\,nm, a baixos fluxos de filtração, é claramente a melhor opção para obter, simultaneamente, um elevado rendimento de recuperação de pDNA e um elevado rendimento de remoção de RNA. Para a membrana com $\raioporo=4.8$\,nm, a remoção do RNA 23S e 16S é reduzida, tal como se pode constatar pela análise da figura~\ref{fig:5art4}. Para a membrana com $\raioporo=25$\,nm observa-se uma elevada permeação de todas as espécies de RNA (figura~\ref{fig:5art4}), em todo o intervalo de fluxos considerados nos ensaios, no entanto, só para valores reduzidos de fluxo se consegue obter um elevado rendimento de recuperação de pDNA. 
+\begin{figure}[!t]
+	\centering
+	\input{./tikz/fig5art4.tikz}
+	\caption[Valores calculados de remoção de RNA no processo de ultrafiltração]{Valores calculados de remoção de RNA no processo de ultrafiltração estudado (concentração do MFP com duas membranas distintas, a $\mr{VCF}=10$). Na figura está igualmente indicado o tamanho de poro e a velocidade de agitação utilizada em cada ensaio.}
+	\label{fig:5art4}
+\end{figure}
+
+Para comparar os resultados experimentais com as previsões do modelo, efetuaram-se os cálculos do rendimento de recuperação de pDNA e do rendimento de remoção de RNA através dos modelos de 3 e 4 componentes, respetivamente, uma vez que a presença das moléculas de RNA apresenta uma reduzida influência na permeação de pDNA. Os valores de remoção total de RNA, indicados na figura~\ref{fig:4art4}, foram obtidos a partir das concentrações iniciais de cada tipo de RNA (tabela~\ref{tab:1art4}) e da remoção estimada das diferentes espécies de RNA, indicada na figura~\ref{fig:5art4}. Como se pode constatar na figura~\ref{fig:4art4}, as previsões da remoção de RNA total estão de acordo com os resultados experimentais, embora se observe uma ligeira tendência para se verificarem rendimentos de recuperação de pDNA mais altos do que o previsto, assim como rendimentos de remoção de RNA total mais reduzidos.
+\index{DNA plasmídico!rendimento de recuperação}%
+\index{RNA!rendimento de remoção}%
+Esta tendência indica que as permeações destas moléculas foram inferiores ao previsto, facto que pode sugerir alguma ocorrência de colmatação. 
+
+O sucesso da aplicação de uma operação de ultrafiltração, para separar pDNA e RNA, com a membrana de 25\,nm foi igualmente testado por eletroforese (figura~\ref{fig:6art4}). Como se pode observar, usando a membrana de 25\,nm (\emph{Biomax 300}) os permeados da ultrafiltração (UFP) contêm quantidades significativas de RNA e simultaneamente reduzidas quantidades de pDNA. Observa-se igualmente uma clara permeação de HMw\,RNA, o que indica que a separação do pDNA, quer do HMw\,RNA quer de LMw\,RNA, pode assim ser obtida. Para a membrana de 4.8\,nm (FS40PP), observa-se um comportamento distinto na medida em que a grande maioria do RNA é retido pela membrana, em especial o HMw\,RNA, o que está de acordo com as previsões do modelo.
+\index{RNA!alto peso molecular}%
+\index{RNA!baixo peso molecular}%
+\index{HMw\,RNA|see{RNA}}%
+\index{LMw\,RNA|see{RNA}}%
+\begin{figure}
+	\centering
+	\input{./tikz/fig6art4.tikz}
+	\caption[Análise por eletroforese em gel de agarose dos ensaios de ultrafiltração.]{Análise por AGE dos seguintes ensaios: (1--4) MF do lisado da fermentação \pVAX\ seguida de UF a 3.7\,\micro m/s e $\agitacao=760$\,min$^{-1}$, com a membrana \emph{FS40PP} (1-lisado, 2-MFP, 3-UFC, 4-UFC). (5--8) MF do lisado da fermentação do \pVAX\ seguida de UF a 2.4\,\micro m/s e $\agitacao=760$\,min$^{-1}$ com a membrana \emph{Biomax 300} (5-lisado, 6-MFP, 7-UFC, 8-UFP). (9--12) MF do lisado da fermentação com \pCAMBIA\ seguido de UF a 2.4\,\micro m/s e $\agitacao=760$\,min$^{-1}$ com a membrana \emph{Biomax 300} (9-lisado, 10-MFP, 11-UFC, 12-UFP).}
+	\label{fig:6art4}
+\end{figure}
+% subsection 3.2art4 (end)
+
+\subsection{Resultados isolamento intermediário} % (fold)
+\label{sub:iso_interm_at4}
+\index{isolamento intermediário}%
+Os resultados obtidos para os vários processos de isolamento intermediário de pDNA encontram-se na tabela~\ref{tab:res_isol_art4}. Para as condições operatórias escolhidas na realização dos vários ensaios verifica-se uma reduzida colmatação das membranas, colmatação essa representada pelo rácio entre a permeabilidade hidráulica das membranas no fim dos ensaios e as suas permeabilidades iniciais ($L_{\mr{p,f}}/L_{\mr{p},0}$).
+\index{permeabilidade hidráulica}%
+Este fator pode ter especial importância do ponto de vista de aplicação prática, uma vez que pode proporcionar um aumento no número de ciclos de utilização entre lavagens (ou substituição) de membranas, sendo este parâmetro um dos principais fatores de impacto ambiental e económico deste tipo de processos \cite{freitas}.
+\begin{table}[!b]
+\centering
+	\caption[Resultados obtidos nos processos de isolamento intermediário.]{Resultados obtidos nos vários processos de isolamento intermediário estudados. Os valores encontram-se representados em percentagem com a indicação do respetivo desvio padrão obtido.}
+	\label{tab:res_isol_art4}
+	\begin{threeparttable}
+\begin{tabular*}{0.75\textwidth}{l@{\extracolsep{\fill}} z{2} z{1} z{1} z{3}}
+ \toprule
+Processo & 
+\mc{1}{l}{$L_{\mr{p,f}}/L_{\mr{p},0}$} &
+\mc{1}{l}{$R_{\mr{pDNA}}$\tnote{a}} &
+\mc{1}{l}{$R_{\mr{RNA}}$\tnote{b}} &
+\mc{1}{l}{Pureza\tnote{c}} \\
+\midrule
+``A'' & 97.3 ? 1.7 & 98.6 ? 3.1 & 19.2 ? 6.1 &  9.53 ? 0.3 \\
+``B'' & 87.2 ? 1.6 & 82.1 ? 2.8 & 96.5 ? 1.3 & 63.34 ? 6.1 \\
+``C'' & 86.1 ? 1.0 & 95.7 ? 5.0 & 96.6 ? 1.1 & 38.99 ? 2.5 \\
+``D'' &            & 88.6 ? 8.0 & 88.0 ? 1.9 & 35.74 ? 2.1 \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}
+\item[a] Rendimento de recuperação de pDNA  
+\item[b] Rendimento de remoção de RNA
+\item[c] Pureza cromatográfica nas análises de HIC
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+Com a utilização da membrana com o poro de menores dimensões (FS40PP, Processo A), obtiveram-se elevados rendimentos de recuperação de pDNA, sendo este o processo que apresentou melhor performance neste domínio (tabela~\ref{tab:res_isol_art4}). No entanto, o rendimento de remoção de RNA obtido foi modesto, estando de acordo com os resultados obtidos no capítulo~\ref{chap:art3}. Contudo, é importante referir que este processo pode ainda assim ser útil no contexto do isolamento intermediário de pDNA, por exemplo em operações de concentração e de troca de tampão, dado os valores elevados de rendimento de recuperação de pDNA obtidos e o reduzido grau de colmatação das membranas verificado nestes ensaios.
+
+Tal como referido anteriormente, para obter rendimentos de remoção de RNA mais elevados é necessário utilizar uma membrana com um poro de maiores dimensões. Assim, foi utilizada uma membrana de 300\,kDa de ``cut-off'' (Biomax\,300, $\raioporo = 25$\,nm). Procurou-se melhorar o valor de remoção de RNA através da utilização de uma operação de diafiltração (Processo B). Tal como se pode verificar na tabela~\ref{tab:res_isol_art4}, por este método obtém-se uma elevada remoção de RNA (cerca de 96.5\%), inclusivamente superior à que se obtém com o processo alternativo estudado (88\%, Processo D).
+\index{RNA!rendimento de remoção}%
+Contudo, o aumento do tamanho do poro conduz igualmente a uma diminuição do rendimento de recuperação de pDNA, por comparação com o Processo A, que se situou em 82\% neste processo. Este valor encontra-se ainda acima do limite mínimo de rendimento que se considera aceitável para uma operação unitária num processo de produção de pDNA \cite{kepka,smrekar,urthaler2}.
+\index{DNA plasmídico!rendimento de recuperação}%
+A perda de rendimento verificada deve-se essencialmente à permeação de parte do plasmídeo \pVAX\ na membrana, uma vez que grande parte do pDNA restante foi analisado no permeado (cerca de 14\%, em média, do plasmídeo presente inicialmente). A ocorrência de alguma permeação de pDNA, e concomitante elevada permeação das diferentes espécies de RNA presentes, está explicita na análise por eletroforese em gel de agarose de amostras recolhidas ao longo do processo (figura~\ref{fig:ef_processoB_art4}).
+\index{AGE}% 
+\begin{figure}[!t]
+	\centering
+	\input{./tikz/ef_processoB_art4.tikz}
+	\caption[Análise de amostras, ao longo do processo B, por eletroforese em gel de agarose.]{Análise de amostras, ao longo do processo B, por eletroforese em gel de agarose. Estão representados os resultados obtidos em duas repetições do processo. Amostras 1 e 5: lisado; Amostras 2 e 6: permeado da microfiltração; Amostras 3 e 7; produto final obtido após diafiltração; Amostras 4 e 8: permeado conjunto da operação de ultrafiltração/diafiltração. Na figura é possível verificar a elevada permeação das várias espécies de RNA bem como alguma permeação do plasmídeo \pVAX.}
+	\label{fig:ef_processoB_art4}
+\end{figure}
+Pode ainda ser acrescentado que este processo permitiu obter um valor de pureza cromatográfica bastante superior, quando comparado com o processo alternativo (Processo D), tal como pode ser observado na tabela~\ref{tab:res_isol_art4} e na figura~\ref{fig:hic_comparacao_art4}.
+\index{pureza cromatográfica}%
+A pureza cromatográfica foi calculada pelo rácio entre a área do pico referente ao plasmídeo e a área total do cromatograma, nas análises pelo método HIC. Na figura~\ref{fig:hic_comparacao_art4} encontram-se as análises de HIC do produto final dos dois processos. O cromatograma referente ao processo B apresenta uma notória superior remoção de contaminantes e consequentemente um valor mais elevado de pureza cromatográfica.
+\begin{figure}[!t]
+	\centering
+	\input{./tikz/hic_comparacao_art4.tikz}
+	\caption[Cromatogramas HIC do produto final dos processos B e C.]{Perfil cromatográfico, obtido com o método de HIC, dos produtos finais referentes aos processos B e D. Na figura é notório o aumento do valor da pureza cromatográfica obtida com o processo à base de operações de membranas (processo B).}
+	\label{fig:hic_comparacao_art4}
+\end{figure}
+
+O modelo desenvolvido prevê uma menor permeação do plasmídeo \pCAMBIA\ nas condições operatórias utilizadas nos processos de isolamento primário, nomeadamente um fluxo de 2.4\,\micro m/s e uma velocidade de agitação de 760\,\minmum\ (ver figura~\ref{fig:1dart4}). Deste modo, foi assim testado o processo de isolamento intermediário na purificação deste plasmídeo (processo C, figura~\ref{fig:processos_art4}). Como se pode observar na tabela~\ref{tab:res_isol_art4}, obteve-se um elevado rendimento de recuperação de pDNA (95.7\%), acompanhado de um igualmente elevado rendimento de remoção de RNA (96.7\%), indicando assim uma satisfatória seletividade do processo para efetuar a separação pDNA/RNA, facto nunca antes obtido recorrendo unicamente a processos de membranas \cite{kahn,duvaltff,freitas}. O menor valor obtido para este processo, em termos da pureza cromatográfica, fica-se a dever à menor concentração do plasmídeo \pCAMBIA\ nos lisados (tabela~\ref{tab:1art4}).
+\index{pCAMBIA@\pCAMBIA}%
+% section 3art4 (end)
+
+\section{Conclusões} % (fold)
+\label{sec:4art4}
+A separação entre o pDNA e as várias espécies de RNA pode ser obtida por ultrafiltração. Para isso é fundamental otimizar quer o tamanho do poro da membrana quer o valor do fluxo de filtração. O desenvolvimento de um modelo teórico com capacidade de prever as permeações observadas de pDNA e RNA revelou-se decisivo na escolha dos parâmetros operacionais. Este modelo, originalmente desenvolvido para sistemas de 3 componentes (o plasmídeo, um contra-ião e um co-ião), com o objetivo de contabilizar o efeito da força iónica da solução nos valores de permeação de pDNA, foi neste capítulo estendido para um sistema de 4 componentes (o plasmídeo, uma espécie de RNA, um contra-ião e um co-ião). Os efeitos mútuos da permeação simultânea de pDNA e RNA foram investigados, com os resultados a mostrarem que a permeação de RNA é fortemente afetada pela presença das moléculas de pDNA, causando uma redução dos seus valores de \permobs. Os resultados experimentais confirmam as previsões do modelo, nomeadamente ao comprovarem que a escolha de uma membrana com poro de 25\,nm, operada a baixos fluxos, é a melhor escolha para efetuar a referida separação. 
+
+A separação pode ser ainda otimizada efetuando uma diafiltração após o passo de concentração. Foram testados 3 processos de isolamento intermediário recorrendo a operações de separação com membranas. Os resultados obtidos confirmam as previsões do modelo, nomeadamente a reduzida permeação de pDNA na membrana com o poro de menores dimensões, acompanhada de uma igualmente reduzida permeação de RNA, em especial de HMw\,RNA. A utilização deste processo, apesar de revelar uma reduzida capacidade de remoção de RNA, apresenta valores bastante elevados de rendimento de recuperação de pDNA e valores mínimos de colmatação, características necessárias à obtenção de um processo com excelente capacidade de efetuar operações de concentração e de troca de tampão. A utilização de uma membrana com um poro de maiores dimensões, para as condições operatórias ótimas determinadas pelo modelo, permitiu obter elevados rendimentos de remoção dos vários tipos de RNA. Em especial, a aplicação do processo no isolamento intermediário do plasmídeo \pCAMBIA\ permitiu obter resultados, quer de recuperação de pDNA quer de remoção de RNA, que revelaram ser consideravelmente melhores quando comparados com os que se obtêm por intermédio de um processo alternativo usado em laboratório e que gera um maior impacto ambiental e económico, em especial de um ponto de vista de aplicação industrial. Para o caso do plasmídeo \pVAX, apesar de se obter novamente um elevado rendimento de remoção de RNA, o rendimento de recuperação de pDNA revelou ser mais reduzido, sendo que a perda de rendimento se deve essencialmente à maior permeação deste plasmídeo pela membrana. Com base no modelo teórico desenvolvido, prevê-se que possa vir a ser possível reduzir o valor de permeação, quer pelo aumento da concentração de \pVAX\ nos lisados quer pela redução da força iónica da solução, recorrendo por exemplo a uma operação prévia de concentração ou de dessalinização. Assim, criadas as condições para assegurar uma reduzida permeação de pDNA, a remoção de RNA poderá ser aumentada se no processo forem utilizados volumes de diafiltração mais elevados, sendo este um tema para trabalho futuro.
+% section 4art4 (end)

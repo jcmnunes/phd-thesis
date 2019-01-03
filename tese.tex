@@ -1,0 +1,116 @@
+\documentclass[10pt,twoside]{thesis}
+
+\include{theme}
+\hyphenation{bio-mo-lé-cu-la a-dmi-nis-trar se-gmen-tos}
+\widowpenalty=10000
+\clubpenalty=10000
+\makeindex
+\makenomenclature
+\cabecalho{Purificação de DNA plasmídico usando tecnologias de membrana}
+
+\begin{document}
+
+\include{losymbols}
+
+\onehalfspacing
+
+\pagenumbering{roman}
+
+\include{cover}
+
+\pagestyle{fancy}
+
+\cleardoublepage
+
+\newpage 	
+\section*{\titulos{Resumo}}
+\vspace{0.5cm}
+\index{resumo}
+Com o crescente interesse na utilização de DNA plasmídico para terapia génica e para formulação de vacinas de DNA, surgiu a necessidade de estudar e desenvolver esquemas de purificação desta biomolécula. As tecnologias de separação com membranas são usadas em diversos tipos de processos a nível das aplicações em biotecnologia, tais como esterilização, separação sólido-líquido, concentração, troca de tampão e purificação de diversos tipos de moléculas. As técnicas de filtração com membranas apresentam normalmente vantagens  em relação a outras técnicas alternativas como seja o reduzido impacto ambiental e económico, maior facilidade de aumento de escala (``scale-up''), maior produtividade dos equipamentos e maior facilidade de automatização e controlo dos processos. Entre as principais desvantagens contam-se normalmente problemas relacionados com a colmatação das membranas, os custos de substituição periódica das mesmas e a menor seletividade nas separações em certos casos.
+
+No âmbito do presente trabalho foi efetuado um estudo fundamental da transmissão de DNA plasmídico (pDNA), nomeadamente na forma superenrolada, através de membranas de micro e ultrafitração. O estudo incluiu a modelação do processo, com base na teoria do transporte restringido de macrosolutos através de poros estreitos, tendo sido estabelecido um novo modelo para a permeação de moléculas longas e flexíveis, tais como o pDNA e o RNA.
+
+Estudou-se igualmente a aplicação de membranas ao isolamento de DNA plasmídico a partir de caldos de fermentação. Nomeadamente foi estudada a microfiltração de lisados e a ultrafiltração dos permeados de microfiltração obtidos com vista à concentração e purificação do DNA plasmídico antes da purificação cromatográfica, passo indispensável no processo de recuperação para assegurar o cumprimento dos padrões de qualidade requeridos pelas agências reguladoras do produto final. Efetuou-se também um estudo de otimização da operação de ultrafiltração, baseado na otimização da separação pDNA/RNA. 
+
+Os estudos de aplicação realizados permitem perspetivar a utilização da microfiltração e ultrafiltração nos processos industriais de recuperação de pDNA, como alternativas vantajosas às operações de centrifugação dos lisados para remoção dos detritos celulares e a operações alternativas no isolamento intermediário de pDNA, tais como precipitações seletivas com álcoois e sais, extrações líquido-líquido, entre outras. A microfiltração será vantajosa na medida em que permite o processamento dos caldos lisados em condições muito mais suaves do que nas centrífugas industriais onde os fluidos estão sujeitos a fortes tensões de corte que, como é sabido, podem danificar a estrutura dos plasmídeos irreversivelmente. A ultrafiltração permite eliminar o consumo de grandes volumes de álcoois, tais como o isopropanol e de sais, tais como sulfato de amónio ou cloreto de cálcio, o que representa uma enorme vantagem económica e ambiental.
+
+\vspace{0.8cm}
+\noindent
+{\titulos{Palavras-chave}}
+
+\vspace{0.5cm}
+\noindent
+Microfiltração, Ultrafiltração, DNA plasmídico, RNA, Modelação matemática
+\cleardoublepage
+
+\newpage 	
+\section*{\titulos{Abstract}}
+\vspace{0.5cm}
+\index{abstract}
+There has been an increasing interest in plasmid DNA for application on gene therapy and to produce DNA vaccines. This fact led to a substantial effort in the development of purification schemes of this biomolecule. Membrane processes have shown applicability in a great variety of biotechnology processes, namely concentration, buffer exchange, solid-liquid separation, sterilization and purification. Membrane filtration techniques offer important practical advantages when compared to alternative techniques, namely reduced economical and environmental impacts, easier operation and control, easier scale-up and higher productivity. The main disadvantages of membrane filtration processes are generally due to membrane fouling, costs associated with periodic cleaning and replacement of membranes and low selectivity in some separations.
+
+In this work, a fundamental study of supercoiled plasmid DNA (pDNA) transmission through micro and ultrafiltration membranes was carried out. The study included the development of new theoretical models, based on the hindered transport theory of flexible macromolecules through narrow pores. These models were applied to both pDNA and RNA.
+
+The application of microfiltration and ultrafiltration operations, to accomplish pDNA recovery and purification from fermentation broths, was also studied. Namely, the microfiltration of alkaline lysates and a subsequent ultrafiltration of the permeates were used in tandem in order to concentrate and purify the pDNA before chromatography; the latter is still required in order to attain the desired quality standards imposed by the regulatory agencies for the final product.
+
+The results obtained allow to foresee the application of micro and ultrafiltration operations in industrial processes for the primary and intermediate recovery of plasmid DNA, as better alternatives to the centrifugation of cell lysates and precipitation of pDNA with alcohols operations. Microfiltration can introduce important advantages such as the clarification of fermentation broths in milder conditions, specially when compared with industrial centrifuges where fluids are subjected to high shear. As it is well-known, this can cause irreversibly degradation of the pDNA molecules. Ultrafiltration can introduce also important advantages, specially by avoiding the use of large quantities of alcohols, such as propan-2-ol, and salts, such as ammonium sulphate or calcium chloride, which represents an important advantage in terms of the economical and environmental impact. 
+
+\vspace{0.8cm}
+\noindent
+{\titulos{Keywords}}
+
+\vspace{0.5cm}
+\noindent
+Microfiltration, Ultrafiltration, Plasmid DNA, RNA, Modeling
+\cleardoublepage
+
+\tableofcontents
+
+\listoffigures
+\cleardoublepage	
+
+\listoftables
+\cleardoublepage
+
+\printnomenclature
+\cleardoublepage
+
+\newpage
+\section*{\titulos{Lista de Acrónimos}}
+
+\vspace{0.5cm}
+
+\begin{longtable}[l]
+{llp{\textwidth*\real{0.7}}}
+\input{loacronimos.tex}
+\end{longtable}
+
+\cleardoublepage
+
+\mainmatter
+
+\include{intro}
+\include{teo}
+\include{pra}
+\include{artigo1}
+\include{artigo2}
+\include{artigo3}
+\include{artigo4}
+\include{conc}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliografia}
+\bibliographystyle{elsart-num}
+\bibliography{bibliografia}
+
+\appendix
+
+\include{anexos}
+
+\cleardoublepage
+\cleardoublepage
+
+\printindex
+
+\end{document}

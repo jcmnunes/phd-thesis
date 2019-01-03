@@ -1,0 +1,49 @@
+%!TEX root=tese.tex
+\chapter{Determinação da concentração mássica de células para efetuar a lise}
+\label{app:1}
+Para determinar a concentração mássica de células (peso húmido) a usar na etapa de lise foram realizados ensaios prévios de estabilidade de lisados. Para isso, efetuou-se a lise alcalina de suspensões de células com diferentes concentrações mássicas (figura~\ref{fig:estabilidade_lisados}). A concentração mássica foi determinada como o rácio entre o peso húmido de células e o volume de tampão usado na sua ressuspensão. Os lisados obtidos foram posteriormente processados por centrifugação para remover o conteúdo sólido formado durante a lise. Como se pode verificar na figura~\ref{fig:estabilidade_lisados}, para as concentrações de 180 e 240 g/L, observa-se um aumento da densidade ótica dos lisados centrifugados ao longo do tempo, facto que indica a ocorrência da precipitação de algum do material inicialmente dissolvido. Optou-se por escolher a concentração de 120\,g/L, para a qual se verificou um reduzido aumento da densidade ótica, estando este valor igualmente dentro da gama de concentrações usadas por outros autores \cite{theo,chamsart,urthaler}. Com a escolha deste valor de concentração pretende-se assim evitar a ocorrência da precipitação de alguns constituintes do lisado em operações subsequentes à etapa da lise alcalina, facto que poderia introduzir efeitos indesejados na interpretação e desempenho dos processos.
+\index{concentração!mássica de células}
+\index{peso húmido}
+\index{lisado!estabilidade} 
+\begin{figure}[!h]
+    \centering
+    \input{./tikz/estabilidade_lisados.tikz}
+    \caption[Densidade ótica de lisados em função do tempo de incubação]{Variação da densidade ótica (600\,nm) em função do tempo de incubação para lisados alcalinos centrifugados a diferentes valores de concentração mássica de células (peso húmido).}
+    \label{fig:estabilidade_lisados}
+\end{figure}
+
+\chapter{Caracterização de lisados centrifugados}
+\label{app:2}
+Foram utilizados dois géis de SEC diferentes: o gel Sephacryl S-1000 SF e o gel Sephacryl S-100 HR (\emph{GE Healthcare}), estando as suas principais características indicadas na tabela~\ref{tab:sephacryl}.\index{Sephacryl S-1000!características}\index{Sephacryl S-100!características} 
+\begin{table}
+\caption[Principais características dos géis Sephacryl S-100 HR e Spehacryl S-1000 SF]{Principais características dos géis Sephacryl S-100 HR e Spehacryl S-1000 SF \cite{sec}.}
+\label{tab:sephacryl}
+\begin{tabularx}{\textwidth}{Y Y Y Y Y} 
+ \toprule
+Gel & Intervalo de fracionamento [kDa] & Capacidade & Caudal recomendado & Tamanho médio das partículas \\
+ \midrule  
+Sephacryl \newline S-100 HR & 1--100 & 0.4\%--4\% do volume total de coluna & 10--35\,cm/h & 47\,\micro m \\
+Sphacryl \newline S-1000 SF & $500-5\times 10^{5}$ & 0.4\%--4\% do volume total de coluna & 2--30\,cm/h & 65\,\micro m \\
+\bottomrule 
+\end{tabularx}
+\end{table}
+
+Para efetuar a análise de lisados por SEC, os géis foram empacotados numa coluna com 50\,mL de volume (\emph{Sigma}), segundo as recomendações do fabricante. Obteve-se no final um volume de gel de aproximadamente 46\,mL. A coluna foi conectada a um sistema cromatográfico (Äkta purifier, \emph{GE Healthcare}) e as amostras de lisado foram injetadas e eluídas a um caudal de 0.5\,mL/min, usando tampão Tris/HCl 10\,mM a pH 8.00, com 150\,mM de NaCl, como eluente. A absorvância do eluato foi continuamente monitorizada a 260\,nm. Em alguns ensaios foram recolhidas amostras do eluído em intervalos de 10\,min. Estas amostras foram posteriormente analisadas por AGE, HIC e BCA.\index{coluna cromatográfica}\index{AGE}\index{BCA}\index{akta@Äkta}
+
+Na figura~\ref{fig:s1000} encontra-se o resultado da análise do lisado de \pVAX\ no gel Sephacryl S-1000 SF. No cromatograma obtido (figura~\ref{fig:s1000}~a) é possível identificar dois picos parcialmente sobrepostos. No primeiro pico elui o plasmídeo, que essencialmente é recolhido nas frações 4 e 5 (figura~\ref{fig:s1000}~c). Devido à existência no lisado de várias espécies de RNA, estas biomoléculas eluem ao longo do segundo pico, com a prevista tendência da redução de tamanhos ao longo das várias frações. Nas análises de HIC das frações selecionadas (figura~\ref{fig:s1000}~b), verifica-se a presença de plasmídeo apenas na fração 5. A área do pico na região 3 (contaminantes hidrofóbicos) diminui ao longo das frações, e na fração 10, que já parece não conter RNA, é nula. Na região 2 (contaminantes hidrofílicos), observa-se uma tendência contrária, registando-se uma maior absorvância na fração 9. Este facto parece indicar que os compostos que eluem na região 2 apresentam uma menor massa molecular.\index{cromatograma}\index{SEC!cromatograma}\index{lisado!SEC}\index{DNA plasmídico!SEC}\index{RNA!SEC}
+\begin{figure}[!t]
+    \centering
+    \input{./tikz/s1000.tikz}
+    \caption[Análise do lisado centrifugado com o gel Sephacryl S-1000.]{Análise do lisado centrifugado obtido após lise alcalina de \ecoli\ contendo o plasmídeo \pVAX. a) Perfil cromatográfico do lisado no gel Sephacryl S-1000 SF (SEC); b) Análise por HIC-HPLC das frações 5, 7, 9 e 10, recolhidas durante o ensaio de SEC. c) Análise por eletroforese das frações recolhidas durante o ensaio de SEC.}
+    \label{fig:s1000}
+\end{figure} 
+
+Foi utilizado um procedimento semelhante para caracterizar o lisado com o gel Sephacryl S-100 HR. Os resultados obtidos encontram-se na figura~\ref{fig:s100}. É possível verificar que os ácidos nucleicos de maior massa molecular (pDNA e HMw\,RNA) não são retidos pelo gel e eluem em conjunto na fração 4. Para o LMw\,RNA observa-se uma ligeira retenção, sendo recolhido nas frações 4 e 5. Parte do material proteico é significativamente retido pelo gel. Observa-se a existência de uma elevada dispersividade de massas moleculares das proteínas presentes visto que estas são detetadas nas frações 5--12, cobrindo quase na totalidade o intervalo de fracionamento do gel. Pela análise dos cromatogramas de HIC (figura~\ref{fig:s100}~b), pode-se verificar que o RNA elui na região 3. De facto, apenas para as frações que contêm ácidos nucleios (frações 4--5) existe um valor de absorvância significativo nesta região e para estas frações não se deteta uma absorvância significativa na região 2.\index{proteínas!SEC}\index{proteínas!quantificação|see{BCA}}        
+\begin{figure}[!t]
+    \centering
+    \input{./tikz/s100.tikz}
+    \caption[Análise do lisado centrifugado com o gel Sephacryl S-100.]{Análise do lisado centrifugado obtido após lise alcalina de \ecoli\ contendo o plasmídeo \pVAX. a) Perfil cromatográfico do lisado no gel Sephacryl S-100 HF (SEC). No mesmo gráfico encontram-se sobrepostos os valores de concentração de proteína total, obtidos para cada fração recolhida; b) Análise por HIC-HPLC das frações 4, 5, e 8, recolhidas durante o ensaio de SEC. c) Análise por eletroforese das frações recolhidas durante o ensaio de SEC.}
+    \label{fig:s100}
+\end{figure}
+
+A análise feita permite assim concluir uma importante característica do método de HIC face à caracterização de lisados, nomeadamente a possibilidade de quantificar numa só análise quer o pDNA (região 1) quer o RNA total presente (região 3). Os compostos que absorvem na região 2 apresentam uma menor massa molecular, sendo maioritariamente detetado nesta zona o material proteico presente nos lisados. Apesar de não serem aqui discutidos, os lisados do plasmídeo \pCAMBIA\ (usados no capítulo~\ref{chap:art4}) apresentam resultados semelhantes. Espera-se que o material proteico presente nos lisados, pelo facto de apresentar uma menor massa molecular, possa ser separado do pDNA através de uma operação de ultrafiltração, tendo este resultado sido já verificado na prática \cite{duvaltff,freitas}.  

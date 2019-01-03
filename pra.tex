@@ -1,0 +1,336 @@
+%!TEX root=tese.tex
+\chapter{Fundamentos Práticos} % (fold)
+\label{cha:pra}
+Neste capítulo são abordados os principais fundamentos, de carácter prático, no âmbito do presente trabalho. Devido à elevada diversidade de materiais e métodos utilizados na realização dos trabalhos experimentais, descritos nos capítulos~\ref{chap:art1}--\ref{chap:art4}, não seria viável fazer a sua exposição no presente capítulo. Assim, os detalhes experimentais específicos de cada trabalho são expostos no seu capítulo correspondente, ficando remetidos para o presente capítulo os detalhes experimentais que possuem uma aplicação mais transversal no âmbito do presente trabalho. Na seguinte secção é descrito o principal equipamento de filtração utilizado, nomeadamente a célula de filtração Amicon 8010.   
+
+\section{Célula de filtração Amicon 8010} % (fold)
+\label{sec:amicon}\index{Amicon 8010}%
+Nesta secção descreve-se a principal célula de filtração usada, a célula de filtração Amicon 8010 (\emph{Millipore}). Esta célula, ilustrada na figura~\ref{fig:amicon}, tem uma geometria ``dead-end'', isto é, o fluxo de filtração apresenta uma direção perpendicular à superfície da membrana, membrana esta que é assente num suporte horizontal que contém um orifício por onde é recolhido o permeado. Para melhorar o coeficiente de transferência de massa, a célula dispõe de um agitador magnético que atua perto da superfície da membrana.\index{dead@``dead-end''}\index{agitador magnético} 
+
+A célula pode ser operada de duas formas distintas (figura~\ref{fig:amicon}). Pode ser conectada a uma fonte de pressão (usualmente azoto ou ar comprimido), pressão esta que força o líquido a permear pela membrana. O fluxo de filtração não é facilmente controlável por este método, apenas o valor do diferencial de pressão através da membrana pode ser estabelecido de forma precisa. Este facto dificulta a tentativa de modelar matematicamente a filtração dado que o fluxo de filtração é um parâmetro crucial na formulação dos modelos teóricos apresentados no capítulo~\ref{chap:teov3}. Por outro lado, este método apresenta-se como o mais eficiente para efetuar alguns tipos de procedimentos, como a lavagem de membranas e a determinação das suas permeabilidades hidráulicas.\index{permeabilidade hidráulica}\index{fluxo!filtração}\index{pressão}
+\begin{figure}
+\centering
+\input{./tikz/amicon.tikz}
+\caption[Esquema e modos de operação da célula Amicon 8010]{Esquema e modos de operação da célula Amicon 8010. A - agitador magnético, B - corpo da célula (10 mL de capacidade), C - ``o-ring'', D - membrana, E - suporte da membrana e recolha de permeado, F - base. No presente trabalho a célula foi operada de duas formas distintas: mantendo a pressão no interior da célula constante ou mantendo o fluxo de filtração constante por intermédio de uma bomba peristáltica colocada a jusante da membrana.}
+\label{fig:amicon}
+\end{figure}
+A célula pode também ser operada de uma forma diferente, colocando uma bomba a jusante da membrana, que atua assim por sucção (figura~\ref{fig:amicon}).\index{bomba peristáltica} Este método permite estabelecer um fluxo de filtração constante e facilmente controlável. No entanto gera algumas limitações de aplicação prática, especialmente para membranas com baixa permeabilidade, causadas pela menor capacidade de estabelecer diferenciais de pressão elevados. Assim, este método é apenas indicado para situações em que os fluxos de filtração pretendidos não são excessivamente elevados e/ou a membrana apresente uma permeabilidade relativamente alta. No presente trabalho, a célula Amicon 8010 é operada pelo método que se revele mais apropriado. Sempre que possível, durante filtrações a célula é operada a fluxo de filtração constante, utilizando uma bomba peristáltica. Para efetuar operações de lavagem de membranas, de determinação de permeabilidades, ou para situações em que o método de fluxo constante não é aplicável, a célula é operada em modo de pressão constante.
+
+O balanço de massa numa dada filtração, dentro da referida célula, pode ser facilmente determinado.\index{balanço de massa} Devido à sua geometria, é possível considerar como simplificação que o perfil de escoamento no seu interior é perfeitamente agitado o que implica que, em cada instante de tempo, a concentração dos solutos no seio da solução é uniforme em todas as posições espaciais. O mesmo é dizer que a concentração de solutos no interior da célula é apenas função do tempo. Para a nomenclatura especificada na figura~\ref{fig:bal_massa}, o balanço de massa para um determinado soluto é dado por (considerando que não ocorre adsorção na membrana):\index{Amicon 8010!balanço de massa}\index{Amicon 8050!balanço de massa}\index{adsorção!membrana}
+\begin{equation}
+	\label{eq:balanco_massa_principal}
+	Q_{\mr{in}}C_{\mr{in}}-Q\concp=\concb\frac{dV}{dt}+V\frac{d\concb}{dt}
+\end{equation}
+No presente trabalho foram considerados dois modos de operação: o modo de concentração, que implica $Q_{\mr{in}}=0$, e o modo de diafiltração a volume constante, o que implica $Q_{\mr{in}}=Q$ e $C_{\mr{in}}=0$.
+\begin{figure}
+	\centering
+	\input{./tikz/bal_massa.tikz}
+	\caption[Nomenclatura para balanço de massa na célula Amicon 8010]{Nomenclatura usada para efetuar o balanço de massa durante uma filtração na célula Amicon 8010. Assume-se que não ocorre adsorção na membrana.}
+	\label{fig:bal_massa}
+\end{figure}
+
+\subsection{Balanço de massa: modo de concentração} % (fold)
+\label{sub:modo_con}\index{Amicon 8010!modo de concentração}
+Em modo de concentração, $Q_{\mr{in}}=0$ e a equação~\ref{eq:balanco_massa_principal} pode ser reescrita da seguinte forma:
+\begin{equation}
+	\label{eq:bal_mas_conc_ini}
+	-Q\concp=\concb\frac{dV}{dt}+V\frac{d\concb}{dt}
+\end{equation}
+Para integrar a equação é necessário primeiro determinar a taxa temporal de variação do volume no interior da célula ($dV/dt$). Para isso pode ser feito um balanço de massa à solução. Se for considerado que a densidade da solução se mantém aproximadamente constante durante a filtração, o balanço de massa é dado por:\index{solução!balanço de massa}
+\begin{equation}
+ 	\begin{aligned}
+ 	dV/dt & = -Q\\
+ 	    V & = V_0-Qt
+ 	\end{aligned}
+\end{equation}
+Introduzindo o anterior resultado na equação~\ref{eq:bal_mas_conc_ini} e integrando a equação entre 0 e $t$ obtém-se:
+\begin{equation}
+	\label{eq:bal_con_cb}
+	\concb=C_{\mr{b0}}\left( 1-\frac{Q}{V_0}t\right)^{\permobs-1}
+\end{equation}
+em que \concb\ é a concentração do soluto no interior da célula, para um determinado tempo $t$, $C_{\mr{b0}}$ é a concentração inicial do soluto no interior da célula (para $t=0$), $V_0$ é o volume inicial de solução a filtrar no interior da célula e \permobs\ é o coeficiente de permeação observado do soluto, que se assume constante ao longo do tempo e que é definido por:\index{permeação!observada}
+\begin{equation}
+	\label{eq:permobs_pra}
+ 	\permobs=\frac{\concp}{\concb}
+ \end{equation}
+Assim, a equação~\ref{eq:bal_con_cb} permite determinar \permobs\ a partir de valores experimentais de \concb\ e \concp. Sublinhe-se que esta equação é somente válida quando \permobs\ é aproximadamente constante, condição que é normalmente verificada na filtração de solutos neutros e na ausência de colmatação significativa. No caso de solutos com carga elétrica, os valores de \permobs\ não são independentes da concentração no meio, \concb, pelo que a equação~\ref{eq:bal_con_cb} é somente aplicável no caso de pequenas variações de volume, o que é o caso da generalidade das determinações experimentais feitas neste trabalho.
+% subsection subsection_name (end)
+
+\subsection{Balanço de massa: modo de diafiltração a volume constante} % (fold)
+\label{sub:mod_df}\index{Amicon 8010!modo diafiltração}
+No modo de diafiltração a volume constante, o volume de solução no interior da célula permanece constante e a concentração do soluto na corrente de entrada ($C_{\mr{in}}$) é nula. Este modo de operação é muito usado por exemplo para efetuar trocas de tampão de soluções de macromoléculas, sendo uma alternativa ao processo de diálise. Nestas condições, a equação~\ref{eq:balanco_massa_principal} pode ser reescrita da seguinte forma:\index{diálise}
+\begin{equation}
+	\label{eq:bal_mas_df_ini}
+	-Q\concp=V \frac{d\concb}{dt}
+\end{equation}
+Introduzindo de novo a equação~\ref{eq:permobs_pra}, e considerando \permobs\ constante ao longo do tempo, obtém-se após integração entre 0 e $t$:
+\begin{equation}
+	\label{bal_mas_df_final}
+	\concb=C_{\mr{b0}}\exp \left( -\permobs \frac{Q}{V} t \right)
+\end{equation}
+Para solutos que apresentem permeabilidades elevadas, a sua concentração no interior da célula decresce exponencialmente ao longo do tempo. Esta equação é particularmente útil para descrever operações de troca de tampão, em que a macromolécula é muito rejeitada enquanto os microsolutos permeiam livremente pela membrana.\index{troca de tampão}
+% subsection mod_df (end)
+
+\subsection{Coeficiente de transferência de massa} % (fold)
+\label{sub:coef_massa_pra}\index{coeficiente!de transferência de massa}\index{Amicon 8010!coeficiente de transferência de massa}
+Outro aspeto muito importante de qualquer processo de filtração é o valor do coeficiente de transferência de massa na camada de polarização de concentração, junto à membrana, o qual foi definido na secção~\ref{sec:filmepol}, através da equação~\ref{eq:kmassa}. De facto, muito do esforço de desenvolvimento e investigação na área das tecnologias de membranas é focalizado na modelação teórica dos processos de transferência de massa ao nível da camada de polarização de concentração, recorrendo a métodos computacionais de dinâmica de fluidos. O desenvolvimento de métodos nessa área vai para além dos objetivos propostos para trabalho de doutoramento, sendo usadas aqui correlações semi-empíricas frequentemente utilizadas na literatura para a estimativa de coeficientes de transferência de massa em casos concretos, as quais são válidas para determinados tipos de equipamento. De acordo com o anteriormente exposto, um coeficiente de transferência de massa elevado é desejável porque permite reduzir os fenómenos de polarização de concentração, tal como referido no capítulo~\ref{chap:teov3}. Uma polarização de concentração excessiva pode originar uma prematura colmatação das membranas, alterando quer a produtividade quer a seletividade destes processos ao longo do tempo. Conduz ainda a um aumento da periodicidade da lavagem e substituição das membranas, facto que gera um elevado impacto económico e ambiental.\index{polarização de concentração}
+
+O coeficiente de transferência de massa, $k$, é fundamentalmente dependente do coeficiente de difusão do soluto, da densidade e viscosidade da solução para além de parâmetros relacionados com o equipamento de filtração, os quais influenciam marcadamente as condições hidrodinâmicas, sendo usualmente determinado por correlações do tipo \cite{mulder}:
+\begin{equation}
+	\label{eq:k_mulder}
+	\mr{Sh}=a\reynolds^b\mr{Sc}^c    	
+\end{equation}
+onde $\mr{Sh}$, $\reynolds$ e $\mr{Sc}$ são os parâmetros adimensionais número de Sherwood, número de Reynolds e número de Schmidt, respetivamente, e $a$, $b$ e $c$ constantes empíricas. Para a célula de filtração Amicon 8010 pode ser usada a correlação proposta por Opong e Zydney \cite{opong}:
+\begin{equation}
+	\label{eq:pra_opong}
+	\mr{Sh} = 0.23 \reynolds^{0.567} \mr{Sc}^{0.33}
+\end{equation}
+em que os parâmetros adimensionais são definidos da seguinte forma:
+\index{número!de Reynolds}\index{número!de Scmidt}\index{número!de Sherwood}
+\begin{equation}
+\begin{aligned}
+	\mr{Sh}   & = \frac{k\raiocelula}{D} \\
+  \reynolds & = \frac{\agitacao\raiocelula^2\densidade}%
+		{\viscosidade} \\
+	\mr{Sc}   & = \frac{\viscosidade}{\densidade D}
+\end{aligned}
+\end{equation}
+onde \raiocelula\ é o raio da célula de filtração (para a célula Amicon 8010 equivale a 12.5\,mm), $D$ é o coeficiente de difusão, \agitacao\ é a velocidade de agitação em rad/s, \densidade\ é a densidade, e \viscosidade\ a viscosidade dinâmica. Os parâmetros são todos referentes a uma situação não-confinada da solução.\index{raio!da célula}\index{Amicon 8010!raio}
+
+O coeficiente de transferência de massa pode também ser determinado experimentalmente, a partir de valores de \permobs\ obtidos a diferentes fluxos de permeação, se for considerado o modelo do filme (secção~\ref{sec:filmepol}). A equação~\ref{eq:sobsvssm} pode ser usada para determinações diretas. Após alguma manipulação algébrica pode ainda obter-se a seguinte relação, a partir da equação~\ref{eq:sobsvssm}:
+\begin{equation}
+	\label{eq:pra_sobs2sm_lin}
+	\ln \left( \frac{1-\permobs}{\permobs} \right) = 
+	\ln \left( \frac{1-\permm}{\permm} \right) - \frac{\fluxo}{k}	
+\end{equation}
+\index{modelo!do filme}\index{modelo!FJC|see{FJC}}\index{modelo!CSC|see{CSC}}\index{modelo!WLC|see{WLC}}% 
+Esta relação prevê uma variação linear entre $\ln[(1-\permobs)/\permobs]$ e o fluxo de filtração, sendo o declive dado por $-k^{-1}$, para o caso de se ter \permm\ constante.
+% subsection coef_massa_pra (end)
+
+\subsection{Caracterização de membranas e determinação de coeficientes de permeação} % (fold)
+\label{sub:car_mem}\index{caracterização!membranas}
+\index{seletividade!membranas}%
+Devido às suas características, tais como a facilidade de operação e a reduzida área de membrana necessária, a célula Amicon 8010 revela-se bastante útil para proceder à caracterização de membranas quanto ao seu tamanho de poro. Nesta secção é descrito o procedimento efetuado no presente trabalho para efetuar esta tarefa. Este procedimento foi ainda utilizado para a determinação experimental de valores de coeficiente de permeação observada (\permobs).
+
+Antes de se iniciar uma filtração devem ser efetuados alguns procedimentos de lavagem, quer da célula quer da membrana. Isto pode ser feito operando a célula em modo de pressão constante. Deve ser usada nas lavagens uma água desmineralizada e microfiltrada, sendo que no presente trabalho foi usada água MilliQ (\emph{Millipore}). Para determinar \permobs\ para um determinado soluto, o procedimento usado foi o seguinte:
+\index{procedimento!seletividade}
+\begin{enumerate}
+	\item Colocar a solução a filtrar (mínimo 5\,mL na célula Amicon 8010), da qual se recolhe uma amostra para posterior análise. 
+	\item Ajustar a velocidade de agitação pretendida, iniciar a filtração e começar a contagem de tempo.
+	\item Recolher 0.5--1\,mL de permeado para um tubo, conforme o volume inicial da solução a filtrar. O tempo de filtração relativo à recolha desta primeira fração será denotado $t_1$.
+	\item Sem parar a filtração, continuar a recolha para outro tubo. O tempo de filtração relativo à recolha desta primeira fracção será denotado $t_2$ (contado desde o início da filtração) .
+	\item Pesar as duas frações e calcular o volume correspondente.
+	\item Analisar as duas frações de permeado, a solução inicial e o concentrado que ficar na célula de filtração, quanto ao conteúdo do soluto em questão e determinar a sua concentração usando o método mais adequado (os vários métodos analíticos são descritos mais à frente).
+	\item Calcular o valor de \permobs. 
+\end{enumerate}
+Usando a equação~\ref{eq:bal_con_cb}, e integrando \concp\ entre o tempo de recolha da primeira fração ($t_1$) e o tempo total de filtração ($t_2$), obtém-se:\index{balanço de massa!seletividade}
+\begin{equation}
+\label{eq:calcrobs}
+C_{\mr{p,med}} = \frac{V_0 C_{\mr{b0}}}{Q(t_1-t_2)}\left[ %
+\left(
+1 - \frac{Q}{V_0}t_1
+\right)^{\permobs} - 
+\left(1 - \frac{Q}{V_0}t_2 
+\right)^{\permobs}
+\right]
+\end{equation}\index{permeação!observada}%    
+O valor de \permobs\ pode assim ser obtido resolvendo numericamente a equação~\ref{eq:calcrobs}, a partir dos valores de $C_{\mr{p,med}}$ (concentração do soluto na segunda fração) e $C_{\mr{b0}}$ experimentais. Com a concentração do soluto nas duas frações de permeado e os respetivos volumes de permeado pode ainda determinar-se a quantidade total de soluto permeado, a qual pode ser comparada com a quantidade de soluto na amostra inicial e a quantidade de soluto no concentrado final. Isto possibilita verificar se houve ou não adsorção de soluto na membrana, e quantificar a quantidade adsorvida.
+% substituindo $C_{\mr{p,med}}$ pelo valor de concentração determinado para a segunda fração de permeado, e substituindo $C_{\mr{b0}}$ pelo valor de concentração do soluto na solução inicial. 
+
+Para caracterizar uma membrana quanto ao seu tamanho de poro é necessário determinar \permobs\ de solutos cujas dimensões moleculares são conhecidas, os quais serão referidos como solutos de referência, seguindo o procedimento descrito em cima, variando entre ensaios a velocidade de agitação e/ou o fluxo de filtração, conforme se revele mais adequado experimentalmente. Os solutos de referência mais usados para caracterizar membranas de UF são dextranos e polietilenoglicóis (PEG's). Para estes dois polímeros podem ser encontradas na literatura correlações para determinar os seus raios hidrodinâmicos (\raiostokes) em função das suas massas moleculares (\massamolecular). Para dextranos \cite{meu1}:\index{dextrano!raio hidrodinâmico}
+\index{massa molecular}
+\begin{equation}
+	\label{eq:rsdextrano_art}
+	\raiostokes = 0.0282(\massamolecular)^{0.47752}
+\end{equation}
+com \raiostokes\ em nm e \massamolecular\ em Da. Para PEG's pode ser usada a seguinte correlação \cite{moraotese}:\index{PEG!raio hidrodinâmico}
+\begin{equation}
+	\label{eq:rspeg_art}
+	\ln \raiostokes = -23.91 + 0.4648 \ln (\massamolecular)
+\end{equation}
+com \raiostokes\ em m e \massamolecular\ em Da. Estes solutos foram escolhidos porque são neutros e podem ser aproximadamente descritos pelo modelo de esferas rígidas \cite{deen,dechadilok,moraompa}, o que permite a aplicação do modelo do transporte restringido descrito na secção~\ref{sec:restringido}. Desta forma é possível determinar um valor de raio de poro (\raioporo) que minimiza os erros entre os valores de \permobs\ obtidos experimentalmente e os valores obtidos com o modelo, erros estes que podem ser representados por uma função de mínimos quadrados \cite{bowen02}:
+\index{raio!do poro}
+\begin{equation}
+	\label{eq:bowenSy}
+	S_y = \sqrt{\frac{\sum_1^n\sum_1^j(S_{\mr{obs,\,exp}}-S_{\mr{obs,\,calc}})^2}{jn-1}}
+\end{equation}\index{minimos@mínimos quadrados}%
+onde $S_{\mr{obs,\,exp}}$ é a permeação observada determinada experimentalmente, $S_{\mr{obs,\,calc}}$ é a permeação observada calculada pelo modelo, $n$ é o número de solutos usados, cada um com $j$ valores de \permobs\ determinados. Assim, o raio de poro da membrana é determinado como sendo o valor que minimiza $S_y$. 
+
+\section{Principais solutos em estudo} % (fold)
+\label{sec:solutos}
+Nesta secção é feita a caracterização dos principais solutos em estudo, nomeadamente DNA plasmídico e RNA. É dado ênfase às suas propriedades mais relevantes no âmbito do presente trabalho, ou seja, as propriedades necessárias para a formulação dos modelos apresentados no capítulo~\ref{chap:teov3}. Para além do que é aqui referido, podem ser encontradas na literatura diversas referências que abordam a caracterização pormenorizada destes dois importantes tipos de biomoléculas. De facto, existem revistas científicas totalmente focadas nesta temática, como por exemplo, ``\emph{PLASMID, A Journal of Mobile Genes and Genomes}'' e ``\emph{RNA, A Publication of the RNA Society}''. O texto de Schleef \et\ \cite{schleef} discute as propriedades destas biomoléculas mais relevantes no contexto de um processo de purificação de pDNA.
+
+\subsection{DNA plasmídico} % (fold)
+\label{sub:pdna_pra}
+\index{DNA plasmídico!propriedades}
+Os plasmídeos são moléculas de DNA circulares, de dupla cadeia, que podem ser encontrados maioritariamente em bactérias, onde desempenham várias funções. Em especial, são responsáveis por conferir funções que possibilitam a adaptação destes organismos unicelulares a diferentes meios, conferindo em alguns casos resistência a determinados compostos que atuam como antibióticos. Sendo moléculas de DNA dupla cadeia, o seu tamanho é quase sempre indicado pelo número de pares de bases (nbp) que o constituem. A valores de pH superiores a 4.00 \cite{schleef}, o grupo fosfato em cada base encontra-se ionizado, o que implica que o pDNA apresenta uma elevada quantidade de cargas negativas, mais especificamente 2 cargas negativas por cada par de bases. A sua massa molecular é dependente não só do número de pares de bases mas também da própria constituição em termos do tipo de bases. Neste trabalho opta-se por se utilizar uma aproximação ao valor real da massa molecular do plasmídeo, considerando uma massa molecular média, por par de bases, igual a 660\,Da \cite{prazeresdif}, ou seja:
+\index{DNA plasmídico!massamolecular}
+\index{massa molecular}
+\begin{equation}
+\label{eq:mw_pdna_pra}
+\massamolecular = 660 (\numpb)
+\end{equation}
+onde \massamolecular\ é a massa molecular do pDNA em Da. A grande maioria dos plasmídeos apresenta um tamanho que pode ir de 1 kbp a 200 kbp. Devido às suas elevadas dimensões, estas moléculas apresentam valores reduzidos de coeficiente de difusão. No presente o trabalho, os coeficientes de difusão das moléculas de pDNA estudadas foram determinados pela correlação proposta por Prazeres \cite{prazeresdif}:
+\index{DNA plasmídico!coeficiente de difusão}
+\index{coeficiente!de difusão}
+\begin{equation}
+\label{eq:prazeres_dif_pra}
+\begin{gathered}
+	D = A\frac{T}{\eta}(\numpb)^{-2/3} \\
+	A = 3.31 \times 10^{-15}\, \mr{N}/\mr{K}
+\end{gathered}
+\end{equation}
+onde $T$ é a temperatura absoluta da solução (K), $\eta$ a viscosidade (Pa$\cdot$s), nbp é o número de pares de bases do plasmídeo e $A$ é uma constante empírica determinada pelo autor.\index{temperatura}
+\index{número!pares de bases} 
+
+Sendo moléculas carregadas negativamente, os plasmídeos apresentam variações no seu tamanho consoante a força iónica do meio, facto que é causado pela redução da intensidade das forças eletrostáticas repulsivas, entre os seus grupos carregados, na presença de sais. Este efeito, no caso de moléculas de DNA, pode ser contabilizado pela correlação proposta por Manning \cite{manning}:
+\index{força iónica}
+\index{comprimento!inverso Debye}
+\index{comprimento!persistência}
+\index{comprimento!de Bjerrum}
+\index{raio!dupla hélice}
+\begin{equation}
+\label{eq:manning_pra}
+\persis=\left(\frac{\pi\persis^{*}}{2}\right)^{2/3}\frac{\raioduplahelice^{4/3}}{\cargaeletrica^{2}\bjerrum}\left[(2\cargaeletrica\densidadecarga-1)\frac{\inversodebye b \numeroeuler^{-\inversodebye b}}{1-\numeroeuler^{-\inversodebye b}}-1-\ln(1-\numeroeuler^{-\inversodebye b})\right]
+\end{equation}
+onde $a$ é o comprimento de persistência do DNA, contabilizando a presença das suas cargas negativas, $\persis^{*}$ é o comprimento de persistência de um isómero da molécula de DNA para o qual os grupos fosfato não estão ionizados (ver \cite{manning}), \raioduplahelice\ é o raio da dupla hélice do DNA, \cargaeletrica\ é a valência do catião do sal presente em solução, \bjerrum\ é o comprimento de Bjerrum da água pura, \densidadecarga\ é a densidade de carga do DNA e $b$ é o espaço entre cargas no DNA. Os valores que podem ser usados para os vários parâmetros são \cite{latu09,manning}:
+\begin{equation}
+\label{eq:prop_manning_pra}
+\begin{aligned}
+  \persis^{*} & = 7.5\,\mr{nm} \\
+  \raioduplahelice & = 1\,\mr{nm} \\
+  \bjerrum & = 0.71\,\mr{nm} \\
+  \densidadecarga & = 4.2 \\
+  b & = 0.17\,\mr{nm}
+\end{aligned}  	
+\end{equation}
+\index{DNA plasmídico!raio dupla hélice}
+\index{DNA plasmídico!densidade carga}
+\index{DNA plasmídico!comprimento de persistência}% 
+A variação do comprimento de persistência com a força iónica da solução está implícita no valor do inverso do comprimento de Debye, \inversodebye, que pode ser calculado, em unidades SI, por \cite{manning}:
+\begin{equation}
+\label{eq:inverso_debye_pra}
+\inversodebye = \sqrt{8\pi\avogadro\bjerrum\forcaionica}
+\end{equation}\index{número!de Avogadro}%
+onde $\avogadro$ é o número de Avogadro e $\forcaionica$ o valor da força iónica da solução. Para determinar o raio de giração das moléculas de pDNA opta-se, no presente trabalho, por as representar como cadeias fechadas segmentadas (capítulo~\ref{chap:teov3}). Seguindo esta abordagem, foi possível obter uma relação entre o raio de giração e o comprimento de persistência e número de pares de bases do plasmídeo, encontrando-se os detalhes inerentes à obtenção da seguinte relação explicitados no capítulo~\ref{chap:art2}:
+\index{DNA plasmídico!raio de giração}
+\begin{equation}
+\label{eq:rg_a_nbp_pra}
+\begin{gathered}
+\raiogiracao = c_1 a ^ {c_2} \numpb ^ {1-c_2} \\
+c_1 = 1.1631 \times 10 ^ {-7};\ \ c_2 = 0.352
+\end{gathered}
+\end{equation}
+com \raiogiracao\ e $a$ em m. O comprimento de persistência pode ser calculado com a equação~\ref{eq:manning_pra}. Na tabela~\ref{tab:prop_pdna_pra} encontram-se os três plasmídeos utilizados no presente trabalho, bem como as suas propriedades mais relevantes, calculadas pelas equações apresentadas.
+\begin{table}
+	\centering
+	\caption[Propriedades mais relevantes dos plasmídeos estudados]{Propriedades mais relevantes, no âmbito do presente trabalho, dos três plasmídeos estudados.}
+	\label{tab:prop_pdna_pra}
+\begin{threeparttable}
+\begin{tabular*}{0.85\textwidth}{l@{\extracolsep{\fill}} d{1} d{7} d{12} d{7} }
+ \toprule
+Plasmídeo & \mc{1}{l}{\numpb\phantom{nnn}} & \mc{1}{l}{\massamolecular\,[MDa]} &\multicolumn{1}{l}{$D \times 10^{12}$\,[m$^2$/s]}&\multicolumn{1}{l}{$\raiogiracao\times 10^9$\,[m]}\\
+\midrule
+\pUC     & 2686  & 1,77 & 5,76 & 53,3  \\
+\pVAX    & 6050  & 3,99 & 3,35 & 90,2  \\
+\pCAMBIA & 12361 & 8,16 & 2,08 & 143,3 \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}
+\item{}$T=298$\,K, $\eta=8.87\times 10^{-3}$\,Pa$\cdot$s
+\item{}$I=150$\,mM (NaCl)
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\subsection{RNA} % (fold)
+\label{sub:rna_pra}\index{RNA}
+Os lisados obtidos pelo procedimento usado de lise alcalina, descrito na secção~\ref{sec:lise_alcalina}, contêm como principal contaminante moléculas de RNA, o que torna premente o estudo desta biomolécula. Analisando o lisado por eletroforese em gel de agarose (figura~\ref{fig:ef_pra}), observam-se duas bandas distintas de RNA: uma primeira banda com menor distância de migração, que se refere ao RNA ribossómico da \ecoli\ de maior massa molecular (RNA\,23 e 16S), e uma segunda banda onde se podem encontrar moléculas de RNA de menor massa molecular. A primeira banda diz assim respeito ao chamado RNA de alto peso molecular (HMw\,RNA) de que fazem parte o RNA\,16S e 23S. A segunda banda contém o denominado RNA de baixo peso molecular (LMw\,RNA), sendo o RNA\,5S o seu principal constituinte \cite{meu3}.
+\begin{figure}
+	\centering
+	\input{./tikz/ef_pra.tikz}
+	\caption[Identificação dos tipos de RNA na análise de AGE]{Identificação dos dois principais grupos de RNA (HMw e LMw\,RNA) numa análise de lisados por eletroforese em gel de agarose. Na figura encontra-se várias amostrar de um lisado do plasmídeo \pVAX, obtido por lise alcalina.}
+	\label{fig:ef_pra}
+\end{figure}
+
+As moléculas de RNA, ao contrário dos plasmídeos, são moléculas de cadeia simples. O seu tamanho pode ser indicado pelo número de nucleótidos (nnt) que o constituem. No entanto, para o caso específico das moléculas de RNA, é mais usual proceder à sua identificação através dos valores dos seus coeficientes de sedimentação (s), em operações de ultracentrifugação, avaliados em unidades Svedberg (S). Assim, pela teoria básica da ultracentrifugação, é possível estimar o raio hidrodinâmico em função da massa molecular e do coeficiente de sedimentação \cite{voet,beckman}:
+\index{coeficiente!de sedimentação}
+\index{número!nucleótidos}
+\index{Svedberg}
+\begin{equation}
+\label{eq:ultracentri_pra}
+\raiostokes=\frac{1}{6\pi\viscosidade}\left[ \frac{\massamolecular}{\avogadro}\frac{(1-\volumeparcial\densidade)}{\sedimentacao}\right]
+\end{equation}%
+\index{volume!parcial específico}%
+\index{RNA!volume parcial específico}%
+\index{RNA!coeficiente de sedimentação}%
+\index{RNA!massa molecular}%
+\index{massa molecular}%
+\index{RNA!raio hidrodinâmico}%
+onde \raiostokes\ representa o raio hidrodinâmico do RNA, \viscosidade\ a viscosidade da solução, \massamolecular\ a massa molecular do RNA, \volumeparcial\ o volume parcial específico do RNA, \densidade\ a densidade da solução e \sedimentacao\ o coeficiente de sedimentação do RNA. A massa molecular do RNA pode ser aproximadamente calculada considerando que cada nucleótido tem uma massa molecular média de 340\,Da.\footnote{\url{http://www.nordicbiosite.com}} O volume parcial específico pode ser considerado aproximadamente constante para os vários tipos de RNA, sendo o seu valor médio de 0.53\,mL/g \cite{beckman}. O coeficiente de difusão pode assim ser obtido a partir dos valores do raio hidrodinâmico através da equação de Stokes-Einstein:
+\index{equação!Stokes-Einstein}
+\begin{equation}
+\label{eq:stokes_einstein_pra}
+D=\frac{\boltzman T}{6\pi\viscosidade\raiostokes}
+\end{equation}
+onde $D$ representa o coeficiente de difusão, \boltzman\ a constante de Boltzmann, $T$ a temperatura absoluta e \viscosidade\ a viscosidade da solução.
+
+No presente trabalho optou-se por representar as várias moléculas de RNA presentes nos lisados pela abordagem de cadeias de ligação livre (capítulo~\ref{chap:art3}). Segundo esta abordagem, o raio de giração pode ser obtido a partir do raio hidrodinâmico através do modelo de Zimm \cite{teraoka,fukatsu,robertson}:\index{FJC}\index{modelo!Zimm}\index{RNA!raio de giração}
+\begin{equation}
+\label{eq:rs2rg_pra}
+\raiogiracao = 1.505 \raiostokes
+\end{equation}
+Na tabela~\ref{tab:prop_rna_pra} encontram-se as propriedades mais relevantes, no âmbito do presente trabalho, das três espécies de RNA consideradas. 
+\begin{table}
+	\centering
+	\caption[Propriedades mais relevantes das espécies de RNA estudadas]{Propriedades mais relevantes, no âmbito do presente trabalho, das três espécies de RNA estudadas.}
+	\label{tab:prop_rna_pra}
+\begin{threeparttable}
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}} d{0} d{6} d{4} d{7} d{7} d{12}}
+ \toprule
+RNA & \mc{1}{l}{nnt\phantom{n}} & \mc{1}{l}{$\sedimentacao\times 10^{13}$\,[s]} & \mc{1}{l}{\massamolecular\,[kDa]} & \multicolumn{1}{l}{$\raiostokes\times 10^9$\,[m]} &\multicolumn{1}{l}{$\raiogiracao\times 10^9$\,[m]} & \multicolumn{1}{l}{$D \times 10^{11}$\,[m$^2$/s]}\\
+\midrule
+RNA\,5S   &  120 &  5 &  40,80 &  3,39 &  5,10 & 7,29 \\
+RNA\,16S  & 1541 & 16 & 523,94 & 13,6  & 20,5  & 1,82 \\
+RNA\,23S  & 2904 & 23 & 987,36 & 17,8  & 26,8  & 1,39 \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}
+\item{}$T=298$\,K
+\item{}$\eta=8.87\times 10^{-3}$\,Pa$\cdot$s
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\section{Método de quantificação HIC} % (fold)
+\label{sec:hic_pra}\index{HIC}\index{DNA plasmídico!quantificação|see{HIC}}\index{RNA!quantificação|see{HIC}}
+Nesta secção são feitas algumas considerações sobre o principal método quantitativo utilizado no presente trabalho. Este método, da autoria de Diogo \et\ \cite{diogo}, é um método de cromatografia por interação hidrofóbica (HIC) e foi originalmente desenvolvido para quantificar o pDNA presente nas várias amostras ao longo de um processo de purificação. Não há distinção entre as várias isoformas de pDNA, pelo que o valor determinado pelo método corresponde ao valor da concentração total de plasmídeo. Os detalhes específicos da execução experimental do referido método são fornecidos nos capítulos~\ref{chap:art3}~e~\ref{chap:art4}.
+\begin{figure}
+	\centering
+	\input{./tikz/hic_pra.tikz}
+	\caption[Cromatograma típico do método de quantificação HIC]{Perfil cromatográfico típico de um lisado alcalino, obtido com o método de HIC desenvolvido por Diogo \et\ \cite{diogo}. No cromatograma podem ser identificadas três regiões distintas. Uma primeira região (região 1) que corresponde às moléculas de pDNA, uma segunda região (região 2) onde eluem compostos com maior tempo de retenção mas que não ficam permanentemente ligados à coluna (contaminantes hidrofílicos) e uma terceira região onde eluem os compostos mais hidrofóbicos (contaminantes hidrofóbicos), cuja eluição só é conseguido reduzindo a força iónica do eluente. Na figura está também representado, a tracejado, o perfil da condutividade do eluido}
+	\label{fig:hic_pra}
+\end{figure}
+O princípio de funcionamento do método de HIC assenta nas diferenças de hidrofobicidade entre os vários constituintes do lisado, encontrando-se um cromatograma típico representado na figura~\ref{fig:hic_pra}.\index{lisado}\index{eluente}\index{contaminantes!hidrofílicos}\index{contaminantes!hidrofóbicos}\index{sulfato de amónio!HIC}\index{coluna cromatográfica}\index{cromatograma}\index{cromatografia!interação hidrofóbica|see{HIC}}\index{procedimento!HIC}\index{lisado!HIC}% 
+No momento da injeção, o eluente contém uma elevada quantidade de \sulfatoamonio\ (1.5\,M) para que seja possível intensificar as interações dos vários componentes do lisado com a matriz hidrofóbica da coluna. Ao fim de um determinado tempo, o eluente é instantaneamente substituído para um novo eluente sem a presença de \sulfatoamonio\ para assim eluir as espécies retidas na coluna. Podem ser identificadas três regiões distintas no cromatograma apresentado na figura~\ref{fig:hic_pra}. A primeira região (``região 1'') é constituída por um pico com um máximo de absorvância aos 0.7\,mL de volume de retenção, que se atribui exclusivamente às moléculas de pDNA \cite{sousabab,diogo,gomesboro}, que é uma molécula altamente hidrofílica por natureza. Numa segunda região (``região 2''), elui um grupo de compostos que apresentam um maior tempo de retenção mas que não ficam ligados de forma permanente à coluna. Estes contaminantes são por isso denominados contaminantes hidrofílicos. Finalmente, pode ser identificada uma terceira região (``região 3'') que apresenta um pico com um máximo de absorvância em 4.5\,mL de volume de retenção, pico este que é apenas obtido aquando da mudança de eluente. Isto significa que os compostos que eluem nesta região ficam fortemente ligados na coluna e são por isso denominados contaminantes hidrofóbicos\footnote{É importante notar que a convenção de nomenclatura adotada para os contaminantes presentes no lisado serve apenas o propósito de os identificar, não procurando efetuar uma análise profunda do grau de hidrofobicidade dos mesmos.}. Como discutido no apêndice~\ref{app:2}, é proposto no presente trabalho identificar estes contaminantes como sendo, na grande maioria, constituídos pelas moléculas de RNA presentes nos lisados, o que possibilita obter por este método a simultânea quantificação do pDNA e do RNA.  
+
+\section{Lise alcalina} % (fold)
+\label{sec:lise_alcalina}\index{lise alcalina}
+Nesta secção descreve-se o procedimento utilizado para efetuar o processo de lise alcalina. Para tentar manter a reprodutibilidade entre ensaios usou-se sempre a mesma concentração mássica de células na suspensão a ser lisada. Esta concentração foi escolhida com base num estudo prévio de estabilidade dos lisados, apresentado no apêndice~\ref{app:1}. 
+
+Na realização do presente trabalho efetuou-se o processo de lise alcalina de forma manual\footnote{Naturalmente, de um ponto de vista de aplicação industrial, o processo de lise terá que ser efetuado de forma automática e de preferência em modo contínuo, sendo relevantes os estudos desenvolvidos por Urthaler \et\ \cite{urthaler}, Meacle \et\ \cite{meacle} e Chamsart e Karnjanasorn \cite{staticmixer} sobre esta matéria.}. O procedimento usado é uma modificação do método originalmente proposto por Birnboim e Doly \cite{birnboim}, e consiste nos seguintes três passos:\index{lise alcalina!procedimento}\index{lise alcalina!referências bibliográficas}
+\begin{enumerate}
+	\item Ressuspender o pellet de \ecoli\ num volume de tampão de ressuspensão apropriado para obter uma suspensão com uma concentração mássica de 120\,g/L (peso húmido). Regra geral, foram ressuspendidas 480\,mg de células em 4\,mL de tampão de ressuspensão.
+	\item Adicionar um volume de tampão de lise, agitar de forma suave e incubar a temperatura ambiente durante 5\,min.
+	\item Adicionar um volume de tampão de neutralização, agitar de forma suave e incubar em gelo durante 15\,min. 
+\end{enumerate}
+\renewcommand\descriptionlabel[1]{\hspace{\labelsep}\textbf{#1}}
+A constituição dos três tampões enunciados, bem como o modo de preparação e de manutenção dos mesmos, foi a seguinte:\index{lise alcalina!tampões}
+\begin{description}
+	\item[Tampão de resuspensão] Solução de 50\,mM de Tris e 10\,mM de EDTA. Ajustar pH para 8.00 através da adição de HCl. Conservar a temperatura ambiente. Verificar o pH do tampão antes de utilizar.
+	\item[Tampão de lise] Solução de 0.2\,M de NaOH e 1\,\% (w/w) de SDS. Conservar a temperatura ambiente. Antes de utilizar deve-se verificar a existência de uma possível precipitação de SDS, o que pode acontecer se a temperatura ambiente for reduzida. Em caso de ter ocorrido precipitação deve-se incubar o tampão num banho termostatizado a 37\degreecelsius\ até se verificar a completa dissolução de SDS.
+	\item[Tampão de neutralização] Solução de 3\,M de acetato de potássio. Ajustar pH para 5.50 através da adição de ácido acético glacial. Conservar a 4\degreecelsius. Verificar o pH antes de utilizar. 
+\end{description}\index{tampão!ressuspensão}\index{tampão!lise}\index{tampão!neutralização}\index{RNase}%
+É importante notar que o tampão de ressuspensão não contém RNase, que é por vezes usada para degradar o RNA \cite{qiagen}. Esta opção, como referido no capítulo~\ref{chap:intro}, apresenta algumas limitações do ponto de vista de aplicação industrial e é assim desaconselhável. Para além do estudo prévio anteriormente referido, foi ainda realizado um estudo de caracterização dos lisados centrifugados por cromatografia de exclusão molecular (SEC), eletroforese em gel de agarose (AGE), cromatografia de interação hidrofóbica (HIC) e de análise ao conteúdo proteico (BCA). Este estudo é descrito apêndice~\ref{app:2}.
+% section hic (end)
+% chapter pra (end)
