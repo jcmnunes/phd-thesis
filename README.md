@@ -32,4 +32,4 @@ links to humans using your project. You can include links like:
   - PhD calculation routines: https://github.com/jcmnunes/phd-calculation-routines
 
 ## Licensing
-Licensed under the MIT License.
+Licensed under the [MIT License](./LICENSE).
